@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T1 · Lei Orgânica do Município de Senador Canedo — Câmara Municipal</title>
+<style>
+:root{
+  --bg:#f6f7f9;--surface:#fff;--surface2:#f0f2f5;--text:#1d2330;--muted:#5d6676;--line:#dde1e7;
+  --accent:#2f5bd3;--accent-soft:#e7edfc;--ok:#1f8a4c;--ok-soft:#e3f4ea;--bad:#c23a3a;--bad-soft:#fbe7e7;
+  --warn:#a86a00;--warn-soft:#fdf1dc;--shadow:0 1px 3px rgba(0,0,0,.06),0 4px 14px rgba(0,0,0,.04);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#12151b;--surface:#1a1e26;--surface2:#222733;--text:#e6e9ef;--muted:#9aa3b2;--line:#2e3442;
+  --accent:#7b9cff;--accent-soft:#232c45;--ok:#4cc27f;--ok-soft:#1b3326;--bad:#ef7676;--bad-soft:#3a2023;
+  --warn:#f0b54a;--warn-soft:#3a2f1a;--shadow:none;
+}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text)}
+header{background:var(--surface);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.top{display:flex;align-items:center;gap:16px;padding:12px 0 6px;flex-wrap:wrap}
+.badge{background:var(--accent);color:#fff;font-weight:700;border-radius:8px;padding:4px 10px;font-size:14px;letter-spacing:.5px}
+.top h1{font-size:18px;margin:0;font-weight:650}
+.top .sub{color:var(--muted);font-size:13px}
+nav{display:flex;gap:4px;overflow-x:auto;padding-bottom:8px}
+nav button{border:0;background:none;color:var(--muted);font:inherit;font-size:14px;padding:6px 12px;border-radius:8px;cursor:pointer;white-space:nowrap}
+nav button:hover{background:var(--surface2);color:var(--text)}
+nav button.on{background:var(--accent-soft);color:var(--accent);font-weight:600}
+main{padding:24px 0 80px}
+section.tab{display:none}section.tab.on{display:block}
+h2{font-size:22px;margin:0 0 4px}
+h3{font-size:17px;margin:28px 0 10px}
+.lead{color:var(--muted);margin:0 0 20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 20px;box-shadow:var(--shadow);margin-bottom:16px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.call{border-left:4px solid var(--accent);background:var(--accent-soft);padding:10px 14px;border-radius:0 8px 8px 0;margin:12px 0}
+.call.warn{border-color:var(--warn);background:var(--warn-soft)}
+.call.bad{border-color:var(--bad);background:var(--bad-soft)}
+.call.ok{border-color:var(--ok);background:var(--ok-soft)}
+.call b:first-child{display:block;margin-bottom:2px}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+th,td{border-bottom:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--surface2);font-weight:600}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:10px;margin:10px 0}
+.tbl table th:first-child,.tbl table td:first-child{padding-left:14px}
+.k{font-weight:650;color:var(--accent)}
+.muted{color:var(--muted)}
+.pill{display:inline-block;font-size:12px;padding:1px 8px;border-radius:99px;background:var(--surface2);color:var(--muted);border:1px solid var(--line)}
+.pill.ok{background:var(--ok-soft);color:var(--ok);border-color:transparent}
+.pill.bad{background:var(--bad-soft);color:var(--bad);border-color:transparent}
+details{border:1px solid var(--line);border-radius:10px;margin:8px 0;background:var(--surface)}
+details summary{cursor:pointer;padding:10px 14px;font-weight:600}
+details>div{padding:0 14px 12px}
+.btn{border:1px solid var(--line);background:var(--surface);color:var(--text);font:inherit;font-size:14px;padding:8px 14px;border-radius:8px;cursor:pointer}
+.btn:hover{border-color:var(--accent)}
+.btn.pri{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.ok{background:var(--ok);border-color:var(--ok);color:#fff}
+.btn.bad{background:var(--bad);border-color:var(--bad);color:#fff}
+.btn:disabled{opacity:.45;cursor:default}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+select{font:inherit;font-size:14px;padding:7px 10px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--text)}
+
+/* roteiro */
+.steps{counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{counter-increment:s;position:relative;padding:10px 0 10px 46px;border-bottom:1px dashed var(--line)}
+.steps li:last-child{border:0}
+.steps li::before{content:counter(s);position:absolute;left:0;top:10px;width:32px;height:32px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-weight:700;display:grid;place-items:center}
+
+/* mapa mental */
+.mm{padding:22px 16px}
+.mm-root{display:block;max-width:520px;margin:0 auto;text-align:center;background:var(--accent);color:#fff;border-radius:12px;padding:12px 16px;font-size:14px;line-height:1.45}
+.mm-root b{display:block;font-size:17px;letter-spacing:.5px}
+.mm-trunk{width:2px;height:22px;background:var(--line);margin:0 auto}
+.mm-branches{display:grid;grid-template-columns:repeat(var(--n,5),1fr);gap:12px;border-top:2px solid var(--line);padding-top:0}
+.mm-br{display:flex;flex-direction:column;align-items:stretch}
+.mm-br::before{content:"";width:2px;height:18px;background:var(--line);margin:0 auto}
+.mm-h{border:2px solid var(--c);border-radius:10px;padding:8px 10px;text-align:center;font-size:13px;background:var(--surface)}
+.mm-h b{display:block;font-size:14.5px;color:var(--c)}
+.mm-br ul{list-style:none;margin:8px 0 0;padding:0 0 0 12px;border-left:2px solid var(--c)}
+.mm-br li{font-size:13px;line-height:1.4;background:var(--surface2);border-radius:8px;padding:6px 9px;margin:6px 0;position:relative}
+.mm-br li::before{content:"";position:absolute;left:-12px;top:50%;width:10px;border-top:2px solid var(--c)}
+@media(max-width:860px){.mm-branches{grid-template-columns:1fr 1fr;border-top:0}}
+@media(max-width:520px){.mm-branches{grid-template-columns:1fr}}
+
+
+/* abreviações com dica */
+abbr[data-tip]{text-decoration:underline dotted;text-underline-offset:3px;cursor:help}
+#tip{position:fixed;z-index:100;max-width:300px;background:#1d2330;color:#fff;font-size:13px;line-height:1.35;padding:6px 10px;border-radius:7px;box-shadow:0 4px 14px rgba(0,0,0,.25);pointer-events:none;opacity:0;transition:opacity .12s}
+#tip.on{opacity:1}
+@media (prefers-color-scheme:dark){#tip{background:#e6e9ef;color:#12151b}}
+
+/* mapa clicável */
+.mm [data-k]{cursor:pointer;transition:transform .12s,box-shadow .12s}
+.mm [data-k]:hover{transform:translateY(-1px);box-shadow:0 2px 8px rgba(0,0,0,.12)}
+.mm [data-k].sel{outline:3px solid var(--c,var(--accent));outline-offset:2px}
+.mm-root[data-k].sel{outline-color:var(--text)}
+.mm-hint{text-align:center;color:var(--muted);font-size:13px;margin:-4px 0 12px}
+#mmPanel{border-left:6px solid var(--c,var(--accent));scroll-margin-top:140px}
+#mmPanel h4{margin:0 0 4px;font-size:18px;color:var(--c,var(--accent))}
+#mmPanel .mm-sec{margin:12px 0 0}
+#mmPanel .lbl{display:block;font-size:13px;text-transform:uppercase;letter-spacing:.4px;color:var(--muted);margin-bottom:2px}
+#mmPanel .ex{background:var(--ok-soft);border-radius:8px;padding:10px 12px}
+#mmPanel .pg{background:var(--bad-soft);border-radius:8px;padding:10px 12px}
+#mmPanel .nav{display:flex;justify-content:space-between;gap:8px;margin-top:14px}
+
+/* questões */
+.qnav{display:flex;flex-wrap:wrap;gap:5px;margin:10px 0 16px}
+.qnav button{width:34px;height:30px;border-radius:6px;border:1px solid var(--line);background:var(--surface);color:var(--text);font-size:12.5px;cursor:pointer}
+.qnav button.cur{outline:2px solid var(--accent);outline-offset:1px}
+.qnav button.ok{background:var(--ok);color:#fff;border-color:var(--ok)}
+.qnav button.bad{background:var(--bad);color:#fff;border-color:var(--bad)}
+.progress{height:8px;background:var(--surface2);border-radius:99px;overflow:hidden}
+.progress>div{height:100%;background:var(--accent);transition:width .3s}
+.qhead{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:13.5px;margin-bottom:8px}
+.enun{white-space:pre-line;margin-bottom:14px}
+.trecho{white-space:pre-line;margin:0 0 12px;padding:10px 14px;border-left:4px solid var(--accent);background:var(--surface2);border-radius:0 8px 8px 0;font-style:italic}
+.trecho .lbl{display:block;font-style:normal;font-size:12px;text-transform:uppercase;letter-spacing:.4px;color:var(--muted);margin-bottom:2px}
+.opt{display:flex;gap:10px;align-items:flex-start;width:100%;text-align:left;border:1px solid var(--line);background:var(--surface);color:var(--text);font:inherit;font-size:15px;padding:10px 12px;border-radius:10px;margin:6px 0;cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--accent);background:var(--accent-soft)}
+.opt .l{font-weight:700;min-width:22px;text-transform:uppercase}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:var(--ok-soft)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.ce{display:flex;gap:10px}.ce .opt{justify-content:center;font-weight:650}
+.opt{user-select:none;-webkit-user-select:none;position:relative}
+.opt.sel{border-color:var(--accent);background:var(--accent-soft);box-shadow:inset 0 0 0 1px var(--accent)}
+.opt.sel .l::before{content:"● ";color:var(--accent)}
+.opt.desc{opacity:.55;padding-right:92px}
+.opt.desc span{text-decoration:line-through;text-decoration-thickness:2px}
+.ce .opt.desc{text-decoration:line-through;text-decoration-thickness:2px}
+.opt.desc::after{content:"descartada";position:absolute;right:10px;top:8px;font-size:11px;color:var(--muted);text-decoration:none}
+.qact{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:12px}
+.qmsg{font-size:14.5px;padding:8px 12px;border-radius:8px;display:none}
+.qmsg.on{display:block}
+.qmsg.warn{background:var(--warn-soft);color:var(--warn)}
+.qmsg.bad{background:var(--bad-soft);color:var(--bad)}
+.qhint{font-size:12.5px;color:var(--muted);margin:2px 0 6px}
+.coment{margin-top:16px;border-top:1px solid var(--line);padding-top:12px}
+.coment p{margin:6px 0}
+.verdict{font-weight:700;font-size:16px}
+.verdict.ok{color:var(--ok)}.verdict.bad{color:var(--bad)}
+
+/* flashcards */
+.fc{perspective:1200px;max-width:640px;margin:0 auto}
+.fc-inner{position:relative;min-height:240px;transition:transform .45s;transform-style:preserve-3d;cursor:pointer}
+.fc.flip .fc-inner{transform:rotateY(180deg)}
+.fc-face{position:absolute;inset:0;backface-visibility:hidden;border-radius:14px;padding:26px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;border:1px solid var(--line);background:var(--surface);box-shadow:var(--shadow)}
+.fc-face.back{transform:rotateY(180deg);background:var(--accent-soft);text-align:left;align-items:flex-start;font-size:15px}
+.fc-face .q{font-size:19px;font-weight:600}
+.fc-meta{display:flex;justify-content:space-between;max-width:640px;margin:0 auto 8px;color:var(--muted);font-size:13px}
+.boxes{display:flex;gap:6px;justify-content:center;margin:14px 0}
+.boxes span{font-size:12px;padding:3px 9px;border-radius:99px;background:var(--surface2);border:1px solid var(--line)}
+
+/* rendimento */
+.big{font-size:44px;font-weight:750;line-height:1}
+.bar{display:grid;grid-template-columns:200px 1fr 70px;gap:10px;align-items:center;margin:6px 0;font-size:14px}
+.bar .t{height:12px;background:var(--surface2);border-radius:99px;overflow:hidden}
+.bar .t>div{height:100%;background:var(--ok)}
+.bar .t>div.mid{background:var(--warn)}.bar .t>div.low{background:var(--bad)}
+@media(max-width:600px){.bar{grid-template-columns:120px 1fr 56px}}
+kbd{font:12px ui-monospace,monospace;border:1px solid var(--line);border-bottom-width:2px;border-radius:4px;padding:0 5px;background:var(--surface2)}
+.btn kbd{background:rgba(255,255,255,.18);color:inherit;border-color:currentColor}
+/* marca-texto */
+mark.hl{color:#1d2330;border-radius:3px;padding:0 1px;cursor:pointer;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+mark.hl-am{background:#fff176}mark.hl-ro{background:#f9c2dc}mark.hl-ve{background:#b6efc4}
+#hlBar{position:fixed;z-index:120;display:none;gap:6px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:6px 8px;box-shadow:0 6px 20px rgba(0,0,0,.18)}
+#hlBar.on{display:flex}
+#hlBar .lbl{font-size:12px;color:var(--muted);margin-right:2px}
+#hlBar button{width:28px;height:28px;border-radius:50%;border:2px solid var(--line);cursor:pointer;font-size:14px;line-height:1;color:var(--text);background:var(--surface2);padding:0}
+#hlBar button:hover{transform:scale(1.12);border-color:var(--text)}
+#hlBar button[data-c=am]{background:#fff176}#hlBar button[data-c=ro]{background:#f9c2dc}#hlBar button[data-c=ve]{background:#b6efc4}
+/* tamanho da fonte: A− / A+ escalam a página inteira (zoom em header e main; #tip só a fonte, para não deslocar) */
+:root{--fz:1}
+header,main{zoom:var(--fz)}
+#tip{font-size:calc(13px * var(--fz))}
+.fz{display:flex;align-items:center;gap:4px}
+.fz button{border:1px solid var(--line);background:var(--surface);color:var(--text);font:inherit;font-size:14px;font-weight:650;min-width:34px;height:30px;padding:0 8px;border-radius:8px;cursor:pointer}
+.fz button:hover{background:var(--surface2)}
+.fz #fzVal{min-width:52px;font-weight:400;color:var(--muted);font-size:13px}
+/* celular: cabeçalho compacto numa linha e menu retrátil (abas, fonte, tela cheia e índice dentro dele) */
+#menuBtn{display:none}
+@media(max-width:700px){
+  .wrap{padding:0 12px}
+  .top{flex-wrap:nowrap;gap:8px;padding:6px 0}
+  .top>div:not(.fz){min-width:0;flex:1}
+  .top h1{font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .top .sub{display:none}
+  .badge{font-size:12px;padding:2px 7px}
+  #menuBtn{display:inline-block;flex-shrink:0;max-width:46vw;border:1px solid var(--line);background:var(--accent-soft);color:var(--accent);font:inherit;font-size:13px;font-weight:600;padding:5px 10px;border-radius:8px;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .top>a,.top .fz,nav{display:none}
+  header.menu-on .top{flex-wrap:wrap}
+  header.menu-on .top>a{display:block;order:3;width:100%;margin:2px 0 0 !important}
+  header.menu-on .top .fz{display:flex;order:4;width:100%;flex-wrap:wrap}
+  header.menu-on nav{display:flex;flex-direction:column;gap:2px;max-height:60vh;overflow-y:auto}
+  header.menu-on nav button{text-align:left;padding:9px 12px}
+}
+</style>
+<script>
+/* aplica o tamanho salvo antes de desenhar a página; vale para todas as páginas do plano */
+document.documentElement.style.setProperty("--fz", localStorage.getItem("canedo_fonte") || "1");
+</script>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="top">
+      <span class="badge">T1</span>
+      <div>
+        <h1>Tarefa 1 · Lei Orgânica do Município de Senador Canedo</h1>
+        <div class="sub">Câmara Municipal de Senador Canedo · Concurso 001/2026 · Lei Orgânica de 20/04/1990, atualizada até 2025</div>
+      </div>
+
+      <button id="menuBtn" aria-expanded="false" aria-controls="nav" title="Abrir menu">☰ Menu</button>
+      <a href="../index.html" style="margin-left:auto;font-size:14px;color:var(--accent);text-decoration:none">← Índice das tarefas</a>
+      <div class="fz" role="group" aria-label="Tamanho da fonte">
+        <button id="fzMenos" title="Diminuir fonte" aria-label="Diminuir fonte">A−</button>
+        <button id="fzVal" title="Voltar ao tamanho normal" aria-label="Tamanho normal">100%</button>
+        <button id="fzMais" title="Aumentar fonte" aria-label="Aumentar fonte">A+</button>
+        <button id="telaCheia" title="Tela cheia" aria-label="Tela cheia">⛶ Tela cheia</button>
+      </div>
+    </div>
+    <nav id="nav">
+      <button data-t="inicio" class="on">Roteiro</button>
+      <button data-t="resumo">Resumo</button>
+      <button data-t="mapa">Mapa mental</button>
+      <button data-t="esquemas">Esquemas</button>
+      <button data-t="reforma">Prazos e quóruns</button>
+      <button data-t="questoes">Questões <span class="pill" id="navQ">0/0</span></button>
+      <button data-t="flash">Flashcards</button>
+      <button data-t="rend">Rendimento</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ROTEIRO -->
+<section class="tab on" id="inicio">
+<h2>Roteiro da sessão T1</h2>
+  <p class="lead">Tarefa: <i>"Estudo da Lei Orgânica do Município de Senador Canedo, com resolução de questões"</i>. Planeje cerca de 1h30.</p>
+
+  <div class="call warn"><b>Material</b>
+    Esta página usa a <b>Lei Orgânica atualizada até 2025</b>, publicada no site oficial da Câmara (<code>material/Lei_Organica_Senador_Canedo_atualizada_2025.pdf</code>).
+    A compilação mantém várias redações antigas ao lado das novas. Nesta página vale sempre a <b>redação mais recente</b>:<br>
+    • <b>Artigo 7º</b>: aparecem 13 e 15 Vereadores. A redação vigente (Emenda à Lei Orgânica 21/2023) fixa <b>13 Vereadores</b>.<br>
+    • <b>Artigo 21, inciso III</b>: na licença para interesse particular, o Vereador <b>pode desistir</b> a qualquer momento e reassumir por simples comunicação (Emenda 25/2019).<br>
+    • <b>Artigo 23</b>: a convocação do suplente vale para vaga por morte, renúncia ou licença, sem o antigo mínimo de 120 dias (Emenda 25/2019).<br>
+    • <b>Artigo 54</b>: a publicação oficial é feita no <b>DOM-e</b>, o Diário Oficial Eletrônico do Município.
+  </div>
+
+  <div class="call"><b>Por que estudar a Lei Orgânica</b>
+    • O edital 001/2026 (banca <b>Consulpam</b>, provas em <b>17 e 18 de outubro de 2026</b>) traz "Promulgação da Lei Orgânica da Cidade" e "Administração Municipal" em <b>Conhecimentos sobre o Município</b>, para todos os cargos.<br>
+    • Para Analista Legislativo e outros cargos da área legislativa, os Conhecimentos Específicos cobram <b>Lei Orgânica Municipal</b>, <b>Regimento Interno</b>, iniciativa das leis, sanção, veto e promulgação.<br>
+    • As questões são de <b>múltipla escolha (A a D)</b> e é preciso acertar pelo menos <b>50%</b> em cada bloco. Lei seca cai literal: números, prazos e quóruns.
+  </div>
+
+  <div class="card">
+    <ol class="steps">
+      <li><b>Pré-teste (5 min).</b> Abra os <b>Flashcards</b> e tente 5 cartões antes de ler.</li>
+      <li><b>Resumo (30 min).</b> Leia a aba <b>Resumo</b>, respondendo aos blocos <i>Pergunte-se</i>.</li>
+      <li><b>Mapa mental e Esquemas (10 min).</b> Clique em cada item do mapa e leia o exemplo.</li>
+      <li><b>Prazos e quóruns (5 min).</b> A tabela que mais rende pontos. Releia na véspera.</li>
+      <li><b>Questões (35 min).</b> 36 questões. Escolha com um clique, descarte com dois e confirme em <b>Responder</b>; leia sempre o comentário.</li>
+      <li><b>Rendimento (5 min).</b> Anote os temas abaixo de 70% e volte ao Resumo deles.</li>
+    </ol>
+  </div>
+
+  <div class="grid3">
+    <div class="card"><b>Banca</b><br><span class="muted">Consulpam: múltipla escolha com 4 alternativas (A, B, C, D). Não há desconto por erro: nunca deixe em branco.</span></div>
+    <div class="card"><b>Onde cai</b><br><span class="muted">Conhecimentos sobre o Município (todos os cargos) e Conhecimentos Específicos dos cargos legislativos.</span></div>
+    <div class="card"><b>Salvamento</b><br><span class="muted">Respostas, flashcards e marcações ficam no navegador. Use <i>Exportar</i> na aba Rendimento para fazer backup.</span></div>
+  </div>
+</section>
+
+<!-- RESUMO -->
+<section class="tab" id="resumo">
+<h2>Resumo: Lei Orgânica do Município de Senador Canedo</h2>
+  <p class="lead">O resumo segue a ordem da lei. Os <span class="k">termos em destaque</span> são os que mais caem e os blocos vermelhos marcam as pegadinhas.</p>
+
+  <h3>1. Organização do Município (artigos 1º a 6º)</h3>
+  <div class="card">
+    <ul>
+      <li>Promulgada em <span class="k">20 de abril de 1990</span> pelos Vereadores constituintes. O Município é <b>pessoa jurídica de direito público interno</b>, com autonomia política, administrativa e financeira.</li>
+      <li>O governo é exercido pelo <b>Prefeito</b> e pela <b>Câmara Municipal</b>. São Poderes do Município, independentes e harmônicos, o <b>Legislativo</b> e o <b>Executivo</b> (não há Judiciário municipal).</li>
+      <li><b>Símbolos</b>: o <span class="k">Brasão, a Bandeira e o Hino</span>. <b>Data cívica</b>: <span class="k">1º de junho</span>.</li>
+      <li><b>Objetivos fundamentais</b> (artigo 1º-A): sociedade livre, justa, produtiva e solidária; bem de todos sem preconceitos; pleno desenvolvimento econômico e social; erradicar a pobreza e reduzir as desigualdades.</li>
+      <li><b>Soberania popular</b>: sufrágio universal e voto direto e secreto, mediante <b>plebiscito, referendo e iniciativa popular</b>.</li>
+      <li><b>Autonomia</b>: eleição direta de Prefeito, Vice e Vereadores, e administração própria (arrecadar tributos, aplicar rendas prestando contas, organizar serviços locais).</li>
+      <li><b>Organização político-administrativa</b>: <span class="k">cidade, distritos e subdistritos</span>. A sede é a cidade de Senador Canedo. Distritos são criados pela <b>Câmara</b>, nos termos da Lei Complementar Estadual, e a sede do distrito tem categoria de <b>vila</b>.</li>
+      <li>Mediante aprovação da Câmara, o Município pode formar <b>consórcios</b>, cooperativas e associações com outros municípios, firmar <b>convênios</b> e constituir <b>guarda municipal</b>.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <b>Competências</b>
+    <ul>
+      <li><b>Artigo 4º</b> (próprias do Município): legislar sobre interesse local; suplementar leis federais e estaduais; instituir e arrecadar tributos; elaborar PPA, LDO e LOA; criar cargos; organizar serviços públicos, inclusive o <b>transporte coletivo</b>, serviço essencial em que <span class="k">não se admite monopólio, ainda que em uma única linha</span>; normas de edificação, loteamento e zoneamento; trânsito, limpeza urbana, cemitérios, publicidade, defesa civil e patrimônio histórico.</li>
+      <li><b>Artigo 5º</b> (concorrente com o Estado): zelar pela higiene e segurança pública; fiscalizar as condições sanitárias dos alimentos nos locais de venda direta ao consumidor; fazer cessar, pelo poder de polícia, atividades que violem normas de saúde, sossego, higiene e segurança.</li>
+      <li><b>Artigo 6º</b> (vedações): estabelecer ou subvencionar cultos; <b>recusar fé a documento público</b>; usar bens públicos para fins estranhos à administração; doar imóveis ou conceder isenções fora dos casos de manifesto interesse público e sem autorização da Câmara.</li>
+    </ul>
+    <div class="call bad"><b>Pegadinha</b>"Zelar pela higiene e segurança pública" está no artigo 5º, que trata da competência <b>concorrente com o Estado</b>, e não da competência exclusiva do artigo 4º.</div>
+  </div>
+  <details><summary>Pergunte-se</summary>
+    <p>Quais são os três instrumentos da soberania popular? Quem cria os distritos? Qual a categoria da sede do distrito?<br><i>Plebiscito, referendo e iniciativa popular. A Câmara Municipal, nos termos da Lei Complementar Estadual. Vila.</i></p>
+  </details>
+
+  <h3>2. Câmara Municipal: composição, posse e Mesa (artigos 7º a 12)</h3>
+  <div class="card">
+    <ul>
+      <li><span class="k">13 Vereadores</span>, eleitos por voto direto e secreto, para legislatura de <b>4 anos</b> iniciada em <b>1º de janeiro</b> do ano seguinte à eleição.</li>
+      <li><b>Posse</b>: 1º de janeiro, em sessão solene, <b>independentemente de número</b>, presidida pelo <b>Vereador mais idoso</b>. Quem não tomar posse na sessão nem em <span class="k">10 dias</span> perde o mandato, salvo força maior. Na posse e ao fim do mandato, declaração de bens.</li>
+      <li>Depois da posse, a Câmara se reúne com <b>maioria absoluta</b> para eleger a Mesa; até lá, preside o mais idoso.</li>
+      <li><b>Mesa Diretora</b> (artigo 9º): Presidente, 1º, 2º e 3º Vice-Presidentes e 1º, 2º e 3º Secretários, observada tanto quanto possível a <b>proporcionalidade partidária</b>. O <b>mandato da Mesa é definido no Regimento Interno</b>.</li>
+      <li>Vaga na Mesa: eleição na primeira sessão ordinária após a vacância (ou em extraordinária convocada para isso), para completar o mandato.</li>
+      <li><b>Destituição</b> de membro da Mesa faltoso, omisso ou ineficiente: voto de <span class="k">dois terços</span> dos membros da Câmara.</li>
+      <li><b>Presidente</b> (artigo 12): representa a Câmara em juízo ou fora dele; promulga resoluções, decretos legislativos e as leis com sanção tácita ou veto rejeitado; declara extinto ou cassado o mandato de Prefeito, Vice e Vereadores; apresenta ao Plenário, até o <b>dia 20 de cada mês</b>, o balancete do mês anterior.</li>
+    </ul>
+    <div class="call bad"><b>Pegadinha</b>A Lei Orgânica descreve uma Mesa de <b>7 cargos</b> (três Secretários). O Regimento Interno (Resolução 4/2020) acrescenta o <b>4º Secretário</b> e fixa o mandato em <b>2 anos</b>. Se a questão disser "segundo a Lei Orgânica", são três Secretários.</div>
+  </div>
+
+  <h3>3. Sessões e quóruns (artigos 13 a 19)</h3>
+  <div class="card">
+    <ul>
+      <li><b>Sessão legislativa</b>: de <span class="k">15 de fevereiro a 30 de junho</span> e de <span class="k">1º de agosto a 15 de dezembro</span>. Reunião marcada para sábado, domingo ou feriado passa ao primeiro dia útil seguinte.</li>
+      <li>A sessão legislativa <b>não é interrompida sem a aprovação da LDO</b>.</li>
+      <li><b>Convocação extraordinária</b>: pelo <b>Prefeito</b>; pelo <b>Presidente da Câmara</b> em caso de intervenção estadual e para posse de Prefeito, Vice ou Vereador; pela <b>maioria dos membros</b>, para assunto de relevante interesse público. Na extraordinária, só se delibera sobre a matéria da convocação (ou atos da Mesa e assuntos internos).</li>
+      <li>Sessões <b>públicas</b>, salvo deliberação de <b>dois terços</b>. Sessões especiais com entidades da população: <b>duas por mês</b>, requeridas com <b>15 dias</b> de antecedência.</li>
+      <li><b>Abertura</b> com no mínimo <span class="k">um terço</span> dos membros; deliberação por <span class="k">maioria simples</span>, salvo exceções.</li>
+      <li><b>Maioria absoluta</b> (artigo 18): leis complementares e Regimento Interno.</li>
+      <li><b>Dois terços</b> (artigo 19): sessão secreta; rejeição do parecer prévio do TCM sobre as contas; cidadania honorífica e homenagens; representação para mudar o nome do Município; emendas à Lei Orgânica; perda do mandato de Vereador; destituição de membro da Mesa.</li>
+      <li>O <b>Presidente só vota</b>: na eleição da Mesa; quando a matéria exigir dois terços; em caso de empate; em votação secreta.</li>
+      <li>Vereador com <b>interesse pessoal</b> não vota, sob pena de nulidade se o voto for decisivo.</li>
+    </ul>
+    <div class="call bad"><b>Pegadinha</b>O artigo 14 não existe: a Lei Orgânica registra que, "por erro de redação", ele não constou do texto de 1990. Não confunda o artigo 17 (abertura com um terço) com o Regimento, que exige maioria dos membros para abrir a sessão ordinária.</div>
+  </div>
+  <details><summary>Pergunte-se</summary>
+    <p>Aprovar o Regimento Interno exige qual quórum? E destituir um membro da Mesa?<br><i>Maioria absoluta (artigo 18). Dois terços (artigos 10 e 19, inciso VII).</i></p>
+  </details>
+
+  <h3>4. Vereadores: subsídio, proibições, perda do mandato e licenças (artigos 20 a 23-A)</h3>
+  <div class="card">
+    <ul>
+      <li><b>Subsídio</b> fixado em cada legislatura <b>para a subsequente</b>, com os limites da Constituição.</li>
+      <li><b>Proibições desde a expedição do diploma</b>: firmar ou manter contrato com pessoa jurídica de direito público, autarquia, empresa pública, sociedade de economia mista ou concessionária (salvo cláusulas uniformes); aceitar cargo, função ou emprego remunerado nessas entidades.</li>
+      <li><b>Proibições desde a posse</b>: ser proprietário, controlador ou diretor de empresa que goze de favor de contrato com o Poder Público; patrocinar causa dessas entidades; ser titular de mais de um cargo ou mandato eletivo; ocupar cargo demissível <i>ad nutum</i> nessas entidades.</li>
+      <li><b>Perde o mandato</b> (artigo 20-B): quem infringir as proibições; quebra de decoro; quem faltar a <span class="k">um terço das sessões ordinárias</span> de cada sessão legislativa, salvo licença ou missão autorizada; perda ou suspensão dos direitos políticos; decisão da Justiça Eleitoral; condenação criminal transitada em julgado; quem <b>fixar residência fora do Município</b>; quem não tomar posse no prazo.</li>
+      <li><b>Extinção</b> declarada pelo Presidente: falecimento ou renúncia por escrito.</li>
+      <li><b>Não perde o mandato</b> (artigo 20-C): investido no cargo de <b>Secretário Municipal</b> (licença automática, podendo optar pela remuneração do mandato, paga pelo órgão de destino); licenciado por doença, maternidade, paternidade ou interesse particular sem remuneração até <span class="k">120 dias por sessão legislativa</span>; em missão temporária cultural ou de interesse do Município autorizada pela Câmara.</li>
+      <li><b>Inviolabilidade</b>: por opiniões, palavras e votos, no exercício do mandato e <b>na circunscrição do Município</b>.</li>
+      <li><b>Licenças</b> (artigo 21): moléstia comprovada e missão cultural ou de interesse do Município são <b>remuneradas</b>; interesse particular é por prazo determinado e o Vereador pode desistir e reassumir por simples comunicação.</li>
+      <li>Ausência injustificada a <b>um terço das sessões ordinárias mensais</b> reduz a remuneração em <b>50%</b>.</li>
+      <li><b>Suplente</b>: convocado em vaga por morte, renúncia ou licença; toma posse em <span class="k">15 dias</span>, salvo motivo justo aceito pela Câmara. Sem suplente, o Presidente comunica o <b>TRE</b> em <b>48 horas</b>. Afastamento judicial: suplente só se for de <b>120 dias ou mais</b>.</li>
+    </ul>
+    <div class="call bad"><b>Pegadinha</b>Prazo de posse do suplente: <b>15 dias</b> na Lei Orgânica (artigo 23) e <b>10 dias</b> no Regimento (artigo 118). Afastamento judicial: <b>120 dias</b> na Lei Orgânica e <b>mais de 90 dias</b> no Regimento. Responda conforme a norma citada no enunciado.</div>
+  </div>
+
+  <h3>5. Atribuições da Câmara (artigos 24 e 25)</h3>
+  <div class="card">
+    <div class="grid2">
+      <div><b>Com sanção do Prefeito</b> (artigo 24)
+        <ul>
+          <li>Tributos, isenções, anistias e remissão de dívidas</li>
+          <li>Plano plurianual; créditos suplementares e especiais</li>
+          <li>Operações de crédito; auxílios e subvenções</li>
+          <li>Concessão e permissão de serviços públicos</li>
+          <li>Alienação de imóveis; aquisição de imóveis (salvo doação sem encargo)</li>
+          <li>Regime jurídico dos servidores; criação de cargos</li>
+          <li>Convênios e consórcios; perímetro urbano; denominação de vias e prédios</li>
+        </ul></div>
+      <div><b>Privativas</b> (artigo 25)
+        <ul>
+          <li>Eleger e destituir a Mesa; elaborar o Regimento</li>
+          <li>Dar posse ao Prefeito e Vice e conceder-lhes licença</li>
+          <li>Autorizar o Prefeito a se ausentar <b>por mais de 15 dias</b></li>
+          <li>Fixar os subsídios do Prefeito</li>
+          <li>Comissão Especial de Inquérito: requerimento de <b>um terço</b>, aprovado por maioria simples</li>
+          <li>Pedir informações (inclusive por pedido direto de Vereador, sem autorização do Plenário)</li>
+          <li>Convocar Secretários: prazo máximo de <b>15 dias</b>; ausência injustificada é <b>crime de responsabilidade</b></li>
+          <li>Julgar as contas do Prefeito após o parecer prévio do TCM</li>
+        </ul></div>
+    </div>
+    <div class="call"><b>Contas do Prefeito</b>O parecer prévio do TCM só deixa de prevalecer pelo voto de <b>dois terços</b>. Esgotado o prazo sem deliberação, as contas são consideradas aprovadas ou rejeitadas <b>conforme a conclusão do parecer</b>; vistas e diligências não podem passar de <b>60 dias</b>. Rejeitadas, vão ao <b>Ministério Público</b>.</div>
+  </div>
+
+  <h3>6. Processo legislativo (artigos 26 a 31)</h3>
+  <div class="card">
+    <ul>
+      <li><b>Iniciativa das leis</b>: qualquer Vereador ou <b>comissão permanente</b>, o Prefeito e os cidadãos.</li>
+      <li><b>Espécies</b>: emendas à Lei Orgânica, leis complementares, leis ordinárias, decretos legislativos e resoluções.</li>
+      <li><b>Emenda à Lei Orgânica</b>: proposta de <span class="k">um terço</span> dos Vereadores ou do Prefeito; dois turnos; aprovada com <span class="k">dois terços</span> em ambos; <b>promulgada pela Mesa</b> com número de ordem. Proposta rejeitada ou prejudicada não volta na mesma sessão legislativa.</li>
+      <li>Projetos de lei: <b>dois turnos</b> de discussão. Aprovado, o autógrafo é elaborado em até <b>10 dias</b>; rejeitado, vai ao arquivo e o autor é notificado.</li>
+      <li><b>Lei complementar</b> (artigo 26-D): Plano Diretor, Código Tributário, Código de Obras e Edificações, Código de Posturas, Lei de Parcelamento e Uso do Solo e Regime Jurídico dos Servidores.</li>
+      <li><b>Decreto legislativo</b>: competência exclusiva da Câmara com <b>efeitos externos</b>. <b>Resolução</b>: <b>economia interna</b>. Os dois são promulgados pelo <b>Presidente da Câmara</b> (sem sanção).</li>
+      <li><b>Iniciativa exclusiva do Prefeito</b>: matéria tributária, financeira e orçamentária; cargos do Executivo e sua remuneração; regime jurídico dos servidores; criação e atribuições das secretarias. Nesses projetos, <b>não se admite emenda que aumente a despesa</b>.</li>
+      <li><b>Iniciativa exclusiva da Mesa</b>: projetos de créditos suplementares ou especiais e de cargos dos servidores da Câmara e seus vencimentos.</li>
+      <li><b>Iniciativa popular</b>: no mínimo <span class="k">5% dos eleitores</span> aptos a votar no Município.</li>
+      <li><b>Urgência do Prefeito</b>: apreciação em <span class="k">45 dias</span>; esgotado o prazo, o projeto tranca a pauta. O prazo não corre no recesso e não se aplica a códigos.</li>
+      <li>Projeto rejeitado só volta na mesma sessão legislativa por proposta da <b>maioria absoluta</b>.</li>
+      <li><b>Sanção e veto</b>: veto total ou parcial em <span class="k">15 dias úteis</span>, com razões comunicadas em <b>48 horas</b>; veto parcial abrange texto integral de artigo, parágrafo, inciso, item ou alínea; <b>silêncio importa sanção</b>. A Câmara aprecia o veto em <b>30 dias</b> e só o rejeita por <b>maioria absoluta</b>. Esgotado o prazo, o veto tranca a pauta.</li>
+      <li>Veto rejeitado: o Prefeito promulga em <b>48 horas</b>; se não o fizer, o Presidente da Câmara; se este também não, o <b>Vice-Presidente da Câmara</b>, em igual prazo.</li>
+    </ul>
+    <div class="call bad"><b>Pegadinhas</b>• Urgência do Prefeito: <b>45 dias</b> na Lei Orgânica e <b>30 dias</b> no Regimento (artigo 245).<br>• A Lei Orgânica ainda fala em rejeição do veto "em votação secreta"; o Regimento (artigo 104) manda votar <b>sempre por voto aberto</b>, salvo eleição da Mesa.<br>• Emenda à Lei Orgânica é promulgada pela <b>Mesa</b>; decreto legislativo e resolução, pelo <b>Presidente</b>.</div>
+  </div>
+  <details><summary>Pergunte-se</summary>
+    <p>Quem pode propor emenda à Lei Orgânica e qual o quórum de aprovação?<br><i>Um terço dos Vereadores ou o Prefeito (o Regimento admite também 5% do eleitorado). Dois terços, em dois turnos.</i></p>
+  </details>
+
+  <h3>7. Poder Executivo (artigos 32 a 42)</h3>
+  <div class="card">
+    <ul>
+      <li>Prefeito e Vice tomam posse <b>em seguida à dos Vereadores</b>, na sessão solene de instalação. Se, <span class="k">10 dias</span> após a data fixada, não assumirem (salvo motivo justificado), o cargo é declarado vago pelo Plenário.</li>
+      <li>O Vice <b>substitui</b> no impedimento e <b>sucede</b> na vaga; pode aceitar cargo de confiança municipal, estadual ou federal sem perder o mandato.</li>
+      <li>Impedimento de ambos: assumem, sucessivamente, o <b>Presidente</b> e o <b>Vice-Presidente da Câmara</b>.</li>
+      <li><b>Dupla vacância</b>: eleição <span class="k">90 dias</span> depois da última vaga. Nos <b>dois últimos anos</b> do mandato, eleição pela <b>Câmara</b> em <span class="k">30 dias</span>.</li>
+      <li>Ausentar-se do Município ou afastar-se do cargo por <b>mais de 15 dias sem licença da Câmara</b>: extinção do mandato. Perde também o mandato quem assumir outro cargo na administração, salvo posse por concurso.</li>
+      <li>Subsídios do Prefeito, Vice e Secretários: lei de iniciativa da <b>Câmara</b>. Verba de representação do Prefeito: até <b>50%</b> do subsídio.</li>
+      <li><b>Atribuições</b> (artigo 37): direção superior; sancionar, promulgar, publicar e vetar; decretar desapropriações; enviar PPA, LDO e LOA; prestar informações à Câmara em <b>15 dias úteis</b>; repassar o <b>duodécimo até o dia 20</b> de cada mês; convocar plebiscito e referendo; delegar por decreto funções que não sejam exclusivas.</li>
+      <li>Contas ao TCM, com cópia à Câmara: mensais em <b>45 dias</b> após o fim do mês; anuais em <b>60 dias</b> após a instalação da sessão legislativa.</li>
+      <li><b>Auxiliares</b>: Secretários Municipais e Subprefeitos. Secretários: <b>brasileiros com mais de 20 anos</b>, nomeados em comissão, com declaração de bens e os <b>mesmos impedimentos dos Vereadores</b>.</li>
+      <li><b>Transição</b>: nos <b>10 dias</b> seguintes ao resultado da eleição, comissão com <b>3 membros</b> do governo (controle interno, finanças e administração) e <b>3 indicados pelo eleito</b>, que levanta dívidas, contratos, servidores, saldos, inventário de bens e ações judiciais.</li>
+      <li>É vedado ao Prefeito assumir compromissos financeiros para depois do mandato sem previsão orçamentária.</li>
+    </ul>
+  </div>
+
+  <h3>8. Administração municipal e servidores (artigos 43 a 53-J)</h3>
+  <div class="card">
+    <ul>
+      <li><b>Princípios</b> (artigo 44): legalidade, impessoalidade, moralidade, publicidade, eficiência, <b>razoabilidade, proporcionalidade e motivação</b>.</li>
+      <li>Concurso de provas ou de provas e títulos, salvo cargos em comissão; validade de <b>até 2 anos, prorrogável uma vez</b> por igual período; aprovado tem prioridade sobre novos concursados durante a validade.</li>
+      <li>Funções de confiança: só servidores efetivos. Cargos em comissão: direção, chefia e assessoramento.</li>
+      <li><b>Teto remuneratório</b>: o <span class="k">subsídio mensal do Prefeito</span>. Parcelas indenizatórias não entram no teto.</li>
+      <li>Acumulação vedada, salvo compatibilidade de horários: dois de professor; professor com técnico ou científico; dois de saúde regulamentados.</li>
+      <li>A administração fazendária e seus fiscais têm <b>precedência</b> sobre os demais setores, na forma da lei.</li>
+      <li>Publicidade oficial com caráter educativo, informativo ou de orientação social, <b>sem promoção pessoal</b>; o Executivo publica <b>mensalmente</b> os gastos com propaganda.</li>
+      <li><b>Direitos dos servidores</b> (artigo 46): vencimento nunca inferior ao salário mínimo; jornada de até <b>8 horas diárias e 44 semanais</b>; hora extra com no mínimo <b>50%</b>; férias com <b>um terço</b>; licença-gestante de <b>120 dias</b>; intervalo de <b>30 minutos</b> para amamentar filho de até 6 meses a cada 3 horas; adicional por <b>quinquênio</b>; adicional de <b>20%</b> para professores de escolas de difícil acesso; assistência médica e odontológica aos filhos até <b>6 anos</b>.</li>
+      <li>Folha paga até o <b>dia 10</b> do mês seguinte, sob pena de correção monetária.</li>
+      <li>Servidor eleito <b>Prefeito</b> afasta-se por todo o mandato, podendo optar pelos vencimentos. Eleito <b>Vereador</b>: com compatibilidade de horários, acumula; sem compatibilidade, afasta-se e opta.</li>
+      <li>Previdência dos efetivos: regime próprio (RPPS) contributivo e solidário, com as regras da Emenda Constitucional 103/2019 incorporadas pelas Emendas à Lei Orgânica 27/2020 e 30/2021.</li>
+    </ul>
+  </div>
+
+  <h3>9. Atos, bens, obras e serviços (artigos 54 a 66)</h3>
+  <div class="card">
+    <ul>
+      <li><b>Publicação</b>: no <b>DOM-e</b>. A data do diário é a da disponibilização; considera-se <b>data de publicação o primeiro dia útil seguinte</b>. Atos de efeitos externos só valem depois de publicados.</li>
+      <li><b>Livros de registro</b> (termos de posse, declarações de bens, atas, leis, contratos, tombamentos, loteamentos), podendo ser substituídos por sistema informatizado.</li>
+      <li><b>Decreto</b>: regulamentar lei; provimento e vacância de cargos; abrir créditos; declarar utilidade pública para desapropriação; aprovar regulamento; permissão de uso; fixar preços. <b>Portaria</b>: lotação; contratação temporária; <b>abertura de sindicâncias e processos administrativos</b> e aplicação de penalidades.</li>
+      <li><b>Certidões</b>: Prefeitura e Câmara fornecem em até <span class="k">15 dias</span>.</li>
+      <li><b>Bens</b>: de uso comum do povo, de uso especial e dominicais. O Prefeito administra, respeitada a competência da Câmara sobre os bens que ela usa.</li>
+      <li>Alienação de <b>imóveis</b>: interesse público, autorização legislativa, avaliação prévia e licitação (concorrência), com dispensas (dação em pagamento, doação a outro órgão público, permuta, investidura, programas habitacionais). <b>Móveis</b>: avaliação e licitação, com dispensas.</li>
+      <li>Vedada a alienação de bens nos <span class="k">três últimos meses do mandato</span> do Prefeito.</li>
+      <li>Uso por terceiros: <b>concessão</b> (lei, licitação e contrato), <b>permissão</b> (precária, por <b>decreto</b>) e <b>autorização</b> (por <b>portaria</b>, uso específico e transitório, até <b>60 dias</b>). Bem de uso comum só é cedido para finalidade escolar, assistencial ou turística, com autorização legislativa.</li>
+      <li>Obras precedidas de projeto. Serviço público prestado preferencialmente pela própria administração; concessão depende de licitação; permissão é precária, por decreto, após edital de chamamento. O Município pode <b>retomar sem indenização</b> serviço prestado em desconformidade. Tarifas fixadas pelo Executivo; <b>Conselhos de Usuários</b> consultivos.</li>
+    </ul>
+  </div>
+
+  <h3>10. Tributação, orçamento e fiscalização (artigos 67 a 79-A)</h3>
+  <div class="card">
+    <ul>
+      <li>Tributos municipais: <b>impostos, taxas e contribuição de melhoria</b>, além da contribuição de <b>iluminação pública</b> (cobrável na fatura de energia).</li>
+      <li>Impostos: IPTU (pode ser progressivo pelo valor e ter alíquotas por localização e uso), ITBI e ISS. O IPTU não é cobrado de entidades legalmente constituídas com finalidade social sem fins lucrativos.</li>
+      <li>Há um órgão colegiado de <b>servidores e contribuintes</b> que julga em grau de recurso as reclamações fiscais.</li>
+      <li><b>Prazos do orçamento</b>: PPA enviado até <b>31 de agosto</b> e devolvido até <b>15 de dezembro</b> do primeiro ano do mandato; LDO até <b>15 de abril</b> e devolvida até <b>30 de junho</b>; LOA até <b>31 de agosto</b> e devolvida até <b>15 de dezembro</b>.</li>
+      <li><b>Emendas individuais</b> à LOA: até <span class="k">1,2% da RCL</span>, metade para saúde, de execução obrigatória (salvo impedimento técnico).</li>
+      <li>RREO publicado até <b>30 dias</b> após cada bimestre.</li>
+      <li>Vedações (artigo 74-A): programas fora da LOA; despesas acima dos créditos; crédito suplementar ou especial sem autorização legislativa; créditos ilimitados; fundos sem autorização. Investimento plurianual só com inclusão no PPA, sob pena de crime de responsabilidade.</li>
+      <li>Para cumprir os limites de pessoal: reduzir em pelo menos <b>20%</b> as despesas com cargos em comissão e funções de confiança e exonerar não estáveis.</li>
+      <li><b>Controle externo</b>: Câmara com auxílio do <b>TCM</b>. <b>Controle interno</b>: sistema próprio de cada Poder.</li>
+      <li>Balancete mensal enviado ao TCM e à Câmara e publicado em até <b>45 dias</b> após o fim do mês.</li>
+      <li>Contas anuais ficam <span class="k">60 dias</span> na Câmara à disposição de qualquer contribuinte. A Câmara não julga as contas antes do parecer do TCM <b>nem antes desse prazo</b>.</li>
+    </ul>
+  </div>
+
+  <h3>11. Política urbana, ordem social e disposições gerais (artigos 80 a 117)</h3>
+  <div class="card">
+    <ul>
+      <li><b>Plano Diretor</b>, aprovado pela Câmara, é o instrumento básico da política urbana. Para o solo não edificado ou subutilizado: parcelamento ou edificação compulsórios, IPTU progressivo no tempo e desapropriação com títulos resgatáveis em até 10 anos.</li>
+      <li>Meio ambiente equilibrado; unidades de conservação para proteger nascentes e mananciais.</li>
+      <li><b>Educação</b>: no mínimo <span class="k">25%</span> da receita de impostos. <b>Saúde</b>: no mínimo <span class="k">15%</span>.</li>
+      <li>Transporte coletivo: gratuidade para homens com mais de <b>65 anos</b>, mulheres com mais de <b>60</b> e crianças até <b>10 anos</b>; participação dos usuários nas tarifas. Táxi e transporte individual: <b>permissão</b> do Executivo.</li>
+      <li><b>Guarda Municipal</b> criada pela Lei Orgânica (patrimônio, parques e mananciais). <b>Conselho de Defesa do Consumidor</b>.</li>
+      <li>Tombamento de edificações e logradouros autorizado pela Câmara.</li>
+      <li>É vedado mudar o nome de via cujo nome foi aprovado por lei <b>há mais de 5 anos</b>, salvo para restituir o nome original. <b>Nunca</b> nome de pessoa viva.</li>
+      <li>Plebiscito e referendo podem ser convocados por iniciativa da <b>Câmara</b> e do <b>Prefeito</b> em assunto polêmico e de interesse geral.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- MAPA -->
+<section class="tab" id="mapa">
+  <h2>Mapa mental: Lei Orgânica de Senador Canedo</h2>
+  <p class="lead">Leia de cima para baixo e explore cada item. Depois feche a página e tente redesenhar o mapa de memória.</p>
+  <p class="mm-hint">👆 Clique em qualquer item do mapa para ver a explicação detalhada, com exemplo, no painel logo abaixo.</p>
+  <div class="card mm" id="mmBox"></div>
+  <div class="card" id="mmPanel"><p class="muted" style="margin:0">Nenhum item selecionado. Clique no centro do mapa para começar.</p></div>
+
+  <h3>Onde este tema se encaixa no edital</h3>
+  <div class="card">
+    <div class="grid3" style="font-size:14px">
+      <div><b class="k">Conhecimentos sobre o Município</b><br>História, geografia e emancipação<br>Promulgação da Lei Orgânica ← <i>você está aqui</i><br>Administração Municipal ← <i>você está aqui</i><br>Estatuto do Servidor</div>
+      <div><b class="k">Legislação do Legislativo</b><br>Lei Orgânica Municipal ← <i>você está aqui</i><br>Regimento Interno da Câmara (tarefa T2)</div>
+      <div><b class="k">Processo legislativo</b><br>Iniciativa das leis<br>Tramitação, emendas e pareceres<br>Sanção, veto e promulgação</div>
+      <div><b class="k">Controle</b><br>Fiscalização do Executivo pelo Legislativo<br>Contas e Tribunal de Contas dos Municípios</div>
+      <div><b class="k">Direito Constitucional</b><br>Organização do Estado; Municípios<br>Processo legislativo federal (simetria)</div>
+      <div><b class="k">Direito Administrativo</b><br>Princípios; agentes públicos<br>Bens, serviços e licitações</div>
+    </div>
+    <p class="muted small" style="margin:10px 0 0">Blocos do edital 001/2026 da Câmara Municipal de Senador Canedo, para orientar o estudo. Confira no Anexo III o conteúdo exato do seu cargo.</p>
+  </div>
+</section>
+
+<!-- ESQUEMAS -->
+<section class="tab" id="esquemas">
+<h2>Esquemas comparativos</h2>
+  <p class="lead">Tabelas para revisão rápida. Você deve conseguir reproduzi-las na véspera.</p>
+
+  <h3>Espécies normativas: quem inicia, quem promulga</h3>
+  <div class="tbl"><table>
+    <tr><th>Espécie</th><th>Para quê</th><th>Quórum</th><th>Sanção?</th><th>Promulgação</th></tr>
+    <tr><td>Emenda à Lei Orgânica</td><td>Alterar a Lei Orgânica</td><td>Dois terços, em dois turnos</td><td>Não</td><td>Mesa (com número de ordem)</td></tr>
+    <tr><td>Lei complementar</td><td>Plano Diretor, códigos, parcelamento do solo, regime dos servidores</td><td>Maioria absoluta</td><td>Sim</td><td>Prefeito</td></tr>
+    <tr><td>Lei ordinária</td><td>Demais matérias de competência do Município</td><td>Maioria simples</td><td>Sim</td><td>Prefeito</td></tr>
+    <tr><td>Decreto legislativo</td><td>Competência exclusiva da Câmara com efeitos externos (ex.: cidadania honorífica)</td><td>Conforme a matéria</td><td>Não</td><td>Presidente da Câmara</td></tr>
+    <tr><td>Resolução</td><td>Economia interna da Câmara (ex.: Regimento)</td><td>Conforme a matéria</td><td>Não</td><td>Presidente da Câmara</td></tr>
+  </table></div>
+
+  <h3>Iniciativa reservada</h3>
+  <div class="tbl"><table>
+    <tr><th>Prefeito (artigo 27)</th><th>Mesa da Câmara (artigo 27, § 1º)</th><th>Cidadãos</th></tr>
+    <tr><td>Matéria tributária, financeira e orçamentária; cargos do Executivo e remuneração; regime jurídico dos servidores; secretarias e órgãos</td><td>Créditos suplementares ou especiais; cargos dos servidores da Câmara e vencimentos</td><td>Projetos subscritos por, no mínimo, 5% dos eleitores aptos</td></tr>
+    <tr><td colspan="3">Nos projetos do Prefeito não cabe emenda que aumente a despesa prevista nem que altere a criação de cargos.</td></tr>
+  </table></div>
+
+  <h3>Vereador × Prefeito</h3>
+  <div class="tbl"><table>
+    <tr><th></th><th>Vereador</th><th>Prefeito</th></tr>
+    <tr><td><b>Prazo para posse</b></td><td>10 dias, sob pena de perda do mandato</td><td>10 dias, sob pena de o cargo ser declarado vago</td></tr>
+    <tr><td><b>Declaração de bens</b></td><td>Na posse e ao término</td><td>Na posse e ao término (o Vice, sempre que assumir)</td></tr>
+    <tr><td><b>Ausência</b></td><td>Faltar a um terço das sessões ordinárias da sessão legislativa: perde o mandato</td><td>Mais de 15 dias fora sem licença da Câmara: extinção do mandato</td></tr>
+    <tr><td><b>Subsídio</b></td><td>Fixado em uma legislatura para a seguinte</td><td>Lei de iniciativa da Câmara; representação até 50%</td></tr>
+    <tr><td><b>Substituto</b></td><td>Suplente, posse em 15 dias</td><td>Vice; depois Presidente e Vice-Presidente da Câmara</td></tr>
+  </table></div>
+
+  <h3>Uso de bem público por terceiros</h3>
+  <div class="tbl"><table>
+    <tr><th>Instrumento</th><th>Forma</th><th>Características</th></tr>
+    <tr><td>Concessão</td><td>Contrato</td><td>Depende de lei e licitação (dispensável por lei em casos de interesse relevante)</td></tr>
+    <tr><td>Permissão</td><td>Decreto</td><td>Precária; pode recair sobre qualquer bem</td></tr>
+    <tr><td>Autorização</td><td>Portaria</td><td>Uso específico e transitório, prazo máximo de 60 dias</td></tr>
+  </table></div>
+
+  <h3>Decreto × portaria (artigo 56)</h3>
+  <div class="tbl"><table>
+    <tr><th>Decreto (numerado em ordem cronológica)</th><th>Portaria</th></tr>
+    <tr><td>Regulamentar lei; prover e declarar vagos cargos; abrir créditos; declarar utilidade pública; aprovar regulamento ou regimento; permissão de uso; medidas do planejamento; fixar preços</td><td>Lotação e relotação; contratação e dispensa temporárias; abertura de sindicância e processo administrativo; aplicação de penalidades; outros atos individuais de efeitos internos</td></tr>
+  </table></div>
+</section>
+
+<!-- REFORMA -->
+<section class="tab" id="reforma">
+<h2>Prazos e quóruns da Lei Orgânica</h2>
+  <p class="lead">Lei seca cai pelos números. Leia esta tabela pelo menos duas vezes antes da prova e cubra a coluna da direita para testar.</p>
+
+  <h3>Quóruns</h3>
+  <div class="tbl"><table>
+    <tr><th>Quórum</th><th>Matérias</th><th>Artigo</th></tr>
+    <tr><td><b>Um terço</b></td><td>Abertura das sessões; propor emenda à Lei Orgânica; requerer Comissão Especial de Inquérito</td><td>17; 26-B; 25, VIII</td></tr>
+    <tr><td><b>Um quarto</b></td><td>Assinar projeto de Vereador que a Câmara deve apreciar em 90 dias, se o autor o considerar urgente</td><td>31</td></tr>
+    <tr><td><b>Maioria simples</b></td><td>Regra geral de deliberação; aprovar a Comissão Especial de Inquérito</td><td>17; 25, VIII</td></tr>
+    <tr><td><b>Maioria dos membros</b></td><td>Convocar sessão extraordinária por relevante interesse público</td><td>13, § 3º</td></tr>
+    <tr><td><b>Maioria absoluta</b></td><td>Eleição da Mesa (presença); leis complementares; Regimento Interno; rejeitar veto; renovar projeto rejeitado na mesma sessão legislativa; operação de crédito acima das despesas de capital</td><td>8, § 3º; 18; 30, § 4º; 29; 74-A, III</td></tr>
+    <tr><td><b>Dois terços</b></td><td>Sessão secreta; rejeitar parecer prévio do TCM; cidadania honorífica e homenagens; mudar o nome do Município; emenda à Lei Orgânica (dois turnos); perda do mandato de Vereador; destituição de membro da Mesa</td><td>15; 19; 25, XII e XIV; 26-B</td></tr>
+    <tr><td><b>5% dos eleitores</b></td><td>Iniciativa popular de projeto de lei</td><td>27, § 3º</td></tr>
+  </table></div>
+
+  <h3>Prazos</h3>
+  <div class="tbl"><table>
+    <tr><th>Prazo</th><th>O quê</th><th>Artigo</th></tr>
+    <tr><td>48 horas</td><td>Comunicar as razões do veto; comunicar ao TRE a falta de suplente; Prefeito promulgar lei após veto rejeitado (e igual prazo para o Presidente e o Vice-Presidente da Câmara)</td><td>30; 23</td></tr>
+    <tr><td>10 dias</td><td>Posse do Vereador e do Prefeito; elaborar o autógrafo de lei; designar a comissão de transição</td><td>8; 32; 26-C; 41</td></tr>
+    <tr><td>15 dias</td><td>Antecedência do pedido de sessão especial; posse do suplente; Secretário atender convocação; certidões; ausência do Prefeito sem licença (mais de 15)</td><td>16; 23; 25, X; 57; 35</td></tr>
+    <tr><td>15 dias úteis</td><td>Vetar o projeto; Prefeito prestar informações à Câmara</td><td>30, § 1º; 37, XIII</td></tr>
+    <tr><td>Dia 10</td><td>Pagamento da folha dos servidores</td><td>47</td></tr>
+    <tr><td>Dia 20</td><td>Repasse do duodécimo à Câmara; Presidente apresentar o balancete do mês anterior</td><td>37, XV; 12, VI</td></tr>
+    <tr><td>30 dias</td><td>Apreciar o veto; eleição pela Câmara na dupla vacância nos dois últimos anos; RREO após o bimestre</td><td>30, § 4º; 34, § 1º; 73, § 3º</td></tr>
+    <tr><td>45 dias</td><td>Urgência do Prefeito; contas mensais ao TCM; balancete publicado</td><td>28; 37, X; 79</td></tr>
+    <tr><td>60 dias</td><td>Contas anuais ao TCM (após a instalação da sessão legislativa); contas à disposição dos contribuintes; limite de vistas e diligências; autorização de uso de bem</td><td>37, X; 79-A; 25, XIV; 61</td></tr>
+    <tr><td>90 dias</td><td>Eleição na dupla vacância; projeto de Vereador com urgência e assinatura de um quarto</td><td>34; 31</td></tr>
+    <tr><td>120 dias</td><td>Licença-gestante do servidor; licença para interesse particular sem perder o mandato (por sessão legislativa); afastamento judicial que permite convocar suplente</td><td>46; 20-C; 23-A</td></tr>
+    <tr><td>3 últimos meses</td><td>Vedada a alienação de bens municipais</td><td>59-A</td></tr>
+    <tr><td>2 anos</td><td>Validade do concurso, prorrogável uma vez</td><td>44, III</td></tr>
+    <tr><td>5 anos</td><td>Nome de via aprovado por lei há mais de 5 anos não pode ser alterado (salvo restituição do original)</td><td>111</td></tr>
+  </table></div>
+
+  <h3>Percentuais</h3>
+  <div class="tbl"><table>
+    <tr><th>Percentual</th><th>O quê</th></tr>
+    <tr><td>1,2% da RCL</td><td>Emendas individuais ao orçamento (metade para saúde)</td></tr>
+    <tr><td>5% dos eleitores</td><td>Iniciativa popular</td></tr>
+    <tr><td>7% da RCL do exercício anterior</td><td>Dotação do Poder Legislativo no orçamento fiscal (artigo 73, § 4º)</td></tr>
+    <tr><td>15% da receita de impostos</td><td>Saúde</td></tr>
+    <tr><td>20%</td><td>Adicional de professores em escolas de difícil acesso; redução mínima de cargos em comissão para cumprir limite de pessoal</td></tr>
+    <tr><td>25% da receita de impostos</td><td>Manutenção e desenvolvimento do ensino</td></tr>
+    <tr><td>50%</td><td>Hora extra mínima; teto da verba de representação do Prefeito; redução da remuneração do Vereador que falta a um terço das sessões do mês</td></tr>
+  </table></div>
+</section>
+
+<!-- QUESTÕES -->
+<section class="tab" id="questoes">
+  <h2>Questões comentadas</h2>
+  <p class="lead">São 36 questões de múltipla escolha (A a D), no formato do edital, elaboradas a partir do texto literal da Lei Orgânica e organizadas na ordem da lei. O comentário aparece depois de cada resposta, com o artigo de referência, e o rendimento por tema quando terminar todas.</p>
+  <div class="row" style="margin-bottom:10px">
+    <label class="muted" for="fTema">Tema:</label>
+    <select id="fTema"></select>
+    <label class="muted" for="fStatus">Mostrar:</label>
+    <select id="fStatus"><option value="all">Todas</option><option value="pend">Não respondidas</option><option value="bad">Erradas</option><option value="ok">Certas</option></select>
+  </div>
+  <div class="progress"><div id="qProg"></div></div>
+  <div class="qnav" id="qNav"></div>
+  <div class="card" id="qCard"></div>
+  <div class="row" style="justify-content:space-between">
+    <button class="btn" id="qPrev">← Anterior</button>
+    <span class="muted" style="font-size:13px">Atalhos: <kbd>A</kbd>–<kbd>E</kbd> ou <kbd>C</kbd>/<kbd>E</kbd> escolhe · <kbd>Shift</kbd>+letra descarta · <kbd>Enter</kbd> responde · <kbd>←</kbd> <kbd>→</kbd> navega</span>
+    <button class="btn pri" id="qNext">Próxima →</button>
+  </div>
+</section>
+
+<!-- FLASHCARDS -->
+<section class="tab" id="flash">
+  <h2>Flashcards com repetição espaçada</h2>
+  <p class="lead">Leia a pergunta, responda <b>em voz alta</b> e só então vire o cartão (clique ou <kbd>Espaço</kbd>). Marque com sinceridade: os cartões errados voltam primeiro (sistema Leitner, caixas 1 a 5).</p>
+  <div class="row" style="justify-content:center;margin-bottom:12px">
+    <select id="fcDeck">
+      <option value="all">Todos os baralhos</option>
+      <option value="a00">Lei Orgânica · artigos-chave</option>
+      <option value="ref">Prazos e quóruns</option>
+      <option value="pan">Panorama: Lei Orgânica e Regimento</option>
+    </select>
+    <button class="btn" id="fcShuffle">Embaralhar</button>
+    <button class="btn" id="fcReset">Zerar caixas</button>
+  </div>
+  <div class="fc-meta"><span id="fcPos"></span><span id="fcBox"></span></div>
+  <div class="fc" id="fc"><div class="fc-inner"><div class="fc-face front"><div class="q" id="fcQ"></div><div class="muted" style="margin-top:14px;font-size:13px">clique para virar</div></div><div class="fc-face back"><div id="fcA"></div></div></div></div>
+  <div class="row" style="justify-content:center;margin-top:16px">
+    <button class="btn bad" id="fcBad">✘ Errei (<kbd>1</kbd>)</button>
+    <button class="btn" id="fcMid">~ Hesitei (<kbd>2</kbd>)</button>
+    <button class="btn ok" id="fcOk">✔ Acertei (<kbd>3</kbd>)</button>
+  </div>
+  <div class="boxes" id="fcBoxes"></div>
+</section>
+
+<!-- RENDIMENTO -->
+<section class="tab" id="rend">
+  <h2>Rendimento</h2>
+  <div id="rendBody"></div>
+  <h3>Gerenciar dados</h3>
+  <div class="row">
+    <button class="btn" id="expBtn">Exportar respostas (.json)</button>
+    <label class="btn" for="impFile">Importar respostas</label><input type="file" id="impFile" accept=".json" hidden>
+    <button class="btn" id="redoBad">Refazer erradas</button>
+    <button class="btn" id="hlReset">Apagar marcações de texto</button>
+    <button class="btn bad" id="resetAll">Apagar todas as respostas</button>
+  </div>
+</section>
+
+</main>
+
+<div id="tip" role="tooltip"></div>
+<div id="hlBar" role="toolbar" aria-label="Marca-texto"><span class="lbl">Marcar</span><button data-c="am" title="Amarelo" aria-label="Amarelo"></button><button data-c="ro" title="Rosa" aria-label="Rosa"></button><button data-c="ve" title="Verde" aria-label="Verde"></button><button data-c="" title="Apagar marcação" aria-label="Apagar marcação">✕</button></div>
+<script>
+const QUESTOES = [{"fonte": "Questão inédita (formato Consulpam)", "tema": "Organização do Município", "enun": "De acordo com a Lei Orgânica do Município de Senador Canedo, são símbolos do Município:", "alts": [["a", "a Bandeira, o Hino e o Selo Municipal, instituídos por decreto do Prefeito."], ["b", "o Brasão e a Bandeira, cabendo à Câmara definir o Hino por resolução."], ["c", "a Bandeira e as Armas do Município, além da data cívica de 20 de abril."], ["d", "o Brasão, a Bandeira e o Hino, representativos de sua cultura e história."]], "tipo": "mc", "resp": "d", "com": ["O artigo 1º, § 2º, diz que são símbolos do Município o Brasão, a Bandeira e o Hino, representativos de sua cultura e história.", "Não há selo nem armas na lista. A data de 20 de abril (de 1990) é a da promulgação da Lei Orgânica; a data cívica é 1º de junho (artigo 1º-G). Gabarito: letra D."], "rot": "Questão 1", "nav": "1", "n": 1}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Organização do Município", "enun": "Segundo a Lei Orgânica, a soberania popular será exercida pelo sufrágio universal e pelo voto direto e secreto, com valor igual para todos, e mediante:", "alts": [["a", "iniciativa popular, ação civil pública e orçamento participativo."], ["b", "ação popular, audiência pública e plebiscito."], ["c", "plebiscito, referendo e iniciativa popular."], ["d", "referendo, consulta pública e tribuna popular."]], "tipo": "mc", "resp": "c", "com": ["O artigo 1º-B lista três instrumentos: plebiscito, referendo e iniciativa popular, como na Constituição Federal.", "Ação popular, audiência pública, tribuna popular e orçamento participativo existem em outras normas, mas não são os instrumentos da soberania popular do artigo 1º-B. Gabarito: letra C."], "rot": "Questão 2", "nav": "2", "n": 2}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Organização do Município", "enun": "Sobre a organização político-administrativa e a divisão territorial do Município de Senador Canedo, assinale a alternativa correta.", "alts": [["a", "Compreende apenas a cidade e os distritos, criados por decreto do Prefeito."], ["b", "Os distritos são criados pela Assembleia Legislativa, e sua sede tem categoria de cidade."], ["c", "Compreende a cidade, os distritos e os subdistritos; os distritos são criados pela Câmara Municipal, nos termos da Lei Complementar Estadual, e a sede tem categoria de vila."], ["d", "Os limites do território podem ser alterados por lei municipal, independentemente da legislação estadual."]], "tipo": "mc", "resp": "c", "com": ["Artigo 1º-E: a organização político-administrativa compreende a cidade, os distritos e os subdistritos. Artigo 2º: os distritos são criados pela Câmara Municipal nos termos da Lei Complementar Estadual, tendo a sede a categoria de vila.", "Os limites do território só podem ser alterados na forma da lei estadual, preservada a unidade histórico-cultural do ambiente urbano (artigo 1º-E, § 2º). Gabarito: letra C."], "rot": "Questão 3", "nav": "3", "n": 3}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Competências", "enun": "Nos termos da Lei Orgânica, compete ao Município de Senador Canedo, concorrentemente com o Estado:", "alts": [["a", "legislar sobre assuntos de interesse local."], ["b", "dispor sobre serviço funerário e cemitérios."], ["c", "elaborar o plano plurianual e o orçamento anual."], ["d", "fiscalizar, nos locais de venda direta ao consumidor, as condições sanitárias dos gêneros alimentícios."]], "tipo": "mc", "resp": "d", "com": ["O artigo 5º traz três competências concorrentes com o Estado: zelar pela higiene e segurança pública; fiscalizar as condições sanitárias dos gêneros alimentícios nos locais de venda direta; e fazer cessar atividades que violem normas de saúde, sossego, higiene e segurança.", "As demais alternativas estão no artigo 4º, que lista o que compete ao próprio Município (incisos I, V e XVIII). Gabarito: letra D."], "rot": "Questão 4", "nav": "4", "n": 4}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Competências", "enun": "Quanto ao transporte coletivo de passageiros, a Lei Orgânica estabelece que:", "alts": [["a", "é serviço essencial, em cuja execução não se admite o monopólio, ainda que em uma única linha."], ["b", "pode ser concedido em caráter monopolístico, desde que precedido de licitação."], ["c", "é de competência exclusiva do Estado, cabendo ao Município apenas fixar os pontos de parada."], ["d", "só pode ser explorado diretamente pelo Município, vedada a concessão."]], "tipo": "mc", "resp": "a", "com": ["O artigo 4º, inciso XI, define o transporte coletivo como essencial, sem monopólio \"ainda que em uma única linha\". O inciso XIV, alínea c, repete: é vedada a concessão em caráter monopolístico, ainda que de uma única linha ou itinerário.", "O artigo 103 permite a exploração pelo próprio Município ou por concessionária. Gabarito: letra A."], "rot": "Questão 5", "nav": "5", "n": 5}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Câmara: composição, posse e Mesa", "enun": "De acordo com a redação vigente do artigo 7º da Lei Orgânica, a Câmara Municipal de Senador Canedo é composta por:", "alts": [["a", "9 Vereadores."], ["b", "13 Vereadores."], ["c", "15 Vereadores."], ["d", "17 Vereadores."]], "tipo": "mc", "resp": "b", "com": ["A Emenda à Lei Orgânica 21/2023 deu ao artigo 7º a redação atual: 13 Vereadores, eleitos por voto direto e secreto, para legislatura de quatro anos iniciada em 1º de janeiro do ano seguinte ao da eleição.", "A compilação ainda mostra a redação da Emenda 26/2019, com 15 Vereadores, que foi substituída. Gabarito: letra B."], "rot": "Questão 6", "nav": "6", "n": 6}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Câmara: composição, posse e Mesa", "enun": "O Vereador que não tomar posse na sessão solene de instalação da Câmara:", "alts": [["a", "terá o prazo de 30 dias para fazê-lo, sob pena de convocação do suplente."], ["b", "perderá o mandato imediatamente, sem possibilidade de posse posterior."], ["c", "deverá fazê-lo no prazo de 10 dias, sob pena de perder o mandato, salvo motivo de força maior."], ["d", "poderá tomar posse a qualquer tempo durante a primeira sessão legislativa."]], "tipo": "mc", "resp": "c", "com": ["Artigo 8º, § 1º: o Vereador que não tomar posse na sessão prevista e não o fizer no prazo de 10 dias perderá o mandato, salvo motivo de força maior.", "O artigo 20-B, VIII, repete a regra entre as causas de perda do mandato. Gabarito: letra C."], "rot": "Questão 7", "nav": "7", "n": 7}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Câmara: composição, posse e Mesa", "enun": "Segundo a Lei Orgânica, qualquer membro da Mesa da Câmara poderá ser destituído, quando faltoso, omisso ou ineficiente no desempenho de suas atribuições regimentais, pelo voto de:", "alts": [["a", "maioria simples dos presentes."], ["b", "maioria absoluta dos membros da Câmara."], ["c", "três quintos dos membros da Câmara."], ["d", "dois terços dos membros da Câmara."]], "tipo": "mc", "resp": "d", "com": ["Artigo 10: destituição pelo voto de dois terços dos membros da Câmara, elegendo-se outro Vereador para completar o mandato. O artigo 19, VII, confirma o quórum.", "Três quintos não é quórum usado na Lei Orgânica. Gabarito: letra D."], "rot": "Questão 8", "nav": "8", "n": 8}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Sessões e quóruns", "enun": "A Câmara Municipal reunir-se-á, anualmente, nos períodos de:", "alts": [["a", "2 de fevereiro a 17 de julho e de 1º de agosto a 22 de dezembro."], ["b", "15 de fevereiro a 15 de julho e de 1º de agosto a 15 de dezembro."], ["c", "1º de fevereiro a 30 de junho e de 1º de agosto a 22 de dezembro."], ["d", "15 de fevereiro a 30 de junho e de 1º de agosto a 15 de dezembro."]], "tipo": "mc", "resp": "d", "com": ["Artigo 13: a Câmara reúne-se de 15 de fevereiro a 30 de junho e de 1º de agosto a 15 de dezembro. O Regimento (artigo 2º) repete essas datas.", "As datas de 2 de fevereiro a 17 de julho e de 1º de agosto a 22 de dezembro são as do Congresso Nacional, na Constituição Federal. Gabarito: letra D."], "rot": "Questão 9", "nav": "9", "n": 9}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Sessões e quóruns", "enun": "Quanto à convocação extraordinária da Câmara, a Lei Orgânica prevê que ela será feita:", "alts": [["a", "exclusivamente pela Mesa Diretora, vedada a convocação pelo Prefeito."], ["b", "somente pelo Presidente da Câmara, a pedido de qualquer Vereador."], ["c", "pelo Prefeito; pelo Presidente da Câmara, nos casos de intervenção estadual e para os atos de posse; ou pela maioria de seus membros, para tratar de assunto de relevante interesse público."], ["d", "pelo Prefeito ou por um terço dos Vereadores, em qualquer caso, podendo-se deliberar sobre qualquer matéria."]], "tipo": "mc", "resp": "c", "com": ["Artigo 13, § 3º: a Câmara é convocada extraordinariamente pelo Prefeito, pelo seu Presidente (intervenção estadual e posse de Prefeito, Vice-Prefeito ou Vereador) ou pela maioria de seus membros (assunto de relevante interesse público).", "Artigo 13, § 4º: na sessão extraordinária, só se delibera a matéria da convocação, atos da Mesa ou assuntos internos. Gabarito: letra C."], "rot": "Questão 10", "nav": "10", "n": 10}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Sessões e quóruns", "enun": "De acordo com a Lei Orgânica, as sessões da Câmara serão abertas com a presença de, no mínimo:", "alts": [["a", "um terço de seus membros, e a Câmara deliberará por maioria simples, salvo as exceções previstas."], ["b", "maioria absoluta de seus membros, e a Câmara deliberará por dois terços."], ["c", "metade de seus membros, e a Câmara deliberará sempre por maioria absoluta."], ["d", "dois terços de seus membros, e a Câmara deliberará por maioria simples."]], "tipo": "mc", "resp": "a", "com": ["Artigo 17: abertura com no mínimo um terço dos membros e deliberação por maioria simples, salvo as exceções da Lei Orgânica e das Constituições.", "Atenção: o Regimento Interno é mais exigente e pede a maioria dos membros para abrir as sessões ordinárias (artigo 134). Gabarito: letra A."], "rot": "Questão 11", "nav": "11", "n": 11}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Sessões e quóruns", "enun": "Depende do voto de dois terços dos membros da Câmara, segundo a Lei Orgânica, EXCETO:", "alts": [["a", "a concessão de cidadania honorífica ou qualquer outra honraria."], ["b", "a aprovação do Regimento Interno da Câmara."], ["c", "a aprovação de emendas à Lei Orgânica Municipal."], ["d", "a realização de sessão secreta."]], "tipo": "mc", "resp": "b", "com": ["O Regimento Interno e as leis complementares são aprovados por maioria absoluta (artigo 18).", "Sessão secreta, honrarias e emendas à Lei Orgânica estão no artigo 19 (dois terços), ao lado da rejeição do parecer do Tribunal de Contas, da mudança do nome do Município, da perda de mandato e da destituição da Mesa. Gabarito: letra B."], "rot": "Questão 12", "nav": "12", "n": 12}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Sessões e quóruns", "enun": "O Presidente da Câmara, ou seu substituto, só terá voto:", "alts": [["a", "nas votações que exijam maioria absoluta e nas de emenda à Lei Orgânica."], ["b", "em todas as votações nominais e nas de projetos de lei complementar."], ["c", "na eleição da Mesa, quando a matéria exigir voto favorável de dois terços, em caso de empate e quando a votação for secreta."], ["d", "apenas em caso de empate, sendo vedado o voto na eleição da Mesa."]], "tipo": "mc", "resp": "c", "com": ["Artigo 19, § 1º: o Presidente só vota na eleição da Mesa, quando a matéria exigir dois terços, quando houver empate e quando a votação for secreta.", "O Regimento (artigo 289) usa fórmula mais ampla: vota quando a matéria exigir quórum superior à maioria simples. Gabarito: letra C."], "rot": "Questão 13", "nav": "13", "n": 13}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Vereadores: proibições, licenças e perda do mandato", "enun": "Conforme a Lei Orgânica, o Vereador não poderá, desde a expedição do diploma:", "alts": [["a", "firmar ou manter contrato com pessoa jurídica de direito público, autarquia, empresa pública, sociedade de economia mista ou concessionária de serviço público, salvo quando o contrato obedecer a cláusulas uniformes."], ["b", "ser titular de mais de um cargo ou mandato público eletivo."], ["c", "patrocinar causa em que seja interessada pessoa jurídica de direito público."], ["d", "ser proprietário, controlador ou diretor de empresa que goze de favor decorrente de contrato com pessoa jurídica de direito público."]], "tipo": "mc", "resp": "a", "com": ["Artigo 20-A, inciso I (desde o diploma): firmar ou manter contrato com essas entidades (salvo cláusulas uniformes) e aceitar ou exercer cargo, função ou emprego remunerado nelas.", "As alternativas B, C e D são proibições do inciso II, que valem desde a posse. Gabarito: letra A."], "rot": "Questão 14", "nav": "14", "n": 14}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Vereadores: proibições, licenças e perda do mandato", "enun": "Não perderá o mandato o Vereador que estiver:", "alts": [["a", "licenciado para tratar de interesse particular, com remuneração, por até 180 dias por sessão legislativa."], ["b", "com residência fixada em Município vizinho, desde que compareça às sessões."], ["c", "ausente de um terço das sessões ordinárias da sessão legislativa, mesmo sem licença."], ["d", "investido no cargo de Secretário Municipal, hipótese em que será automaticamente licenciado e poderá optar pela remuneração do mandato."]], "tipo": "mc", "resp": "d", "com": ["Artigo 20-C, inciso I e parágrafo único: o Vereador investido como Secretário Municipal não perde o mandato, fica automaticamente licenciado e pode optar pela remuneração do mandato, paga pelo órgão de destino.", "A licença por interesse particular é sem remuneração e limitada a 120 dias por sessão legislativa (artigo 20-C, II). Fixar residência fora do Município e faltar a um terço das sessões ordinárias sem licença são causas de perda (artigo 20-B, III e VII). Gabarito: letra D."], "rot": "Questão 15", "nav": "15", "n": 15}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Vereadores: proibições, licenças e perda do mandato", "enun": "Em caso de vaga por morte, renúncia de Vereador ou licença, a Lei Orgânica determina que o Presidente convoque o suplente, que deverá tomar posse no prazo de:", "alts": [["a", "48 horas, sob pena de perda do direito à vaga."], ["b", "10 dias; não havendo suplente, o fato será comunicado ao Tribunal Regional Eleitoral em 5 dias."], ["c", "30 dias; não havendo suplente, a vaga permanecerá aberta até a próxima eleição."], ["d", "15 dias, salvo motivo justo aceito pela Câmara; não havendo suplente, o Presidente comunicará o fato ao Tribunal Regional Eleitoral em 48 horas."]], "tipo": "mc", "resp": "d", "com": ["Artigo 23 (redação da Emenda 25/2019): posse do suplente em 15 dias, salvo motivo justo aceito pela Câmara. Parágrafo único: sem suplente, comunicação ao Tribunal Regional Eleitoral em 48 horas.", "Cuidado: o Regimento Interno (artigo 118) fixa 10 dias para a posse do suplente. Gabarito: letra D."], "rot": "Questão 16", "nav": "16", "n": 16}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Atribuições da Câmara", "enun": "Compete privativamente à Câmara Municipal, nos termos da Lei Orgânica:", "alts": [["a", "fixar a remuneração dos servidores do Poder Executivo por resolução."], ["b", "autorizar o Prefeito a ausentar-se do Município por mais de quinze dias."], ["c", "legislar sobre tributos municipais, com sanção do Prefeito."], ["d", "autorizar a alienação de bens imóveis, com sanção do Prefeito."]], "tipo": "mc", "resp": "b", "com": ["Artigo 25, VI: é privativo da Câmara autorizar o Prefeito a se ausentar do Município por mais de quinze dias.", "Tributos e alienação de imóveis são matérias do artigo 24, que dependem de sanção do Prefeito. A remuneração dos servidores do Executivo é fixada por lei de iniciativa do Prefeito (artigo 27, II), e não por resolução. Gabarito: letra B."], "rot": "Questão 17", "nav": "17", "n": 17}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Atribuições da Câmara", "enun": "Sobre o julgamento das contas do Prefeito pela Câmara, assinale a alternativa correta.", "alts": [["a", "A Câmara pode julgar as contas antes de receber o parecer prévio do Tribunal de Contas dos Municípios."], ["b", "O parecer prévio do Tribunal de Contas dos Municípios somente deixará de prevalecer por decisão de dois terços dos membros da Câmara."], ["c", "Decorrido o prazo sem deliberação, as contas serão sempre consideradas aprovadas."], ["d", "Rejeitadas, as contas serão arquivadas, sem outras providências."]], "tipo": "mc", "resp": "b", "com": ["Artigo 25, inciso XIV, alínea a, e artigo 19, II: o parecer só é rejeitado por dois terços. A Câmara não julga antes do parecer nem antes de escoado o prazo de exame pelos contribuintes (artigo 79-A, parágrafo único).", "Sem deliberação no prazo, as contas são consideradas aprovadas ou rejeitadas conforme a conclusão do parecer do Tribunal (alínea b). Rejeitadas, são remetidas ao Ministério Público (alínea c). Gabarito: letra B."], "rot": "Questão 18", "nav": "18", "n": 18}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Processo legislativo", "enun": "A Lei Orgânica de Senador Canedo poderá ser emendada mediante proposta:", "alts": [["a", "de qualquer Vereador, aprovada em turno único por maioria absoluta."], ["b", "da Mesa da Câmara, aprovada em dois turnos por maioria absoluta, e promulgada pelo Prefeito."], ["c", "de um terço, no mínimo, dos Vereadores ou do Prefeito, discutida e votada em dois turnos e aprovada se obtiver, em ambos, dois terços dos votos dos membros da Casa."], ["d", "do Prefeito, exclusivamente, aprovada por três quintos em dois turnos."]], "tipo": "mc", "resp": "c", "com": ["Artigo 26-B: proposta de um terço, no mínimo, dos Vereadores ou do Prefeito; § 1º: dois turnos e dois terços em ambos; § 2º: promulgação pela Mesa Diretora com o respectivo número de ordem.", "§ 3º: a matéria de proposta rejeitada ou prejudicada não pode ser objeto de nova proposta na mesma sessão legislativa. Gabarito: letra C."], "rot": "Questão 19", "nav": "19", "n": 19}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Processo legislativo", "enun": "Conforme a Lei Orgânica, NÃO é matéria objeto de lei complementar:", "alts": [["a", "o Plano Diretor."], ["b", "o Código de Posturas."], ["c", "o Regime Jurídico dos Servidores Municipais."], ["d", "a Lei de Diretrizes Orçamentárias."]], "tipo": "mc", "resp": "d", "com": ["Artigo 26-D: são objeto de lei complementar o Plano Diretor, o Código Tributário Municipal, o Código de Obras e Edificações, o Código de Posturas, a Lei de Parcelamento e Uso do Solo e o Regime Jurídico dos Servidores Municipais.", "A Lei de Diretrizes Orçamentárias é lei ordinária de iniciativa do Executivo (artigo 73). Gabarito: letra D."], "rot": "Questão 20", "nav": "20", "n": 20}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Processo legislativo", "enun": "Quanto ao decreto legislativo e à resolução, a Lei Orgânica dispõe que:", "alts": [["a", "a resolução regula matérias com efeitos externos, e o decreto legislativo, matérias internas da Câmara."], ["b", "o decreto legislativo é promulgado pela Mesa e a resolução, pelo Prefeito."], ["c", "o decreto legislativo regula matérias de competência exclusiva da Câmara que produzam efeitos externos, e a resolução regula matérias de economia interna; ambos são promulgados pelo Presidente da Câmara."], ["d", "ambos dependem de sanção do Prefeito para entrar em vigor."]], "tipo": "mc", "resp": "c", "com": ["Artigo 26-E: o decreto legislativo regula matérias de competência exclusiva da Câmara que produzam efeitos externos e é promulgado pelo Presidente. Artigo 26-F: a resolução regula a economia interna da Câmara e também é promulgada pelo Presidente.", "Nenhum dos dois vai à sanção. Exemplo: a cidadania honorífica é concedida por decreto legislativo (artigo 25, XII); o Regimento Interno é uma resolução. Gabarito: letra C."], "rot": "Questão 21", "nav": "21", "n": 21}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Processo legislativo", "enun": "É de competência exclusiva da Mesa da Câmara a iniciativa dos projetos de lei que:", "alts": [["a", "criem, alterem ou extingam cargos dos servidores da Câmara e fixem os respectivos vencimentos."], ["b", "disciplinem o regime jurídico dos servidores do Município."], ["c", "disponham sobre a criação e as atribuições das secretarias municipais."], ["d", "disponham sobre matéria tributária e orçamentária."]], "tipo": "mc", "resp": "a", "com": ["Artigo 27, § 1º: cabe à Mesa a iniciativa dos projetos que autorizem a abertura de créditos suplementares ou especiais e dos que criem, alterem ou extingam cargos dos servidores da Câmara e fixem os vencimentos.", "As alternativas B, C e D tratam de iniciativa exclusiva do Prefeito (artigo 27, incisos I a IV). Gabarito: letra A."], "rot": "Questão 22", "nav": "22", "n": 22}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Processo legislativo", "enun": "A iniciativa popular, segundo a Lei Orgânica, será exercida pela apresentação de projetos de lei subscritos por, no mínimo:", "alts": [["a", "3% do eleitorado do Município."], ["b", "5% dos eleitores aptos a votar no Município."], ["c", "10% dos eleitores aptos a votar no Município."], ["d", "1% do eleitorado do Município."]], "tipo": "mc", "resp": "b", "com": ["Artigo 27, § 3º: projetos subscritos por, no mínimo, cinco por cento dos eleitores aptos a votar no Município. O Regimento (artigos 234 e 317) adota o mesmo percentual.", "A Constituição Federal (artigo 29, XIII) também fixa 5% do eleitorado para a iniciativa popular municipal. Gabarito: letra B."], "rot": "Questão 23", "nav": "23", "n": 23}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Processo legislativo", "enun": "Quando o Prefeito solicitar urgência na apreciação de matéria de sua iniciativa, a Lei Orgânica estabelece que o projeto deverá ser apreciado em:", "alts": [["a", "30 dias, prazo que corre inclusive durante o recesso."], ["b", "45 dias; esgotado o prazo, o projeto será incluído na Ordem do Dia, sobrestando-se a deliberação sobre as demais matérias, e o prazo não corre no recesso nem se aplica aos projetos de codificação."], ["c", "60 dias, após o que será considerado aprovado."], ["d", "15 dias úteis, sob pena de aprovação tácita."]], "tipo": "mc", "resp": "b", "com": ["Artigo 28: apreciação em 45 dias; § 2º: esgotado o prazo, o projeto entra na Ordem do Dia e sobrestá as demais matérias; § 3º: os prazos não correm no recesso e não se aplicam aos projetos de codificação.", "O Regimento Interno (artigo 245) fala em 30 dias. Não existe aprovação tácita de projeto. Gabarito: letra B."], "rot": "Questão 24", "nav": "24", "n": 24}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Processo legislativo", "enun": "Sobre a sanção e o veto, assinale a alternativa correta de acordo com a Lei Orgânica.", "alts": [["a", "Rejeitado o veto, a lei é promulgada pelo Presidente da Câmara, sem retornar ao Prefeito."], ["b", "O Prefeito tem 30 dias corridos para vetar o projeto, e seu silêncio importa rejeição."], ["c", "O veto parcial pode recair sobre palavras ou expressões isoladas de um artigo."], ["d", "O veto será apreciado em 30 dias e só poderá ser rejeitado pela maioria absoluta dos membros da Câmara."]], "tipo": "mc", "resp": "d", "com": ["Artigo 30, § 4º: o veto é apreciado em 30 dias do recebimento e só pode ser rejeitado pela maioria absoluta dos membros da Câmara.", "O prazo de veto é de 15 dias úteis e o silêncio importa sanção (§§ 1º e 3º). O veto parcial deve abranger texto integral de artigo, parágrafo, inciso, item ou alínea (§ 2º). Rejeitado o veto, o projeto vai ao Prefeito para promulgar em 48 horas; só se ele não o fizer, promulga o Presidente da Câmara e, depois, o Vice-Presidente (§§ 6º e 7º). Gabarito: letra D."], "rot": "Questão 25", "nav": "25", "n": 25}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Poder Executivo", "enun": "Vagando os cargos de Prefeito e Vice-Prefeito nos dois últimos anos do período de governo, a Lei Orgânica determina que:", "alts": [["a", "o Presidente da Câmara assumirá até o fim do mandato, sem nova eleição."], ["b", "far-se-á eleição direta noventa dias depois de aberta a última vaga."], ["c", "a eleição para ambos os cargos será feita pela Câmara Municipal, trinta dias depois de aberta a última vaga, na forma da lei."], ["d", "o Juiz de Direito da comarca assumirá a Prefeitura até a posse dos novos eleitos."]], "tipo": "mc", "resp": "c", "com": ["Artigo 34, § 1º: ocorrendo a vacância nos dois últimos anos, a eleição para ambos os cargos será feita trinta dias depois de aberta a última vaga, pela Câmara Municipal.", "A eleição em noventa dias (caput) é a regra para vacância nos dois primeiros anos. Gabarito: letra C."], "rot": "Questão 26", "nav": "26", "n": 26}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Poder Executivo", "enun": "Os Secretários Municipais, segundo a Lei Orgânica:", "alts": [["a", "estão dispensados de apresentar declaração de bens."], ["b", "serão nomeados pelo Prefeito entre brasileiros com mais de vinte anos de idade, em comissão, e terão os mesmos impedimentos dos Vereadores enquanto permanecerem no cargo."], ["c", "dependem de aprovação da Câmara para serem nomeados."], ["d", "devem ter mais de vinte e cinco anos e ser servidores efetivos do Município."]], "tipo": "mc", "resp": "b", "com": ["Artigo 39, parágrafo único: nomeação pelo Prefeito entre brasileiros com mais de vinte anos. Artigo 40: auxiliares nomeados em comissão, com declaração de bens na posse e no término, e os mesmos impedimentos dos Vereadores.", "Não há aprovação da Câmara nem exigência de cargo efetivo. Gabarito: letra B."], "rot": "Questão 27", "nav": "27", "n": 27}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Poder Executivo", "enun": "Sobre a transição administrativa prevista na Lei Orgânica, é correto afirmar que:", "alts": [["a", "nos dez dias seguintes ao conhecimento do resultado das eleições, o Prefeito designará comissão de transição com 3 membros responsáveis pelo controle interno, finanças e administração e 3 membros indicados pelo candidato eleito."], ["b", "a comissão é formada exclusivamente por Vereadores, indicados pela Mesa."], ["c", "a comissão deve ser instalada até 31 de dezembro, com 5 membros indicados pela Câmara."], ["d", "a comissão de transição é designada pelo Prefeito eleito, logo após a posse."]], "tipo": "mc", "resp": "a", "com": ["Artigo 41: nos dez dias seguintes ao resultado, o Prefeito designa comissão de transição com 3 membros (controle interno, finanças e administração) e 3 indicados pelo eleito.", "Ela levanta dívidas, contratos, convênios, servidores, saldos, inventário de bens, ações judiciais e projetos do Executivo em curso na Câmara. Gabarito: letra A."], "rot": "Questão 28", "nav": "28", "n": 28}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Administração e servidores", "enun": "De acordo com a Lei Orgânica, a remuneração e o subsídio dos ocupantes de cargos, funções e empregos públicos do Município não poderão exceder:", "alts": [["a", "o subsídio mensal do Prefeito."], ["b", "o subsídio dos Deputados Estaduais."], ["c", "o subsídio dos Ministros do Supremo Tribunal Federal."], ["d", "o subsídio mensal dos Vereadores."]], "tipo": "mc", "resp": "a", "com": ["Artigo 44, XII: nenhuma remuneração, subsídio, provento ou pensão no Município pode exceder o subsídio mensal, em espécie, do Prefeito.", "Parcelas indenizatórias previstas em lei não entram no teto (§ 10). O subsídio dos Deputados Estaduais é referência para o limite do subsídio dos Vereadores (artigo 20). Gabarito: letra A."], "rot": "Questão 29", "nav": "29", "n": 29}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Administração e servidores", "enun": "Entre os direitos dos servidores públicos do Município, a Lei Orgânica assegura:", "alts": [["a", "remuneração do serviço extraordinário superior em, no mínimo, 30% à do normal."], ["b", "licença-gestante de 120 dias, duração do trabalho não superior a oito horas diárias e quarenta e quatro semanais, e serviço extraordinário com, no mínimo, 50% a mais."], ["c", "férias anuais com metade a mais do que a remuneração normal."], ["d", "licença-gestante de 180 dias e jornada de até 40 horas semanais."]], "tipo": "mc", "resp": "b", "com": ["Artigo 46: jornada não superior a oito horas diárias e quarenta e quatro semanais (VI); hora extra com no mínimo 50% (VIII); férias com pelo menos um terço a mais (IX); licença-gestante de 120 dias (X).", "O mesmo artigo garante intervalo de 30 minutos para amamentação a cada três horas, adicional por quinquênio e adicional de 20% aos professores de escolas de difícil acesso. Gabarito: letra B."], "rot": "Questão 30", "nav": "30", "n": 30}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Atos e bens municipais", "enun": "Considera-se data de publicação dos atos no Diário Oficial Eletrônico do Município de Senador Canedo (DOM-e):", "alts": [["a", "a data em que o ato foi assinado pela autoridade."], ["b", "a própria data em que o diário foi disponibilizado."], ["c", "o primeiro dia útil subsequente à data em que o diário foi disponibilizado."], ["d", "o quinto dia útil após a disponibilização do diário."]], "tipo": "mc", "resp": "c", "com": ["Artigo 54-A, § 1º: a data constante do DOM-e corresponde à data de sua disponibilização. § 2º: considera-se data de publicação o primeiro dia útil subsequente.", "Os atos de efeitos externos só valem depois de publicados (artigo 54, § 2º). Gabarito: letra C."], "rot": "Questão 31", "nav": "31", "n": 31}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Atos e bens municipais", "enun": "Conforme a Lei Orgânica, os atos administrativos do Prefeito serão expedidos por portaria no caso de:", "alts": [["a", "declaração de utilidade pública para fins de desapropriação."], ["b", "abertura de sindicâncias e processos administrativos e aplicação de penalidades."], ["c", "regulamentação de lei."], ["d", "abertura de créditos especiais e suplementares."]], "tipo": "mc", "resp": "b", "com": ["Artigo 56, II: portaria para lotação e relotação, contratação e dispensa temporárias, abertura de sindicâncias e processos administrativos, aplicação de penalidades e demais atos individuais de efeitos internos.", "Regulamentar lei, abrir créditos e declarar utilidade pública são casos de decreto (artigo 56, I). Gabarito: letra B."], "rot": "Questão 32", "nav": "32", "n": 32}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Atos e bens municipais", "enun": "Sobre os bens municipais, assinale a alternativa correta.", "alts": [["a", "A alienação de bens municipais é vedada, em qualquer hipótese, nos três últimos meses do mandato do Prefeito."], ["b", "A aquisição de imóveis por compra dispensa autorização legislativa."], ["c", "A permissão de uso tem caráter contratual estável e depende de licitação."], ["d", "A autorização de uso, feita por decreto, pode durar até um ano."]], "tipo": "mc", "resp": "a", "com": ["Artigo 59-A: fica vedada a alienação de bens municipais, em qualquer hipótese, nos três últimos meses do mandato do Prefeito.", "A autorização é feita por portaria, pelo prazo máximo de 60 dias (artigo 61, § 4º). A aquisição de imóveis depende de avaliação prévia e autorização legislativa (artigo 60). A permissão é precária e feita por decreto (artigo 61, § 3º). Gabarito: letra A."], "rot": "Questão 33", "nav": "33", "n": 33}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Tributação, orçamento e fiscalização", "enun": "Segundo a Lei Orgânica, o projeto de lei de diretrizes orçamentárias será enviado pelo Prefeito à Câmara e devolvido para sanção, respectivamente, até:", "alts": [["a", "15 de abril e 30 de junho de cada exercício."], ["b", "31 de agosto e 15 de dezembro de cada exercício."], ["c", "30 de abril e 17 de julho de cada exercício."], ["d", "15 de março e 15 de junho de cada exercício."]], "tipo": "mc", "resp": "a", "com": ["Artigo 74, II: a LDO é enviada até 15 de abril e devolvida até 30 de junho de cada exercício. O Regimento (artigo 329) repete o prazo de envio.", "Plano plurianual e orçamento anual: envio até 31 de agosto e devolução até 15 de dezembro (o plano plurianual, no primeiro ano do mandato). Gabarito: letra A."], "rot": "Questão 34", "nav": "34", "n": 34}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Tributação, orçamento e fiscalização", "enun": "As emendas individuais ao projeto de lei orçamentária, nos termos da Lei Orgânica, serão aprovadas no limite de:", "alts": [["a", "1,2% da receita corrente líquida prevista no projeto, sendo que a metade desse percentual será destinada a ações e serviços públicos de saúde."], ["b", "1,2% da receita tributária, integralmente destinado à educação."], ["c", "0,6% da receita corrente líquida, de execução facultativa."], ["d", "2% da receita corrente líquida, sem vinculação."]], "tipo": "mc", "resp": "a", "com": ["Artigo 74, § 5º: emendas individuais no limite de 1,2% da receita corrente líquida prevista no projeto, com metade para saúde. § 6º: a execução é obrigatória, salvo impedimento de ordem técnica (§ 7º).", "O 0,6% aparece no § 9º, como limite de restos a pagar que contam para cumprir a execução das emendas individuais. Gabarito: letra A."], "rot": "Questão 35", "nav": "35", "n": 35}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Ordem social e disposições gerais", "enun": "A respeito da denominação de vias e logradouros públicos, a Lei Orgânica estabelece que:", "alts": [["a", "a denominação pode ser alterada a qualquer tempo por decreto do Prefeito."], ["b", "é permitido homenagear pessoas vivas, desde que aprovado por dois terços da Câmara."], ["c", "a alteração depende de plebiscito entre os moradores da via."], ["d", "é vedada a alteração de denominação aprovada em virtude de lei há mais de cinco anos, exceto para restituir o nome original, e não se aceita nome de pessoa viva."]], "tipo": "mc", "resp": "d", "com": ["Artigo 111: é vedada a alteração de denominação de vias e logradouros cujos nomes tenham sido aprovados por lei há mais de cinco anos, salvo para restituir o nome original. Parágrafo único: sob nenhuma hipótese se aceita nome de pessoa viva.", "A denominação de vias é matéria de lei, com sanção do Prefeito (artigo 24, XIII). Gabarito: letra D."], "rot": "Questão 36", "nav": "36", "n": 36}];
+
+const FLASH = [
+ // Lei Orgânica: artigos-chave
+ ["a00","Quais são os símbolos do Município de Senador Canedo?","O <b>Brasão</b>, a <b>Bandeira</b> e o <b>Hino</b> (artigo 1º, § 2º).<br><b>Exemplo:</b> uma alternativa que inclua \"selo oficial\" ou \"armas\" está errada."],
+ ["a00","Qual é a data cívica do Município?","<b>1º de junho</b> (artigo 1º-G). A Lei Orgânica foi promulgada em 20 de abril de 1990.<br><b>Exemplo:</b> a questão troca as datas e diz que a data cívica é 20 de abril: errado."],
+ ["a00","Como se exerce a soberania popular no Município?","Sufrágio universal e voto direto e secreto, mediante <b>plebiscito, referendo e iniciativa popular</b> (artigo 1º-B).<br><b>Exemplo:</b> uma consulta à população sobre mudar o nome de um bairro antes de votar a lei é um plebiscito."],
+ ["a00","O que compreende a organização político-administrativa?","A <b>cidade, os distritos e os subdistritos</b>; a sede é a cidade de Senador Canedo (artigo 1º-E).<br><b>Exemplo:</b> o distrito é criado pela Câmara e sua sede ganha categoria de vila (artigo 2º)."],
+ ["a00","Transporte coletivo: pode haver monopólio?","<b>Não</b>, nem mesmo em uma única linha. É serviço essencial (artigo 4º, XI e XIV, c).<br><b>Exemplo:</b> a concessão de uma linha exclusiva e perpétua a uma única empresa viola a Lei Orgânica."],
+ ["a00","Quantos Vereadores tem a Câmara?","<b>13</b>, para legislatura de 4 anos iniciada em 1º de janeiro (artigo 7º, redação da Emenda 21/2023).<br><b>Exemplo:</b> com 13 membros, a maioria absoluta é 7 e dois terços são 9."],
+ ["a00","Como é composta a Mesa segundo a Lei Orgânica?","Presidente, 1º, 2º e 3º Vice-Presidentes e 1º, 2º e 3º Secretários, com proporcionalidade partidária sempre que possível (artigo 9º).<br><b>Exemplo:</b> o 4º Secretário existe só no Regimento Interno."],
+ ["a00","Quem preside a Câmara na ausência dos membros da Mesa?","O <b>Vereador mais idoso</b> dentre os presentes (artigo 9º, § 3º).<br><b>Exemplo:</b> na posse de 1º de janeiro, também é o mais idoso que preside a sessão solene."],
+ ["a00","Em que casos o Presidente da Câmara vota?","Eleição da Mesa; matéria que exige dois terços; empate; votação secreta (artigo 19, § 1º).<br><b>Exemplo:</b> num projeto de lei ordinária aprovado por 8 a 4, o Presidente não vota."],
+ ["a00","Quando o Vereador não perde o mandato?","Investido como <b>Secretário Municipal</b>; licenciado por doença, maternidade, paternidade ou interesse particular até 120 dias por sessão legislativa; em missão temporária autorizada (artigo 20-C).<br><b>Exemplo:</b> o Vereador nomeado Secretário de Saúde fica licenciado e pode optar pela remuneração do mandato."],
+ ["a00","Cite causas de perda do mandato do Vereador","Infringir proibições; quebra de decoro; faltar a um terço das sessões ordinárias da sessão legislativa; perder direitos políticos; decisão da Justiça Eleitoral; condenação criminal transitada em julgado; residência fora do Município; não tomar posse no prazo (artigo 20-B).<br><b>Exemplo:</b> o Vereador que se muda para Goiânia perde o mandato."],
+ ["a00","Qual a extensão da inviolabilidade do Vereador?","Opiniões, palavras e votos, <b>no exercício do mandato e na circunscrição do Município</b> (artigo 20-D).<br><b>Exemplo:</b> um discurso feito na tribuna da Câmara está protegido; uma ofensa feita em outro Estado, fora do mandato, não."],
+ ["a00","Quais licenças do Vereador são remuneradas?","Por <b>moléstia</b> comprovada e para <b>missão cultural ou de interesse do Município</b> (artigo 21, § 1º).<br><b>Exemplo:</b> a licença de 60 dias para tratar de interesse particular é sem remuneração."],
+ ["a00","Quem tem iniciativa das leis?","Qualquer Vereador ou <b>comissão permanente</b>, o Prefeito e os cidadãos (artigo 26).<br><b>Exemplo:</b> a Comissão de Educação pode apresentar projeto sobre merenda escolar."],
+ ["a00","Quais matérias são de lei complementar?","Plano Diretor, Código Tributário, Código de Obras e Edificações, Código de Posturas, Lei de Parcelamento e Uso do Solo e Regime Jurídico dos Servidores (artigo 26-D).<br><b>Exemplo:</b> a reforma do Código de Posturas exige maioria absoluta: 7 dos 13 Vereadores."],
+ ["a00","Decreto legislativo × resolução","Decreto legislativo: matéria exclusiva da Câmara com <b>efeitos externos</b>. Resolução: <b>economia interna</b>. Os dois são promulgados pelo Presidente da Câmara, sem sanção (artigos 26-E e 26-F).<br><b>Exemplo:</b> título de cidadão honorário = decreto legislativo; Regimento Interno = resolução."],
+ ["a00","Iniciativa exclusiva do Prefeito","Matéria tributária, financeira e orçamentária; cargos do Executivo e remuneração; regime jurídico dos servidores; criação e atribuições de secretarias (artigo 27).<br><b>Exemplo:</b> projeto de Vereador que cria a Secretaria do Idoso tem vício de iniciativa."],
+ ["a00","Iniciativa exclusiva da Mesa da Câmara","Projetos que autorizem créditos suplementares ou especiais e os que criem, alterem ou extingam cargos dos servidores da Câmara e fixem vencimentos (artigo 27, § 1º).<br><b>Exemplo:</b> a criação do cargo de Analista Legislativo é proposta pela Mesa."],
+ ["a00","Quem substitui Prefeito e Vice impedidos?","Sucessivamente, o <b>Presidente</b> e o <b>Vice-Presidente da Câmara</b> (artigo 33, § 2º).<br><b>Exemplo:</b> com Prefeito e Vice hospitalizados, o Presidente da Câmara assume a Prefeitura."],
+ ["a00","Quem são os auxiliares diretos do Prefeito?","Os <b>Secretários Municipais</b> e os <b>Subprefeitos</b>; Secretários são brasileiros com <b>mais de 20 anos</b> (artigo 39).<br><b>Exemplo:</b> o Secretário tem os mesmos impedimentos dos Vereadores e faz declaração de bens."],
+ ["a00","Princípios da administração na Lei Orgânica","Legalidade, impessoalidade, moralidade, publicidade, eficiência, <b>razoabilidade, proporcionalidade e motivação</b> (artigo 44).<br><b>Exemplo:</b> uma multa desproporcional à infração fere a proporcionalidade expressa na Lei Orgânica."],
+ ["a00","Qual é o teto remuneratório no Município?","O <b>subsídio mensal do Prefeito</b>; parcelas indenizatórias não entram (artigo 44, XII e § 10).<br><b>Exemplo:</b> um procurador não pode receber, somadas as vantagens pessoais, mais do que o Prefeito."],
+ ["a00","Data de publicação no DOM-e","O <b>primeiro dia útil seguinte</b> à disponibilização do diário (artigo 54-A, § 2º).<br><b>Exemplo:</b> diário disponibilizado na sexta-feira: a publicação conta na segunda-feira."],
+ ["a00","Decreto ou portaria para abrir sindicância?","<b>Portaria</b> (artigo 56, II, c). Decreto regulamenta lei, provê cargos, abre créditos, declara utilidade pública.<br><b>Exemplo:</b> para apurar sumiço de computadores, a autoridade baixa portaria de sindicância."],
+ ["a00","Permissão × autorização de uso de bem","Permissão: precária, por <b>decreto</b>. Autorização: por <b>portaria</b>, para uso específico e transitório, até <b>60 dias</b> (artigo 61).<br><b>Exemplo:</b> uma feira de artesanato de fim de semana numa praça usa autorização por portaria."],
+ ["a00","Quanto o Município aplica em educação e saúde?","Educação: no mínimo <b>25%</b> da receita de impostos (artigo 87). Saúde: no mínimo <b>15%</b> (artigo 92).<br><b>Exemplo:</b> com 200 milhões em impostos, pelo menos 50 milhões vão para o ensino e 30 milhões para a saúde."],
+ ["a00","Quando é vedado mudar o nome de uma via?","Se o nome foi aprovado por lei <b>há mais de 5 anos</b>, salvo para restituir o original; e nunca se usa nome de pessoa viva (artigo 111).<br><b>Exemplo:</b> a Rua das Flores, nomeada por lei em 2015, não pode virar homenagem a um empresário vivo."],
+ // Prazos e quóruns
+ ["ref","Prazo para o Vereador tomar posse depois da sessão solene","<b>10 dias</b>, sob pena de perda do mandato, salvo força maior (artigo 8º, § 1º).<br><b>Exemplo:</b> eleito que não aparece até 11 de janeiro, sem justificativa, perde o mandato."],
+ ["ref","Quórum de abertura e de deliberação (Lei Orgânica)","Abertura: <b>um terço</b>. Deliberação: <b>maioria simples</b>, salvo exceções (artigo 17).<br><b>Exemplo:</b> com 5 dos 13 presentes a sessão pode ser aberta pela Lei Orgânica."],
+ ["ref","O que exige maioria absoluta (artigo 18)?","<b>Leis complementares e Regimento Interno</b>.<br><b>Exemplo:</b> reformar o Regimento exige 7 votos favoráveis."],
+ ["ref","O que exige dois terços (artigo 19)?","Sessão secreta; rejeitar parecer do TCM; honrarias; mudar o nome do Município; emenda à Lei Orgânica; perda do mandato de Vereador; destituição de membro da Mesa.<br><b>Exemplo:</b> conceder título de cidadão honorário a um médico exige 9 votos."],
+ ["ref","Prazo de posse do suplente (Lei Orgânica)","<b>15 dias</b>, salvo motivo justo aceito pela Câmara; sem suplente, aviso ao TRE em <b>48 horas</b> (artigo 23).<br><b>Exemplo:</b> o Regimento fala em 10 dias: leia qual norma o enunciado cita."],
+ ["ref","Prazos de sanção e veto","Veto em <b>15 dias úteis</b>; razões em <b>48 horas</b>; Câmara aprecia em <b>30 dias</b>; rejeição por <b>maioria absoluta</b>; promulgação em <b>48 horas</b> (artigo 30).<br><b>Exemplo:</b> projeto recebido numa segunda-feira sem feriados: o Prefeito tem 15 dias úteis, cerca de três semanas."],
+ ["ref","Urgência do Prefeito na Lei Orgânica","A Câmara aprecia em <b>45 dias</b>; depois tranca a pauta. Não corre no recesso e não vale para códigos (artigo 28).<br><b>Exemplo:</b> pedido feito em 1º de julho só começa a contar em 1º de agosto."],
+ ["ref","Dupla vacância de Prefeito e Vice","Eleição <b>90 dias</b> depois da última vaga; nos dois últimos anos, eleição <b>pela Câmara em 30 dias</b> (artigo 34).<br><b>Exemplo:</b> renúncia dos dois no primeiro ano gera nova eleição direta."],
+ ["ref","Ausência do Prefeito sem licença","Mais de <b>15 dias</b> sem licença da Câmara: extinção do mandato (artigos 35 e 38).<br><b>Exemplo:</b> uma viagem de 10 dias não precisa de licença; uma de 16 dias precisa."],
+ ["ref","Prazo para Secretário convocado comparecer","No máximo <b>15 dias</b> do recebimento; ausência injustificada é <b>crime de responsabilidade</b> (artigo 25, X).<br><b>Exemplo:</b> o Secretário de Obras convocado para explicar um atraso de obra não pode simplesmente ignorar o ofício."],
+ ["ref","Prazos do orçamento (artigo 74)","LDO: envio até <b>15 de abril</b>, devolução até <b>30 de junho</b>. PPA e LOA: envio até <b>31 de agosto</b>, devolução até <b>15 de dezembro</b>.<br><b>Exemplo:</b> o PPA 2026-2029 foi enviado até 31 de agosto de 2025, primeiro ano do mandato."],
+ ["ref","Contas à disposição dos contribuintes","<b>60 dias</b> por ano na Câmara; a Câmara não julga antes do parecer do TCM nem antes desse prazo (artigo 79-A).<br><b>Exemplo:</b> um contador da cidade pode pedir para examinar os balanços nesse período."],
+ ["ref","Certidões na Prefeitura e na Câmara","Prazo máximo de <b>15 dias</b>, para defesa de direitos e esclarecimento de situações de interesse pessoal (artigo 57).<br><b>Exemplo:</b> um servidor pede certidão de tempo de serviço para se aposentar."],
+ ["ref","Quando é vedado alienar bens municipais?","Nos <b>três últimos meses do mandato</b> do Prefeito (artigo 59-A).<br><b>Exemplo:</b> leilão de veículos marcado para novembro do último ano do mandato é vedado."],
+ // Panorama
+ ["pan","Mandato da Mesa no Regimento Interno","<b>2 anos</b>, com 8 membros (inclui o 4º Secretário); uma reeleição para o mesmo cargo na mesma legislatura.<br><b>Exemplo:</b> o Presidente eleito para 2025-2026 pode ser reeleito para 2027-2028 uma única vez."],
+ ["pan","Urgência do Prefeito: Lei Orgânica × Regimento","Lei Orgânica: <b>45 dias</b> (artigo 28). Regimento: <b>30 dias</b> (artigo 245).<br><b>Exemplo:</b> se o enunciado disser \"nos termos do Regimento Interno\", marque 30 dias."],
+ ["pan","Abertura das sessões: Lei Orgânica × Regimento","Lei Orgânica: <b>um terço</b>. Regimento: ordinárias com a <b>maioria dos membros</b>; extraordinárias e secretas com <b>um terço</b>.<br><b>Exemplo:</b> pelo Regimento, uma sessão ordinária não abre com só 5 dos 13 Vereadores."],
+ ["pan","Controle externo do Município","Exercido pela <b>Câmara</b> com auxílio do <b>Tribunal de Contas dos Municípios</b> (artigo 76).<br><b>Exemplo:</b> o parecer do Tribunal sobre as contas do Prefeito só é derrubado por 9 dos 13 Vereadores."],
+ ["pan","Banca e formato da prova","<b>Consulpam</b>, múltipla escolha de A a D, provas em 17 e 18 de outubro de 2026; mínimo de 50% nos Conhecimentos Gerais e nos Específicos.<br><b>Exemplo:</b> sem desconto por erro, chute com eliminação vale a pena."]
+];
+
+/* ---------- mapa mental: cada item tem explicação, exemplo, base legal e pegadinha ---------- */
+const MM_ROOT = {k: "root", t: "LEI ORGÂNICA DE SENADOR CANEDO", s: "Promulgada em 20/04/1990<br><small>Organização do Município · Poderes · Administração · Finanças · Ordem social</small>",
+  e: "A Lei Orgânica é a \"constituição\" do Município: organiza o território, distribui competências, estrutura a Câmara e a Prefeitura, disciplina o processo legislativo, a administração, os servidores, os bens, os tributos e o orçamento. Só muda por <b>emenda</b>, aprovada por dois terços em dois turnos.",
+  x: "Quando um Vereador quer criar uma lei sobre horário do comércio, é a Lei Orgânica que diz se o assunto é de interesse local (artigo 4º), quem pode propor o projeto (artigo 26) e qual quórum aprova (artigo 17).",
+  l: "Lei Orgânica do Município de Senador Canedo, de 20 de abril de 1990, com emendas até 2025.",
+  p: "\"A Lei Orgânica pode ser alterada por lei complementar aprovada pela maioria absoluta\": ERRADO. Exige emenda, com dois terços em dois turnos."};
+
+const MM = [
+ {k: "org", c: "#2f5bd3", t: "Organização do Município", s: "Artigos 1º a 6º",
+  e: "O Município é pessoa jurídica de direito público interno com autonomia política, administrativa e financeira. Seus Poderes são o Legislativo e o Executivo. Organiza-se em cidade, distritos e subdistritos.",
+  x: "Se o Município quiser criar o distrito de uma vila rural, a criação é feita pela Câmara, nos termos da Lei Complementar Estadual, e a sede do distrito passa a ter categoria de vila.",
+  l: "Artigos 1º, 1º-A a 1º-H, 2º e 3º.",
+  p: "\"São Poderes do Município o Legislativo, o Executivo e o Judiciário\": ERRADO. Não há Judiciário municipal.",
+  f: [
+   {k: "org1", t: "Símbolos e data cívica",
+    e: "Símbolos: Brasão, Bandeira e Hino, representativos da cultura e da história. Data cívica: 1º de junho.",
+    x: "Num evento oficial da Câmara em 1º de junho, a data cívica do Município, são executados o Hino e hasteada a Bandeira municipal.",
+    l: "Artigo 1º, § 2º, e artigo 1º-G.",
+    p: "Não confunda a data cívica (1º de junho) com a promulgação da Lei Orgânica (20 de abril de 1990)."},
+   {k: "org2", t: "Soberania popular",
+    e: "Exercida pelo sufrágio universal e pelo voto direto e secreto, com valor igual para todos, mediante plebiscito, referendo e iniciativa popular.",
+    x: "Moradores colhem assinaturas de 5% dos eleitores para apresentar à Câmara um projeto de lei sobre coleta seletiva: é a iniciativa popular.",
+    l: "Artigo 1º-B; artigo 27, § 3º.",
+    p: "Ação popular e audiência pública não estão na lista do artigo 1º-B."},
+   {k: "org3", t: "Competência própria (artigo 4º)",
+    e: "Legislar sobre interesse local, suplementar leis federais e estaduais, tributar, planejar o orçamento, organizar serviços (inclusive o transporte coletivo, sem monopólio), urbanismo, trânsito, limpeza, cemitérios, publicidade e defesa civil.",
+    x: "A Prefeitura não pode conceder todas as linhas de ônibus, nem mesmo uma única linha, em caráter monopolístico a uma só empresa.",
+    l: "Artigo 4º, incisos I a XXVIII.",
+    p: "Monopólio é vedado \"ainda que em uma única linha\"."},
+   {k: "org4", t: "Concorrente com o Estado e vedações",
+    e: "Concorrente (artigo 5º): higiene e segurança pública, fiscalização sanitária de alimentos na venda direta e fazer cessar atividades nocivas. Vedações (artigo 6º): cultos, recusar fé a documento público, desvio de bens, doações e isenções sem interesse público e sem autorização da Câmara.",
+    x: "A vigilância sanitária municipal pode interditar uma lanchonete que vende alimentos estragados: é competência concorrente com o Estado.",
+    l: "Artigos 5º e 6º.",
+    p: "Recusar fé a documento público é <b>proibido</b> ao Município."}
+  ]},
+ {k: "cam", c: "#1f8a4c", t: "Câmara Municipal", s: "Composição, Mesa e sessões",
+  e: "A Câmara tem 13 Vereadores eleitos para legislatura de 4 anos. É dirigida pela Mesa Diretora e funciona em sessões ordinárias, extraordinárias e especiais, abertas com um terço dos membros.",
+  x: "Em 1º de janeiro, os 13 eleitos tomam posse em sessão solene presidida pelo Vereador mais idoso e, em seguida, elegem a Mesa com a presença da maioria absoluta.",
+  l: "Artigos 7º a 19.",
+  p: "A redação vigente do artigo 7º (Emenda 21/2023) fixa 13 Vereadores, embora a compilação ainda mostre a versão de 15.",
+  f: [
+   {k: "cam1", t: "Posse e Mesa",
+    e: "Posse em 1º de janeiro, sessão solene, independentemente de número, presidida pelo mais idoso. Prazo de 10 dias para quem faltar. Mesa: Presidente, três Vice-Presidentes e três Secretários; mandato definido no Regimento; destituição por dois terços.",
+    x: "Um Vereador internado no dia 1º de janeiro pode tomar posse até 10 dias depois; se a internação se prolongar, alega força maior.",
+    l: "Artigos 8º a 12.",
+    p: "Segundo a Lei Orgânica, são três Secretários; o 4º Secretário está só no Regimento."},
+   {k: "cam2", t: "Sessão legislativa",
+    e: "De 15 de fevereiro a 30 de junho e de 1º de agosto a 15 de dezembro. Não se interrompe sem aprovar a LDO. Datas que caem em fim de semana ou feriado passam ao primeiro dia útil.",
+    x: "Se a LDO não for votada até 30 de junho, a Câmara não entra em recesso em julho.",
+    l: "Artigo 13, caput e §§ 1º e 2º.",
+    p: "O que impede o recesso de julho, pela Lei Orgânica, é a <b>LDO</b>."},
+   {k: "cam3", t: "Convocação extraordinária",
+    e: "Pelo Prefeito; pelo Presidente da Câmara (intervenção estadual e posse); pela maioria dos membros (relevante interesse público). Só se delibera a matéria da convocação.",
+    x: "Em janeiro, o Prefeito convoca a Câmara para votar um crédito emergencial após enchentes; os Vereadores não podem incluir outro projeto na pauta.",
+    l: "Artigo 13, §§ 3º e 4º.",
+    p: "Vereador sozinho não convoca sessão extraordinária."},
+   {k: "cam4", t: "Quóruns",
+    e: "Abertura: um terço. Deliberação: maioria simples. Maioria absoluta: leis complementares e Regimento. Dois terços: sessão secreta, parecer do TCM, honrarias, nome do Município, emenda à Lei Orgânica, perda de mandato e destituição da Mesa.",
+    x: "Com 13 Vereadores, dois terços são 9 votos (8,67 arredondado para cima) e a maioria absoluta é 7.",
+    l: "Artigos 15, 17, 18 e 19.",
+    p: "O Presidente só vota na eleição da Mesa, em matéria de dois terços, no empate e em votação secreta."}
+  ]},
+ {k: "ver", c: "#b8860b", t: "Vereadores", s: "Proibições, perda e licenças",
+  e: "O Vereador tem inviolabilidade por opiniões, palavras e votos na circunscrição do Município, sujeita-se a proibições desde a diplomação e desde a posse, e perde o mandato nas hipóteses do artigo 20-B.",
+  x: "Uma Vereadora que se muda para Goiânia perde o mandato, porque fixar residência fora do Município é causa de perda (artigo 20-B, VII).",
+  l: "Artigos 20 a 23-A.",
+  p: "Investido como Secretário Municipal, o Vereador <b>não perde</b> o mandato: é licenciado automaticamente.",
+  f: [
+   {k: "ver1", t: "Proibições",
+    e: "Desde o diploma: contratar com o Poder Público (salvo cláusulas uniformes) e aceitar cargo remunerado nessas entidades. Desde a posse: ser dono ou diretor de empresa favorecida, patrocinar causas dessas entidades, ter mais de um mandato eletivo, ocupar cargo <i>ad nutum</i> nelas.",
+    x: "Um Vereador pode ter conta de luz com a concessionária (contrato de cláusulas uniformes), mas não pode assinar contrato de fornecimento de merenda com a Prefeitura.",
+    l: "Artigo 20-A.",
+    p: "\"Ser titular de mais de um mandato eletivo\" é proibição desde a <b>posse</b>, e não desde o diploma."},
+   {k: "ver2", t: "Perda do mandato",
+    e: "Infringir proibições; quebra de decoro (abuso de prerrogativas, vantagens indevidas); faltar a um terço das sessões ordinárias da sessão legislativa; perder direitos políticos; decisão da Justiça Eleitoral; condenação criminal transitada em julgado; residência fora; não tomar posse no prazo. Falecimento e renúncia escrita extinguem o mandato.",
+    x: "Condenado definitivamente por peculato, o Vereador perde o mandato; antes do trânsito em julgado, não.",
+    l: "Artigo 20-B e § 1º e § 2º.",
+    p: "A perda de mandato decidida pela Câmara exige <b>dois terços</b> (artigo 19, VI)."},
+   {k: "ver3", t: "Licenças",
+    e: "Moléstia comprovada e missão cultural ou de interesse do Município: remuneradas. Interesse particular: prazo determinado, sem remuneração, até 120 dias por sessão legislativa sem perder o mandato; pode desistir e reassumir por comunicação.",
+    x: "Um Vereador pede 90 dias de licença para cuidar de um negócio da família e volta no 40º dia, apenas comunicando à Presidência.",
+    l: "Artigos 20-C e 21.",
+    p: "Licença para interesse particular <b>não</b> é remunerada."},
+   {k: "ver4", t: "Suplente",
+    e: "Convocado em vaga por morte, renúncia ou licença; posse em 15 dias, salvo motivo justo. Sem suplente, o Presidente avisa o TRE em 48 horas. Afastamento judicial: suplente só se for de 120 dias ou mais.",
+    x: "Afastado por decisão judicial por 60 dias, o Vereador não dá lugar ao suplente pela Lei Orgânica.",
+    l: "Artigos 23 e 23-A.",
+    p: "Regimento: posse do suplente em 10 dias e convocação no afastamento judicial superior a 90 dias."}
+  ]},
+ {k: "leg", c: "#7a3fc2", t: "Processo legislativo", s: "Iniciativa, espécies, veto",
+  e: "A Câmara elabora emendas à Lei Orgânica, leis complementares, leis ordinárias, decretos legislativos e resoluções. Projetos de lei passam por dois turnos, seguem para sanção ou veto, e o veto pode ser derrubado por maioria absoluta.",
+  x: "Um projeto do Prefeito sobre reajuste dos servidores é aprovado em dois turnos, vai à sanção e, se vetado em parte, volta à Câmara para apreciação em 30 dias.",
+  l: "Artigos 26 a 31.",
+  p: "Silêncio do Prefeito em 15 dias úteis = sanção tácita.",
+  f: [
+   {k: "leg1", t: "Emenda à Lei Orgânica",
+    e: "Proposta de um terço dos Vereadores ou do Prefeito; dois turnos; dois terços em ambos; promulgada pela Mesa com número de ordem. Rejeitada, não volta na mesma sessão legislativa.",
+    x: "Cinco Vereadores (mais de um terço de 13) apresentam emenda que aumenta o número de sessões especiais; ela precisa de 9 votos em cada turno.",
+    l: "Artigo 26-B.",
+    p: "Quem promulga é a <b>Mesa</b>, e não o Prefeito."},
+   {k: "leg2", t: "Lei complementar",
+    e: "Plano Diretor, Código Tributário, Código de Obras e Edificações, Código de Posturas, Lei de Parcelamento e Uso do Solo e Regime Jurídico dos Servidores. Aprovação por maioria absoluta.",
+    x: "A revisão do Plano Diretor precisa de 7 votos favoráveis dos 13 Vereadores.",
+    l: "Artigos 18 e 26-D.",
+    p: "LDO e LOA <b>não</b> estão na lista de leis complementares."},
+   {k: "leg3", t: "Iniciativa",
+    e: "Geral: Vereador, comissão permanente, Prefeito e cidadãos (5% dos eleitores). Exclusiva do Prefeito: tributos, finanças, orçamento, cargos do Executivo, regime dos servidores, secretarias. Exclusiva da Mesa: créditos e cargos da Câmara.",
+    x: "Um Vereador apresenta projeto criando a Secretaria de Turismo: vício de iniciativa, porque a criação de secretarias é do Prefeito.",
+    l: "Artigos 26 e 27.",
+    p: "Nos projetos do Prefeito não cabe emenda que aumente a despesa."},
+   {k: "leg4", t: "Sanção, veto e promulgação",
+    e: "Veto em 15 dias úteis, razões em 48 horas; veto parcial abrange texto integral do dispositivo; silêncio é sanção. Câmara aprecia em 30 dias; rejeição por maioria absoluta; esgotado o prazo, tranca a pauta. Promulgação: Prefeito em 48 horas, senão Presidente, senão Vice-Presidente da Câmara.",
+    x: "O Prefeito não pode vetar só a palavra \"não\" de um artigo para inverter seu sentido: o veto parcial alcança o artigo, parágrafo, inciso, item ou alínea inteiro.",
+    l: "Artigo 30.",
+    p: "Urgência do Prefeito: 45 dias na Lei Orgânica (o Regimento fala em 30)."}
+  ]},
+ {k: "exe", c: "#c0392b", t: "Poder Executivo", s: "Prefeito, Vice e auxiliares",
+  e: "O Prefeito dirige a administração com o auxílio dos Secretários e Subprefeitos. Toma posse logo após os Vereadores, depende de licença da Câmara para se ausentar por mais de 15 dias e presta contas ao TCM com cópia à Câmara.",
+  x: "O Prefeito viaja 20 dias para uma missão no exterior: precisa de autorização da Câmara, sob pena de extinção do mandato.",
+  l: "Artigos 32 a 42.",
+  p: "Dupla vacância nos dois últimos anos: eleição <b>pela Câmara</b> em 30 dias.",
+  f: [
+   {k: "exe1", t: "Posse, substituição e vacância",
+    e: "Posse na sessão de instalação; 10 dias de tolerância. Vice substitui e sucede. Impedidos ambos: Presidente e Vice-Presidente da Câmara. Dupla vacância: eleição em 90 dias; nos dois últimos anos, pela Câmara em 30 dias.",
+    x: "Se Prefeito e Vice renunciam no terceiro ano do mandato, a Câmara elege os sucessores em 30 dias para completar o período.",
+    l: "Artigos 32 a 34.",
+    p: "Na Lei Orgânica, a eleição direta ocorre 90 dias depois da última vaga."},
+   {k: "exe2", t: "Atribuições",
+    e: "Direção superior; sanção, promulgação, veto; regulamentos; desapropriações; envio do PPA, LDO e LOA; informações à Câmara em 15 dias úteis; duodécimo até o dia 20; contas ao TCM; plebiscito e referendo; delegação por decreto.",
+    x: "A Câmara pede ao Prefeito a lista de contratos de limpeza urbana; ele tem 15 dias úteis para responder.",
+    l: "Artigo 37.",
+    p: "Contas mensais ao TCM em 45 dias; anuais em 60 dias após a instalação da sessão legislativa."},
+   {k: "exe3", t: "Secretários e transição",
+    e: "Secretários: brasileiros com mais de 20 anos, nomeados em comissão, com declaração de bens e os mesmos impedimentos dos Vereadores. Transição: comissão de 3 + 3 membros designada em 10 dias após o resultado da eleição.",
+    x: "Logo após a eleição, o Prefeito em fim de mandato designa os responsáveis por controle interno, finanças e administração, e o eleito indica outros três para levantar dívidas e contratos.",
+    l: "Artigos 39 a 41.",
+    p: "Idade mínima do Secretário: <b>mais de 20 anos</b>, e não 21 ou 25."}
+  ]},
+ {k: "adm", c: "#0f7c8c", t: "Administração e finanças", s: "Servidores, bens, tributos, orçamento",
+  e: "A administração segue os princípios do artigo 44, contrata por concurso e licitação, respeita o teto do subsídio do Prefeito, publica seus atos no DOM-e e se submete ao controle externo da Câmara com auxílio do TCM.",
+  x: "Um edital de concurso da Câmara com validade de 2 anos pode ser prorrogado uma vez por mais 2 anos; nesse período, os aprovados têm prioridade sobre novos concursados.",
+  l: "Artigos 43 a 79-A.",
+  p: "O teto remuneratório municipal é o subsídio do <b>Prefeito</b>.",
+  f: [
+   {k: "adm1", t: "Princípios e servidores",
+    e: "Legalidade, impessoalidade, moralidade, publicidade, eficiência, razoabilidade, proporcionalidade e motivação. Direitos: jornada de 8 horas e 44 semanais, hora extra de 50%, férias com um terço, licença-gestante de 120 dias, quinquênio, folha até o dia 10.",
+    x: "Uma servidora que volta da licença-gestante tem 30 minutos de intervalo a cada 3 horas para amamentar o filho de até 6 meses.",
+    l: "Artigos 44, 46 e 47.",
+    p: "A Lei Orgânica acrescenta razoabilidade, proporcionalidade e motivação ao LIMPE."},
+   {k: "adm2", t: "Atos e bens",
+    e: "Publicação no DOM-e (data de publicação: primeiro dia útil após a disponibilização). Decreto e portaria têm usos próprios. Certidões em 15 dias. Bens: uso comum, uso especial e dominicais. Alienação vedada nos três últimos meses do mandato. Permissão por decreto; autorização por portaria até 60 dias.",
+    x: "Uma festa junina numa praça recebe autorização de uso por portaria, por 3 dias.",
+    l: "Artigos 54 a 61.",
+    p: "Abertura de sindicância é feita por <b>portaria</b>, e não por decreto."},
+   {k: "adm3", t: "Tributos e orçamento",
+    e: "Impostos (IPTU, ITBI, ISS), taxas, contribuição de melhoria e de iluminação pública. LDO: 15 de abril a 30 de junho. PPA e LOA: 31 de agosto a 15 de dezembro. Emendas individuais: 1,2% da RCL, metade para saúde.",
+    x: "Com receita corrente líquida prevista de 500 milhões de reais, as emendas individuais somam até 6 milhões, dos quais 3 milhões vão para saúde.",
+    l: "Artigos 67 a 74-B.",
+    p: "PPA é enviado até 31 de agosto do <b>primeiro ano</b> do mandato."},
+   {k: "adm4", t: "Fiscalização e contas",
+    e: "Controle externo pela Câmara com o TCM; controle interno em cada Poder. Balancete publicado em 45 dias. Contas anuais 60 dias à disposição dos contribuintes. A Câmara não julga antes do parecer do TCM nem antes desse prazo.",
+    x: "Um morador pode examinar as contas do Município na Câmara e questionar a legitimidade de um gasto durante os 60 dias.",
+    l: "Artigos 75 a 79-A.",
+    p: "O parecer prévio do TCM só deixa de prevalecer por dois terços."}
+  ]}
+];
+
+function mmItens(){
+  const out = [MM_ROOT];
+  MM.forEach(b => { out.push(b); b.f.forEach(f => out.push(Object.assign({c: b.c, pai: b.t}, f))); });
+  return out;
+}
+function renderMapa(){
+  $("#mmBox").innerHTML = `<div class="mm-root" data-k="root" tabindex="0"><b>${MM_ROOT.t}</b>${MM_ROOT.s}</div>
+    <div class="mm-trunk"></div>
+    <div class="mm-branches" style="--n:${MM.length}">${MM.map(b => `<div class="mm-br" style="--c:${b.c}">
+      <div class="mm-h" data-k="${b.k}" tabindex="0"><b>${b.t}</b>${b.s}</div>
+      <ul>${b.f.map(f => `<li data-k="${f.k}" tabindex="0">${f.t}</li>`).join("")}</ul></div>`).join("")}</div>`;
+  $("#mmBox").querySelectorAll("[data-k]").forEach(el => {
+    el.onclick = () => abrirItem(el.dataset.k);
+    el.onkeydown = e => { if (e.key === "Enter" || e.key === " "){ e.preventDefault(); abrirItem(el.dataset.k); } };
+  });
+  abbrify($("#mmBox"));
+}
+function abrirItem(k){
+  const itens = mmItens(), i = itens.findIndex(x => x.k === k), it = itens[i];
+  $("#mmBox").querySelectorAll("[data-k]").forEach(el => el.classList.toggle("sel", el.dataset.k === k));
+  const p = $("#mmPanel");
+  p.style.setProperty("--c", it.c || "var(--accent)");
+  p.innerHTML = `<div class="muted" style="font-size:13px">${it.pai ? "Mapa › " + it.pai : "Mapa"}</div>
+    <h4>${it.t}</h4>
+    <div class="mm-sec"><span class="lbl">Explicação</span>${it.e}</div>
+    <div class="mm-sec ex"><span class="lbl">Exemplo prático</span>${it.x}</div>
+    <div class="mm-sec"><span class="lbl">Base legal e jurisprudência</span>${it.l}</div>
+    <div class="mm-sec pg"><span class="lbl">Pegadinha da banca</span>${it.p}</div>
+    <div class="nav"><button class="btn" id="mmPrev" ${i === 0 ? "disabled" : ""}>← Item anterior</button>
+      <button class="btn pri" id="mmNext" ${i === itens.length - 1 ? "disabled" : ""}>Próximo item →</button></div>`;
+  abbrify(p);
+  p.dataset.hl = "mm-" + k; hlAplicar(p);
+  $("#mmPrev").onclick = () => abrirItem(itens[i - 1].k);
+  $("#mmNext").onclick = () => abrirItem(itens[i + 1].k);
+  const r = p.getBoundingClientRect();
+  if (r.top < 120 || r.top > innerHeight - 160) p.scrollIntoView({behavior: "smooth", block: "start"});
+}
+
+/* ---------- glossário: toda sigla ganha dica com o nome por extenso ---------- */
+const GLOSS = {
+ "CF/88": "Constituição Federal de 1988", "CF": "Constituição Federal de 1988",
+ "CTN": "Código Tributário Nacional (Lei 5.172/1966)", "STF": "Supremo Tribunal Federal", "STJ": "Superior Tribunal de Justiça",
+ "LC": "Lei Complementar", "MP": "Medida Provisória", "EC": "Emenda Constitucional", "DL": "Decreto-Lei",
+ "ADCT": "Ato das Disposições Constitucionais Transitórias", "CLT": "Consolidação das Leis do Trabalho",
+ "ADI": "Ação Direta de Inconstitucionalidade", "RE": "Recurso Extraordinário", "RREE": "Recursos Extraordinários",
+ "REsp": "Recurso Especial", "HC": "Habeas Corpus", "AgR": "Agravo Regimental",
+ "ICMS": "Imposto sobre Circulação de Mercadorias e Serviços", "ISS": "Imposto sobre Serviços", "ISSQN": "Imposto sobre Serviços de Qualquer Natureza",
+ "IPTU": "Imposto sobre a Propriedade Predial e Territorial Urbana", "ITBI": "Imposto sobre a Transmissão de Bens Imóveis",
+ "ITCMD": "Imposto sobre Transmissão Causa Mortis e Doação", "IPVA": "Imposto sobre a Propriedade de Veículos Automotores",
+ "IE": "Imposto de Exportação", "IR": "Imposto de Renda", "IRPF": "Imposto de Renda da Pessoa Física", "IRPJ": "Imposto de Renda da Pessoa Jurídica",
+ "IPI": "Imposto sobre Produtos Industrializados", "IOF": "Imposto sobre Operações Financeiras", "ITR": "Imposto sobre a Propriedade Territorial Rural",
+ "IGF": "Imposto sobre Grandes Fortunas", "IS": "Imposto Seletivo", "IEG": "Imposto Extraordinário de Guerra",
+ "IBS": "Imposto sobre Bens e Serviços", "CBS": "Contribuição sobre Bens e Serviços", "IVA": "Imposto sobre Valor Agregado",
+ "CIDE": "Contribuição de Intervenção no Domínio Econômico", "COSIP": "Contribuição para o Custeio do Serviço de Iluminação Pública",
+ "COFINS": "Contribuição para o Financiamento da Seguridade Social", "CSLL": "Contribuição Social sobre o Lucro Líquido",
+ "PIS": "Programa de Integração Social", "PASEP": "Programa de Formação do Patrimônio do Servidor Público",
+ "RPPS": "Regime Próprio de Previdência Social", "RGPS": "Regime Geral de Previdência Social",
+ "CVM": "Comissão de Valores Mobiliários", "AFRMM": "Adicional ao Frete para a Renovação da Marinha Mercante",
+ "SEBRAE": "Serviço Brasileiro de Apoio às Micro e Pequenas Empresas", "INCRA": "Instituto Nacional de Colonização e Reforma Agrária",
+ "SESC": "Serviço Social do Comércio", "SENAC": "Serviço Nacional de Aprendizagem Comercial", "SENAI": "Serviço Nacional de Aprendizagem Industrial",
+ "OAB": "Ordem dos Advogados do Brasil", "CRC": "Conselho Regional de Contabilidade", "CREA": "Conselho Regional de Engenharia e Agronomia",
+ "CRM": "Conselho Regional de Medicina", "CRA": "Conselho Regional de Administração", "IBAMA": "Instituto Brasileiro do Meio Ambiente e dos Recursos Naturais Renováveis",
+ "TCFA": "Taxa de Controle e Fiscalização Ambiental", "TFA": "Taxa de Fiscalização de Anúncios", "TFLF": "Taxa de Fiscalização, Localização e Funcionamento",
+ "TLLF": "Taxa de Licença de Localização e Funcionamento", "ZFM": "Zona Franca de Manaus", "PAF": "Processo Administrativo Fiscal",
+ "DF": "Distrito Federal", "SEFAZ": "Secretaria de Estado de Fazenda", "SEEC": "Secretaria de Estado de Economia",
+ "CEBRASPE": "Centro Brasileiro de Pesquisa em Avaliação e Seleção e de Promoção de Eventos (banca)", "CESPE": "Centro de Seleção e de Promoção de Eventos (atual CEBRASPE)",
+ "PGFN": "Procuradoria-Geral da Fazenda Nacional", "AGU": "Advocacia-Geral da União", "RFB": "Receita Federal do Brasil",
+ "CAGE": "Contadoria e Auditoria-Geral do Estado", "CGE": "Controladoria-Geral do Estado", "TCE": "Tribunal de Contas do Estado",
+ "PGE": "Procuradoria-Geral do Estado", "STM": "Superior Tribunal Militar", "PF": "Polícia Federal", "PC": "Polícia Civil",
+ "ANM": "Agência Nacional de Mineração", "CAU": "Conselho de Arquitetura e Urbanismo", "INPI": "Instituto Nacional da Propriedade Industrial",
+ "APEX": "Agência Brasileira de Promoção de Exportações e Investimentos", "EMBRAPA": "Empresa Brasileira de Pesquisa Agropecuária",
+ "CAGEPA": "Companhia de Água e Esgotos da Paraíba", "SEPLAN": "Secretaria de Planejamento", "APO": "Analista de Planejamento e Orçamento",
+ "PPNT": "Processo seletivo público (Petrobras)", "ATT": "Auditor Técnico de Tributos", "AFRE": "Auditor Fiscal da Receita Estadual",
+ "AFE": "Auditor Fiscal Estadual",
+ "art.": "artigo", "arts.": "artigos", "Art.": "artigo", "§": "parágrafo", "c/c": "combinado com", "nº": "número", "n.º": "número",
+ "Proc": "Procurador", "Pref": "Prefeitura", "Rel.": "Relator", "Min.": "Ministro", "Súm.": "Súmula", "SV": "Súmula Vinculante",
+ "TCM": "Tribunal de Contas dos Municípios do Estado de Goiás", "TRE": "Tribunal Regional Eleitoral", "LDO": "Lei de Diretrizes Orçamentárias", "LOA": "Lei Orçamentária Anual", "PPA": "Plano Plurianual", "DOM-e": "Diário Oficial Eletrônico do Município de Senador Canedo", "RCL": "Receita Corrente Líquida", "RREO": "Relatório Resumido da Execução Orçamentária", "CEI": "Comissão Especial de Inquérito", "CPI": "Comissão Parlamentar de Inquérito", "GO": "Goiás", "Consulpam": "Instituto Consulpam (banca do concurso)", "MP": "Ministério Público",
+ "FG": "fato gerador", "BC": "base de cálculo", "LO": "lei ordinária"
+};
+const GLOSS_RE = new RegExp("(?<![\\wÀ-ÿ])(" + Object.keys(GLOSS).sort((a, b) => b.length - a.length)
+  .map(s => s.replace(/[.*+?^${}()|[\]\\\/]/g, "\\$&")).join("|") + ")(?![\\wÀ-ÿ])", "g");
+function abbrify(root){
+  if (!root) return;
+  const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {acceptNode: n =>
+    n.parentElement.closest("abbr,script,style,select,option,kbd") ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT});
+  const nodes = []; while (w.nextNode()) nodes.push(w.currentNode);
+  nodes.forEach(n => {
+    const s = n.nodeValue; GLOSS_RE.lastIndex = 0;
+    if (!GLOSS_RE.test(s)) return;
+    const frag = document.createDocumentFragment(); let last = 0; GLOSS_RE.lastIndex = 0; let m;
+    while ((m = GLOSS_RE.exec(s))){
+      frag.append(s.slice(last, m.index));
+      const a = document.createElement("abbr"); a.textContent = m[1]; a.dataset.tip = GLOSS[m[1]]; a.setAttribute("aria-label", GLOSS[m[1]]);
+      frag.append(a); last = m.index + m[1].length;
+    }
+    frag.append(s.slice(last)); n.replaceWith(frag);
+  });
+}
+/* dica posicionada acima da sigla, sem cobrir o texto nem ficar sob o cursor */
+(() => {
+  const tip = () => document.getElementById("tip");
+  function show(el){
+    const t = tip(); t.textContent = el.dataset.tip; t.classList.add("on");
+    const r = el.getBoundingClientRect(), w = t.offsetWidth, h = t.offsetHeight;
+    let x = Math.min(Math.max(8, r.left + r.width / 2 - w / 2), innerWidth - w - 8);
+    let y = r.top - h - 8; if (y < 8) y = r.bottom + 8;
+    t.style.left = x + "px"; t.style.top = y + "px";
+  }
+  document.addEventListener("mouseover", e => { const a = e.target.closest("abbr[data-tip]"); if (a) show(a); });
+  document.addEventListener("mouseout", e => { if (e.target.closest("abbr[data-tip]")) tip().classList.remove("on"); });
+  document.addEventListener("click", e => { const a = e.target.closest("abbr[data-tip]"); if (a){ show(a); setTimeout(() => tip().classList.remove("on"), 2500); } });
+  addEventListener("scroll", () => tip().classList.remove("on"), {passive: true});
+})();
+
+const KEY = "canedo_T1_lei_organica_v1";
+/* respostas já resolvidas, embutidas na publicação (usadas só se este navegador ainda não tiver dados) */
+const RESPOSTAS_INICIAIS = null;
+let S = JSON.parse(localStorage.getItem(KEY) || "null") || (RESPOSTAS_INICIAIS ? structuredClone(RESPOSTAS_INICIAIS) : null) || {answers:{}, cards:{}};
+S.answers ||= {}; S.cards ||= {}; S.draft ||= {};
+const save = () => localStorage.setItem(KEY, JSON.stringify(S));
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+/* abas */
+function showTab(t){
+  document.querySelectorAll("section.tab").forEach(s => s.classList.toggle("on", s.id === t));
+  document.querySelectorAll("#nav button").forEach(b => b.classList.toggle("on", b.dataset.t === t));
+  if (t === "rend") renderRend();
+  if (t === "flash") renderCard();
+  window.scrollTo(0, 0);
+}
+document.querySelectorAll("#nav button").forEach(b => b.onclick = () => showTab(b.dataset.t));
+const active = () => document.querySelector("section.tab.on").id;
+
+/* questões */
+const TEMAS = [...new Set(QUESTOES.map(q => q.tema))];
+$("#fTema").innerHTML = '<option value="all">Todos os temas</option>' + TEMAS.map(t => `<option>${esc(t)}</option>`).join("");
+let cur = 0;
+
+function visible(){
+  const t = $("#fTema").value, st = $("#fStatus").value;
+  return QUESTOES.map((q, i) => i).filter(i => {
+    const q = QUESTOES[i], a = S.answers[q.n];
+    if (t !== "all" && q.tema !== t) return false;
+    if (st === "pend") return !a;
+    if (st === "bad") return a && !a.ok;
+    if (st === "ok") return a && a.ok;
+    return true;
+  });
+}
+function fmtCom(p){
+  return esc(p).replace(/^(Letra [A-E]|Item [IVX]+|Alternativa [A-E]|Assertiva [IVX]+)(:?)/, "<b>$1$2</b>");
+}
+function renderQ(){
+  const vis = visible();
+  const done = Object.keys(S.answers).length;
+  $("#qProg").style.width = (100 * done / QUESTOES.length) + "%";
+  $("#navQ").textContent = `${done}/${QUESTOES.length}`;
+  $("#qNav").innerHTML = vis.map(i => {
+    const a = S.answers[QUESTOES[i].n];
+    return `<button data-i="${i}" class="${a ? (a.ok ? "ok" : "bad") : ""} ${i === cur ? "cur" : ""}">${QUESTOES[i].nav || QUESTOES[i].n}</button>`;
+  }).join("");
+  $("#qNav").querySelectorAll("button").forEach(b => b.onclick = () => { cur = +b.dataset.i; renderQ(); });
+  if (!vis.length){ $("#qCard").innerHTML = '<p class="muted">Nenhuma questão neste filtro.</p>'; return; }
+  if (!vis.includes(cur)) cur = vis[0];
+  const q = QUESTOES[cur], a = S.answers[q.n];
+  const d = draft(q.n);
+  const st = v => a ? "" : (d.desc.includes(v) ? "desc" : d.sel === v ? "sel" : "");
+  let opts;
+  if (q.tipo === "ce"){
+    opts = '<div class="ce">' + [["C","Certo"],["E","Errado"]].map(([v, l]) => {
+      let cls = "";
+      if (a){ if (v === q.resp) cls = "right"; else if (v === a.sel) cls = "wrong"; }
+      return `<button class="opt ${cls} ${st(v)}" data-v="${v}" ${a ? "disabled" : ""}>${l}</button>`;
+    }).join("") + "</div>";
+  } else {
+    opts = q.alts.map(([l, t]) => {
+      let cls = "";
+      if (a){ if (l === q.resp) cls = "right"; else if (l === a.sel) cls = "wrong"; }
+      return `<button class="opt ${cls} ${st(l)}" data-v="${l}" ${a ? "disabled" : ""}><span class="l">${l})</span><span>${esc(t)}</span></button>`;
+    }).join("");
+  }
+  const pos = vis.indexOf(cur) + 1;
+  let com = "";
+  if (a){
+    const gab = q.tipo === "ce" ? (q.resp === "C" ? "Certo" : "Errado") : "Letra " + q.resp.toUpperCase();
+    com = `<div class="coment" data-hl="q${q.n}c"><div class="verdict ${a.ok ? "ok" : "bad"}">${a.ok ? "✔ Você acertou" : "✘ Você errou"} · Gabarito: ${gab}</div>
+      ${q.com.map(p => `<p>${fmtCom(p)}</p>`).join("")}</div>`;
+  }
+  $("#qCard").innerHTML = `<div class="qhead"><span><b>${esc(q.rot || "Questão " + q.n)}</b> · ${esc(q.fonte)}</span><span><span class="pill">${esc(q.tema)}</span> ${pos}/${vis.length}</span></div>
+    ${q.texto ? `<div class="trecho" data-hl="q${q.n}t"><span class="lbl">Trecho do texto</span>${esc(q.texto)}</div>` : ""}
+    <div class="enun" data-hl="q${q.n}">${esc(q.enun)}</div>
+    ${a ? "" : '<div class="qhint">Clique para escolher · clique duas vezes para descartar (riscar) ou recuperar uma opção</div>'}
+    ${opts}
+    ${a ? "" : `<div class="qact"><button class="btn pri" id="qSubmit">Responder</button><div class="qmsg" id="qMsg" role="alert"></div></div>`}
+    ${com}`;
+  abbrify($("#qCard"));
+  $("#qCard").querySelectorAll("[data-hl]").forEach(hlAplicar);
+  let clickTimer = null;
+  $("#qCard").querySelectorAll(".opt:not(:disabled)").forEach(b => {
+    b.onclick = () => { clearTimeout(clickTimer); clickTimer = setTimeout(() => escolher(b.dataset.v), 230); };
+    b.ondblclick = e => { e.preventDefault(); clearTimeout(clickTimer); descartar(b.dataset.v); };
+  });
+  if ($("#qSubmit")) $("#qSubmit").onclick = submeter;
+  $("#qPrev").disabled = pos <= 1;
+  $("#qNext").textContent = pos >= vis.length ? "Ver rendimento →" : "Próxima →";
+}
+function draft(n){
+  S.draft ||= {};
+  return S.draft[n] ||= {sel: null, desc: []};
+}
+function opcoes(q){ return q.tipo === "ce" ? ["C", "E"] : q.alts.map(x => x[0]); }
+function escolher(v){
+  const q = QUESTOES[cur]; if (S.answers[q.n]) return;
+  const d = draft(q.n);
+  if (d.desc.includes(v)){ msg("warn", "Essa opção está descartada. Clique duas vezes nela para recuperá-la antes de escolher."); return; }
+  d.sel = d.sel === v ? null : v; save(); renderQ();
+}
+function descartar(v){
+  const q = QUESTOES[cur]; if (S.answers[q.n]) return;
+  const d = draft(q.n);
+  if (d.desc.includes(v)) d.desc = d.desc.filter(x => x !== v);
+  else { d.desc.push(v); if (d.sel === v) d.sel = null; }
+  save(); renderQ();
+  if (d.desc.length === opcoes(q).length) msg("warn", "Você descartou todas as opções. Clique duas vezes em uma delas para recuperá-la e poder responder.");
+}
+function msg(tipo, texto){
+  const m = $("#qMsg"); if (!m) return;
+  m.className = "qmsg on " + tipo; m.textContent = texto;
+}
+function submeter(){
+  const q = QUESTOES[cur]; if (S.answers[q.n]) return;
+  const d = draft(q.n), todas = opcoes(q);
+  if (d.desc.length === todas.length) return msg("bad", "Você marcou todas as opções como descartadas. Recupere uma (clique duas vezes) e selecione-a antes de responder.");
+  if (!d.sel) return msg("bad", "Você não selecionou nenhuma resposta. Clique em uma opção e depois em Responder.");
+  answer(d.sel);
+}
+function answer(v){
+  const q = QUESTOES[cur];
+  if (S.answers[q.n]) return;
+  const d = draft(q.n);
+  S.answers[q.n] = {sel: v, ok: v === q.resp, desc: d.desc.slice(), ts: Date.now()};
+  delete S.draft[q.n];
+  save(); renderQ();
+  $("#qCard .coment")?.scrollIntoView({behavior: "smooth", block: "nearest"});
+  if (Object.keys(S.answers).length === QUESTOES.length){
+    setTimeout(() => { if (confirmFinish()) showTab("rend"); }, 50);
+  }
+}
+let finishedShown = false;
+function confirmFinish(){ if (finishedShown) return false; finishedShown = true; return true; }
+function step(d){
+  const vis = visible(), p = vis.indexOf(cur);
+  if (d > 0 && p >= vis.length - 1){ showTab("rend"); return; }
+  const np = Math.min(Math.max(p + d, 0), vis.length - 1);
+  cur = vis[np]; renderQ(); $("#qCard").scrollIntoView({block: "nearest"});
+}
+$("#qPrev").onclick = () => step(-1);
+$("#qNext").onclick = () => step(1);
+$("#fTema").onchange = $("#fStatus").onchange = () => { cur = -1; renderQ(); };
+
+/* flashcards */
+let deck = [], fcI = 0;
+FLASH.forEach((c, i) => c.id = "f" + i);
+function buildDeck(shuffle){
+  const d = $("#fcDeck").value;
+  deck = FLASH.filter(c => d === "all" || c[0] === d);
+  const box = c => (S.cards[c.id] || {box: 1}).box;
+  deck = deck.map(c => [c, Math.random()]).sort((x, y) => shuffle ? x[1] - y[1] : (box(x[0]) - box(y[0])) || (x[1] - y[1])).map(x => x[0]);
+  fcI = 0; renderCard();
+}
+function renderCard(){
+  if (!deck.length) buildDeck();
+  const c = deck[fcI];
+  $("#fc").classList.remove("flip");
+  $("#fcQ").innerHTML = c[1];
+  $("#fcA").innerHTML = c[2];
+  const b = (S.cards[c.id] || {box: 1}).box;
+  $("#fcPos").textContent = `Cartão ${fcI + 1} de ${deck.length}`;
+  $("#fcBox").textContent = `Caixa ${b}`;
+  const cnt = [0, 0, 0, 0, 0];
+  deck.forEach(x => cnt[((S.cards[x.id] || {box: 1}).box) - 1]++);
+  abbrify($("#fcQ")); abbrify($("#fcA"));
+  $("#fcBoxes").innerHTML = cnt.map((n, i) => `<span>Caixa ${i + 1}: ${n}</span>`).join("");
+}
+function grade(g){
+  const c = deck[fcI], st = S.cards[c.id] || {box: 1};
+  st.box = g === 0 ? 1 : g === 1 ? Math.max(1, st.box) : Math.min(5, st.box + 1);
+  st.seen = (st.seen || 0) + 1; S.cards[c.id] = st; save();
+  fcI = (fcI + 1) % deck.length; renderCard();
+}
+$("#fc").onclick = () => $("#fc").classList.toggle("flip");
+$("#fcBad").onclick = () => grade(0);
+$("#fcMid").onclick = () => grade(1);
+$("#fcOk").onclick = () => grade(2);
+$("#fcDeck").onchange = () => buildDeck();
+$("#fcShuffle").onclick = () => buildDeck(true);
+$("#fcReset").onclick = () => { if (confirm("Zerar as caixas de todos os flashcards?")){ S.cards = {}; save(); buildDeck(); } };
+
+/* rendimento */
+function renderRend(){
+  const ans = S.answers, n = QUESTOES.length, done = QUESTOES.filter(q => ans[q.n]);
+  const ok = done.filter(q => ans[q.n].ok).length;
+  if (!done.length){ $("#rendBody").innerHTML = '<div class="card"><p class="muted">Você ainda não respondeu nenhuma questão. Vá para a aba <b>Questões</b>.</p></div>'; return; }
+  const pct = Math.round(100 * ok / done.length);
+  const ce = done.filter(q => q.tipo === "ce"), ceOk = ce.filter(q => ans[q.n].ok).length, ceBad = ce.length - ceOk;
+  const mc = done.filter(q => q.tipo === "mc"), mcOk = mc.filter(q => ans[q.n].ok).length;
+  const complete = done.length === n;
+  const msg = pct >= 80 ? ["ok", "Excelente! Acima da meta de 80%. O edital exige no mínimo 50% em cada bloco de conhecimentos."] : pct >= 70 ? ["warn", "Bom, mas abaixo da meta de 80%. Revise os temas em amarelo e vermelho."] : ["bad", "Abaixo de 70%. Releia o Resumo dos temas fracos antes de refazer as erradas."];
+  const byT = TEMAS.map(t => {
+    const qs = done.filter(q => q.tema === t), o = qs.filter(q => ans[q.n].ok).length;
+    return {t, tot: QUESTOES.filter(q => q.tema === t).length, d: qs.length, o, p: qs.length ? Math.round(100 * o / qs.length) : null};
+  }).sort((a, b) => (a.p ?? 101) - (b.p ?? 101));
+  const wrong = done.filter(q => !ans[q.n].ok);
+  $("#rendBody").innerHTML = `
+    ${complete ? "" : `<div class="call warn"><b>Resultado parcial</b>Você respondeu ${done.length} de ${n}. O rendimento final aparece quando terminar todas.</div>`}
+    <div class="grid3">
+      <div class="card"><div class="muted">Aproveitamento</div><div class="big" style="color:var(--${pct >= 80 ? "ok" : pct >= 70 ? "warn" : "bad"})">${pct}%</div><div class="muted">${ok} certas de ${done.length}</div></div>
+      ${ce.length ? `<div class="card"><div class="muted">Certo/Errado (nota CEBRASPE)</div><div class="big">${ceOk - ceBad}</div><div class="muted">${ceOk} certas − ${ceBad} erradas, em ${ce.length} itens</div></div>` : `<div class="card"><div class="muted">Respondidas</div><div class="big">${done.length}/${n}</div><div class="muted">${n - done.length} pendentes</div></div>`}
+      <div class="card"><div class="muted">Múltipla escolha</div><div class="big">${mc.length ? Math.round(100 * mcOk / mc.length) : 0}%</div><div class="muted">${mcOk} de ${mc.length}</div></div>
+    </div>
+    <div class="call ${msg[0]}"><b>Diagnóstico</b>${msg[1]}</div>
+    <h3>Desempenho por tema (do mais fraco ao mais forte)</h3>
+    <div class="card">${byT.map(r => `<div class="bar"><span>${esc(r.t)}</span><div class="t"><div class="${r.p === null ? "" : r.p < 70 ? "low" : r.p < 85 ? "mid" : ""}" style="width:${r.p ?? 0}%"></div></div><span>${r.p === null ? "—" : r.p + "%"} <small class="muted">${r.o}/${r.d}</small></span></div>`).join("")}</div>
+    <h3>Questões erradas (${wrong.length})</h3>
+    <div class="card">${wrong.length ? wrong.map(q => `<div style="margin:6px 0"><a href="#" data-n="${q.n}">Q${q.n}</a> · <span class="pill">${esc(q.tema)}</span> <span class="muted">${esc(q.enun.slice(-120).replace(/^\S*\s/, "…"))}</span></div>`).join("") : '<p class="muted">Nenhuma! 🎯</p>'}</div>`;
+  abbrify($("#rendBody"));
+  $("#rendBody").querySelectorAll("a[data-n]").forEach(a => a.onclick = e => {
+    e.preventDefault(); $("#fTema").value = "all"; $("#fStatus").value = "all";
+    cur = QUESTOES.findIndex(q => q.n === +a.dataset.n); showTab("questoes"); renderQ();
+  });
+}
+$("#expBtn").onclick = () => {
+  const blob = new Blob([JSON.stringify(S, null, 1)], {type: "application/json"});
+  const a = document.createElement("a"); a.href = URL.createObjectURL(blob);
+  a.download = `${KEY}_${new Date().toISOString().slice(0, 10)}.json`; a.click();
+};
+$("#impFile").onchange = e => {
+  const f = e.target.files[0]; if (!f) return;
+  f.text().then(t => { S = JSON.parse(t); S.answers ||= {}; S.cards ||= {}; S.draft ||= {}; S.marks ||= {}; save(); renderQ(); renderRend(); hlTudo(); });
+};
+$("#redoBad").onclick = () => {
+  const bad = Object.keys(S.answers).filter(k => !S.answers[k].ok);
+  if (!bad.length) return;
+  bad.forEach(k => delete S.answers[k]); save(); finishedShown = false;
+  $("#fStatus").value = "pend"; cur = -1; showTab("questoes"); renderQ();
+};
+$("#resetAll").onclick = () => { if (confirm("Apagar TODAS as respostas das questões?")){ S.answers = {}; save(); finishedShown = false; renderQ(); renderRend(); } };
+
+/* ---------- marca-texto: selecione um trecho e escolha amarelo, rosa ou verde (salvo em S.marks) ---------- */
+S.marks ||= {};
+const hlBar = $("#hlBar");
+let hlAlvo = null;  /* {root, id} quando o clique foi numa marcação já existente */
+const hlId = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+const hlRaiz = n => (n.nodeType === 1 ? n : n.parentElement)?.closest("[data-hl]");
+function hlTextos(root){
+  const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT), r = [];
+  while (w.nextNode()) r.push(w.currentNode);
+  return r;
+}
+function hlOff(root, node, off){ const r = document.createRange(); r.setStart(root, 0); r.setEnd(node, off); return r.toString().length; }
+/* posições contadas no texto puro do bloco; se o texto mudar, procura o trecho guardado */
+function hlAplicar(root){
+  if (!root) return;
+  root.querySelectorAll("mark.hl").forEach(m => m.replaceWith(...m.childNodes));
+  root.normalize();
+  const full = root.textContent;
+  (S.marks[root.dataset.hl] || []).forEach(m => {
+    if (full.slice(m.s, m.e) !== m.t){ const i = full.indexOf(m.t); if (i < 0) return; m.s = i; m.e = i + m.t.length; }
+    let pos = 0;
+    hlTextos(root).forEach(t => {
+      const a = pos, b = pos + t.length; pos = b;
+      if (b <= m.s || a >= m.e) return;
+      if (!t.nodeValue.trim() && /^(TABLE|TBODY|THEAD|TR|UL|OL|SECTION|DIV|DETAILS)$/.test(t.parentNode.nodeName)) return;
+      let n = t;
+      if (m.e - a < t.length) n.splitText(m.e - a);
+      if (m.s > a) n = n.splitText(m.s - a);
+      const mk = document.createElement("mark");
+      mk.className = "hl hl-" + m.c; mk.dataset.id = m.id;
+      n.replaceWith(mk); mk.append(n);
+    });
+  });
+}
+function hlTudo(){ document.querySelectorAll("[data-hl]").forEach(hlAplicar); }
+function hlSelecao(){
+  const sel = getSelection();
+  if (!sel.rangeCount || sel.isCollapsed) return null;
+  const r = sel.getRangeAt(0), root = hlRaiz(r.startContainer);
+  if (!root || root !== hlRaiz(r.endContainer)) return null;
+  const s = hlOff(root, r.startContainer, r.startOffset), e = hlOff(root, r.endContainer, r.endOffset);
+  return e > s ? {root, s, e, rect: r.getBoundingClientRect()} : null;
+}
+/* tira o trecho [s, e) das marcações existentes (nova cor por cima ou apagar) */
+function hlCortar(lista, s, e, full){
+  const out = [];
+  lista.forEach(m => {
+    if (m.e <= s || m.s >= e) return out.push(m);
+    if (m.s < s) out.push({...m, id: hlId(), e: s, t: full.slice(m.s, s)});
+    if (m.e > e) out.push({...m, id: hlId(), s: e, t: full.slice(e, m.e)});
+  });
+  return out;
+}
+function hlSalvar(root, lista){
+  const k = root.dataset.hl;
+  if (lista.length) S.marks[k] = lista.sort((a, b) => a.s - b.s); else delete S.marks[k];
+  save(); hlAplicar(root);
+}
+function hlMostrar(rect){
+  hlBar.classList.add("on");
+  const w = hlBar.offsetWidth, h = hlBar.offsetHeight;
+  let y = rect.top - h - 8; if (y < 8) y = rect.bottom + 8;
+  hlBar.style.left = Math.min(Math.max(8, rect.left + rect.width / 2 - w / 2), innerWidth - w - 8) + "px";
+  hlBar.style.top = y + "px";
+}
+function hlEsconder(){ hlBar.classList.remove("on"); hlAlvo = null; }
+hlBar.addEventListener("mousedown", e => e.preventDefault());
+hlBar.querySelectorAll("button").forEach(b => b.onclick = () => {
+  const c = b.dataset.c;
+  if (hlAlvo){
+    const {root, id} = hlAlvo, lista = S.marks[root.dataset.hl] || [];
+    hlSalvar(root, c ? lista.map(m => m.id === id ? {...m, c} : m) : lista.filter(m => m.id !== id));
+  } else {
+    const x = hlSelecao(); if (!x) return hlEsconder();
+    const full = x.root.textContent, lista = hlCortar(S.marks[x.root.dataset.hl] || [], x.s, x.e, full);
+    if (c) lista.push({id: hlId(), s: x.s, e: x.e, c, t: full.slice(x.s, x.e)});
+    getSelection().removeAllRanges();
+    hlSalvar(x.root, lista);
+  }
+  hlEsconder();
+});
+function hlChecar(e){
+  if (hlBar.contains(e.target)) return;
+  setTimeout(() => {
+    const x = hlSelecao();
+    if (x){ hlAlvo = null; return hlMostrar(x.rect); }
+    const mk = e.target.closest?.("mark.hl");
+    if (mk && getSelection().isCollapsed){ hlMostrar(mk.getBoundingClientRect()); hlAlvo = {root: hlRaiz(mk), id: mk.dataset.id}; return; }
+    hlEsconder();
+  }, 10);
+}
+document.addEventListener("mouseup", hlChecar);
+document.addEventListener("touchend", hlChecar);
+document.addEventListener("keyup", e => { if (e.shiftKey) hlChecar(e); });
+addEventListener("scroll", hlEsconder, {passive: true});
+$("#hlReset").onclick = () => { if (confirm("Apagar todas as marcações de texto desta página?")){ S.marks = {}; save(); hlTudo(); } };
+document.querySelectorAll("section.tab").forEach(s => { if (!["mapa", "questoes", "flash", "rend"].includes(s.id)) s.dataset.hl = s.id; });
+hlTudo();
+
+/* teclado */
+document.addEventListener("keydown", e => {
+  if (e.target.tagName === "SELECT" || e.ctrlKey || e.metaKey || e.altKey) return;
+  const k = e.key.toLowerCase(), tab = active();
+  if (tab === "questoes"){
+    const q = QUESTOES[cur];
+    if (k === "arrowright") step(1);
+    else if (k === "arrowleft") step(-1);
+    else if (q && !S.answers[q.n]){
+      const v = q.tipo === "ce" ? k.toUpperCase() : k;
+      if (k === "enter"){ e.preventDefault(); submeter(); }
+      else if (opcoes(q).includes(v)){ e.shiftKey ? descartar(v) : escolher(v); }
+    }
+  } else if (tab === "flash"){
+    if (k === " "){ e.preventDefault(); $("#fc").classList.toggle("flip"); }
+    else if (k === "1") grade(0); else if (k === "2") grade(1); else if (k === "3") grade(2);
+  }
+});
+
+renderMapa();
+["#inicio", "#resumo", "#mapa", "#esquemas", "#reforma"].forEach(s => abbrify($(s)));
+cur = 0; renderQ(); buildDeck();
+
+/* ---------- tamanho da fonte (70% a 200%, passo de 10%; salvo para todas as páginas) ---------- */
+function fonte(v){
+  v = Math.min(2, Math.max(0.7, Math.round(v * 10) / 10));
+  document.documentElement.style.setProperty("--fz", v);
+  localStorage.setItem("canedo_fonte", v);
+  $("#fzVal").textContent = Math.round(v * 100) + "%";
+  $("#fzMenos").disabled = v <= 0.7; $("#fzMais").disabled = v >= 2;
+}
+const fzAtual = () => parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--fz")) || 1;
+$("#fzMenos").onclick = () => fonte(fzAtual() - 0.1);
+$("#fzMais").onclick = () => fonte(fzAtual() + 0.1);
+$("#fzVal").onclick = () => fonte(1);
+fonte(fzAtual());
+
+/* ---------- tela cheia: o mesmo botão entra e sai (Esc também sai) ---------- */
+$("#telaCheia").onclick = () => document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen().catch(() => {});
+document.addEventListener("fullscreenchange", () => {
+  const on = !!document.fullscreenElement, b = $("#telaCheia");
+  b.textContent = on ? "✕ Sair da tela cheia" : "⛶ Tela cheia";
+  b.title = b.ariaLabel = on ? "Sair da tela cheia" : "Tela cheia";
+});
+
+/* ---------- menu retrátil no celular: mostra a aba atual e fecha ao escolher outra ---------- */
+function menuRotulo(){
+  const b = $("#nav button.on");
+  $("#menuBtn").textContent = "☰ " + (b ? b.firstChild.textContent.trim() : "Menu");
+}
+$("#menuBtn").onclick = () => {
+  const on = $("header").classList.toggle("menu-on");
+  $("#menuBtn").setAttribute("aria-expanded", on);
+};
+$("#nav").addEventListener("click", e => {
+  if (!e.target.closest("button")) return;
+  $("header").classList.remove("menu-on"); $("#menuBtn").setAttribute("aria-expanded", false); menuRotulo();
+});
+document.addEventListener("click", e => { if (!e.target.closest("header")) menuRotulo(); });
+menuRotulo();
+</script>
+</body>
+</html>

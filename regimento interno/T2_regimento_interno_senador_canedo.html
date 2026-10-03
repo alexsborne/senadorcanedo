@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T2 · Regimento Interno da Câmara Municipal de Senador Canedo</title>
+<style>
+:root{
+  --bg:#f6f7f9;--surface:#fff;--surface2:#f0f2f5;--text:#1d2330;--muted:#5d6676;--line:#dde1e7;
+  --accent:#2f5bd3;--accent-soft:#e7edfc;--ok:#1f8a4c;--ok-soft:#e3f4ea;--bad:#c23a3a;--bad-soft:#fbe7e7;
+  --warn:#a86a00;--warn-soft:#fdf1dc;--shadow:0 1px 3px rgba(0,0,0,.06),0 4px 14px rgba(0,0,0,.04);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#12151b;--surface:#1a1e26;--surface2:#222733;--text:#e6e9ef;--muted:#9aa3b2;--line:#2e3442;
+  --accent:#7b9cff;--accent-soft:#232c45;--ok:#4cc27f;--ok-soft:#1b3326;--bad:#ef7676;--bad-soft:#3a2023;
+  --warn:#f0b54a;--warn-soft:#3a2f1a;--shadow:none;
+}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text)}
+header{background:var(--surface);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.top{display:flex;align-items:center;gap:16px;padding:12px 0 6px;flex-wrap:wrap}
+.badge{background:var(--accent);color:#fff;font-weight:700;border-radius:8px;padding:4px 10px;font-size:14px;letter-spacing:.5px}
+.top h1{font-size:18px;margin:0;font-weight:650}
+.top .sub{color:var(--muted);font-size:13px}
+nav{display:flex;gap:4px;overflow-x:auto;padding-bottom:8px}
+nav button{border:0;background:none;color:var(--muted);font:inherit;font-size:14px;padding:6px 12px;border-radius:8px;cursor:pointer;white-space:nowrap}
+nav button:hover{background:var(--surface2);color:var(--text)}
+nav button.on{background:var(--accent-soft);color:var(--accent);font-weight:600}
+main{padding:24px 0 80px}
+section.tab{display:none}section.tab.on{display:block}
+h2{font-size:22px;margin:0 0 4px}
+h3{font-size:17px;margin:28px 0 10px}
+.lead{color:var(--muted);margin:0 0 20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 20px;box-shadow:var(--shadow);margin-bottom:16px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.call{border-left:4px solid var(--accent);background:var(--accent-soft);padding:10px 14px;border-radius:0 8px 8px 0;margin:12px 0}
+.call.warn{border-color:var(--warn);background:var(--warn-soft)}
+.call.bad{border-color:var(--bad);background:var(--bad-soft)}
+.call.ok{border-color:var(--ok);background:var(--ok-soft)}
+.call b:first-child{display:block;margin-bottom:2px}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+th,td{border-bottom:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--surface2);font-weight:600}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:10px;margin:10px 0}
+.tbl table th:first-child,.tbl table td:first-child{padding-left:14px}
+.k{font-weight:650;color:var(--accent)}
+.muted{color:var(--muted)}
+.pill{display:inline-block;font-size:12px;padding:1px 8px;border-radius:99px;background:var(--surface2);color:var(--muted);border:1px solid var(--line)}
+.pill.ok{background:var(--ok-soft);color:var(--ok);border-color:transparent}
+.pill.bad{background:var(--bad-soft);color:var(--bad);border-color:transparent}
+details{border:1px solid var(--line);border-radius:10px;margin:8px 0;background:var(--surface)}
+details summary{cursor:pointer;padding:10px 14px;font-weight:600}
+details>div{padding:0 14px 12px}
+.btn{border:1px solid var(--line);background:var(--surface);color:var(--text);font:inherit;font-size:14px;padding:8px 14px;border-radius:8px;cursor:pointer}
+.btn:hover{border-color:var(--accent)}
+.btn.pri{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.ok{background:var(--ok);border-color:var(--ok);color:#fff}
+.btn.bad{background:var(--bad);border-color:var(--bad);color:#fff}
+.btn:disabled{opacity:.45;cursor:default}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+select{font:inherit;font-size:14px;padding:7px 10px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--text)}
+
+/* roteiro */
+.steps{counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{counter-increment:s;position:relative;padding:10px 0 10px 46px;border-bottom:1px dashed var(--line)}
+.steps li:last-child{border:0}
+.steps li::before{content:counter(s);position:absolute;left:0;top:10px;width:32px;height:32px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-weight:700;display:grid;place-items:center}
+
+/* mapa mental */
+.mm{padding:22px 16px}
+.mm-root{display:block;max-width:520px;margin:0 auto;text-align:center;background:var(--accent);color:#fff;border-radius:12px;padding:12px 16px;font-size:14px;line-height:1.45}
+.mm-root b{display:block;font-size:17px;letter-spacing:.5px}
+.mm-trunk{width:2px;height:22px;background:var(--line);margin:0 auto}
+.mm-branches{display:grid;grid-template-columns:repeat(var(--n,5),1fr);gap:12px;border-top:2px solid var(--line);padding-top:0}
+.mm-br{display:flex;flex-direction:column;align-items:stretch}
+.mm-br::before{content:"";width:2px;height:18px;background:var(--line);margin:0 auto}
+.mm-h{border:2px solid var(--c);border-radius:10px;padding:8px 10px;text-align:center;font-size:13px;background:var(--surface)}
+.mm-h b{display:block;font-size:14.5px;color:var(--c)}
+.mm-br ul{list-style:none;margin:8px 0 0;padding:0 0 0 12px;border-left:2px solid var(--c)}
+.mm-br li{font-size:13px;line-height:1.4;background:var(--surface2);border-radius:8px;padding:6px 9px;margin:6px 0;position:relative}
+.mm-br li::before{content:"";position:absolute;left:-12px;top:50%;width:10px;border-top:2px solid var(--c)}
+@media(max-width:860px){.mm-branches{grid-template-columns:1fr 1fr;border-top:0}}
+@media(max-width:520px){.mm-branches{grid-template-columns:1fr}}
+
+
+/* abreviações com dica */
+abbr[data-tip]{text-decoration:underline dotted;text-underline-offset:3px;cursor:help}
+#tip{position:fixed;z-index:100;max-width:300px;background:#1d2330;color:#fff;font-size:13px;line-height:1.35;padding:6px 10px;border-radius:7px;box-shadow:0 4px 14px rgba(0,0,0,.25);pointer-events:none;opacity:0;transition:opacity .12s}
+#tip.on{opacity:1}
+@media (prefers-color-scheme:dark){#tip{background:#e6e9ef;color:#12151b}}
+
+/* mapa clicável */
+.mm [data-k]{cursor:pointer;transition:transform .12s,box-shadow .12s}
+.mm [data-k]:hover{transform:translateY(-1px);box-shadow:0 2px 8px rgba(0,0,0,.12)}
+.mm [data-k].sel{outline:3px solid var(--c,var(--accent));outline-offset:2px}
+.mm-root[data-k].sel{outline-color:var(--text)}
+.mm-hint{text-align:center;color:var(--muted);font-size:13px;margin:-4px 0 12px}
+#mmPanel{border-left:6px solid var(--c,var(--accent));scroll-margin-top:140px}
+#mmPanel h4{margin:0 0 4px;font-size:18px;color:var(--c,var(--accent))}
+#mmPanel .mm-sec{margin:12px 0 0}
+#mmPanel .lbl{display:block;font-size:13px;text-transform:uppercase;letter-spacing:.4px;color:var(--muted);margin-bottom:2px}
+#mmPanel .ex{background:var(--ok-soft);border-radius:8px;padding:10px 12px}
+#mmPanel .pg{background:var(--bad-soft);border-radius:8px;padding:10px 12px}
+#mmPanel .nav{display:flex;justify-content:space-between;gap:8px;margin-top:14px}
+
+/* questões */
+.qnav{display:flex;flex-wrap:wrap;gap:5px;margin:10px 0 16px}
+.qnav button{width:34px;height:30px;border-radius:6px;border:1px solid var(--line);background:var(--surface);color:var(--text);font-size:12.5px;cursor:pointer}
+.qnav button.cur{outline:2px solid var(--accent);outline-offset:1px}
+.qnav button.ok{background:var(--ok);color:#fff;border-color:var(--ok)}
+.qnav button.bad{background:var(--bad);color:#fff;border-color:var(--bad)}
+.progress{height:8px;background:var(--surface2);border-radius:99px;overflow:hidden}
+.progress>div{height:100%;background:var(--accent);transition:width .3s}
+.qhead{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:13.5px;margin-bottom:8px}
+.enun{white-space:pre-line;margin-bottom:14px}
+.trecho{white-space:pre-line;margin:0 0 12px;padding:10px 14px;border-left:4px solid var(--accent);background:var(--surface2);border-radius:0 8px 8px 0;font-style:italic}
+.trecho .lbl{display:block;font-style:normal;font-size:12px;text-transform:uppercase;letter-spacing:.4px;color:var(--muted);margin-bottom:2px}
+.opt{display:flex;gap:10px;align-items:flex-start;width:100%;text-align:left;border:1px solid var(--line);background:var(--surface);color:var(--text);font:inherit;font-size:15px;padding:10px 12px;border-radius:10px;margin:6px 0;cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--accent);background:var(--accent-soft)}
+.opt .l{font-weight:700;min-width:22px;text-transform:uppercase}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:var(--ok-soft)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.ce{display:flex;gap:10px}.ce .opt{justify-content:center;font-weight:650}
+.opt{user-select:none;-webkit-user-select:none;position:relative}
+.opt.sel{border-color:var(--accent);background:var(--accent-soft);box-shadow:inset 0 0 0 1px var(--accent)}
+.opt.sel .l::before{content:"● ";color:var(--accent)}
+.opt.desc{opacity:.55;padding-right:92px}
+.opt.desc span{text-decoration:line-through;text-decoration-thickness:2px}
+.ce .opt.desc{text-decoration:line-through;text-decoration-thickness:2px}
+.opt.desc::after{content:"descartada";position:absolute;right:10px;top:8px;font-size:11px;color:var(--muted);text-decoration:none}
+.qact{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:12px}
+.qmsg{font-size:14.5px;padding:8px 12px;border-radius:8px;display:none}
+.qmsg.on{display:block}
+.qmsg.warn{background:var(--warn-soft);color:var(--warn)}
+.qmsg.bad{background:var(--bad-soft);color:var(--bad)}
+.qhint{font-size:12.5px;color:var(--muted);margin:2px 0 6px}
+.coment{margin-top:16px;border-top:1px solid var(--line);padding-top:12px}
+.coment p{margin:6px 0}
+.verdict{font-weight:700;font-size:16px}
+.verdict.ok{color:var(--ok)}.verdict.bad{color:var(--bad)}
+
+/* flashcards */
+.fc{perspective:1200px;max-width:640px;margin:0 auto}
+.fc-inner{position:relative;min-height:240px;transition:transform .45s;transform-style:preserve-3d;cursor:pointer}
+.fc.flip .fc-inner{transform:rotateY(180deg)}
+.fc-face{position:absolute;inset:0;backface-visibility:hidden;border-radius:14px;padding:26px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;border:1px solid var(--line);background:var(--surface);box-shadow:var(--shadow)}
+.fc-face.back{transform:rotateY(180deg);background:var(--accent-soft);text-align:left;align-items:flex-start;font-size:15px}
+.fc-face .q{font-size:19px;font-weight:600}
+.fc-meta{display:flex;justify-content:space-between;max-width:640px;margin:0 auto 8px;color:var(--muted);font-size:13px}
+.boxes{display:flex;gap:6px;justify-content:center;margin:14px 0}
+.boxes span{font-size:12px;padding:3px 9px;border-radius:99px;background:var(--surface2);border:1px solid var(--line)}
+
+/* rendimento */
+.big{font-size:44px;font-weight:750;line-height:1}
+.bar{display:grid;grid-template-columns:200px 1fr 70px;gap:10px;align-items:center;margin:6px 0;font-size:14px}
+.bar .t{height:12px;background:var(--surface2);border-radius:99px;overflow:hidden}
+.bar .t>div{height:100%;background:var(--ok)}
+.bar .t>div.mid{background:var(--warn)}.bar .t>div.low{background:var(--bad)}
+@media(max-width:600px){.bar{grid-template-columns:120px 1fr 56px}}
+kbd{font:12px ui-monospace,monospace;border:1px solid var(--line);border-bottom-width:2px;border-radius:4px;padding:0 5px;background:var(--surface2)}
+.btn kbd{background:rgba(255,255,255,.18);color:inherit;border-color:currentColor}
+/* marca-texto */
+mark.hl{color:#1d2330;border-radius:3px;padding:0 1px;cursor:pointer;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+mark.hl-am{background:#fff176}mark.hl-ro{background:#f9c2dc}mark.hl-ve{background:#b6efc4}
+#hlBar{position:fixed;z-index:120;display:none;gap:6px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:6px 8px;box-shadow:0 6px 20px rgba(0,0,0,.18)}
+#hlBar.on{display:flex}
+#hlBar .lbl{font-size:12px;color:var(--muted);margin-right:2px}
+#hlBar button{width:28px;height:28px;border-radius:50%;border:2px solid var(--line);cursor:pointer;font-size:14px;line-height:1;color:var(--text);background:var(--surface2);padding:0}
+#hlBar button:hover{transform:scale(1.12);border-color:var(--text)}
+#hlBar button[data-c=am]{background:#fff176}#hlBar button[data-c=ro]{background:#f9c2dc}#hlBar button[data-c=ve]{background:#b6efc4}
+/* tamanho da fonte: A− / A+ escalam a página inteira (zoom em header e main; #tip só a fonte, para não deslocar) */
+:root{--fz:1}
+header,main{zoom:var(--fz)}
+#tip{font-size:calc(13px * var(--fz))}
+.fz{display:flex;align-items:center;gap:4px}
+.fz button{border:1px solid var(--line);background:var(--surface);color:var(--text);font:inherit;font-size:14px;font-weight:650;min-width:34px;height:30px;padding:0 8px;border-radius:8px;cursor:pointer}
+.fz button:hover{background:var(--surface2)}
+.fz #fzVal{min-width:52px;font-weight:400;color:var(--muted);font-size:13px}
+/* celular: cabeçalho compacto numa linha e menu retrátil (abas, fonte, tela cheia e índice dentro dele) */
+#menuBtn{display:none}
+@media(max-width:700px){
+  .wrap{padding:0 12px}
+  .top{flex-wrap:nowrap;gap:8px;padding:6px 0}
+  .top>div:not(.fz){min-width:0;flex:1}
+  .top h1{font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .top .sub{display:none}
+  .badge{font-size:12px;padding:2px 7px}
+  #menuBtn{display:inline-block;flex-shrink:0;max-width:46vw;border:1px solid var(--line);background:var(--accent-soft);color:var(--accent);font:inherit;font-size:13px;font-weight:600;padding:5px 10px;border-radius:8px;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .top>a,.top .fz,nav{display:none}
+  header.menu-on .top{flex-wrap:wrap}
+  header.menu-on .top>a{display:block;order:3;width:100%;margin:2px 0 0 !important}
+  header.menu-on .top .fz{display:flex;order:4;width:100%;flex-wrap:wrap}
+  header.menu-on nav{display:flex;flex-direction:column;gap:2px;max-height:60vh;overflow-y:auto}
+  header.menu-on nav button{text-align:left;padding:9px 12px}
+}
+</style>
+<script>
+/* aplica o tamanho salvo antes de desenhar a página; vale para todas as páginas do plano */
+document.documentElement.style.setProperty("--fz", localStorage.getItem("canedo_fonte") || "1");
+</script>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="top">
+      <span class="badge">T2</span>
+      <div>
+        <h1>Tarefa 2 · Regimento Interno da Câmara Municipal de Senador Canedo</h1>
+        <div class="sub">Câmara Municipal de Senador Canedo · Concurso 001/2026 · Regimento Interno (Resolução 4/2020)</div>
+      </div>
+
+      <button id="menuBtn" aria-expanded="false" aria-controls="nav" title="Abrir menu">☰ Menu</button>
+      <a href="../index.html" style="margin-left:auto;font-size:14px;color:var(--accent);text-decoration:none">← Índice das tarefas</a>
+      <div class="fz" role="group" aria-label="Tamanho da fonte">
+        <button id="fzMenos" title="Diminuir fonte" aria-label="Diminuir fonte">A−</button>
+        <button id="fzVal" title="Voltar ao tamanho normal" aria-label="Tamanho normal">100%</button>
+        <button id="fzMais" title="Aumentar fonte" aria-label="Aumentar fonte">A+</button>
+        <button id="telaCheia" title="Tela cheia" aria-label="Tela cheia">⛶ Tela cheia</button>
+      </div>
+    </div>
+    <nav id="nav">
+      <button data-t="inicio" class="on">Roteiro</button>
+      <button data-t="resumo">Resumo</button>
+      <button data-t="mapa">Mapa mental</button>
+      <button data-t="esquemas">Esquemas</button>
+      <button data-t="reforma">Prazos e quóruns</button>
+      <button data-t="questoes">Questões <span class="pill" id="navQ">0/0</span></button>
+      <button data-t="flash">Flashcards</button>
+      <button data-t="rend">Rendimento</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ROTEIRO -->
+<section class="tab on" id="inicio">
+<h2>Roteiro da sessão T2</h2>
+  <p class="lead">Tarefa: <i>"Estudo do Regimento Interno da Câmara Municipal de Senador Canedo, com resolução de questões"</i>. Planeje cerca de 1h30.</p>
+
+  <div class="call warn"><b>Material</b>
+    Esta página usa o <b>Regimento Interno aprovado pela Resolução 4, de 9 de dezembro de 2020</b> (379 artigos), obtido no portal de transparência da Câmara (<code>material/Regimento_Interno_Resolucao_004_2020.pdf</code>).<br>
+    O Portal do Cidadão da Câmara lista também uma <b>Resolução 4/2021</b> (assinada em 17/11/2021) que "revoga e reformula o Regimento Interno", mas <b>sem o texto anexado</b>. Se você conseguir esse texto (pedido ao Serviço de Informação ao Cidadão da Câmara), confira prazos e quóruns antes da prova. A eleição da Mesa ainda é feita "conforme o artigo 9º", como no texto de 2020.
+  </div>
+
+  <div class="call"><b>Por que estudar o Regimento</b>
+    • O edital 001/2026 (banca <b>Consulpam</b>, provas em <b>17 e 18 de outubro de 2026</b>) cobra o <b>Regimento Interno da Câmara Municipal</b> nos Conhecimentos Específicos dos cargos legislativos, ao lado de tramitação de proposições, comissões permanentes e temporárias, emendas, substitutivos e pareceres, sanção, veto e promulgação.<br>
+    • O Cerimonialista também tem "Noções de Regimento Interno".<br>
+    • Questões de múltipla escolha (A a D) e mínimo de <b>50%</b> em cada bloco. Os números (prazos, minutos, quóruns) são o alvo preferido.
+  </div>
+
+  <div class="card">
+    <ol class="steps">
+      <li><b>Pré-teste (5 min).</b> Abra os <b>Flashcards</b> e tente 5 cartões antes de ler.</li>
+      <li><b>Resumo (30 min).</b> Leia a aba <b>Resumo</b>, respondendo aos blocos <i>Pergunte-se</i>.</li>
+      <li><b>Mapa mental e Esquemas (10 min).</b> Clique em cada item do mapa e leia o exemplo.</li>
+      <li><b>Prazos e quóruns (5 min).</b> A tabela de números do Regimento, com as diferenças em relação à Lei Orgânica.</li>
+      <li><b>Questões (35 min).</b> 39 questões. Escolha com um clique, descarte com dois e confirme em <b>Responder</b>; leia sempre o comentário.</li>
+      <li><b>Rendimento (5 min).</b> Anote os temas abaixo de 70% e volte ao Resumo deles.</li>
+    </ol>
+  </div>
+
+  <div class="grid3">
+    <div class="card"><b>Banca</b><br><span class="muted">Consulpam: múltipla escolha com 4 alternativas (A, B, C, D). Não há desconto por erro: nunca deixe em branco.</span></div>
+    <div class="card"><b>Pré-requisito</b><br><span class="muted">Estude antes a T1 (Lei Orgânica). Várias questões exploram as diferenças entre as duas normas.</span></div>
+    <div class="card"><b>Salvamento</b><br><span class="muted">Respostas, flashcards e marcações ficam no navegador. Use <i>Exportar</i> na aba Rendimento para fazer backup.</span></div>
+  </div>
+</section>
+
+<!-- RESUMO -->
+<section class="tab" id="resumo">
+<h2>Resumo: Regimento Interno da Câmara Municipal</h2>
+  <p class="lead">O resumo segue a ordem do Regimento. Os <span class="k">termos em destaque</span> são os que mais caem e os blocos vermelhos marcam as pegadinhas, principalmente as diferenças em relação à Lei Orgânica.</p>
+
+  <h3>1. A Câmara e sua instalação (artigos 1º a 4º)</h3>
+  <div class="card">
+    <ul>
+      <li>A Câmara é o órgão Legislativo do Município, com sede própria. São <b>nulas as sessões fora da sede</b>, exceto as <b>solenes ou comemorativas</b>.</li>
+      <li>Por motivo relevante ou força maior, a Mesa pode reunir a Câmara em outro edifício, <i>ad referendum</i> da maioria absoluta. Atos estranhos à função na sede dependem de autorização da Mesa.</li>
+      <li>A <b>legislatura</b> tem <b>4 sessões legislativas</b>, de 15 de fevereiro a 30 de junho e de 1º de agosto a 15 de dezembro.</li>
+      <li><b>Instalação</b>: 1º de janeiro, <span class="k">às nove horas</span>, em sessão solene, independentemente de número, presidida pelo <b>Vereador mais idoso</b>. Compromisso lido e ratificado por cada Vereador, de pé: "Assim o prometo".</li>
+      <li>Em seguida, com maioria absoluta, elege-se a Mesa das <b>duas primeiras sessões legislativas</b>, começando pelo Presidente ou por chapa completa. Sem quórum, o mais idoso convoca sessões diárias até a eleição.</li>
+    </ul>
+  </div>
+
+  <h3>2. Mesa, Presidente e Secretários (artigos 5º a 37)</h3>
+  <div class="card">
+    <ul>
+      <li><b>Composição</b>: Presidente, 1º, 2º e 3º Vice-Presidentes e 1º, 2º, 3º e <span class="k">4º Secretários</span> (8 membros), com <span class="k">mandato de 2 anos</span>.</li>
+      <li>Funções cessam por morte, posse da nova Mesa, renúncia escrita, destituição ou perda do mandato.</li>
+      <li>Vaga: eleição no Expediente da primeira sessão seguinte. Vaga a Presidência, assumem interinamente, nesta ordem: 1º, 2º e 3º Vice; 1º, 2º, 3º e 4º Secretários; o Vereador mais idoso.</li>
+      <li>O Presidente <b>não integra Comissão Permanente</b> (pode integrar Temporária).</li>
+      <li><b>Eleição de renovação</b>: na <span class="k">terceira sessão ordinária de março do último ano</span> do mandato da Mesa; posse em <b>1º de janeiro</b> seguinte. <b>Uma reeleição</b> para o mesmo cargo na mesma legislatura; eleição em legislaturas diferentes não é recondução.</li>
+      <li>Eleição por <b>maioria simples</b>, cargo a cargo ou chapa completa, em <b>voto secreto</b> com cédula. Empate: o <b>mais idoso</b>; persistindo, <b>sorteio</b>.</li>
+      <li><b>Mesa</b>: convoca sessões extraordinárias; propõe privativamente projetos sobre cargos da Câmara e sobre a remuneração do Prefeito, Vice, Secretários e Vereadores; declara a perda do mandato nos casos legais; instala a Tribuna Popular; administra a Câmara, nomeia e pune servidores, abre sindicâncias; devolve o saldo de caixa ao Executivo no fim do exercício; envia as contas mensais ao TCM. Delibera por maioria, presente a maioria absoluta. Contratos são assinados <b>exclusivamente pelo Presidente</b>.</li>
+      <li><b>Presidente</b>: representa a Câmara; abre, preside, suspende e encerra sessões; resolve questões de ordem e firma precedentes; organiza a Ordem do Dia; dá posse a Vereadores e suplentes; promulga resoluções, decretos legislativos e leis com sanção tácita; expede certidões em <b>15 dias</b>; apresenta, na última sessão do ano, a resenha dos trabalhos. Para sair do Município <b>por mais de 15 dias</b>, licencia-se. Sua presença conta para o quórum e ele não pode ser aparteado.</li>
+      <li>Ninguém preside a sessão durante a discussão e votação de matéria <b>de sua autoria</b> (exceto proposições da Mesa ou de Comissões). Para discutir, o Presidente deixa a presidência.</li>
+      <li><b>1º Secretário</b>: chamada, leitura de papéis, correspondência, folhas de presença, secretariar a Mesa. <b>2º Secretário</b>: redige as atas e anota as decisões do Plenário.</li>
+      <li><b>Contas da Mesa</b>: balancetes mensais apresentados pelo Presidente até o <b>dia 20</b> do mês seguinte e publicados no portal da transparência.</li>
+    </ul>
+    <div class="call bad"><b>Pegadinha</b>Lei Orgânica: Mesa com <b>três</b> Secretários. Regimento: <b>quatro</b> Secretários e mandato de <b>2 anos</b>. O enunciado manda: "segundo o Regimento" = 8 membros.</div>
+  </div>
+  <div class="card">
+    <b>Renúncia e destituição de membro da Mesa</b>
+    <ul>
+      <li>Renúncia por ofício, efetiva quando <b>lida em sessão</b>, sem deliberação do Plenário.</li>
+      <li>Perde automaticamente o cargo quem faltar a <span class="k">5 reuniões consecutivas ou 10 alternadas</span> da Mesa sem justificativa.</li>
+      <li>Destituição por exorbitar, negligenciar ou se omitir: representação subscrita pela <b>maioria absoluta</b>; <b>3 Vereadores sorteados</b> formam a Comissão Processante, que se reúne em 48 horas; notificação em 3 dias; <b>defesa prévia em 10 dias</b>; parecer em no máximo <b>20 dias</b>.</li>
+      <li>Parecer pela improcedência: maioria simples (aprovado, arquiva; rejeitado, vai à Comissão de Constituição e Justiça, que em 3 dias propõe a destituição). Projeto de resolução de destituição: <span class="k">dois terços</span>.</li>
+      <li>Cada Vereador fala <b>15 minutos</b>; relator e acusado, <b>120 minutos</b>, sem cessão de tempo. O acusado não preside, não secretaria e não vota.</li>
+    </ul>
+  </div>
+  <details><summary>Pergunte-se</summary>
+    <p>Quando é a eleição para renovar a Mesa e quando os eleitos tomam posse?<br><i>Na terceira sessão ordinária de março do último ano do mandato; posse em 1º de janeiro do ano seguinte.</i></p>
+  </details>
+
+  <h3>3. Comissões (artigos 38 a 100)</h3>
+  <div class="card">
+    <ul>
+      <li><b>Permanentes</b> (técnico-legislativas) e <b>Temporárias</b> (assunto específico; extinguem-se ao atingir o fim ou ao vencer o prazo).</li>
+      <li><span class="k">6 Comissões Permanentes, com 3 membros cada</span>: Constituição, Justiça e Redação; Finanças e Orçamento; Política Urbana e Meio Ambiente; Trânsito, Transporte, Atividade Econômica, Turismo e Lazer; Educação, Cultura e Esportes; Saúde, Promoção Social, Trabalho, Criança e Adolescente, Idoso e Mulher.</li>
+      <li><b>Comissões Extraordinárias Permanentes</b>: Direitos Humanos, Cidadania e Segurança Pública (5 membros); Defesa dos Direitos da Criança, do Adolescente e da Juventude (5); do Idoso e de Assistência Social (3); de Meio Ambiente (3). Não contam para a proporcionalidade do artigo 40.</li>
+      <li>Membros indicados pelas bancadas, com <b>proporcionalidade partidária</b>, e nomeados pela Presidência. Suplentes <b>não podem</b> presidir nem ser vice-presidentes de comissão. Presidente e Vice de cada comissão são eleitos pelos membros; empate, <b>sorteio</b>.</li>
+      <li>Destituição do membro que faltar a <b>5 reuniões ordinárias consecutivas ou 10 intercaladas</b>; não pode integrar outra Permanente até o fim da sessão legislativa.</li>
+      <li><b>Comissão de Constituição, Justiça e Redação</b>: aspecto constitucional, legal e regimental; nenhuma proposição tramita sem seu parecer. <b>Finanças e Orçamento</b>: PPA, LDO, LOA, créditos, contas do Prefeito, tributos. Comissão não opina fora de sua atribuição.</li>
+      <li>Reuniões ordinárias <b>uma vez por semana</b>; extraordinárias pelo Presidente ou pela maioria. No recesso, só extraordinárias para assunto relevante e inadiável. Reuniões <b>públicas</b>, salvo deliberação da maioria.</li>
+      <li><b>Prazo do parecer</b>: <span class="k">30 dias</span>, prorrogável por mais <b>2 dias</b>; relator designado em <b>24 horas</b>; vista de <b>24 horas</b>. Urgência do Prefeito: <b>15 dias</b> por comissão, sem prorrogação. Pedido de informações ao Executivo suspende o prazo por até 30 dias. O recesso suspende os prazos.</li>
+      <li>Vencidos os prazos, o projeto pode ir à Ordem do Dia <b>com ou sem parecer</b>.</li>
+      <li>Distribuída a várias comissões: ouve-se <b>primeiro a de Constituição e Justiça</b> e <b>por último a de Finanças</b>.</li>
+      <li><b>Parecer</b>: exposição da matéria, conclusão do relator e decisão da comissão. Assinatura simples = concordância; "com restrições" ou "pelas conclusões" = favorável. Voto em separado pode ser pelas conclusões, aditivo ou contrário.</li>
+      <li>Parecer da Comissão de Constituição e Justiça pela <b>inconstitucionalidade ou ilegalidade</b>: proposição tida como <b>rejeitada</b>, com recurso do autor ao Plenário em <b>30 dias</b>. Parecer contrário de mérito de <b>todas</b> as comissões: projeto rejeitado.</li>
+      <li><b>Votação conclusiva nas comissões</b>: possível, exceto projetos de iniciativa popular, de comissão, em urgência e das matérias do artigo 105. Cabe recurso ao Plenário em 5 sessões ordinárias.</li>
+      <li><b>Audiências públicas</b>: uso e parcelamento do solo; outros projetos, se requeridas por <span class="k">0,1% dos eleitores</span>; assuntos de interesse público; iniciativa popular. Expositor fala 20 minutos; Vereadores interpelam por 3 minutos.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <b>Comissões Temporárias</b>
+    <ul>
+      <li>São três: <b>Parlamentar de Inquérito</b>, <b>de Representação</b> e <b>de Estudos</b>. Comissões Especiais só nos casos expressos.</li>
+      <li><b>CPI</b>: requerimento de <span class="k">um terço</span>, fato determinado e prazo certo; poderes de investigação próprios das autoridades judiciais; conclusões ao <b>Ministério Público</b>. Até <b>5 CPIs</b>: 2 concomitantes e 3 excepcionais com aprovação da maioria absoluta. Prazo de <span class="k">120 dias</span>, prorrogável <b>uma vez</b> por igual período. Não instalada em <b>15 dias</b>, extingue-se. Presidente: o <b>primeiro signatário</b>. Relatório em 15 dias após a conclusão. Pode funcionar no recesso.</li>
+      <li><b>Comissão de Representação</b>: representa a Câmara em atos externos; criada pela Mesa, pelo Presidente ou por requerimento da maioria absoluta, sem deliberação do Plenário.</li>
+      <li><b>Comissão de Estudos</b>: aprovada pela <b>maioria absoluta</b>, quando pelo menos duas Permanentes devam opinar; funciona por <b>60 dias</b>, prorrogáveis uma vez por até 60.</li>
+    </ul>
+    <div class="call bad"><b>Pegadinha</b>A Lei Orgânica chama de "Comissão Especial de Inquérito", criada a requerimento de um terço e <b>aprovada por maioria simples</b>. O Regimento chama de Comissão Parlamentar de Inquérito, criada mediante requerimento de um terço. O relatório final de CPI é votado por <b>maioria absoluta</b> (artigo 103).</div>
+  </div>
+
+  <h3>4. Plenário e quóruns (artigos 101 a 105)</h3>
+  <div class="card">
+    <ul>
+      <li>O <b>Plenário</b> é o órgão deliberativo e soberano, formado pelos Vereadores em exercício.</li>
+      <li><b>Maioria simples</b>: maior resultado entre os presentes. <b>Absoluta</b>: mais da metade dos membros. <b>Qualificada</b>: <b>dois terços</b> ou mais dos membros.</li>
+      <li>Qualquer deliberação exige a <span class="k">presença da maioria absoluta</span>.</li>
+      <li><b>Qualificada</b>: emenda à Lei Orgânica; cassação de agente político; destituição de membro da Mesa; rejeição do parecer prévio do TCM.</li>
+      <li><b>Absoluta</b>: Plano Diretor, Código Tributário, Código de Obras, Código de Posturas, Lei de Parcelamento e Uso do Solo, Regime Jurídico dos Servidores, <b>relatório final de CPI</b> e <b>rejeição de veto</b>.</li>
+      <li><b>Simples</b>: demais projetos de lei, resoluções e proposições.</li>
+      <li><span class="k">Voto sempre aberto</span>, salvo na eleição da Mesa e de seus substitutos.</li>
+      <li>Atribuições do Plenário (artigo 105): eleger e destituir a Mesa; reformar o Regimento; fixar subsídios (dos Vereadores, para a legislatura seguinte); autorizar o Prefeito a sair por mais de 15 dias; criar CPI; julgar as contas e o Prefeito; sustar atos normativos do Executivo que exorbitem o poder regulamentar; orçamento; concessões; títulos honoríficos.</li>
+    </ul>
+  </div>
+
+  <h3>5. Vereadores (artigos 106 a 131)</h3>
+  <div class="card">
+    <ul>
+      <li>Posse na sessão de instalação; declaração de bens na posse e no fim, publicada em até <b>30 dias</b>; quem não tomar posse tem <b>10 dias</b>.</li>
+      <li><b>Inviolabilidade</b> por opiniões, palavras e votos, no mandato e na circunscrição do Município. Servidor eleito pode se afastar e optar pela remuneração; o tempo conta para tudo, <b>exceto promoção por merecimento</b>.</li>
+      <li><b>Deveres</b>: residir no Município; comparecer às sessões; votar, salvo interesse próprio ou de parente até o <b>3º grau</b> (nulidade se o voto for decisivo); comparecer às comissões.</li>
+      <li><b>Faltas justificadas</b>: doença, licença-gestante ou paternidade e missão oficial da Câmara. Cada falta injustificada desconta <span class="k">1/20</span> da remuneração.</li>
+      <li><b>Licenças</b>: doença; gestante ou paternidade; missão temporária de interesse do Município; interesses particulares (até <b>120 dias por sessão legislativa</b>). Doença, gestante e interesse particular: por <b>comunicação</b> ao Presidente; missão: por <b>requerimento votado</b> pelo Plenário. Só nas licenças por missão e interesse particular o Vereador pode reassumir antes do fim. São remuneradas as de doença, gestante/paternidade e missão.</li>
+      <li>Licenciado automaticamente: investido como Ministro, Secretário de Estado, <b>Secretário Municipal</b> ou chefe de missão diplomática temporária.</li>
+      <li><b>Suplente</b>: convocado em vaga por morte ou renúncia, na investidura do artigo 115, na licença não remunerada e no afastamento judicial <b>superior a 90 dias</b>; posse em <span class="k">10 dias</span>. Sem suplente, aviso ao TRE em 48 horas.</li>
+      <li><b>Líderes</b>: um Vice-Líder para cada 3 Vereadores da bancada. Encaminham a votação por até <b>1 minuto</b> (prerrogativa do artigo 120), registram candidatos à Mesa e indicam membros das comissões. O Prefeito pode indicar Líder e Vice-Líder do Governo.</li>
+      <li><b>Remuneração</b>: a Mesa propõe os subsídios; o Presidente pode receber indenização de até <b>50%</b> dos subsídios.</li>
+      <li><b>Perda do mandato</b> (artigo 125): proibições da Lei Orgânica e quebra de decoro são decididas pela Câmara por <b>dois terços</b>, após acolhida a acusação pela maioria absoluta; faltas, direitos políticos e Justiça Eleitoral são <b>declarados pela Mesa</b>. É quebra de decoro, entre outros: ofender colegas, incitar a galeria, <b>publicar em rede social incitações e acusações infundadas contra a Câmara ou a Mesa</b>, dificultar acesso a informação, desrespeitar a autoria de proposições.</li>
+      <li><b>Extinção</b>: falecimento ou renúncia escrita (irretratável depois de lida em Plenário); não tomar posse em 10 dias; residência fora do Município sem autorização da Mesa.</li>
+      <li><b>Cassação</b>: denúncia de qualquer eleitor ou ato da Mesa; recebida pela maioria absoluta; arquivada se não concluída em <span class="k">90 dias</span>. Vereador denunciante não vota nem integra a Comissão Processante.</li>
+    </ul>
+    <div class="call bad"><b>Pegadinhas</b>• Suplente: <b>10 dias</b> no Regimento × 15 na Lei Orgânica.<br>• Afastamento judicial: <b>mais de 90 dias</b> no Regimento × 120 na Lei Orgânica.<br>• Desconto por falta: <b>1/20</b> por falta no Regimento × redução de 50% por faltar a um terço das sessões do mês na Lei Orgânica.</div>
+  </div>
+
+  <h3>6. Sessões (artigos 132 a 210)</h3>
+  <div class="card">
+    <ul>
+      <li><b>Espécies</b>: ordinárias, extraordinárias, solenes, permanentes e <b>itinerantes</b> (estas convocadas pela Mesa, no máximo <b>4 por período legislativo</b>, fora da sede). Também há sessões secretas e a Tribuna Popular.</li>
+      <li>Públicas, salvo deliberação de <b>dois terços</b>. Se a Mesa não estiver presente, abre a sessão o Vereador mais idoso.</li>
+      <li>Ordinárias e extraordinárias duram <b>3 horas</b>; ordinárias abrem com a <b>maioria dos membros</b>; nova chamada em 15 minutos; sem quórum, não há sessão. Abertura: "Sob a proteção de Deus, declaro aberta a presente sessão".</li>
+      <li>Traje: paletó e gravata para homens e traje social para mulheres; um assessor por 3 membros da bancada.</li>
+      <li><b>Prorrogação</b>: requerimento escrito, votação nominal, entre <b>1 e 3 horas</b> (frações de 30 minutos), apresentado até 20 minutos antes do fim. Nenhuma sessão passa da meia-noite, salvo a solene.</li>
+      <li><b>Encerramento antecipado</b>: falta de quórum; luto ou calamidade (deliberação do Plenário); tumulto grave; pauta esgotada.</li>
+      <li><b>Ata</b>: votada na sessão seguinte; cada Vereador fala uma vez, até 5 minutos (o artigo 306 fixa 3 minutos para retificar ou impugnar), sem apartes.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <b>Sessão ordinária</b>
+    <ul>
+      <li><span class="k">6 por mês</span>, de <b>3 horas</b>, na <b>segunda e quarta semanas</b>, às <b>terças, quartas e quintas</b>, às <b>9 horas</b> (fevereiro e dezembro: dias definidos pela Mesa). Não há sessão em janeiro e julho (recesso), em feriados e pontos facultativos.</li>
+      <li>A sessão legislativa não é encerrada sem aprovar a <b>LDO e o orçamento</b>.</li>
+    </ul>
+    <div class="tbl"><table>
+      <tr><th>Fase</th><th>Duração</th><th>Uso da palavra</th></tr>
+      <tr><td>1. Pequeno Expediente</td><td>até 30 min</td><td>5 min por orador, assunto livre, <b>sem apartes</b> e sem cessão de tempo; rodízio alfabético</td></tr>
+      <tr><td>2. Grande Expediente</td><td>até 60 min</td><td>15 min por orador, assunto livre, <b>com apartes</b>; cessão de tempo permitida</td></tr>
+      <tr><td>3. Prolongamento do Expediente</td><td>até 30 min</td><td>Leitura de correspondência e projetos; requerimentos de urgência, convocação de Secretário, Comissão Temporária e providências; moções</td></tr>
+      <tr><td>4. Ordem do Dia</td><td>1 hora (+ sobra)</td><td>Discussão e votação da pauta</td></tr>
+      <tr><td>5. Explicação Pessoal</td><td>tempo restante</td><td>5 min, sem apartes, com <b>um terço</b> presente; não há prorrogação para ela</td></tr>
+    </table></div>
+    <ul>
+      <li>Requerimentos de urgência, convocação de Secretário e providências: subscritos por <b>um quarto</b>; Comissão Temporária: <b>um terço</b>; providências a autoridades: só o autor.</li>
+      <li><b>Ordem do Dia</b> (artigo 171): vetos; contas; projetos do Executivo em urgência; redação final ou reabertura; segunda discussão; primeira discussão; discussão única. Dentro de cada fase: emendas à Lei Orgânica, projetos de lei, de resolução e de decreto legislativo.</li>
+      <li>A pauta só é alterada para licença ou posse de Vereador, urgência, inversão ou retirada de proposição.</li>
+      <li>Retirada de proposição da Ordem do Dia: pelo autor, se o parecer de constitucionalidade for contrário ou não houver parecer de mérito favorável; com parecer favorável de mérito, depende do Plenário.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <b>Outras sessões</b>
+    <ul>
+      <li><b>Extraordinárias</b>: convocadas pela <b>Mesa</b>, por <b>um terço</b> dos membros ou pelo <b>Prefeito</b> (matéria urgente); antecedência mínima de <span class="k">24 horas</span>, salvo extrema urgência; abrem com <b>um terço</b>; só têm <b>Ordem do Dia</b>, sem matéria estranha. Podem ocorrer em domingos e feriados.</li>
+      <li><b>Solenes</b>: convocadas pelo Presidente, de ofício ou a requerimento de um terço.</li>
+      <li><b>Secretas</b>: requerimento de <span class="k">dois terços</span>, deferido de plano; abrem com um terço; só Vereadores no recinto; ata lacrada.</li>
+      <li><b>Permanentes</b>: pela Mesa ou requerimento da <b>maioria absoluta</b>; sem hora para terminar; nenhuma outra sessão enquanto durar (salvo extraordinária para matéria com prazo fatal).</li>
+      <li><b>Tribuna Popular</b>: a critério da Mesa, na <b>segunda semana</b> do mês, em sessão extraordinária de até 30 minutos após a ordinária, com pelo menos <b>5 representantes</b> inscritos. Entidade com <b>1 ano</b> de existência e sede na cidade, ou movimento apresentado por <b>200 cidadãos</b>; cada orador fala <b>15 minutos</b>, com apartes; a mesma entidade, no máximo <b>a cada 3 meses</b>.</li>
+      <li><b>Fase especial (recesso)</b>: convocação pelo <b>Prefeito</b> ou pela <b>maioria absoluta</b> dos Vereadores; sessões começam em no mínimo 24 horas; só a matéria convocada.</li>
+    </ul>
+  </div>
+
+  <h3>7. Proposições (artigos 211 a 275)</h3>
+  <div class="card">
+    <ul>
+      <li><b>Espécies</b>: indicações, requerimentos, moções, projetos de emenda à Lei Orgânica, de lei, de decreto legislativo e de resolução, substitutivos e emendas.</li>
+      <li>São <b>devolvidas ao autor</b>, com fundamentação escrita do Presidente: as manifestamente antirregimentais, ilegais ou inconstitucionais; emendas impertinentes; matéria rejeitada ou vetada (com veto mantido) fora do prazo; repetições. Cabe recurso ao Plenário.</li>
+      <li>Autor é o <b>primeiro signatário</b>; as demais assinaturas são de apoio e não podem ser retiradas depois da entrega.</li>
+      <li>Projeto de lei da Câmara rejeitado só volta em outra sessão legislativa, salvo reapresentado pela <b>maioria absoluta</b>.</li>
+      <li><b>Indicação</b>: o Vereador sugere medidas de interesse público aos poderes competentes; despachada pelo Presidente, sem votação.</li>
+      <li><b>Requerimento</b>: dirigido ao Presidente ou à Mesa. Não admite emenda, só substitutivo. Alguns são despachados de plano (verificação de presença, retificação de ata, juntada de documentos, voto de pesar, convocação de sessões especiais); outros vão ao Plenário sem discussão (urgência, adiamento, preferência, prorrogação, inversão de pauta); outros são escritos e discutidos (licença do Prefeito, convocação de Secretário, Comissão Temporária).</li>
+      <li><b>Moção</b>: manifestação da Câmara (reivindicar, solidarizar, protestar, repudiar); no máximo <b>5 por Vereador por mês</b>; lida no Prolongamento e votada na sessão seguinte; sem emendas.</li>
+      <li><b>Emenda à Lei Orgânica</b>: subscrição de <b>um terço</b> quando a iniciativa for de Vereador, Mesa ou Comissão; promulgada pela <b>Mesa</b>; cidadãos com 5% do eleitorado.</li>
+      <li><b>Projeto de lei</b>: iniciativa da Mesa, do Prefeito, do Vereador, das Comissões Permanentes e dos cidadãos (5% do eleitorado); vai à sanção.</li>
+      <li><b>Decreto legislativo</b>: matéria que excede a economia interna, sem sanção, promulgado pelo Presidente (ex.: <b>título de cidadão honorário</b>). <b>Resolução</b>: matéria político-administrativa da Câmara: economia interna, <b>perda de mandato de Vereador</b>, <b>destituição da Mesa</b> e <b>Regimento Interno</b>.</li>
+      <li><b>Tramitação</b>: projeto passa por <b>duas discussões e votações</b> (além da redação final); <b>resoluções e decretos legislativos</b> têm discussão e votação únicas. Primeira discussão: <b>10 minutos</b> por Vereador; segunda: <b>5 minutos</b>. Substitutivos votados antes do projeto (na ordem inversa da apresentação; o de comissão tem preferência). Emendas votadas uma a uma, em ordem direta, com preferência para as de comissão.</li>
+      <li><b>Urgência do Prefeito</b>: se a Câmara não deliberar em <span class="k">30 dias</span>, o projeto tranca a pauta; prazo não corre no recesso nem vale para códigos. Resultado comunicado ao Prefeito em 48 horas.</li>
+      <li>Criar cargos na Câmara: <b>maioria absoluta</b>.</li>
+      <li><b>Redação final</b>: fica sobre a Mesa na sessão seguinte para receber emendas de redação; sem emendas, está aprovada.</li>
+      <li><b>Substitutivo</b>: só em parecer de comissão ou, em Plenário, subscrito por <b>um terço</b>; aprovado, prejudica os demais e o projeto. Emendas rejeitadas não podem ser reapresentadas.</li>
+      <li><b>Arquivamento</b>: no início de cada legislatura, arquivam-se as proposições não aprovadas em pelo menos uma discussão, <b>exceto as do Executivo</b>; o Líder pode pedir o desarquivamento.</li>
+    </ul>
+    <div class="call bad"><b>Pegadinha</b>Urgência do Prefeito: <b>30 dias</b> no Regimento (artigo 245) × 45 dias na Lei Orgânica (artigo 28).</div>
+  </div>
+
+  <h3>8. Debates e votação (artigos 276 a 314)</h3>
+  <div class="card">
+    <ul>
+      <li>Inscrição de próprio punho, a favor ou contra, com <b>alternância</b>. Ordem: autor, relatores, autor de voto vencido, signatários de substitutivos.</li>
+      <li><b>Aparte</b>: interrupção consentida, até <span class="k">2 minutos</span>. Proibido: ao Presidente; paralelo ou cruzado; durante encaminhamento, declaração de voto, ata ou explicação pessoal; no <b>Pequeno Expediente</b> e no <b>Prolongamento do Expediente</b>.</li>
+      <li><b>Encerramento da discussão</b>: falta de oradores; disposição legal; requerimento de <b>um terço</b>, só depois de <b>30 minutos</b> de discussão. Rejeitado, só volta depois de mais 4 oradores.</li>
+      <li>O Vereador vota a favor, contra ou se abstém; impedido, comunica e <b>conta para o quórum</b>. O Presidente vota na eleição da Mesa, nas votações secretas, quando o quórum exigido for superior à maioria simples e no empate.</li>
+      <li><b>Encaminhamento de votação</b>: um orador por bancada, <b>5 minutos</b>, sem apartes.</li>
+      <li><b>Processos de votação</b>: simbólico, nominal por chamada e secreto. <b>Nominal obrigatória</b>: destituição da Mesa; parecer do TCM; prorrogação de sessão; convocação de Secretário; urgência; zoneamento urbano; Plano Diretor; emenda à Lei Orgânica. Uma única verificação nominal por votação.</li>
+      <li><b>Questão de ordem</b>: 5 minutos, sem apartes; não cabe no Pequeno Expediente, com orador na tribuna, durante votação.</li>
+      <li><b>Recurso</b> contra decisão do Presidente: por escrito em <b>2 dias úteis</b>; Presidente decide em 2 dias úteis; Comissão de Constituição e Justiça opina em 2 dias úteis; Plenário vota na sessão seguinte. Até lá, vale a decisão do Presidente.</li>
+      <li><b>Precedentes regimentais</b>: casos omissos decididos pelo Presidente; a Mesa os consolida ao fim de cada sessão legislativa.</li>
+    </ul>
+  </div>
+
+  <h3>9. Iniciativa popular, orçamento, honrarias, veto, Prefeito e reforma (artigos 315 a 379)</h3>
+  <div class="card">
+    <ul>
+      <li><b>Iniciativa popular</b>: tramitação especial e urgente; projeto de lei, emenda à Lei Orgânica, plebiscito ou referendo com <b>5% do eleitorado</b>. Listas organizadas por uma entidade com sede na cidade ou por <b>30 cidadãos</b> responsáveis. Conferência em 5 dias úteis; relatores sorteados com 7 dias; audiência pública 7 dias depois (defesa oral de 15 minutos, prorrogáveis por mais 15); comissões deliberam em 7 dias.</li>
+      <li><b>Orçamento</b>: LDO chega até <b>15 de abril</b>; PPA e LOA até <b>31 de agosto</b>; vão direto à Comissão de Finanças. Na primeira discussão, não há emendas; depois, o projeto fica sobre a Mesa por <b>duas sessões</b> para emendas subscritas por <b>um terço</b>. Sessão com projeto orçamentário só tem Pequeno Expediente e Ordem do Dia. Não se encerra a sessão legislativa sem votar a LOA.</li>
+      <li><b>Títulos honoríficos</b>: decreto legislativo em votação única, por <b>dois terços</b>; projeto subscrito por <b>um terço</b>, com biografia e anuência do homenageado; vedado a quem exerce cargo executivo, eletivo ou por nomeação (salvo estrangeiros mundialmente consagrados); cada Vereador é primeiro signatário no máximo <b>8 vezes por legislatura</b>; entrega em sessão solene.</li>
+      <li><b>Sanção e veto</b>: projeto enviado ao Prefeito em <b>10 dias úteis</b>; silêncio por <b>15 dias úteis</b> = sanção; veto em 15 dias úteis, razões em 48 horas. Câmara delibera em <b>30 dias</b> (o recesso interrompe o prazo); comissão tem <b>10 dias</b> para o parecer (15 se conjunto); discussão e votação únicas, 15 minutos por Vereador; rejeição por <b>maioria absoluta</b>. Rejeitado, o projeto vai ao Prefeito em 5 dias úteis para promulgar em 48 horas; se não o fizer, o Presidente e, depois, os demais membros da Mesa.</li>
+      <li>Emendas à Lei Orgânica (pela Mesa), decretos legislativos e resoluções (pelo Presidente) são promulgados em até <b>10 dias</b>.</li>
+      <li><b>Prefeito</b> pode comparecer para esclarecimentos (assento à direita do Presidente). <b>Secretário</b> convocado por requerimento de qualquer Vereador, aprovado pelo Plenário, comparece em até <b>15 dias</b>; Vereadores interpelam por 5 minutos e ele responde em 10.</li>
+      <li><b>Contas do Prefeito</b>: parecer prévio do TCM à Comissão de Finanças; 15 minutos por Vereador; só deixa de prevalecer por <b>dois terços</b>; rejeitadas, vão ao Ministério Público; ficam 60 dias à disposição dos contribuintes.</li>
+      <li>Crimes comuns e de responsabilidade do Prefeito: <b>Tribunal de Justiça</b>. Infrações político-administrativas: <b>Câmara</b>, pelo Decreto-Lei 201/1967.</li>
+      <li><b>Reforma do Regimento</b>: só por <b>resolução</b>, proposta por <b>um terço</b> dos membros, pela <b>Mesa</b> ou por <b>Comissão Especial</b>.</li>
+      <li><b>Calendário oficial</b>: 8 de março (Dia da Mulher), 28 de outubro (Dia do Servidor Público) e 20 de novembro (Dia da Consciência Negra).</li>
+    </ul>
+  </div>
+</section>
+
+<!-- MAPA -->
+<section class="tab" id="mapa">
+  <h2>Mapa mental: Regimento Interno da Câmara</h2>
+  <p class="lead">Leia de cima para baixo e explore cada item. Depois feche a página e tente redesenhar o mapa de memória.</p>
+  <p class="mm-hint">👆 Clique em qualquer item do mapa para ver a explicação detalhada, com exemplo, no painel logo abaixo.</p>
+  <div class="card mm" id="mmBox"></div>
+  <div class="card" id="mmPanel"><p class="muted" style="margin:0">Nenhum item selecionado. Clique no centro do mapa para começar.</p></div>
+
+  <h3>Onde este tema se encaixa no edital</h3>
+  <div class="card">
+    <div class="grid3" style="font-size:14px">
+      <div><b class="k">Legislação do Legislativo</b><br>Lei Orgânica Municipal (tarefa T1)<br>Regimento Interno da Câmara ← <i>você está aqui</i></div>
+      <div><b class="k">Processo legislativo</b><br>Iniciativa das leis ← <i>você está aqui</i><br>Tramitação de proposições ← <i>você está aqui</i><br>Sanção, veto e promulgação ← <i>você está aqui</i></div>
+      <div><b class="k">Comissões</b><br>Permanentes e temporárias ← <i>você está aqui</i><br>Emendas, substitutivos e pareceres ← <i>você está aqui</i></div>
+      <div><b class="k">Controle</b><br>Fiscalização e controle do Poder Executivo pelo Legislativo<br>Contas e Tribunal de Contas dos Municípios</div>
+      <div><b class="k">Direito Constitucional</b><br>Processo legislativo: espécies normativas<br>Competência legislativa dos Municípios</div>
+      <div><b class="k">Cerimonial</b><br>Sessões solenes e títulos honoríficos<br>Calendário oficial da Câmara</div>
+    </div>
+    <p class="muted small" style="margin:10px 0 0">Blocos do edital 001/2026 da Câmara Municipal de Senador Canedo, para orientar o estudo. Confira no Anexo III o conteúdo exato do seu cargo.</p>
+  </div>
+</section>
+
+<!-- ESQUEMAS -->
+<section class="tab" id="esquemas">
+<h2>Esquemas comparativos</h2>
+  <p class="lead">Tabelas para revisão rápida. Você deve conseguir reproduzi-las na véspera.</p>
+
+  <h3>Regimento × Lei Orgânica: onde a banca pega</h3>
+  <div class="tbl"><table>
+    <tr><th>Tema</th><th>Regimento Interno</th><th>Lei Orgânica</th></tr>
+    <tr><td>Mesa</td><td>8 membros (até 4º Secretário), mandato de 2 anos</td><td>7 membros (até 3º Secretário); mandato remetido ao Regimento</td></tr>
+    <tr><td>Abertura da sessão ordinária</td><td>Maioria dos membros</td><td>Um terço</td></tr>
+    <tr><td>Urgência do Prefeito</td><td>30 dias</td><td>45 dias</td></tr>
+    <tr><td>Posse do suplente</td><td>10 dias</td><td>15 dias</td></tr>
+    <tr><td>Suplente no afastamento judicial</td><td>Mais de 90 dias</td><td>120 dias ou mais</td></tr>
+    <tr><td>Falta do Vereador</td><td>Desconto de 1/20 por falta injustificada</td><td>Redução de 50% se faltar a um terço das sessões do mês</td></tr>
+    <tr><td>Voto do Presidente</td><td>Eleição da Mesa, votação secreta, quórum superior à maioria simples, empate</td><td>Eleição da Mesa, dois terços, empate, votação secreta</td></tr>
+    <tr><td>Votação do veto</td><td>Voto aberto (artigo 104), maioria absoluta</td><td>Fala em votação secreta, maioria absoluta</td></tr>
+    <tr><td>Comissão de inquérito</td><td>CPI: requerimento de um terço</td><td>Comissão Especial de Inquérito: um terço, aprovada por maioria simples</td></tr>
+  </table></div>
+
+  <h3>Espécies de sessão</h3>
+  <div class="tbl"><table>
+    <tr><th>Sessão</th><th>Quem convoca</th><th>Abertura</th><th>Destaques</th></tr>
+    <tr><td>Ordinária</td><td>Calendário (6 por mês)</td><td>Maioria dos membros</td><td>3 horas, 5 fases</td></tr>
+    <tr><td>Extraordinária</td><td>Mesa, um terço dos Vereadores ou Prefeito</td><td>Um terço</td><td>24 horas de antecedência; só Ordem do Dia</td></tr>
+    <tr><td>Solene</td><td>Presidente, de ofício ou a requerimento de um terço</td><td>Independe de número</td><td>Única que pode passar da meia-noite</td></tr>
+    <tr><td>Secreta</td><td>Requerimento de dois terços</td><td>Um terço</td><td>Só Vereadores; ata lacrada</td></tr>
+    <tr><td>Permanente</td><td>Mesa ou maioria absoluta</td><td>Exige quórum</td><td>Sem hora para acabar; vigília</td></tr>
+    <tr><td>Itinerante</td><td>Mesa</td><td>Como a ordinária</td><td>Fora da sede; até 4 por período legislativo</td></tr>
+  </table></div>
+
+  <h3>Comissões Temporárias</h3>
+  <div class="tbl"><table>
+    <tr><th>Comissão</th><th>Criação</th><th>Prazo</th><th>Presidência</th></tr>
+    <tr><td>Parlamentar de Inquérito</td><td>Requerimento de um terço; até 5 (2 + 3 excepcionais por maioria absoluta)</td><td>120 dias + 120 (uma vez); instalação em 15 dias</td><td>Primeiro signatário</td></tr>
+    <tr><td>De Representação</td><td>Mesa, Presidente ou requerimento da maioria absoluta</td><td>Ato externo</td><td>Primeiro signatário (se não houver o Presidente da Câmara)</td></tr>
+    <tr><td>De Estudos</td><td>Aprovação da maioria absoluta</td><td>60 dias + até 60 (uma vez)</td><td>Definida pelos membros</td></tr>
+  </table></div>
+
+  <h3>Decreto legislativo × resolução</h3>
+  <div class="tbl"><table>
+    <tr><th>Decreto legislativo</th><th>Resolução</th></tr>
+    <tr><td>Matéria que excede a economia interna da Câmara; sem sanção; promulgado pelo Presidente</td><td>Matéria político-administrativa da Câmara; promulgada pelo Presidente</td></tr>
+    <tr><td>Título de cidadão honorário e outras honrarias</td><td>Economia interna; perda de mandato de Vereador; destituição da Mesa; Regimento Interno</td></tr>
+  </table></div>
+
+  <h3>Tempo de uso da palavra (artigo 306)</h3>
+  <div class="tbl"><table>
+    <tr><th>Situação</th><th>Tempo</th><th>Apartes?</th></tr>
+    <tr><td>Retificar ou impugnar ata</td><td>3 min</td><td>Não</td></tr>
+    <tr><td>Pequeno Expediente; explicação pessoal; encaminhamento; declaração de voto; pela ordem; moções; requerimentos</td><td>5 min</td><td>Não</td></tr>
+    <tr><td>Aparte</td><td>2 min</td><td>—</td></tr>
+    <tr><td>Veto</td><td>10 min (artigo 306) / 15 min (artigo 358)</td><td>Sim</td></tr>
+    <tr><td>Grande Expediente; projeto; parecer de inconstitucionalidade; contas; recursos</td><td>15 min</td><td>Sim</td></tr>
+    <tr><td>Relator e acusado na destituição da Mesa ou cassação</td><td>120 min</td><td>Sim</td></tr>
+  </table></div>
+  <p class="muted small">O próprio Regimento traz números diferentes para o veto (10 minutos no artigo 306 e 15 no artigo 358) e para a primeira discussão de projeto (10 minutos no artigo 249 e 15 no artigo 306). Se cair, a banca tende a copiar o artigo específico do tema.</p>
+</section>
+
+<!-- REFORMA -->
+<section class="tab" id="reforma">
+<h2>Prazos, tempos e quóruns do Regimento</h2>
+  <p class="lead">Lei seca cai pelos números. Cubra a coluna da direita e teste a memória.</p>
+
+  <h3>Quóruns</h3>
+  <div class="tbl"><table>
+    <tr><th>Quórum</th><th>Matérias</th><th>Artigo</th></tr>
+    <tr><td><b>Um quarto</b></td><td>Subscrever requerimentos de urgência, de convocação de Secretário (no Prolongamento do Expediente)</td><td>164, § 1º</td></tr>
+    <tr><td><b>Um terço</b></td><td>Abrir sessão extraordinária e secreta; Explicação Pessoal; convocar extraordinária ou solene; CPI; Comissão Temporária; emenda à Lei Orgânica (subscrição); substitutivo em Plenário; encerrar discussão; título honorífico (subscrição); emendas ao orçamento; reformar o Regimento; explicação de autor e relatores</td><td>183, 187, 194, 198, 91, 233, 269, 284, 348, 337, 376</td></tr>
+    <tr><td><b>Maioria dos membros</b></td><td>Abrir sessão ordinária</td><td>134, 151</td></tr>
+    <tr><td><b>Maioria absoluta</b></td><td>Presença para qualquer deliberação; eleger a Mesa na instalação; representação para destituir a Mesa; receber denúncia de cassação; códigos e Plano Diretor; relatório final de CPI; rejeitar veto; criar cargos na Câmara; Comissão de Estudos; Comissão de Representação a requerimento; sessão permanente; convocar a Câmara no recesso; renovar projeto rejeitado; CPIs excepcionais</td><td>102, 4º, 32, 130, 103, 247, 99, 98, 202, 324, 215, 91</td></tr>
+    <tr><td><b>Dois terços</b></td><td>Emenda à Lei Orgânica; cassação de agente político; destituição de membro da Mesa; rejeitar parecer do TCM; sessão secreta; perda de mandato por proibições ou decoro; título honorífico</td><td>103, 125, 132, 195, 347</td></tr>
+    <tr><td><b>0,1% dos eleitores</b></td><td>Requerer audiência pública sobre projeto em tramitação</td><td>85</td></tr>
+    <tr><td><b>5% do eleitorado</b></td><td>Iniciativa popular (lei, emenda à Lei Orgânica, plebiscito, referendo)</td><td>234, 317</td></tr>
+  </table></div>
+
+  <h3>Prazos</h3>
+  <div class="tbl"><table>
+    <tr><th>Prazo</th><th>O quê</th><th>Artigo</th></tr>
+    <tr><td>24 horas</td><td>Designar relator; vista na comissão; antecedência da extraordinária; redigir voto vencedor</td><td>63, 184, 77</td></tr>
+    <tr><td>48 horas</td><td>Comissão Processante se reunir; parecer conjunto sobre substitutivo; aviso ao TRE; comunicar o Prefeito do resultado da urgência; razões do veto; promulgar após veto rejeitado</td><td>32, 270, 118, 246, 353, 360</td></tr>
+    <tr><td>2 dias úteis</td><td>Recurso contra decisão do Presidente (e cada etapa da resposta)</td><td>312</td></tr>
+    <tr><td>5 dias</td><td>Comissão redigir o vencido; redação final do orçamento</td><td>253, 258, 341</td></tr>
+    <tr><td>10 dias</td><td>Defesa prévia do membro da Mesa; posse do Vereador e do suplente; parecer da comissão sobre veto; promulgar emendas à Lei Orgânica, decretos legislativos e resoluções</td><td>32, 106, 118, 355, 362</td></tr>
+    <tr><td>10 dias úteis</td><td>Enviar o projeto aprovado ao Prefeito</td><td>352</td></tr>
+    <tr><td>15 dias</td><td>Certidões; licença do Presidente fora do Município (mais de 15); instalar a CPI; relatório da CPI; Secretário atender a convocação; parecer conjunto sobre veto; parecer em urgência do Prefeito</td><td>18, 19, 93, 95, 367, 356, 63</td></tr>
+    <tr><td>15 dias úteis</td><td>Vetar; silêncio do Prefeito = sanção</td><td>352, 353</td></tr>
+    <tr><td>20 dias</td><td>Parecer da Comissão Processante da Mesa</td><td>32</td></tr>
+    <tr><td>30 dias</td><td>Parecer de comissão (+2); recurso contra parecer de inconstitucionalidade; urgência do Prefeito; apreciar veto; publicar declaração de bens; vista do projeto no Plenário</td><td>63, 79, 245, 354, 106</td></tr>
+    <tr><td>60 dias</td><td>Comissão de Estudos; contas à disposição dos contribuintes</td><td>99, 372</td></tr>
+    <tr><td>90 dias</td><td>Conclusão do processo de cassação (senão, arquiva); afastamento judicial que convoca suplente (superior a)</td><td>129, 117</td></tr>
+    <tr><td>120 dias</td><td>Prazo da CPI; licença por interesse particular (por sessão legislativa)</td><td>93, 112</td></tr>
+  </table></div>
+
+  <h3>Números soltos que caem</h3>
+  <div class="tbl"><table>
+    <tr><th>Número</th><th>O quê</th></tr>
+    <tr><td>4</td><td>Sessões legislativas por legislatura; sessões itinerantes por período; oradores antes de repetir o pedido de encerramento</td></tr>
+    <tr><td>5 e 10</td><td>Faltas consecutivas ou alternadas que tiram o cargo na Mesa ou na comissão</td></tr>
+    <tr><td>5</td><td>Moções por Vereador por mês; CPIs simultâneas no máximo; representantes para instalar a Tribuna Popular</td></tr>
+    <tr><td>6</td><td>Comissões Permanentes (3 membros cada); sessões ordinárias por mês</td></tr>
+    <tr><td>8</td><td>Membros da Mesa; títulos honoríficos por Vereador (como primeiro signatário) por legislatura</td></tr>
+    <tr><td>1/20</td><td>Desconto por falta injustificada</td></tr>
+    <tr><td>50%</td><td>Indenização que pode ser atribuída ao Presidente</td></tr>
+    <tr><td>200</td><td>Cidadãos para apresentar movimento social à Tribuna Popular</td></tr>
+    <tr><td>30</td><td>Cidadãos responsáveis pelas listas de iniciativa popular</td></tr>
+  </table></div>
+</section>
+
+<!-- QUESTÕES -->
+<section class="tab" id="questoes">
+  <h2>Questões comentadas</h2>
+  <p class="lead">São 39 questões de múltipla escolha (A a D), no formato do edital, elaboradas a partir do texto literal do Regimento Interno e organizadas na ordem dele. O comentário aparece depois de cada resposta, com o artigo de referência, e o rendimento por tema quando terminar todas.</p>
+  <div class="row" style="margin-bottom:10px">
+    <label class="muted" for="fTema">Tema:</label>
+    <select id="fTema"></select>
+    <label class="muted" for="fStatus">Mostrar:</label>
+    <select id="fStatus"><option value="all">Todas</option><option value="pend">Não respondidas</option><option value="bad">Erradas</option><option value="ok">Certas</option></select>
+  </div>
+  <div class="progress"><div id="qProg"></div></div>
+  <div class="qnav" id="qNav"></div>
+  <div class="card" id="qCard"></div>
+  <div class="row" style="justify-content:space-between">
+    <button class="btn" id="qPrev">← Anterior</button>
+    <span class="muted" style="font-size:13px">Atalhos: <kbd>A</kbd>–<kbd>E</kbd> ou <kbd>C</kbd>/<kbd>E</kbd> escolhe · <kbd>Shift</kbd>+letra descarta · <kbd>Enter</kbd> responde · <kbd>←</kbd> <kbd>→</kbd> navega</span>
+    <button class="btn pri" id="qNext">Próxima →</button>
+  </div>
+</section>
+
+<!-- FLASHCARDS -->
+<section class="tab" id="flash">
+  <h2>Flashcards com repetição espaçada</h2>
+  <p class="lead">Leia a pergunta, responda <b>em voz alta</b> e só então vire o cartão (clique ou <kbd>Espaço</kbd>). Marque com sinceridade: os cartões errados voltam primeiro (sistema Leitner, caixas 1 a 5).</p>
+  <div class="row" style="justify-content:center;margin-bottom:12px">
+    <select id="fcDeck">
+      <option value="all">Todos os baralhos</option>
+      <option value="a00">Regimento · artigos-chave</option>
+      <option value="ref">Prazos, tempos e quóruns</option>
+      <option value="pan">Panorama: Regimento e Lei Orgânica</option>
+    </select>
+    <button class="btn" id="fcShuffle">Embaralhar</button>
+    <button class="btn" id="fcReset">Zerar caixas</button>
+  </div>
+  <div class="fc-meta"><span id="fcPos"></span><span id="fcBox"></span></div>
+  <div class="fc" id="fc"><div class="fc-inner"><div class="fc-face front"><div class="q" id="fcQ"></div><div class="muted" style="margin-top:14px;font-size:13px">clique para virar</div></div><div class="fc-face back"><div id="fcA"></div></div></div></div>
+  <div class="row" style="justify-content:center;margin-top:16px">
+    <button class="btn bad" id="fcBad">✘ Errei (<kbd>1</kbd>)</button>
+    <button class="btn" id="fcMid">~ Hesitei (<kbd>2</kbd>)</button>
+    <button class="btn ok" id="fcOk">✔ Acertei (<kbd>3</kbd>)</button>
+  </div>
+  <div class="boxes" id="fcBoxes"></div>
+</section>
+
+<!-- RENDIMENTO -->
+<section class="tab" id="rend">
+  <h2>Rendimento</h2>
+  <div id="rendBody"></div>
+  <h3>Gerenciar dados</h3>
+  <div class="row">
+    <button class="btn" id="expBtn">Exportar respostas (.json)</button>
+    <label class="btn" for="impFile">Importar respostas</label><input type="file" id="impFile" accept=".json" hidden>
+    <button class="btn" id="redoBad">Refazer erradas</button>
+    <button class="btn" id="hlReset">Apagar marcações de texto</button>
+    <button class="btn bad" id="resetAll">Apagar todas as respostas</button>
+  </div>
+</section>
+
+</main>
+
+<div id="tip" role="tooltip"></div>
+<div id="hlBar" role="toolbar" aria-label="Marca-texto"><span class="lbl">Marcar</span><button data-c="am" title="Amarelo" aria-label="Amarelo"></button><button data-c="ro" title="Rosa" aria-label="Rosa"></button><button data-c="ve" title="Verde" aria-label="Verde"></button><button data-c="" title="Apagar marcação" aria-label="Apagar marcação">✕</button></div>
+<script>
+const QUESTOES = [{"fonte": "Questão inédita (formato Consulpam)", "tema": "Câmara e instalação", "enun": "Segundo o Regimento Interno da Câmara Municipal de Senador Canedo, reputam-se nulas as sessões da Câmara realizadas fora de sua sede, à exceção das sessões:", "alts": [["a", "solenes ou comemorativas."], ["b", "secretas e itinerantes."], ["c", "ordinárias realizadas no recesso."], ["d", "extraordinárias e permanentes."]], "tipo": "mc", "resp": "a", "com": ["Artigo 1º, § 1º: são nulas as sessões fora da sede, à exceção das sessões solenes ou comemorativas.", "O § 2º permite, por motivo relevante ou de força maior, reunir a Câmara em outro edifício por deliberação da Mesa, ad referendum da maioria absoluta. As sessões itinerantes (artigo 138-A) foram acrescentadas como espécie própria, convocada pela Mesa. Gabarito: letra A."], "rot": "Questão 1", "nav": "1", "n": 1}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Câmara e instalação", "enun": "A instalação da Câmara, no primeiro ano de cada legislatura, ocorrerá:", "alts": [["a", "em 15 de fevereiro, com a presença da maioria absoluta, presidida pelo Presidente da Mesa anterior."], ["b", "em 1º de janeiro, às dezoito horas, sob a presidência do Juiz Eleitoral."], ["c", "em 1º de janeiro, às nove horas, em sessão solene, independentemente de número, sob a presidência do Vereador mais idoso dentre os presentes."], ["d", "em 1º de fevereiro, em sessão ordinária, presidida pelo Vereador mais votado."]], "tipo": "mc", "resp": "c", "com": ["Artigo 3º: 1º de janeiro, às nove horas, sessão solene, independentemente de número, sob a presidência do Vereador mais idoso dentre os presentes.", "Na sequência, com a maioria absoluta presente, elege-se a Mesa que regerá as duas primeiras sessões legislativas (artigo 4º). Gabarito: letra C."], "rot": "Questão 2", "nav": "2", "n": 2}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Mesa e Presidente", "enun": "Nos termos do Regimento Interno, a Mesa da Câmara:", "alts": [["a", "tem mandato de 1 ano, permitida a reeleição ilimitada."], ["b", "tem mandato de 2 anos e é composta por Presidente, 1º, 2º e 3º Vice-Presidentes e 1º, 2º, 3º e 4º Secretários."], ["c", "tem mandato de 2 anos e é composta por Presidente, 1º e 2º Vice-Presidentes e 1º e 2º Secretários."], ["d", "tem mandato de 4 anos e é composta por Presidente, Vice-Presidente e dois Secretários."]], "tipo": "mc", "resp": "b", "com": ["Artigo 5º: Mesa com mandato de 2 anos, composta por Presidente, três Vice-Presidentes e quatro Secretários (8 membros).", "A Lei Orgânica (artigo 9º) lista só três Secretários e remete o mandato ao Regimento. É permitida uma reeleição para o mesmo cargo na mesma legislatura (artigo 9º, § 1º, do Regimento). Gabarito: letra B."], "rot": "Questão 3", "nav": "3", "n": 3}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Mesa e Presidente", "enun": "A eleição para renovação da Mesa, segundo o Regimento, será realizada:", "alts": [["a", "na primeira sessão ordinária de fevereiro, com posse em 15 de fevereiro."], ["b", "em sessão extraordinária convocada pelo Prefeito, em novembro."], ["c", "na última sessão ordinária de dezembro do último ano do mandato, com posse imediata."], ["d", "na terceira sessão ordinária do mês de março do último ano do mandato da Mesa, com posse dos eleitos em 1º de janeiro do ano subsequente."]], "tipo": "mc", "resp": "d", "com": ["Artigo 9º: eleição na terceira sessão ordinária de março do último ano do mandato da Mesa; posse em 1º de janeiro do ano subsequente.", "§ 1º: só uma reeleição para o mesmo cargo na mesma legislatura; § 2º: não é recondução a eleição para o mesmo cargo em legislaturas diferentes. Gabarito: letra D."], "rot": "Questão 4", "nav": "4", "n": 4}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Mesa e Presidente", "enun": "Na eleição da Mesa, ocorrendo empate entre os concorrentes, o Regimento determina que:", "alts": [["a", "será considerado eleito o candidato do partido com maior bancada."], ["b", "caberá ao Presidente em exercício o voto de desempate."], ["c", "será considerado eleito o mais idoso dos concorrentes e, persistindo o empate, o cargo será disputado por sorteio."], ["d", "será realizada nova votação na sessão seguinte, até que haja maioria absoluta."]], "tipo": "mc", "resp": "c", "com": ["Artigo 10, § 2º: empate resolve-se pela idade (o mais idoso) e, se persistir, por sorteio. A eleição é por maioria simples (caput), em voto secreto com cédula própria (artigo 11).", "Nas Comissões Permanentes, o empate na eleição de Presidente e Vice é resolvido diretamente por sorteio (artigo 43, § 1º). Gabarito: letra C."], "rot": "Questão 5", "nav": "5", "n": 5}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Mesa e Presidente", "enun": "Sobre o Presidente da Câmara, de acordo com o Regimento, assinale a alternativa correta.", "alts": [["a", "O Presidente pode presidir a sessão durante a votação de projeto de sua autoria individual."], ["b", "O Presidente pode fazer parte de qualquer Comissão Permanente."], ["c", "Os contratos que a Câmara firmar com terceiros serão assinados exclusivamente pelo Presidente."], ["d", "A presença do Presidente não é computada para efeito de quórum."]], "tipo": "mc", "resp": "c", "com": ["Artigo 15: os contratos de qualquer natureza firmados pela Câmara são assinados exclusivamente pelo Presidente.", "O Presidente não integra Comissão Permanente (artigo 8º); sua presença é sempre computada para quórum (artigo 22); e ninguém preside a discussão e votação de matéria de sua autoria, salvo proposições da Mesa ou de Comissões (artigo 21). Gabarito: letra C."], "rot": "Questão 6", "nav": "6", "n": 6}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Mesa e Presidente", "enun": "O processo de destituição de membro da Mesa, segundo o Regimento, terá início por representação subscrita, no mínimo:", "alts": [["a", "por um terço dos Vereadores, e a destituição será aprovada por maioria absoluta."], ["b", "por qualquer Vereador, e a destituição será aprovada por maioria simples."], ["c", "pela maioria absoluta da Câmara, e o projeto de resolução de destituição exigirá o voto de, no mínimo, dois terços dos membros."], ["d", "por dois terços da Câmara, e a destituição será decidida pela Comissão de Constituição e Justiça."]], "tipo": "mc", "resp": "c", "com": ["Artigo 32: a representação é subscrita, no mínimo, pela maioria absoluta da Câmara. Sorteiam-se 3 Vereadores para a Comissão Processante, há defesa prévia em 10 dias e parecer em até 20 dias.", "A destituição exige dois terços (artigo 34, § 2º, e artigo 103, I, c), em votação nominal (artigo 295, I). Gabarito: letra C."], "rot": "Questão 7", "nav": "7", "n": 7}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Comissões Permanentes", "enun": "As Comissões Permanentes de caráter técnico-legislativo previstas no Regimento são em número de:", "alts": [["a", "8, com 2 membros cada."], ["b", "4, com 5 membros cada."], ["c", "5, com 3 membros cada."], ["d", "6, com 3 membros cada."]], "tipo": "mc", "resp": "d", "com": ["Artigo 39: 6 Comissões Permanentes, com 3 membros cada: Constituição, Justiça e Redação; Finanças e Orçamento; Política Urbana e Meio Ambiente; Trânsito, Transporte, Atividade Econômica, Turismo e Lazer; Educação, Cultura e Esportes; Saúde, Promoção Social, Trabalho, Criança e Adolescente, Idoso e Mulher.", "As 4 Comissões Extraordinárias Permanentes (artigo 38, §§ 1º e 2º) têm 5 ou 3 membros e não contam para a proporcionalidade do artigo 40. Gabarito: letra D."], "rot": "Questão 8", "nav": "8", "n": 8}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Comissões Permanentes", "enun": "Quanto aos membros das Comissões Permanentes, o Regimento estabelece que:", "alts": [["a", "o Presidente da Comissão funciona como relator de todas as proposituras."], ["b", "serão destituídos caso não compareçam a 5 reuniões ordinárias consecutivas ou a 10 intercaladas, sem motivo justificado."], ["c", "os Suplentes de Vereador podem presidir as Comissões."], ["d", "as alterações na proporcionalidade das bancadas valem imediatamente para as Comissões."]], "tipo": "mc", "resp": "b", "com": ["Artigo 44: destituição por faltar a 5 reuniões ordinárias consecutivas ou 10 intercaladas sem justificativa; o destituído não integra outra Comissão Permanente até o fim da sessão legislativa (§ 3º).", "Suplentes não podem ser eleitos nem assumir a presidência e a vice-presidência (artigo 41, § 2º); mudanças de proporcionalidade só valem na sessão legislativa seguinte (artigo 43, § 3º); o Presidente da Comissão não pode ser relator (artigo 50, parágrafo único). Gabarito: letra B."], "rot": "Questão 9", "nav": "9", "n": 9}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Comissões Permanentes", "enun": "Para emitir parecer sobre qualquer matéria, cada Comissão terá, segundo o Regimento, o prazo de:", "alts": [["a", "45 dias, improrrogáveis em qualquer hipótese."], ["b", "10 dias úteis, prorrogáveis por mais 10."], ["c", "15 dias, prorrogável por igual período."], ["d", "30 dias, prorrogável por mais 2 dias pelo Presidente da Comissão, a requerimento fundamentado; nos projetos com urgência do Prefeito, 15 dias, vedada a prorrogação."]], "tipo": "mc", "resp": "d", "com": ["Artigo 63: prazo de 30 dias, prorrogável por mais 2 dias; § 6º: com urgência do Prefeito, 15 dias para cada Comissão, sem prorrogação.", "O relator é designado em 24 horas (§ 2º) e a vista é de 24 horas (§ 4º). O recesso sobrestá os prazos (artigo 69). Gabarito: letra D."], "rot": "Questão 10", "nav": "10", "n": 10}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Comissões Permanentes", "enun": "Quando um processo for distribuído a mais de uma Comissão:", "alts": [["a", "a Comissão de Finanças e Orçamento será ouvida em primeiro lugar."], ["b", "cada qual dará seu parecer separadamente, ouvida em primeiro lugar a Comissão de Constituição e Justiça e, em último, a de Finanças e Orçamento, quando for o caso."], ["c", "bastará o parecer da Comissão de mérito, dispensada a de Constituição e Justiça."], ["d", "todas emitirão parecer conjunto, presidido pelo membro mais idoso."]], "tipo": "mc", "resp": "b", "com": ["Artigo 70: pareceres separados, ouvida primeiro a Comissão de Constituição e Justiça e por último a de Finanças e Orçamento.", "Reuniões conjuntas são possíveis por acordo dos Presidentes, em urgência justificada (artigo 71). Nenhuma proposição tramita sem o parecer da Comissão de Constituição e Justiça (artigo 47, I, a). Gabarito: letra B."], "rot": "Questão 11", "nav": "11", "n": 11}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Comissões Permanentes", "enun": "Concluído o parecer da Comissão de Constituição e Justiça pela inconstitucionalidade ou ilegalidade de qualquer proposição:", "alts": [["a", "o Prefeito decidirá sobre o prosseguimento da proposição."], ["b", "a proposição será arquivada definitivamente, sem possibilidade de recurso."], ["c", "a proposição será tida como rejeitada, cabendo recurso ao Plenário pelo autor, no prazo de 30 dias após a notificação."], ["d", "a proposição seguirá normalmente às demais Comissões."]], "tipo": "mc", "resp": "c", "com": ["Artigo 79: a proposição é tida como rejeitada, com recurso do autor ao Plenário em 30 dias. Parágrafo único: se o Plenário aprovar o parecer, arquiva-se; se o rejeitar, a proposição vai às demais Comissões.", "Gabarito: letra C."], "rot": "Questão 12", "nav": "12", "n": 12}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Comissões Permanentes", "enun": "As Comissões Permanentes poderão convocar audiências públicas sobre projetos de lei em tramitação sempre que requeridas por:", "alts": [["a", "5% dos eleitores do Município."], ["b", "um terço dos Vereadores."], ["c", "1% dos eleitores do Município."], ["d", "0,1% dos eleitores do Município."]], "tipo": "mc", "resp": "d", "com": ["Artigo 85, II: audiências sobre outros projetos em tramitação sempre que requeridas por 0,1% (um décimo por cento) dos eleitores do Município.", "Os 5% do eleitorado são exigidos para a iniciativa popular (artigo 317). Gabarito: letra D."], "rot": "Questão 13", "nav": "13", "n": 13}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Comissões Temporárias", "enun": "São Comissões Temporárias, nos termos do Regimento:", "alts": [["a", "Comissão de Direitos Humanos, Comissão do Idoso e Comissão de Meio Ambiente."], ["b", "Comissão de Finanças, Comissão de Ética e Comissão de Redação."], ["c", "Comissão Parlamentar de Inquérito, Comissão de Representação e Comissão de Estudos."], ["d", "Comissão Processante, Comissão de Orçamento e Comissão de Transição."]], "tipo": "mc", "resp": "c", "com": ["Artigo 89: as Comissões Temporárias são a Comissão Parlamentar de Inquérito, a Comissão de Representação e a Comissão de Estudos.", "Direitos Humanos, Idoso e Meio Ambiente são Comissões Extraordinárias Permanentes (artigo 38, § 1º). Comissões Especiais só existem nos casos expressos (artigo 100). Gabarito: letra C."], "rot": "Questão 14", "nav": "14", "n": 14}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Comissões Temporárias", "enun": "Sobre as Comissões Parlamentares de Inquérito, é correto afirmar, de acordo com o Regimento, que:", "alts": [["a", "são presididas pelo Presidente da Câmara e não podem funcionar no recesso."], ["b", "são criadas a requerimento da maioria absoluta e funcionam por prazo indeterminado."], ["c", "podem funcionar até 10 simultaneamente, todas instaladas pela regra geral."], ["d", "são criadas mediante requerimento de um terço dos membros da Câmara, com prazo de funcionamento de 120 dias, prorrogável uma única vez por igual período."]], "tipo": "mc", "resp": "d", "com": ["Artigo 91: criação mediante requerimento de um terço dos membros, para fato determinado e prazo certo. Artigo 93, III: prazo de 120 dias, prorrogável uma vez por igual período.", "Funcionam até 5 CPIs (2 concomitantes e 3 excepcionais com maioria absoluta); são presididas pelo primeiro signatário (artigo 94, parágrafo único) e podem trabalhar no recesso (artigo 93, § 2º). Não instaladas em 15 dias, extinguem-se. Gabarito: letra D."], "rot": "Questão 15", "nav": "15", "n": 15}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Plenário e quóruns", "enun": "Segundo o Regimento, a maioria absoluta é a que:", "alts": [["a", "compreende mais da metade dos Vereadores presentes à sessão."], ["b", "representa o maior resultado de votação, dentre os presentes."], ["c", "compreende mais da metade dos membros da Câmara."], ["d", "atinge ou ultrapassa dois terços dos membros da Câmara."]], "tipo": "mc", "resp": "c", "com": ["Artigo 102, § 2º: maioria absoluta é a que compreende mais da metade dos membros da Câmara. Com 13 Vereadores, são 7.", "A alternativa B define maioria simples (§ 1º) e a D, maioria qualificada (§ 3º). Qualquer deliberação exige a presença da maioria absoluta (§ 4º). Gabarito: letra C."], "rot": "Questão 16", "nav": "16", "n": 16}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Plenário e quóruns", "enun": "O Plenário deliberará por maioria absoluta sobre:", "alts": [["a", "rejeição de veto do Prefeito."], ["b", "emenda à Lei Orgânica."], ["c", "destituição de membro da Mesa Diretora."], ["d", "rejeição do parecer prévio do Tribunal de Contas dos Municípios."]], "tipo": "mc", "resp": "a", "com": ["Artigo 103, II: maioria absoluta para Plano Diretor, Código Tributário, Código de Obras e Edificações, Código de Posturas, Lei de Parcelamento e Uso do Solo, Regime Jurídico dos Servidores, relatório final de CPI e rejeição de veto.", "Emenda à Lei Orgânica, cassação, destituição da Mesa e rejeição do parecer do Tribunal de Contas exigem maioria qualificada (inciso I). Gabarito: letra A."], "rot": "Questão 17", "nav": "17", "n": 17}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Plenário e quóruns", "enun": "Quanto à forma de votação, o Regimento estabelece que as deliberações do Plenário dar-se-ão:", "alts": [["a", "por voto aberto apenas nas matérias de maioria simples."], ["b", "sempre por voto secreto."], ["c", "por voto secreto nos casos de veto e cassação."], ["d", "sempre por voto aberto, salvo na eleição dos membros da Mesa e de seus substitutos."]], "tipo": "mc", "resp": "d", "com": ["Artigo 104: voto sempre aberto, salvo na eleição dos membros da Mesa e de seus substitutos. O artigo 297 manda usar votação secreta só nesse caso.", "A Lei Orgânica (artigo 30, § 4º) ainda menciona votação secreta do veto, mas o Regimento adota o voto aberto. Gabarito: letra D."], "rot": "Questão 18", "nav": "18", "n": 18}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Vereadores", "enun": "Sobre as licenças do Vereador previstas no Regimento, assinale a alternativa correta.", "alts": [["a", "A licença para tratar de interesses particulares não tem limite de prazo."], ["b", "A licença para desempenhar missão temporária de interesse do Município far-se-á por requerimento escrito submetido à deliberação do Plenário."], ["c", "Todas as licenças dependem de aprovação do Plenário."], ["d", "O Vereador licenciado por doença pode reassumir antes do término da licença."]], "tipo": "mc", "resp": "b", "com": ["Artigo 112, § 2º: a licença para missão temporária é feita por requerimento escrito votado pelo Plenário. Nos casos de doença, gestante ou paternidade e interesse particular, basta comunicação ao Presidente (§ 1º).", "Interesse particular: até 120 dias por sessão legislativa (§ 3º, b). A reassunção antes do término só é permitida nas licenças por missão e por interesse particular (§ 3º, d). Gabarito: letra B."], "rot": "Questão 19", "nav": "19", "n": 19}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Vereadores", "enun": "Pelo Regimento Interno, efetivada a licença ou ocorrida a vaga, o suplente convocado deverá tomar posse dentro de:", "alts": [["a", "15 dias, salvo motivo justo aceito pela Câmara."], ["b", "30 dias, improrrogáveis."], ["c", "48 horas."], ["d", "10 dias, salvo motivo justo aceito pela Câmara."]], "tipo": "mc", "resp": "d", "com": ["Artigo 118: o suplente toma posse em 10 dias, salvo motivo justo aceito pela Câmara; sem suplente, o Presidente avisa o Tribunal Regional Eleitoral em 48 horas.", "Atenção: a Lei Orgânica (artigo 23) dá 15 dias. O Regimento também convoca o suplente no afastamento judicial superior a 90 dias (artigo 117, parágrafo único). Gabarito: letra D."], "rot": "Questão 20", "nav": "20", "n": 20}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Vereadores", "enun": "Em relação à remuneração dos Vereadores, o Regimento prevê que:", "alts": [["a", "o Presidente não pode receber qualquer indenização adicional."], ["b", "a remuneração sofrerá desconto de 1/20 quando ocorrer falta injustificada."], ["c", "a remuneração será reduzida pela metade a cada falta injustificada."], ["d", "não há desconto por falta, mas apenas advertência."]], "tipo": "mc", "resp": "b", "com": ["Artigo 124: desconto de 1/20 (um vinte avos) quando ocorrer falta injustificada.", "O artigo 123 permite atribuir ao Presidente indenização de 50% dos subsídios. A Lei Orgânica (artigo 21, § 3º) prevê redução de 50% para quem faltar a um terço das sessões ordinárias do mês. Gabarito: letra B."], "rot": "Questão 21", "nav": "21", "n": 21}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Vereadores", "enun": "Nos casos de perda do mandato por infração às proibições da Lei Orgânica ou por procedimento incompatível com o decoro parlamentar, o Regimento determina que:", "alts": [["a", "basta a maioria simples dos presentes para a perda do mandato."], ["b", "a perda será declarada pela Mesa, de ofício."], ["c", "acolhida a acusação pela maioria absoluta dos Vereadores, a perda do mandato será decidida pela Câmara por quórum de dois terços, assegurado o direito de defesa."], ["d", "a perda será decidida pela Justiça Eleitoral."]], "tipo": "mc", "resp": "c", "com": ["Artigo 125, § 2º: nos incisos I e II (proibições e decoro), acolhida a acusação pela maioria absoluta, a perda é decidida por dois terços, com direito de defesa.", "Nos incisos III a V (faltas, direitos políticos, Justiça Eleitoral), a perda é declarada pela Mesa (§ 3º). O processo de cassação é arquivado se não concluído em 90 dias (artigo 129, § 3º). Gabarito: letra C."], "rot": "Questão 22", "nav": "22", "n": 22}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Sessão ordinária", "enun": "As sessões ordinárias da Câmara, nos termos do Regimento:", "alts": [["a", "são em número de 4 mensais, às quintas-feiras, abertas com um terço dos membros."], ["b", "são semanais, às segundas-feiras, com duração de 4 horas."], ["c", "são em número de 6 mensais, com duração de 3 horas, realizadas na segunda e quarta semanas de cada mês, às terças, quartas e quintas-feiras, com início às 9 horas."], ["d", "são diárias, das 14 às 18 horas."]], "tipo": "mc", "resp": "c", "com": ["Artigo 151: 6 sessões ordinárias por mês, de 3 horas, na segunda e quarta semanas, às terças, quartas e quintas, às 9 horas, abertas com a maioria dos membros. Fevereiro e dezembro têm dias definidos pela Mesa.", "Por deliberação do Plenário, dias e horário podem ser alterados (§ 1º). Gabarito: letra C."], "rot": "Questão 23", "nav": "23", "n": 23}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Sessão ordinária", "enun": "A sequência correta das partes da sessão ordinária, segundo o Regimento, é:", "alts": [["a", "Grande Expediente, Pequeno Expediente, Ordem do Dia, Prolongamento do Expediente e Explicação Pessoal."], ["b", "Pequeno Expediente, Grande Expediente, Prolongamento do Expediente, Ordem do Dia e Explicação Pessoal."], ["c", "Pequeno Expediente, Ordem do Dia, Grande Expediente, Explicação Pessoal e Prolongamento do Expediente."], ["d", "Ordem do Dia, Pequeno Expediente, Grande Expediente, Explicação Pessoal e Prolongamento do Expediente."]], "tipo": "mc", "resp": "b", "com": ["Artigo 152: Pequeno Expediente, Grande Expediente, Prolongamento do Expediente, Ordem do Dia e Explicação Pessoal.", "Quando o projeto de lei orçamentária está na pauta, a sessão tem só Pequeno Expediente e Ordem do Dia (artigo 333). Gabarito: letra B."], "rot": "Questão 24", "nav": "24", "n": 24}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Sessão ordinária", "enun": "No Pequeno Expediente, o Presidente dará a palavra aos Vereadores para expor assunto de sua livre escolha durante:", "alts": [["a", "5 minutos improrrogáveis a cada orador, não se permitindo apartes, com duração máxima da fase de 30 minutos."], ["b", "10 minutos, com apartes, em fase de 60 minutos."], ["c", "3 minutos, com cessão de tempo permitida."], ["d", "15 minutos, permitidos apartes e cessão de tempo."]], "tipo": "mc", "resp": "a", "com": ["Artigo 157: Pequeno Expediente de até 30 minutos, com 5 minutos improrrogáveis por orador, sem apartes; não se admite cessão de tempo (§ 6º).", "No Grande Expediente (até 60 minutos), cada orador tem 15 minutos, com apartes e cessão de tempo (artigos 159 e 160). Gabarito: letra A."], "rot": "Questão 25", "nav": "25", "n": 25}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Sessão ordinária", "enun": "Na organização da Ordem do Dia, a matéria será distribuída, em primeiro lugar, com:", "alts": [["a", "vetos."], ["b", "projetos do Executivo em regime de urgência."], ["c", "pareceres de redação final."], ["d", "projetos em primeira discussão."]], "tipo": "mc", "resp": "a", "com": ["Artigo 171: vetos; contas; projetos do Executivo em regime de urgência; parecer de redação final ou de reabertura de discussão; segunda discussão; primeira discussão; discussão única.", "Dentro de cada fase, vêm na ordem: emendas à Lei Orgânica, projetos de lei, de resolução e de decreto legislativo (§ 1º). Gabarito: letra A."], "rot": "Questão 26", "nav": "26", "n": 26}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Outras sessões e Tribuna Popular", "enun": "As sessões extraordinárias, segundo o Regimento, poderão ser convocadas:", "alts": [["a", "por qualquer Vereador, a qualquer tempo, sem antecedência."], ["b", "pela maioria absoluta dos Vereadores, vedada a convocação pelo Prefeito."], ["c", "apenas pelo Presidente, com antecedência mínima de 72 horas."], ["d", "pela Mesa da Câmara, por requerimento subscrito por um terço dos membros ou pelo Prefeito, para matéria urgente, com antecedência mínima de 24 horas, salvo extrema urgência."]], "tipo": "mc", "resp": "d", "com": ["Artigo 183: convocação pela Mesa, por requerimento de um terço dos membros ou pelo Prefeito, para matéria urgente. Artigo 184: antecedência mínima de 24 horas, salvo extrema urgência.", "As extraordinárias abrem com um terço dos membros (artigo 187) e só têm Ordem do Dia, sem matéria estranha à convocação (artigo 188). No recesso, a convocação é do Prefeito ou da maioria absoluta (artigo 324). Gabarito: letra D."], "rot": "Questão 27", "nav": "27", "n": 27}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Outras sessões e Tribuna Popular", "enun": "A Câmara poderá realizar sessões secretas, segundo o Regimento, mediante requerimento subscrito, no mínimo:", "alts": [["a", "pela maioria absoluta de seus membros."], ["b", "por dois terços de seus membros, deferido de plano pelo Presidente."], ["c", "por qualquer Vereador, aprovado pelo Plenário."], ["d", "por um terço de seus membros."]], "tipo": "mc", "resp": "b", "com": ["Artigo 195: sessão secreta mediante requerimento de, no mínimo, dois terços dos membros, deferido de plano pelo Presidente.", "A sessão secreta abre com um terço dos membros (artigo 198), só Vereadores ficam no recinto e a ata é lacrada (artigos 197 e 199). Sessão permanente: Mesa ou maioria absoluta (artigo 202). Gabarito: letra B."], "rot": "Questão 28", "nav": "28", "n": 28}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Outras sessões e Tribuna Popular", "enun": "Sobre a Tribuna Popular, prevista no Regimento, é correto afirmar que:", "alts": [["a", "é instalada semanalmente, com duração de 2 horas."], ["b", "o orador inscrito disporá de 15 minutos improrrogáveis, e a mesma entidade poderá ocupá-la no máximo uma vez a cada 3 meses, salvo exceção aprovada pelo Plenário."], ["c", "os Vereadores não podem apartear o orador da Tribuna Popular."], ["d", "qualquer cidadão pode se inscrever individualmente, sem vínculo com entidade."]], "tipo": "mc", "resp": "b", "com": ["Artigo 209: 15 minutos improrrogáveis por orador, com apartes dos Vereadores (§ 1º). Artigo 207, § 3º: a mesma entidade ou movimento pode inscrever representante no máximo uma vez a cada 3 meses, salvo exceção do Plenário.", "A Tribuna é instalada a critério da Mesa, na segunda semana do mês, em sessão extraordinária de até 30 minutos, com pelo menos 5 representantes de entidades (com 1 ano de existência) ou de movimentos sociais apresentados por 200 cidadãos. Gabarito: letra B."], "rot": "Questão 29", "nav": "29", "n": 29}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Proposições e tramitação", "enun": "A proposição em que o Vereador sugere aos poderes competentes medidas de interesse público denomina-se:", "alts": [["a", "moção."], ["b", "requerimento."], ["c", "indicação."], ["d", "emenda."]], "tipo": "mc", "resp": "c", "com": ["Artigo 219: indicação é a proposição em que o Vereador sugere aos poderes competentes medidas de interesse público; é despachada pelo Presidente, sem deliberação do Plenário.", "Moção é a manifestação da Câmara sobre um assunto, reivindicando, solidarizando-se, protestando ou repudiando, limitada a 5 por Vereador por mês (artigo 228). Requerimento é dirigido ao Presidente ou à Mesa (artigo 220). Gabarito: letra C."], "rot": "Questão 30", "nav": "30", "n": 30}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Proposições e tramitação", "enun": "Constitui matéria de projeto de resolução, segundo o Regimento:", "alts": [["a", "criação de cargos na Prefeitura."], ["b", "concessão de título de cidadão honorário."], ["c", "fixação dos subsídios do Prefeito."], ["d", "perda de mandato de Vereador e destituição da Mesa ou de qualquer de seus membros."]], "tipo": "mc", "resp": "d", "com": ["Artigo 237, parágrafo único: são matéria de resolução os assuntos de economia interna da Câmara, a perda de mandato de Vereador, a destituição da Mesa ou de qualquer de seus membros e o Regimento Interno.", "Título de cidadão honorário é matéria de decreto legislativo (artigo 236). Subsídios do Prefeito e cargos da Prefeitura são matéria de lei. Gabarito: letra D."], "rot": "Questão 31", "nav": "31", "n": 31}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Proposições e tramitação", "enun": "Nos termos do Regimento, nenhum projeto será dado por definitivamente aprovado antes de passar por:", "alts": [["a", "duas discussões e votações, além da redação final, quando for o caso, à exceção dos projetos votados conclusivamente pelas Comissões e dos projetos de resolução e de decreto legislativo, que sofrerão apenas uma discussão e votação."], ["b", "três discussões, sendo a última com quórum qualificado."], ["c", "duas discussões, inclusive os projetos de resolução e de decreto legislativo."], ["d", "uma única discussão e votação, em qualquer caso."]], "tipo": "mc", "resp": "a", "com": ["Artigo 242: duas discussões e votações, além da redação final, salvo os projetos votados conclusivamente pelas Comissões e os de resolução e de decreto legislativo, que têm uma discussão e votação.", "Na primeira discussão, cada Vereador fala 10 minutos (artigo 249); na segunda, 5 minutos (artigo 254). Gabarito: letra A."], "rot": "Questão 32", "nav": "32", "n": 32}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Proposições e tramitação", "enun": "O Prefeito poderá solicitar que os projetos de sua iniciativa tramitem em regime de urgência. Pelo Regimento, se a Câmara não deliberar em até:", "alts": [["a", "30 dias, o projeto será incluído na Ordem do Dia, sobrestando-se a deliberação quanto aos demais assuntos até que se ultime a votação."], ["b", "45 dias, o projeto será arquivado."], ["c", "60 dias, o Prefeito poderá promulgá-lo por decreto."], ["d", "15 dias, o projeto será considerado aprovado."]], "tipo": "mc", "resp": "a", "com": ["Artigo 245, § 1º: sem deliberação em 30 dias, o projeto entra na Ordem do Dia e sobrestá os demais assuntos. § 2º: o prazo não corre no recesso nem se aplica a projetos de código.", "A Lei Orgânica (artigo 28) prevê 45 dias. Não existe aprovação tácita nem promulgação por decreto. Gabarito: letra A."], "rot": "Questão 33", "nav": "33", "n": 33}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Proposições e tramitação", "enun": "No início de cada legislatura, segundo o Regimento, serão arquivados os processos relativos a proposições que, até o encerramento da legislatura anterior:", "alts": [["a", "não tenham sido aprovadas em, pelo menos, uma discussão, não se aplicando a regra às proposições de iniciativa do Executivo."], ["b", "tenham recebido qualquer parecer contrário."], ["c", "tenham sido apresentadas por Vereadores não reeleitos."], ["d", "não tenham sido sancionadas, inclusive as de iniciativa do Executivo."]], "tipo": "mc", "resp": "a", "com": ["Artigo 275: arquivam-se as proposições não aprovadas em pelo menos uma discussão; § 1º: a regra não se aplica às de iniciativa do Executivo; § 2º: o Líder da Bancada pode requerer a volta à tramitação.", "§ 4º: não podem ser desarquivadas as proposições tidas como inconstitucionais ou ilegais, nem as com parecer contrário das Comissões de mérito. Gabarito: letra A."], "rot": "Questão 34", "nav": "34", "n": 34}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Debates e votação", "enun": "Aparte é a interrupção consentida, breve e oportuna do orador, que não pode ultrapassar:", "alts": [["a", "1 minuto, permitido no Pequeno Expediente."], ["b", "2 minutos, não sendo permitido, entre outros casos, durante o Pequeno Expediente e o Prolongamento do Expediente."], ["c", "3 minutos, permitido em qualquer fase."], ["d", "5 minutos, vedado apenas na Explicação Pessoal."]], "tipo": "mc", "resp": "b", "com": ["Artigo 282: o aparte não pode passar de 2 minutos. Artigo 283: não se permite aparte à palavra do Presidente, aparte paralelo ou cruzado, durante encaminhamento de votação, declaração de voto, fala sobre a ata ou explicação pessoal, e durante o Pequeno Expediente e o Prolongamento do Expediente.", "Gabarito: letra B."], "rot": "Questão 35", "nav": "35", "n": 35}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Debates e votação", "enun": "Proceder-se-á, obrigatoriamente, à votação nominal, segundo o Regimento, para:", "alts": [["a", "emenda à Lei Orgânica e Plano Diretor."], ["b", "indicações ao Prefeito."], ["c", "requerimento de inversão de pauta."], ["d", "moções de aplauso."]], "tipo": "mc", "resp": "a", "com": ["Artigo 295, parágrafo único: votação nominal obrigatória para destituição da Mesa; parecer do Tribunal de Contas sobre as contas do Prefeito; prorrogação de sessão; convocação de Secretário; inclusão de projeto em urgência; zoneamento urbano; Plano Diretor; emenda à Lei Orgânica.", "Indicação nem é votada (artigo 219). Inversão de pauta é votada sem discussão, pelo processo comum (artigo 174). Gabarito: letra A."], "rot": "Questão 36", "nav": "36", "n": 36}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Orçamento, veto, honrarias e reforma", "enun": "Sobre a concessão de títulos honoríficos, o Regimento estabelece que:", "alts": [["a", "é feita por decreto legislativo, aprovado em discussão e votação únicas, no mínimo por dois terços dos membros, sendo vedada a concessão a pessoas no exercício de cargos ou funções executivas, eletivas ou por nomeação."], ["b", "pode ser proposta por qualquer Vereador isoladamente, sem limite de vezes."], ["c", "dispensa a anuência do homenageado e a apresentação de biografia."], ["d", "é feita por resolução, aprovada por maioria simples."]], "tipo": "mc", "resp": "a", "com": ["Artigo 347: decreto legislativo em discussão e votação únicas, por dois terços; § 1º: vedada a concessão a quem exerce cargo ou função executiva, eletiva ou por nomeação (salvo estrangeiros mundialmente consagrados, § 2º).", "O projeto é subscrito por um terço dos membros, com biografia e anuência escrita do homenageado (artigo 348); cada Vereador pode ser primeiro signatário no máximo 8 vezes por legislatura (artigo 349). Gabarito: letra A."], "rot": "Questão 37", "nav": "37", "n": 37}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Orçamento, veto, honrarias e reforma", "enun": "De acordo com o Regimento, a respeito da apreciação do veto, é correto afirmar que:", "alts": [["a", "a Câmara deliberará sobre o veto no prazo de 30 dias de seu recebimento, e a entrada em recesso interromperá esse prazo."], ["b", "o veto é discutido em dois turnos, como os projetos de lei."], ["c", "a Comissão terá 30 dias para emitir parecer sobre o veto."], ["d", "a rejeição do veto depende do voto de dois terços dos membros da Câmara."]], "tipo": "mc", "resp": "a", "com": ["Artigo 354: a Câmara delibera em 30 dias; esgotado o prazo, o veto tranca a pauta (§ 1º); o recesso interrompe o prazo (§ 2º).", "A rejeição exige maioria absoluta (artigo 360); a discussão e votação são únicas (artigo 358); a Comissão tem 10 dias improrrogáveis (artigo 355), ou 15 se o parecer for conjunto (artigo 356). Gabarito: letra A."], "rot": "Questão 38", "nav": "38", "n": 38}, {"fonte": "Questão inédita (formato Consulpam)", "tema": "Orçamento, veto, honrarias e reforma", "enun": "O projeto de resolução que vise a alterar, reformar ou substituir o Regimento Interno somente será admitido quando proposto:", "alts": [["a", "pela maioria absoluta dos membros, exclusivamente."], ["b", "por um terço, no mínimo, dos membros da Câmara, pela Mesa ou pela Comissão Especial para esse fim constituída."], ["c", "pela Comissão de Constituição e Justiça, exclusivamente."], ["d", "pelo Prefeito ou por qualquer Vereador."]], "tipo": "mc", "resp": "b", "com": ["Artigo 375: o Regimento só pode ser alterado, reformado ou substituído por resolução. Artigo 376: a proposta cabe a um terço dos membros, à Mesa ou à Comissão Especial constituída para esse fim.", "A aprovação do Regimento exige maioria absoluta, conforme a Lei Orgânica (artigo 18). Gabarito: letra B."], "rot": "Questão 39", "nav": "39", "n": 39}];
+
+const FLASH = [
+ // Regimento: artigos-chave
+ ["a00","Sessões fora da sede da Câmara","São <b>nulas</b>, exceto as <b>solenes ou comemorativas</b> (artigo 1º, § 1º).<br><b>Exemplo:</b> uma sessão solene de entrega de títulos num clube da cidade é válida; uma ordinária ali, não (salvo itinerante convocada pela Mesa)."],
+ ["a00","Instalação da legislatura","1º de janeiro, <b>às 9 horas</b>, sessão solene, independentemente de número, presidida pelo Vereador mais idoso (artigo 3º).<br><b>Exemplo:</b> cada Vereador, de pé, ratifica o compromisso dizendo \"Assim o prometo\"."],
+ ["a00","Composição e mandato da Mesa no Regimento","Presidente, 1º a 3º Vice-Presidentes e 1º a 4º Secretários; mandato de <b>2 anos</b> (artigo 5º).<br><b>Exemplo:</b> 8 cargos; a Lei Orgânica lista só 7."],
+ ["a00","Quando se elege a nova Mesa?","Na <b>terceira sessão ordinária de março</b> do último ano do mandato; posse em 1º de janeiro seguinte (artigo 9º).<br><b>Exemplo:</b> eleição em março de 2026 para o biênio 2027-2028."],
+ ["a00","Empate na eleição da Mesa","Eleito o <b>mais idoso</b>; persistindo, <b>sorteio</b> (artigo 10, § 2º). Voto secreto, em cédula.<br><b>Exemplo:</b> dois candidatos de 54 anos nascidos no mesmo dia: decide-se por sorteio."],
+ ["a00","Quem assina os contratos da Câmara?","<b>Exclusivamente o Presidente</b> (artigo 15).<br><b>Exemplo:</b> o contrato de limpeza do prédio é assinado pelo Presidente, e não pela Mesa reunida."],
+ ["a00","O Presidente pode integrar comissões?","Não integra <b>Comissão Permanente</b>; pode integrar <b>Temporária</b> (artigo 8º).<br><b>Exemplo:</b> o Presidente pode fazer parte de uma Comissão de Representação numa solenidade estadual."],
+ ["a00","Quantas são as Comissões Permanentes?","<b>6</b>, com <b>3 membros</b> cada (artigo 39).<br><b>Exemplo:</b> Constituição, Justiça e Redação; Finanças e Orçamento; Política Urbana e Meio Ambiente; Trânsito, Transporte...; Educação, Cultura e Esportes; Saúde, Promoção Social..."],
+ ["a00","Ordem das comissões na tramitação","Primeiro a de <b>Constituição e Justiça</b>; por último a de <b>Finanças e Orçamento</b> (artigo 70).<br><b>Exemplo:</b> projeto de nova creche: Constituição e Justiça → Educação → Finanças."],
+ ["a00","Parecer pela inconstitucionalidade","A proposição é <b>tida como rejeitada</b>; o autor pode recorrer ao Plenário em <b>30 dias</b> (artigo 79).<br><b>Exemplo:</b> se o Plenário rejeitar o parecer, o projeto segue às demais comissões."],
+ ["a00","Quais são as Comissões Temporárias?","<b>Parlamentar de Inquérito</b>, <b>de Representação</b> e <b>de Estudos</b> (artigo 89).<br><b>Exemplo:</b> a Comissão de Representação vai à posse do novo Governador em nome da Câmara."],
+ ["a00","Regras da CPI","Requerimento de <b>um terço</b>; fato determinado; <b>120 dias</b> prorrogáveis uma vez; extinta se não instalada em <b>15 dias</b>; preside o primeiro signatário; até <b>5</b> CPIs (artigos 91 a 94).<br><b>Exemplo:</b> 5 dos 13 Vereadores bastam para pedir a CPI."],
+ ["a00","Maioria simples, absoluta e qualificada","Simples: maior resultado entre os <b>presentes</b>. Absoluta: mais da metade dos <b>membros</b>. Qualificada: dois terços ou mais dos membros (artigo 102).<br><b>Exemplo:</b> com 13 Vereadores, absoluta = 7 e qualificada = 9."],
+ ["a00","Voto aberto ou secreto?","<b>Sempre aberto</b>, salvo na eleição da Mesa e de seus substitutos (artigo 104).<br><b>Exemplo:</b> a votação do veto e da cassação é aberta pelo Regimento."],
+ ["a00","Licenças do Vereador","Doença; gestante ou paternidade; missão de interesse do Município; interesse particular até 120 dias por sessão legislativa (artigo 112).<br><b>Exemplo:</b> a licença para missão é a única que depende de votação do Plenário."],
+ ["a00","Quebra de decoro em rede social","Publicar em perfil de rede social incitações contra a Câmara ou a Mesa, com distorções ou acusações infundadas para denegrir a imagem (artigo 125, § 1º, c).<br><b>Exemplo:</b> post acusando sem provas a Mesa de desviar verbas pode gerar processo de perda do mandato."],
+ ["a00","Espécies de sessão","Ordinárias, extraordinárias, solenes, permanentes e <b>itinerantes</b> (artigo 132), além das secretas e da Tribuna Popular.<br><b>Exemplo:</b> a sessão itinerante num distrito conta como uma das 4 permitidas no período legislativo."],
+ ["a00","Sessões ordinárias: quantas e quando?","<b>6 por mês</b>, de 3 horas, na 2ª e 4ª semanas, às terças, quartas e quintas, às <b>9 horas</b> (artigo 151).<br><b>Exemplo:</b> fevereiro e dezembro têm dias definidos pela Mesa."],
+ ["a00","Fases da sessão ordinária","Pequeno Expediente → Grande Expediente → Prolongamento do Expediente → Ordem do Dia → Explicação Pessoal (artigo 152).<br><b>Exemplo:</b> com projeto orçamentário na pauta, só há Pequeno Expediente e Ordem do Dia (artigo 333)."],
+ ["a00","Ordem da pauta na Ordem do Dia","Vetos; contas; projetos do Executivo em urgência; redação final ou reabertura; segunda discussão; primeira discussão; discussão única (artigo 171).<br><b>Exemplo:</b> um veto sempre é votado antes de um projeto em primeira discussão."],
+ ["a00","Indicação × moção","Indicação: o Vereador <b>sugere medidas</b> aos poderes competentes, sem votação. Moção: <b>manifestação da Câmara</b> (reivindicar, solidarizar, protestar, repudiar), votada; até 5 por Vereador por mês.<br><b>Exemplo:</b> pedir poda de árvores ao Prefeito é indicação; repudiar a violência contra professores é moção."],
+ ["a00","Decreto legislativo × resolução no Regimento","Decreto legislativo: matéria que excede a economia interna (ex.: <b>título honorífico</b>). Resolução: economia interna, <b>perda de mandato</b>, <b>destituição da Mesa</b> e <b>Regimento</b> (artigos 236 e 237).<br><b>Exemplo:</b> cassado o Vereador, a Mesa expede resolução."],
+ ["a00","Quantas discussões tem cada projeto?","Projetos de lei: <b>duas</b> discussões e votações. Resoluções e decretos legislativos: <b>discussão e votação únicas</b> (artigo 242).<br><b>Exemplo:</b> o título de cidadão honorário é votado uma única vez."],
+ ["a00","Arquivamento ao fim da legislatura","Arquivam-se as proposições não aprovadas em pelo menos uma discussão, <b>exceto as do Executivo</b>; o Líder pode pedir para voltar (artigo 275).<br><b>Exemplo:</b> projeto de Vereador que nunca foi votado é arquivado em 1º de janeiro da nova legislatura."],
+ ["a00","Aparte: tempo e vedações","Até <b>2 minutos</b>. Vedado ao Presidente, paralelo, cruzado, em encaminhamento, declaração de voto, ata, explicação pessoal, <b>Pequeno Expediente</b> e <b>Prolongamento</b> (artigos 282 e 283).<br><b>Exemplo:</b> no Grande Expediente o aparte é permitido."],
+ ["a00","Votação nominal obrigatória","Destituição da Mesa; parecer do TCM; prorrogação de sessão; convocação de Secretário; urgência; zoneamento; Plano Diretor; emenda à Lei Orgânica (artigo 295).<br><b>Exemplo:</b> requerimento de prorrogação da sessão é votado pelo processo nominal."],
+ ["a00","Reforma do Regimento","Só por <b>resolução</b>, proposta por <b>um terço</b> dos membros, pela <b>Mesa</b> ou por <b>Comissão Especial</b> (artigos 375 e 376).<br><b>Exemplo:</b> 5 Vereadores podem apresentar o projeto de resolução que muda o horário das sessões."],
+ ["a00","Calendário oficial da Câmara","8 de março (Dia da Mulher), 28 de outubro (Dia do Servidor Público) e 20 de novembro (Dia da Consciência Negra) (artigo 377).<br><b>Exemplo:</b> o Cerimonialista organiza eventos nessas datas, regulamentados por Ato Normativo."],
+ // Prazos, tempos e quóruns
+ ["ref","Destituição de membro da Mesa: rito","Representação da <b>maioria absoluta</b>; 3 sorteados; defesa em <b>10 dias</b>; parecer em <b>20 dias</b>; aprovação por <b>dois terços</b> (artigos 32 a 35).<br><b>Exemplo:</b> relator e acusado falam até 120 minutos cada."],
+ ["ref","Faltas que tiram o cargo na Mesa ou na comissão","<b>5 consecutivas ou 10 alternadas</b> sem justificativa (artigos 31 e 44).<br><b>Exemplo:</b> o membro destituído de comissão não entra em outra Permanente até o fim da sessão legislativa."],
+ ["ref","Prazo do parecer de comissão","<b>30 dias</b>, prorrogável por <b>2 dias</b>; relator em 24 horas; vista de 24 horas; urgência do Prefeito: <b>15 dias</b> (artigo 63).<br><b>Exemplo:</b> na urgência do Prefeito não há prorrogação."],
+ ["ref","Audiência pública a pedido de eleitores","Requerida por <b>0,1%</b> dos eleitores do Município (artigo 85, II).<br><b>Exemplo:</b> com 80 mil eleitores, bastam 80 assinaturas."],
+ ["ref","Comissão de Estudos","Aprovação da <b>maioria absoluta</b>; funciona por <b>60 dias</b>, prorrogáveis uma vez por até 60 (artigo 99).<br><b>Exemplo:</b> estudar o transporte coletivo envolve as comissões de Trânsito e de Finanças."],
+ ["ref","Presença exigida para deliberar","<b>Maioria absoluta</b> dos membros, em qualquer fase da sessão (artigo 102, § 4º).<br><b>Exemplo:</b> com 6 presentes, a sessão pode até discutir, mas não votar."],
+ ["ref","Posse do suplente no Regimento","<b>10 dias</b>, salvo motivo justo; sem suplente, aviso ao TRE em 48 horas (artigo 118).<br><b>Exemplo:</b> na Lei Orgânica o prazo é de 15 dias."],
+ ["ref","Desconto por falta injustificada","<b>1/20</b> da remuneração por falta (artigo 124).<br><b>Exemplo:</b> três faltas injustificadas = 3/20 de desconto."],
+ ["ref","Prazo do processo de cassação","Se não concluído em <b>90 dias</b>, é arquivado (artigo 129, § 3º).<br><b>Exemplo:</b> denúncia recebida em 1º de março precisa ser julgada até o fim de maio."],
+ ["ref","Tempo das fases do Expediente","Pequeno: 30 min (5 por orador). Grande: 60 min (15 por orador). Prolongamento: 30 min. Ordem do Dia: 1 hora (artigos 157 a 170).<br><b>Exemplo:</b> no Pequeno Expediente cabem até 6 oradores."],
+ ["ref","Sessão extraordinária: convocação e abertura","Mesa, <b>um terço</b> ou Prefeito; antecedência de <b>24 horas</b>; abre com <b>um terço</b> (artigos 183 a 187).<br><b>Exemplo:</b> pode ser realizada até num domingo."],
+ ["ref","Sessão secreta e sessão permanente","Secreta: requerimento de <b>dois terços</b>. Permanente: Mesa ou <b>maioria absoluta</b> (artigos 195 e 202).<br><b>Exemplo:</b> 9 Vereadores pedem sessão secreta; 7 bastam para a permanente."],
+ ["ref","Tribuna Popular em números","5 representantes; 15 minutos por orador; entidade com 1 ano; movimento com 200 cidadãos; mesma entidade a cada 3 meses (artigos 207 a 209).<br><b>Exemplo:</b> a sessão da Tribuna dura até 30 minutos, na segunda semana do mês."],
+ ["ref","Urgência do Prefeito no Regimento","<b>30 dias</b>; depois, tranca a pauta; não corre no recesso; não vale para códigos (artigo 245).<br><b>Exemplo:</b> na Lei Orgânica, 45 dias."],
+ ["ref","Prazos de sanção e veto no Regimento","Envio em 10 dias úteis; sanção tácita em 15 dias úteis; veto em 15 dias úteis; Câmara em 30 dias; comissão em 10 dias (15 se conjunto) (artigos 352 a 356).<br><b>Exemplo:</b> o recesso interrompe o prazo do veto."],
+ ["ref","Títulos honoríficos","Decreto legislativo por <b>dois terços</b>; subscrição de <b>um terço</b>; biografia e anuência do homenageado; no máximo <b>8</b> por Vereador por legislatura (artigos 347 a 349).<br><b>Exemplo:</b> não se pode homenagear o Secretário de Saúde em exercício."],
+ ["ref","Recurso contra decisão do Presidente","Por escrito em <b>2 dias úteis</b>; Presidente e Comissão de Constituição e Justiça têm 2 dias úteis cada (artigo 312).<br><b>Exemplo:</b> enquanto o Plenário não decide, vale a decisão do Presidente."],
+ // Panorama
+ ["pan","Iniciativa das leis: Regimento × Lei Orgânica","Regimento (artigo 234): Mesa, Prefeito, Vereador, Comissões Permanentes e cidadãos. Lei Orgânica (artigo 26): Vereador, comissão permanente, Prefeito e cidadãos.<br><b>Exemplo:</b> o Regimento cita a Mesa expressamente, inclusive para os cargos da Câmara."],
+ ["pan","Emenda à Lei Orgânica nas duas normas","Lei Orgânica: um terço dos Vereadores ou Prefeito; dois terços em dois turnos; promulgada pela Mesa. Regimento: inclui iniciativa popular (5%) e exige votação nominal.<br><b>Exemplo:</b> 9 votos em cada turno, nome a nome."],
+ ["pan","Infrações do Prefeito: quem julga?","Crimes comuns e de responsabilidade: <b>Tribunal de Justiça</b>. Infrações político-administrativas: <b>Câmara</b>, pelo Decreto-Lei 201/1967 (artigos 373 e 374).<br><b>Exemplo:</b> o Prefeito que deixa de enviar o orçamento no prazo pode ser processado pela Câmara."],
+ ["pan","Convocação da Câmara no recesso","Pelo <b>Prefeito</b> ou pela <b>maioria absoluta</b> dos Vereadores, por escrito, com a matéria indicada (artigos 324 e 325).<br><b>Exemplo:</b> em janeiro, 7 Vereadores convocam a Câmara para votar um projeto de calamidade."]
+];
+
+/* ---------- mapa mental: cada item tem explicação, exemplo, base legal e pegadinha ---------- */
+const MM_ROOT = {k: "root", t: "REGIMENTO INTERNO DA CÂMARA", s: "Resolução 4/2020 · 379 artigos<br><small>Mesa · Comissões · Plenário · Vereadores · Sessões · Proposições · Votação</small>",
+  e: "O Regimento Interno é a resolução que organiza o funcionamento da Câmara: quem dirige (Mesa), quem estuda os projetos (comissões), quem decide (Plenário), como são as sessões, como as proposições tramitam e como se vota. Só pode ser alterado por <b>resolução</b>.",
+  x: "Quando um Vereador pede a palavra para reclamar que uma votação desrespeitou o rito, ele levanta uma \"questão de ordem\" com base no Regimento; o Presidente decide e cabe recurso ao Plenário em 2 dias úteis.",
+  l: "Resolução 4, de 9 de dezembro de 2020; artigos 375 e 376 (reforma).",
+  p: "\"O Regimento pode ser alterado por lei de iniciativa da Mesa\": ERRADO. Só por resolução."};
+
+const MM = [
+ {k: "mesa", c: "#2f5bd3", t: "Mesa e Presidente", s: "Direção da Câmara",
+  e: "A Mesa tem 8 membros e mandato de 2 anos; dirige os trabalhos legislativos e os serviços administrativos. O Presidente representa a Câmara e conduz as sessões.",
+  x: "O Presidente assina sozinho o contrato de manutenção do ar-condicionado da Câmara; a Mesa decide, por maioria, abrir sindicância sobre o sumiço de equipamentos.",
+  l: "Artigos 5º a 37.",
+  p: "Contratos da Câmara são assinados <b>exclusivamente pelo Presidente</b>.",
+  f: [
+   {k: "mesa1", t: "Eleição e mandato",
+    e: "Mandato de 2 anos. Renovação na terceira sessão ordinária de março do último ano; posse em 1º de janeiro. Maioria simples, voto secreto, cargo a cargo ou chapa. Empate: mais idoso, depois sorteio. Uma reeleição por legislatura.",
+    x: "A Mesa de 2025-2026 é sucedida por uma eleita em março de 2026, que toma posse em 1º de janeiro de 2027.",
+    l: "Artigos 5º, 9º, 10 e 11.",
+    p: "Eleição para o mesmo cargo em legislaturas diferentes <b>não</b> é recondução."},
+   {k: "mesa2", t: "Substituição do Presidente",
+    e: "Vice-Presidentes na ordem; depois 1º a 4º Secretários; por fim o Vereador mais idoso. Nas licenças e impedimentos, o substituto tem plenitude de funções.",
+    x: "Com Presidente e três Vices ausentes, o 1º Secretário preside a sessão.",
+    l: "Artigos 7º, 24 a 26.",
+    p: "O Presidente não integra Comissão Permanente, mas pode integrar Temporária."},
+   {k: "mesa3", t: "Destituição",
+    e: "Representação da maioria absoluta; Comissão Processante de 3 sorteados; defesa prévia em 10 dias; parecer em 20 dias; destituição por dois terços, promulgada em 48 horas. Faltar a 5 reuniões consecutivas ou 10 alternadas tira o cargo automaticamente.",
+    x: "O 2º Secretário que deixa de redigir as atas por meses pode ser destituído por omissão.",
+    l: "Artigos 31 a 37.",
+    p: "Relator e acusado falam 120 minutos; os demais Vereadores, 15."}
+  ]},
+ {k: "com", c: "#1f8a4c", t: "Comissões", s: "Permanentes e temporárias",
+  e: "As comissões estudam as proposições e fiscalizam. São 6 Permanentes de 3 membros, 4 Extraordinárias Permanentes e 3 tipos de Temporárias (CPI, Representação e Estudos).",
+  x: "Um projeto que cria um parque passa pela Comissão de Constituição e Justiça, pela de Política Urbana e Meio Ambiente e, por último, pela de Finanças.",
+  l: "Artigos 38 a 100.",
+  p: "A Comissão de Constituição e Justiça é ouvida <b>primeiro</b>; a de Finanças, <b>por último</b>.",
+  f: [
+   {k: "com1", t: "Funcionamento e prazos",
+    e: "Reunião semanal; pública, salvo deliberação da maioria. Parecer em 30 dias (+2), relator em 24 horas, vista de 24 horas; urgência do Prefeito: 15 dias. Vencido o prazo, o projeto pode ir ao Plenário sem parecer.",
+    x: "O relator recebe o projeto na segunda-feira e tem 30 dias para entregar o parecer; se pedir informações à Prefeitura, o prazo fica suspenso por até 30 dias.",
+    l: "Artigos 57 a 73.",
+    p: "A prorrogação é de apenas <b>2 dias</b>, e não de 30."},
+   {k: "com2", t: "Pareceres",
+    e: "Três partes: exposição, conclusão do relator e decisão. Parecer da Comissão de Constituição e Justiça pela inconstitucionalidade torna a proposição rejeitada, com recurso ao Plenário em 30 dias. Parecer contrário de todas as comissões de mérito: rejeição.",
+    x: "Um projeto que cria despesa para o Executivo, apresentado por Vereador, recebe parecer pela inconstitucionalidade; o autor recorre ao Plenário.",
+    l: "Artigos 74 a 80.",
+    p: "Assinatura \"com restrições\" conta como voto <b>favorável</b>."},
+   {k: "com3", t: "CPI",
+    e: "Requerimento de um terço, fato determinado, prazo de 120 dias prorrogável uma vez; até 5 CPIs; extinta se não instalada em 15 dias; preside o primeiro signatário; conclusões ao Ministério Público; relatório final aprovado por maioria absoluta.",
+    x: "Cinco Vereadores pedem CPI sobre a merenda escolar; ela pode ouvir testemunhas sob compromisso e examinar livros da Secretaria de Educação.",
+    l: "Artigos 90 a 97 e 103, II, g.",
+    p: "Só são admitidas 2 CPIs concomitantes pela regra geral; as outras 3 dependem da maioria absoluta."},
+   {k: "com4", t: "Audiências públicas",
+    e: "Sobre parcelamento do solo, sobre projetos (a pedido de 0,1% dos eleitores), assuntos de interesse público e iniciativa popular. Expositor tem 20 minutos; Vereadores interpelam por 3.",
+    x: "Moradores de um bairro reúnem 0,1% dos eleitores e pedem audiência sobre o projeto que muda o zoneamento da região.",
+    l: "Artigos 85 a 88.",
+    p: "Entidade requerente precisa ter pelo menos 1 ano de funcionamento."}
+  ]},
+ {k: "plen", c: "#b8860b", t: "Plenário e votação", s: "Quóruns e processos",
+  e: "O Plenário é o órgão deliberativo e soberano. Delibera com a presença da maioria absoluta, por maioria simples, absoluta ou qualificada, sempre em voto aberto (salvo eleição da Mesa).",
+  x: "Com 13 Vereadores, só há deliberação se 7 estiverem presentes; um projeto comum passa com 4 votos a 3.",
+  l: "Artigos 101 a 105 e 287 a 304.",
+  p: "Maioria simples é calculada sobre os <b>presentes</b>; absoluta e qualificada, sobre os <b>membros</b>.",
+  f: [
+   {k: "plen1", t: "Quóruns qualificados",
+    e: "Dois terços: emenda à Lei Orgânica, cassação, destituição da Mesa, rejeição do parecer do TCM. Maioria absoluta: códigos, Plano Diretor, parcelamento do solo, regime dos servidores, relatório de CPI, rejeição de veto.",
+    x: "Derrubar um veto do Prefeito exige 7 votos, mesmo que só 8 Vereadores estejam presentes.",
+    l: "Artigo 103.",
+    p: "Rejeição de veto é maioria <b>absoluta</b>, e não dois terços."},
+   {k: "plen2", t: "Processos de votação",
+    e: "Simbólico, nominal e secreto. Nominal obrigatória: destituição da Mesa, parecer do TCM, prorrogação de sessão, convocação de Secretário, urgência, zoneamento, Plano Diretor, emenda à Lei Orgânica.",
+    x: "Na votação do Plano Diretor, o Secretário chama cada Vereador, que responde \"sim\" ou \"não\".",
+    l: "Artigos 293 a 301.",
+    p: "Só se admite <b>uma</b> verificação nominal por votação."},
+   {k: "plen3", t: "Debates e apartes",
+    e: "Inscrição a favor ou contra, com alternância. Aparte de até 2 minutos, vedado no Pequeno Expediente e no Prolongamento. Encerramento da discussão a pedido de um terço, após 30 minutos.",
+    x: "Durante o Pequeno Expediente, um Vereador tenta apartear o colega: o Presidente nega, porque ali não há apartes.",
+    l: "Artigos 276 a 286.",
+    p: "No Grande Expediente os apartes são permitidos."}
+  ]},
+ {k: "ver", c: "#7a3fc2", t: "Vereadores", s: "Direitos, deveres, licenças, mandato",
+  e: "O Regimento detalha posse, deveres, faltas, licenças, suplentes, líderes, remuneração e as hipóteses de perda, extinção e cassação do mandato.",
+  x: "Um Vereador falta a duas sessões sem justificativa: perde 2/20 da remuneração do mês.",
+  l: "Artigos 106 a 131.",
+  p: "Suplente toma posse em <b>10 dias</b> pelo Regimento (15 pela Lei Orgânica).",
+  f: [
+   {k: "ver1", t: "Licenças",
+    e: "Doença, gestante/paternidade e interesse particular: por comunicação. Missão: por requerimento votado. Interesse particular: até 120 dias por sessão legislativa. Só nas licenças por missão e por interesse particular o Vereador reassume antes.",
+    x: "Uma Vereadora em licença-maternidade não pode reassumir antes do fim; um Vereador em licença para interesse particular pode.",
+    l: "Artigos 112 a 116.",
+    p: "A licença para missão depende do Plenário; as outras, de simples comunicação."},
+   {k: "ver2", t: "Perda e cassação",
+    e: "Proibições e decoro: dois terços, após acusação acolhida pela maioria absoluta. Faltas, direitos políticos e Justiça Eleitoral: declarados pela Mesa. Cassação iniciada por eleitor ou pela Mesa; arquivada se não concluída em 90 dias.",
+    x: "Um Vereador publica nas redes acusações sem prova contra a Mesa para desmoralizar a Câmara: isso está listado como quebra de decoro.",
+    l: "Artigos 125 a 131.",
+    p: "A renúncia torna-se irretratável depois de lida em Plenário."},
+   {k: "ver3", t: "Líderes",
+    e: "Bancadas ou Blocos escolhem Líder; um Vice-Líder para cada 3 Vereadores. O Líder fala pela ordem, encaminha votação, registra candidatos à Mesa e indica membros de comissões. O Prefeito indica Líder do Governo.",
+    x: "Uma bancada de 6 Vereadores pode indicar 2 Vice-Líderes.",
+    l: "Artigos 119 a 121.",
+    p: "Partidos coligados em Bloco perdem as prerrogativas de liderança próprias."}
+  ]},
+ {k: "ses", c: "#c0392b", t: "Sessões", s: "Ordinárias e especiais",
+  e: "Seis sessões ordinárias por mês, de 3 horas, com cinco fases. Extraordinárias, solenes, secretas, permanentes, itinerantes e Tribuna Popular têm regras próprias de convocação e quórum.",
+  x: "Na terça-feira da segunda semana, às 9 horas, a sessão abre com 7 Vereadores, passa pelos Expedientes e chega à Ordem do Dia.",
+  l: "Artigos 132 a 210.",
+  p: "Extraordinária e secreta abrem com <b>um terço</b>; ordinária, com a maioria.",
+  f: [
+   {k: "ses1", t: "Fases da ordinária",
+    e: "Pequeno Expediente (30 min; 5 por orador, sem apartes), Grande Expediente (60 min; 15 por orador, com apartes), Prolongamento (30 min; requerimentos e moções), Ordem do Dia (1 hora), Explicação Pessoal (5 min, com um terço presente).",
+    x: "O requerimento de urgência para um projeto deve ser entregue até o fim do Pequeno Expediente e é votado no Prolongamento.",
+    l: "Artigos 151 a 182.",
+    p: "A sessão não é prorrogada para a Explicação Pessoal."},
+   {k: "ses2", t: "Ordem do Dia",
+    e: "Vetos; contas; projetos do Executivo em urgência; redação final ou reabertura; segunda discussão; primeira discussão; discussão única. Só é alterada para licença ou posse de Vereador, urgência, inversão ou retirada.",
+    x: "Um veto com prazo esgotado entra na frente de todos os projetos da pauta.",
+    l: "Artigos 170 a 177.",
+    p: "Pauta só com proposições que tenham parecer, salvo prazos vencidos."},
+   {k: "ses3", t: "Extraordinária, secreta, permanente",
+    e: "Extraordinária: Mesa, um terço ou Prefeito; 24 horas de antecedência; só Ordem do Dia. Secreta: requerimento de dois terços. Permanente: Mesa ou maioria absoluta, sem hora para acabar.",
+    x: "Durante uma enchente, a Câmara se declara em sessão permanente para acompanhar a situação e votar medidas a qualquer momento.",
+    l: "Artigos 183 a 206.",
+    p: "Instalar sessão secreta ou permanente encerra a sessão pública em curso."},
+   {k: "ses4", t: "Tribuna Popular",
+    e: "A critério da Mesa, na segunda semana do mês, até 30 minutos após a sessão ordinária, com pelo menos 5 inscritos; 15 minutos por orador; entidade com 1 ano ou movimento com 200 cidadãos; mesma entidade a cada 3 meses.",
+    x: "A associação de moradores de um bairro, fundada há 2 anos, inscreve um representante para falar sobre a falta de iluminação.",
+    l: "Artigos 207 a 210.",
+    p: "Os Vereadores <b>podem</b> apartear o orador da Tribuna Popular."}
+  ]},
+ {k: "prop", c: "#0f7c8c", t: "Proposições e veto", s: "Do projeto à promulgação",
+  e: "Indicações, requerimentos, moções, projetos e emendas. Projetos de lei passam por duas discussões; resoluções e decretos legislativos, por uma. Depois vêm sanção ou veto e promulgação.",
+  x: "Um projeto de lei aprovado em segunda discussão sem emendas vai direto à sanção; com emendas, volta à comissão para redigir o vencido em 5 dias.",
+  l: "Artigos 211 a 275 e 352 a 363.",
+  p: "Urgência do Prefeito: 30 dias no Regimento.",
+  f: [
+   {k: "prop1", t: "Indicação, requerimento e moção",
+    e: "Indicação: sugestão ao Executivo, despachada sem votação. Requerimento: pedido ao Presidente ou à Mesa, sem emendas. Moção: manifestação da Câmara, até 5 por Vereador por mês, sem emendas.",
+    x: "\"Indico ao Prefeito a instalação de um quebra-molas na Rua 10\" é uma indicação; \"a Câmara repudia o fechamento da agência do INSS\" é uma moção.",
+    l: "Artigos 219 a 231.",
+    p: "Requerimentos e moções aceitam <b>substitutivo</b>, mas não emenda."},
+   {k: "prop2", t: "Tramitação e emendas",
+    e: "Duas discussões (10 e 5 minutos); substitutivos votados antes do projeto; emendas uma a uma, comissão com preferência. Substitutivo em Plenário: um terço. Emendas rejeitadas não voltam.",
+    x: "Aprovado um substitutivo da Comissão de Educação, ficam prejudicados o projeto original e os demais substitutivos.",
+    l: "Artigos 239 a 273.",
+    p: "No início da legislatura, arquiva-se o que não passou de nenhuma discussão, exceto proposições do Executivo."},
+   {k: "prop3", t: "Sanção, veto e promulgação",
+    e: "Envio ao Prefeito em 10 dias úteis; silêncio de 15 dias úteis = sanção; veto em 15 dias úteis. Câmara aprecia em 30 dias; comissão opina em 10; rejeição por maioria absoluta; promulgação em 48 horas pelo Prefeito, senão pelo Presidente e pelos demais membros da Mesa.",
+    x: "O veto chega em 20 de junho; com o recesso de julho, o prazo de 30 dias fica interrompido e o veto é lido na primeira sessão de agosto.",
+    l: "Artigos 352 a 363.",
+    p: "O recesso <b>interrompe</b> o prazo de apreciação do veto."}
+  ]}
+];
+
+function mmItens(){
+  const out = [MM_ROOT];
+  MM.forEach(b => { out.push(b); b.f.forEach(f => out.push(Object.assign({c: b.c, pai: b.t}, f))); });
+  return out;
+}
+function renderMapa(){
+  $("#mmBox").innerHTML = `<div class="mm-root" data-k="root" tabindex="0"><b>${MM_ROOT.t}</b>${MM_ROOT.s}</div>
+    <div class="mm-trunk"></div>
+    <div class="mm-branches" style="--n:${MM.length}">${MM.map(b => `<div class="mm-br" style="--c:${b.c}">
+      <div class="mm-h" data-k="${b.k}" tabindex="0"><b>${b.t}</b>${b.s}</div>
+      <ul>${b.f.map(f => `<li data-k="${f.k}" tabindex="0">${f.t}</li>`).join("")}</ul></div>`).join("")}</div>`;
+  $("#mmBox").querySelectorAll("[data-k]").forEach(el => {
+    el.onclick = () => abrirItem(el.dataset.k);
+    el.onkeydown = e => { if (e.key === "Enter" || e.key === " "){ e.preventDefault(); abrirItem(el.dataset.k); } };
+  });
+  abbrify($("#mmBox"));
+}
+function abrirItem(k){
+  const itens = mmItens(), i = itens.findIndex(x => x.k === k), it = itens[i];
+  $("#mmBox").querySelectorAll("[data-k]").forEach(el => el.classList.toggle("sel", el.dataset.k === k));
+  const p = $("#mmPanel");
+  p.style.setProperty("--c", it.c || "var(--accent)");
+  p.innerHTML = `<div class="muted" style="font-size:13px">${it.pai ? "Mapa › " + it.pai : "Mapa"}</div>
+    <h4>${it.t}</h4>
+    <div class="mm-sec"><span class="lbl">Explicação</span>${it.e}</div>
+    <div class="mm-sec ex"><span class="lbl">Exemplo prático</span>${it.x}</div>
+    <div class="mm-sec"><span class="lbl">Base legal e jurisprudência</span>${it.l}</div>
+    <div class="mm-sec pg"><span class="lbl">Pegadinha da banca</span>${it.p}</div>
+    <div class="nav"><button class="btn" id="mmPrev" ${i === 0 ? "disabled" : ""}>← Item anterior</button>
+      <button class="btn pri" id="mmNext" ${i === itens.length - 1 ? "disabled" : ""}>Próximo item →</button></div>`;
+  abbrify(p);
+  p.dataset.hl = "mm-" + k; hlAplicar(p);
+  $("#mmPrev").onclick = () => abrirItem(itens[i - 1].k);
+  $("#mmNext").onclick = () => abrirItem(itens[i + 1].k);
+  const r = p.getBoundingClientRect();
+  if (r.top < 120 || r.top > innerHeight - 160) p.scrollIntoView({behavior: "smooth", block: "start"});
+}
+
+/* ---------- glossário: toda sigla ganha dica com o nome por extenso ---------- */
+const GLOSS = {
+ "CF/88": "Constituição Federal de 1988", "CF": "Constituição Federal de 1988",
+ "CTN": "Código Tributário Nacional (Lei 5.172/1966)", "STF": "Supremo Tribunal Federal", "STJ": "Superior Tribunal de Justiça",
+ "LC": "Lei Complementar", "MP": "Medida Provisória", "EC": "Emenda Constitucional", "DL": "Decreto-Lei",
+ "ADCT": "Ato das Disposições Constitucionais Transitórias", "CLT": "Consolidação das Leis do Trabalho",
+ "ADI": "Ação Direta de Inconstitucionalidade", "RE": "Recurso Extraordinário", "RREE": "Recursos Extraordinários",
+ "REsp": "Recurso Especial", "HC": "Habeas Corpus", "AgR": "Agravo Regimental",
+ "ICMS": "Imposto sobre Circulação de Mercadorias e Serviços", "ISS": "Imposto sobre Serviços", "ISSQN": "Imposto sobre Serviços de Qualquer Natureza",
+ "IPTU": "Imposto sobre a Propriedade Predial e Territorial Urbana", "ITBI": "Imposto sobre a Transmissão de Bens Imóveis",
+ "ITCMD": "Imposto sobre Transmissão Causa Mortis e Doação", "IPVA": "Imposto sobre a Propriedade de Veículos Automotores",
+ "IE": "Imposto de Exportação", "IR": "Imposto de Renda", "IRPF": "Imposto de Renda da Pessoa Física", "IRPJ": "Imposto de Renda da Pessoa Jurídica",
+ "IPI": "Imposto sobre Produtos Industrializados", "IOF": "Imposto sobre Operações Financeiras", "ITR": "Imposto sobre a Propriedade Territorial Rural",
+ "IGF": "Imposto sobre Grandes Fortunas", "IS": "Imposto Seletivo", "IEG": "Imposto Extraordinário de Guerra",
+ "IBS": "Imposto sobre Bens e Serviços", "CBS": "Contribuição sobre Bens e Serviços", "IVA": "Imposto sobre Valor Agregado",
+ "CIDE": "Contribuição de Intervenção no Domínio Econômico", "COSIP": "Contribuição para o Custeio do Serviço de Iluminação Pública",
+ "COFINS": "Contribuição para o Financiamento da Seguridade Social", "CSLL": "Contribuição Social sobre o Lucro Líquido",
+ "PIS": "Programa de Integração Social", "PASEP": "Programa de Formação do Patrimônio do Servidor Público",
+ "RPPS": "Regime Próprio de Previdência Social", "RGPS": "Regime Geral de Previdência Social",
+ "CVM": "Comissão de Valores Mobiliários", "AFRMM": "Adicional ao Frete para a Renovação da Marinha Mercante",
+ "SEBRAE": "Serviço Brasileiro de Apoio às Micro e Pequenas Empresas", "INCRA": "Instituto Nacional de Colonização e Reforma Agrária",
+ "SESC": "Serviço Social do Comércio", "SENAC": "Serviço Nacional de Aprendizagem Comercial", "SENAI": "Serviço Nacional de Aprendizagem Industrial",
+ "OAB": "Ordem dos Advogados do Brasil", "CRC": "Conselho Regional de Contabilidade", "CREA": "Conselho Regional de Engenharia e Agronomia",
+ "CRM": "Conselho Regional de Medicina", "CRA": "Conselho Regional de Administração", "IBAMA": "Instituto Brasileiro do Meio Ambiente e dos Recursos Naturais Renováveis",
+ "TCFA": "Taxa de Controle e Fiscalização Ambiental", "TFA": "Taxa de Fiscalização de Anúncios", "TFLF": "Taxa de Fiscalização, Localização e Funcionamento",
+ "TLLF": "Taxa de Licença de Localização e Funcionamento", "ZFM": "Zona Franca de Manaus", "PAF": "Processo Administrativo Fiscal",
+ "DF": "Distrito Federal", "SEFAZ": "Secretaria de Estado de Fazenda", "SEEC": "Secretaria de Estado de Economia",
+ "CEBRASPE": "Centro Brasileiro de Pesquisa em Avaliação e Seleção e de Promoção de Eventos (banca)", "CESPE": "Centro de Seleção e de Promoção de Eventos (atual CEBRASPE)",
+ "PGFN": "Procuradoria-Geral da Fazenda Nacional", "AGU": "Advocacia-Geral da União", "RFB": "Receita Federal do Brasil",
+ "CAGE": "Contadoria e Auditoria-Geral do Estado", "CGE": "Controladoria-Geral do Estado", "TCE": "Tribunal de Contas do Estado",
+ "PGE": "Procuradoria-Geral do Estado", "STM": "Superior Tribunal Militar", "PF": "Polícia Federal", "PC": "Polícia Civil",
+ "ANM": "Agência Nacional de Mineração", "CAU": "Conselho de Arquitetura e Urbanismo", "INPI": "Instituto Nacional da Propriedade Industrial",
+ "APEX": "Agência Brasileira de Promoção de Exportações e Investimentos", "EMBRAPA": "Empresa Brasileira de Pesquisa Agropecuária",
+ "CAGEPA": "Companhia de Água e Esgotos da Paraíba", "SEPLAN": "Secretaria de Planejamento", "APO": "Analista de Planejamento e Orçamento",
+ "PPNT": "Processo seletivo público (Petrobras)", "ATT": "Auditor Técnico de Tributos", "AFRE": "Auditor Fiscal da Receita Estadual",
+ "AFE": "Auditor Fiscal Estadual",
+ "art.": "artigo", "arts.": "artigos", "Art.": "artigo", "§": "parágrafo", "c/c": "combinado com", "nº": "número", "n.º": "número",
+ "Proc": "Procurador", "Pref": "Prefeitura", "Rel.": "Relator", "Min.": "Ministro", "Súm.": "Súmula", "SV": "Súmula Vinculante",
+ "TCM": "Tribunal de Contas dos Municípios do Estado de Goiás", "TRE": "Tribunal Regional Eleitoral", "LDO": "Lei de Diretrizes Orçamentárias", "LOA": "Lei Orçamentária Anual", "PPA": "Plano Plurianual", "CPI": "Comissão Parlamentar de Inquérito", "CNPJ": "Cadastro Nacional da Pessoa Jurídica", "GO": "Goiás", "MP": "Ministério Público",
+ "FG": "fato gerador", "BC": "base de cálculo", "LO": "lei ordinária"
+};
+const GLOSS_RE = new RegExp("(?<![\\wÀ-ÿ])(" + Object.keys(GLOSS).sort((a, b) => b.length - a.length)
+  .map(s => s.replace(/[.*+?^${}()|[\]\\\/]/g, "\\$&")).join("|") + ")(?![\\wÀ-ÿ])", "g");
+function abbrify(root){
+  if (!root) return;
+  const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {acceptNode: n =>
+    n.parentElement.closest("abbr,script,style,select,option,kbd") ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT});
+  const nodes = []; while (w.nextNode()) nodes.push(w.currentNode);
+  nodes.forEach(n => {
+    const s = n.nodeValue; GLOSS_RE.lastIndex = 0;
+    if (!GLOSS_RE.test(s)) return;
+    const frag = document.createDocumentFragment(); let last = 0; GLOSS_RE.lastIndex = 0; let m;
+    while ((m = GLOSS_RE.exec(s))){
+      frag.append(s.slice(last, m.index));
+      const a = document.createElement("abbr"); a.textContent = m[1]; a.dataset.tip = GLOSS[m[1]]; a.setAttribute("aria-label", GLOSS[m[1]]);
+      frag.append(a); last = m.index + m[1].length;
+    }
+    frag.append(s.slice(last)); n.replaceWith(frag);
+  });
+}
+/* dica posicionada acima da sigla, sem cobrir o texto nem ficar sob o cursor */
+(() => {
+  const tip = () => document.getElementById("tip");
+  function show(el){
+    const t = tip(); t.textContent = el.dataset.tip; t.classList.add("on");
+    const r = el.getBoundingClientRect(), w = t.offsetWidth, h = t.offsetHeight;
+    let x = Math.min(Math.max(8, r.left + r.width / 2 - w / 2), innerWidth - w - 8);
+    let y = r.top - h - 8; if (y < 8) y = r.bottom + 8;
+    t.style.left = x + "px"; t.style.top = y + "px";
+  }
+  document.addEventListener("mouseover", e => { const a = e.target.closest("abbr[data-tip]"); if (a) show(a); });
+  document.addEventListener("mouseout", e => { if (e.target.closest("abbr[data-tip]")) tip().classList.remove("on"); });
+  document.addEventListener("click", e => { const a = e.target.closest("abbr[data-tip]"); if (a){ show(a); setTimeout(() => tip().classList.remove("on"), 2500); } });
+  addEventListener("scroll", () => tip().classList.remove("on"), {passive: true});
+})();
+
+const KEY = "canedo_T2_regimento_interno_v1";
+/* respostas já resolvidas, embutidas na publicação (usadas só se este navegador ainda não tiver dados) */
+const RESPOSTAS_INICIAIS = null;
+let S = JSON.parse(localStorage.getItem(KEY) || "null") || (RESPOSTAS_INICIAIS ? structuredClone(RESPOSTAS_INICIAIS) : null) || {answers:{}, cards:{}};
+S.answers ||= {}; S.cards ||= {}; S.draft ||= {};
+const save = () => localStorage.setItem(KEY, JSON.stringify(S));
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+/* abas */
+function showTab(t){
+  document.querySelectorAll("section.tab").forEach(s => s.classList.toggle("on", s.id === t));
+  document.querySelectorAll("#nav button").forEach(b => b.classList.toggle("on", b.dataset.t === t));
+  if (t === "rend") renderRend();
+  if (t === "flash") renderCard();
+  window.scrollTo(0, 0);
+}
+document.querySelectorAll("#nav button").forEach(b => b.onclick = () => showTab(b.dataset.t));
+const active = () => document.querySelector("section.tab.on").id;
+
+/* questões */
+const TEMAS = [...new Set(QUESTOES.map(q => q.tema))];
+$("#fTema").innerHTML = '<option value="all">Todos os temas</option>' + TEMAS.map(t => `<option>${esc(t)}</option>`).join("");
+let cur = 0;
+
+function visible(){
+  const t = $("#fTema").value, st = $("#fStatus").value;
+  return QUESTOES.map((q, i) => i).filter(i => {
+    const q = QUESTOES[i], a = S.answers[q.n];
+    if (t !== "all" && q.tema !== t) return false;
+    if (st === "pend") return !a;
+    if (st === "bad") return a && !a.ok;
+    if (st === "ok") return a && a.ok;
+    return true;
+  });
+}
+function fmtCom(p){
+  return esc(p).replace(/^(Letra [A-E]|Item [IVX]+|Alternativa [A-E]|Assertiva [IVX]+)(:?)/, "<b>$1$2</b>");
+}
+function renderQ(){
+  const vis = visible();
+  const done = Object.keys(S.answers).length;
+  $("#qProg").style.width = (100 * done / QUESTOES.length) + "%";
+  $("#navQ").textContent = `${done}/${QUESTOES.length}`;
+  $("#qNav").innerHTML = vis.map(i => {
+    const a = S.answers[QUESTOES[i].n];
+    return `<button data-i="${i}" class="${a ? (a.ok ? "ok" : "bad") : ""} ${i === cur ? "cur" : ""}">${QUESTOES[i].nav || QUESTOES[i].n}</button>`;
+  }).join("");
+  $("#qNav").querySelectorAll("button").forEach(b => b.onclick = () => { cur = +b.dataset.i; renderQ(); });
+  if (!vis.length){ $("#qCard").innerHTML = '<p class="muted">Nenhuma questão neste filtro.</p>'; return; }
+  if (!vis.includes(cur)) cur = vis[0];
+  const q = QUESTOES[cur], a = S.answers[q.n];
+  const d = draft(q.n);
+  const st = v => a ? "" : (d.desc.includes(v) ? "desc" : d.sel === v ? "sel" : "");
+  let opts;
+  if (q.tipo === "ce"){
+    opts = '<div class="ce">' + [["C","Certo"],["E","Errado"]].map(([v, l]) => {
+      let cls = "";
+      if (a){ if (v === q.resp) cls = "right"; else if (v === a.sel) cls = "wrong"; }
+      return `<button class="opt ${cls} ${st(v)}" data-v="${v}" ${a ? "disabled" : ""}>${l}</button>`;
+    }).join("") + "</div>";
+  } else {
+    opts = q.alts.map(([l, t]) => {
+      let cls = "";
+      if (a){ if (l === q.resp) cls = "right"; else if (l === a.sel) cls = "wrong"; }
+      return `<button class="opt ${cls} ${st(l)}" data-v="${l}" ${a ? "disabled" : ""}><span class="l">${l})</span><span>${esc(t)}</span></button>`;
+    }).join("");
+  }
+  const pos = vis.indexOf(cur) + 1;
+  let com = "";
+  if (a){
+    const gab = q.tipo === "ce" ? (q.resp === "C" ? "Certo" : "Errado") : "Letra " + q.resp.toUpperCase();
+    com = `<div class="coment" data-hl="q${q.n}c"><div class="verdict ${a.ok ? "ok" : "bad"}">${a.ok ? "✔ Você acertou" : "✘ Você errou"} · Gabarito: ${gab}</div>
+      ${q.com.map(p => `<p>${fmtCom(p)}</p>`).join("")}</div>`;
+  }
+  $("#qCard").innerHTML = `<div class="qhead"><span><b>${esc(q.rot || "Questão " + q.n)}</b> · ${esc(q.fonte)}</span><span><span class="pill">${esc(q.tema)}</span> ${pos}/${vis.length}</span></div>
+    ${q.texto ? `<div class="trecho" data-hl="q${q.n}t"><span class="lbl">Trecho do texto</span>${esc(q.texto)}</div>` : ""}
+    <div class="enun" data-hl="q${q.n}">${esc(q.enun)}</div>
+    ${a ? "" : '<div class="qhint">Clique para escolher · clique duas vezes para descartar (riscar) ou recuperar uma opção</div>'}
+    ${opts}
+    ${a ? "" : `<div class="qact"><button class="btn pri" id="qSubmit">Responder</button><div class="qmsg" id="qMsg" role="alert"></div></div>`}
+    ${com}`;
+  abbrify($("#qCard"));
+  $("#qCard").querySelectorAll("[data-hl]").forEach(hlAplicar);
+  let clickTimer = null;
+  $("#qCard").querySelectorAll(".opt:not(:disabled)").forEach(b => {
+    b.onclick = () => { clearTimeout(clickTimer); clickTimer = setTimeout(() => escolher(b.dataset.v), 230); };
+    b.ondblclick = e => { e.preventDefault(); clearTimeout(clickTimer); descartar(b.dataset.v); };
+  });
+  if ($("#qSubmit")) $("#qSubmit").onclick = submeter;
+  $("#qPrev").disabled = pos <= 1;
+  $("#qNext").textContent = pos >= vis.length ? "Ver rendimento →" : "Próxima →";
+}
+function draft(n){
+  S.draft ||= {};
+  return S.draft[n] ||= {sel: null, desc: []};
+}
+function opcoes(q){ return q.tipo === "ce" ? ["C", "E"] : q.alts.map(x => x[0]); }
+function escolher(v){
+  const q = QUESTOES[cur]; if (S.answers[q.n]) return;
+  const d = draft(q.n);
+  if (d.desc.includes(v)){ msg("warn", "Essa opção está descartada. Clique duas vezes nela para recuperá-la antes de escolher."); return; }
+  d.sel = d.sel === v ? null : v; save(); renderQ();
+}
+function descartar(v){
+  const q = QUESTOES[cur]; if (S.answers[q.n]) return;
+  const d = draft(q.n);
+  if (d.desc.includes(v)) d.desc = d.desc.filter(x => x !== v);
+  else { d.desc.push(v); if (d.sel === v) d.sel = null; }
+  save(); renderQ();
+  if (d.desc.length === opcoes(q).length) msg("warn", "Você descartou todas as opções. Clique duas vezes em uma delas para recuperá-la e poder responder.");
+}
+function msg(tipo, texto){
+  const m = $("#qMsg"); if (!m) return;
+  m.className = "qmsg on " + tipo; m.textContent = texto;
+}
+function submeter(){
+  const q = QUESTOES[cur]; if (S.answers[q.n]) return;
+  const d = draft(q.n), todas = opcoes(q);
+  if (d.desc.length === todas.length) return msg("bad", "Você marcou todas as opções como descartadas. Recupere uma (clique duas vezes) e selecione-a antes de responder.");
+  if (!d.sel) return msg("bad", "Você não selecionou nenhuma resposta. Clique em uma opção e depois em Responder.");
+  answer(d.sel);
+}
+function answer(v){
+  const q = QUESTOES[cur];
+  if (S.answers[q.n]) return;
+  const d = draft(q.n);
+  S.answers[q.n] = {sel: v, ok: v === q.resp, desc: d.desc.slice(), ts: Date.now()};
+  delete S.draft[q.n];
+  save(); renderQ();
+  $("#qCard .coment")?.scrollIntoView({behavior: "smooth", block: "nearest"});
+  if (Object.keys(S.answers).length === QUESTOES.length){
+    setTimeout(() => { if (confirmFinish()) showTab("rend"); }, 50);
+  }
+}
+let finishedShown = false;
+function confirmFinish(){ if (finishedShown) return false; finishedShown = true; return true; }
+function step(d){
+  const vis = visible(), p = vis.indexOf(cur);
+  if (d > 0 && p >= vis.length - 1){ showTab("rend"); return; }
+  const np = Math.min(Math.max(p + d, 0), vis.length - 1);
+  cur = vis[np]; renderQ(); $("#qCard").scrollIntoView({block: "nearest"});
+}
+$("#qPrev").onclick = () => step(-1);
+$("#qNext").onclick = () => step(1);
+$("#fTema").onchange = $("#fStatus").onchange = () => { cur = -1; renderQ(); };
+
+/* flashcards */
+let deck = [], fcI = 0;
+FLASH.forEach((c, i) => c.id = "f" + i);
+function buildDeck(shuffle){
+  const d = $("#fcDeck").value;
+  deck = FLASH.filter(c => d === "all" || c[0] === d);
+  const box = c => (S.cards[c.id] || {box: 1}).box;
+  deck = deck.map(c => [c, Math.random()]).sort((x, y) => shuffle ? x[1] - y[1] : (box(x[0]) - box(y[0])) || (x[1] - y[1])).map(x => x[0]);
+  fcI = 0; renderCard();
+}
+function renderCard(){
+  if (!deck.length) buildDeck();
+  const c = deck[fcI];
+  $("#fc").classList.remove("flip");
+  $("#fcQ").innerHTML = c[1];
+  $("#fcA").innerHTML = c[2];
+  const b = (S.cards[c.id] || {box: 1}).box;
+  $("#fcPos").textContent = `Cartão ${fcI + 1} de ${deck.length}`;
+  $("#fcBox").textContent = `Caixa ${b}`;
+  const cnt = [0, 0, 0, 0, 0];
+  deck.forEach(x => cnt[((S.cards[x.id] || {box: 1}).box) - 1]++);
+  abbrify($("#fcQ")); abbrify($("#fcA"));
+  $("#fcBoxes").innerHTML = cnt.map((n, i) => `<span>Caixa ${i + 1}: ${n}</span>`).join("");
+}
+function grade(g){
+  const c = deck[fcI], st = S.cards[c.id] || {box: 1};
+  st.box = g === 0 ? 1 : g === 1 ? Math.max(1, st.box) : Math.min(5, st.box + 1);
+  st.seen = (st.seen || 0) + 1; S.cards[c.id] = st; save();
+  fcI = (fcI + 1) % deck.length; renderCard();
+}
+$("#fc").onclick = () => $("#fc").classList.toggle("flip");
+$("#fcBad").onclick = () => grade(0);
+$("#fcMid").onclick = () => grade(1);
+$("#fcOk").onclick = () => grade(2);
+$("#fcDeck").onchange = () => buildDeck();
+$("#fcShuffle").onclick = () => buildDeck(true);
+$("#fcReset").onclick = () => { if (confirm("Zerar as caixas de todos os flashcards?")){ S.cards = {}; save(); buildDeck(); } };
+
+/* rendimento */
+function renderRend(){
+  const ans = S.answers, n = QUESTOES.length, done = QUESTOES.filter(q => ans[q.n]);
+  const ok = done.filter(q => ans[q.n].ok).length;
+  if (!done.length){ $("#rendBody").innerHTML = '<div class="card"><p class="muted">Você ainda não respondeu nenhuma questão. Vá para a aba <b>Questões</b>.</p></div>'; return; }
+  const pct = Math.round(100 * ok / done.length);
+  const ce = done.filter(q => q.tipo === "ce"), ceOk = ce.filter(q => ans[q.n].ok).length, ceBad = ce.length - ceOk;
+  const mc = done.filter(q => q.tipo === "mc"), mcOk = mc.filter(q => ans[q.n].ok).length;
+  const complete = done.length === n;
+  const msg = pct >= 80 ? ["ok", "Excelente! Acima da meta de 80%. O edital exige no mínimo 50% em cada bloco de conhecimentos."] : pct >= 70 ? ["warn", "Bom, mas abaixo da meta de 80%. Revise os temas em amarelo e vermelho."] : ["bad", "Abaixo de 70%. Releia o Resumo dos temas fracos antes de refazer as erradas."];
+  const byT = TEMAS.map(t => {
+    const qs = done.filter(q => q.tema === t), o = qs.filter(q => ans[q.n].ok).length;
+    return {t, tot: QUESTOES.filter(q => q.tema === t).length, d: qs.length, o, p: qs.length ? Math.round(100 * o / qs.length) : null};
+  }).sort((a, b) => (a.p ?? 101) - (b.p ?? 101));
+  const wrong = done.filter(q => !ans[q.n].ok);
+  $("#rendBody").innerHTML = `
+    ${complete ? "" : `<div class="call warn"><b>Resultado parcial</b>Você respondeu ${done.length} de ${n}. O rendimento final aparece quando terminar todas.</div>`}
+    <div class="grid3">
+      <div class="card"><div class="muted">Aproveitamento</div><div class="big" style="color:var(--${pct >= 80 ? "ok" : pct >= 70 ? "warn" : "bad"})">${pct}%</div><div class="muted">${ok} certas de ${done.length}</div></div>
+      ${ce.length ? `<div class="card"><div class="muted">Certo/Errado (nota CEBRASPE)</div><div class="big">${ceOk - ceBad}</div><div class="muted">${ceOk} certas − ${ceBad} erradas, em ${ce.length} itens</div></div>` : `<div class="card"><div class="muted">Respondidas</div><div class="big">${done.length}/${n}</div><div class="muted">${n - done.length} pendentes</div></div>`}
+      <div class="card"><div class="muted">Múltipla escolha</div><div class="big">${mc.length ? Math.round(100 * mcOk / mc.length) : 0}%</div><div class="muted">${mcOk} de ${mc.length}</div></div>
+    </div>
+    <div class="call ${msg[0]}"><b>Diagnóstico</b>${msg[1]}</div>
+    <h3>Desempenho por tema (do mais fraco ao mais forte)</h3>
+    <div class="card">${byT.map(r => `<div class="bar"><span>${esc(r.t)}</span><div class="t"><div class="${r.p === null ? "" : r.p < 70 ? "low" : r.p < 85 ? "mid" : ""}" style="width:${r.p ?? 0}%"></div></div><span>${r.p === null ? "—" : r.p + "%"} <small class="muted">${r.o}/${r.d}</small></span></div>`).join("")}</div>
+    <h3>Questões erradas (${wrong.length})</h3>
+    <div class="card">${wrong.length ? wrong.map(q => `<div style="margin:6px 0"><a href="#" data-n="${q.n}">Q${q.n}</a> · <span class="pill">${esc(q.tema)}</span> <span class="muted">${esc(q.enun.slice(-120).replace(/^\S*\s/, "…"))}</span></div>`).join("") : '<p class="muted">Nenhuma! 🎯</p>'}</div>`;
+  abbrify($("#rendBody"));
+  $("#rendBody").querySelectorAll("a[data-n]").forEach(a => a.onclick = e => {
+    e.preventDefault(); $("#fTema").value = "all"; $("#fStatus").value = "all";
+    cur = QUESTOES.findIndex(q => q.n === +a.dataset.n); showTab("questoes"); renderQ();
+  });
+}
+$("#expBtn").onclick = () => {
+  const blob = new Blob([JSON.stringify(S, null, 1)], {type: "application/json"});
+  const a = document.createElement("a"); a.href = URL.createObjectURL(blob);
+  a.download = `${KEY}_${new Date().toISOString().slice(0, 10)}.json`; a.click();
+};
+$("#impFile").onchange = e => {
+  const f = e.target.files[0]; if (!f) return;
+  f.text().then(t => { S = JSON.parse(t); S.answers ||= {}; S.cards ||= {}; S.draft ||= {}; S.marks ||= {}; save(); renderQ(); renderRend(); hlTudo(); });
+};
+$("#redoBad").onclick = () => {
+  const bad = Object.keys(S.answers).filter(k => !S.answers[k].ok);
+  if (!bad.length) return;
+  bad.forEach(k => delete S.answers[k]); save(); finishedShown = false;
+  $("#fStatus").value = "pend"; cur = -1; showTab("questoes"); renderQ();
+};
+$("#resetAll").onclick = () => { if (confirm("Apagar TODAS as respostas das questões?")){ S.answers = {}; save(); finishedShown = false; renderQ(); renderRend(); } };
+
+/* ---------- marca-texto: selecione um trecho e escolha amarelo, rosa ou verde (salvo em S.marks) ---------- */
+S.marks ||= {};
+const hlBar = $("#hlBar");
+let hlAlvo = null;  /* {root, id} quando o clique foi numa marcação já existente */
+const hlId = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+const hlRaiz = n => (n.nodeType === 1 ? n : n.parentElement)?.closest("[data-hl]");
+function hlTextos(root){
+  const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT), r = [];
+  while (w.nextNode()) r.push(w.currentNode);
+  return r;
+}
+function hlOff(root, node, off){ const r = document.createRange(); r.setStart(root, 0); r.setEnd(node, off); return r.toString().length; }
+/* posições contadas no texto puro do bloco; se o texto mudar, procura o trecho guardado */
+function hlAplicar(root){
+  if (!root) return;
+  root.querySelectorAll("mark.hl").forEach(m => m.replaceWith(...m.childNodes));
+  root.normalize();
+  const full = root.textContent;
+  (S.marks[root.dataset.hl] || []).forEach(m => {
+    if (full.slice(m.s, m.e) !== m.t){ const i = full.indexOf(m.t); if (i < 0) return; m.s = i; m.e = i + m.t.length; }
+    let pos = 0;
+    hlTextos(root).forEach(t => {
+      const a = pos, b = pos + t.length; pos = b;
+      if (b <= m.s || a >= m.e) return;
+      if (!t.nodeValue.trim() && /^(TABLE|TBODY|THEAD|TR|UL|OL|SECTION|DIV|DETAILS)$/.test(t.parentNode.nodeName)) return;
+      let n = t;
+      if (m.e - a < t.length) n.splitText(m.e - a);
+      if (m.s > a) n = n.splitText(m.s - a);
+      const mk = document.createElement("mark");
+      mk.className = "hl hl-" + m.c; mk.dataset.id = m.id;
+      n.replaceWith(mk); mk.append(n);
+    });
+  });
+}
+function hlTudo(){ document.querySelectorAll("[data-hl]").forEach(hlAplicar); }
+function hlSelecao(){
+  const sel = getSelection();
+  if (!sel.rangeCount || sel.isCollapsed) return null;
+  const r = sel.getRangeAt(0), root = hlRaiz(r.startContainer);
+  if (!root || root !== hlRaiz(r.endContainer)) return null;
+  const s = hlOff(root, r.startContainer, r.startOffset), e = hlOff(root, r.endContainer, r.endOffset);
+  return e > s ? {root, s, e, rect: r.getBoundingClientRect()} : null;
+}
+/* tira o trecho [s, e) das marcações existentes (nova cor por cima ou apagar) */
+function hlCortar(lista, s, e, full){
+  const out = [];
+  lista.forEach(m => {
+    if (m.e <= s || m.s >= e) return out.push(m);
+    if (m.s < s) out.push({...m, id: hlId(), e: s, t: full.slice(m.s, s)});
+    if (m.e > e) out.push({...m, id: hlId(), s: e, t: full.slice(e, m.e)});
+  });
+  return out;
+}
+function hlSalvar(root, lista){
+  const k = root.dataset.hl;
+  if (lista.length) S.marks[k] = lista.sort((a, b) => a.s - b.s); else delete S.marks[k];
+  save(); hlAplicar(root);
+}
+function hlMostrar(rect){
+  hlBar.classList.add("on");
+  const w = hlBar.offsetWidth, h = hlBar.offsetHeight;
+  let y = rect.top - h - 8; if (y < 8) y = rect.bottom + 8;
+  hlBar.style.left = Math.min(Math.max(8, rect.left + rect.width / 2 - w / 2), innerWidth - w - 8) + "px";
+  hlBar.style.top = y + "px";
+}
+function hlEsconder(){ hlBar.classList.remove("on"); hlAlvo = null; }
+hlBar.addEventListener("mousedown", e => e.preventDefault());
+hlBar.querySelectorAll("button").forEach(b => b.onclick = () => {
+  const c = b.dataset.c;
+  if (hlAlvo){
+    const {root, id} = hlAlvo, lista = S.marks[root.dataset.hl] || [];
+    hlSalvar(root, c ? lista.map(m => m.id === id ? {...m, c} : m) : lista.filter(m => m.id !== id));
+  } else {
+    const x = hlSelecao(); if (!x) return hlEsconder();
+    const full = x.root.textContent, lista = hlCortar(S.marks[x.root.dataset.hl] || [], x.s, x.e, full);
+    if (c) lista.push({id: hlId(), s: x.s, e: x.e, c, t: full.slice(x.s, x.e)});
+    getSelection().removeAllRanges();
+    hlSalvar(x.root, lista);
+  }
+  hlEsconder();
+});
+function hlChecar(e){
+  if (hlBar.contains(e.target)) return;
+  setTimeout(() => {
+    const x = hlSelecao();
+    if (x){ hlAlvo = null; return hlMostrar(x.rect); }
+    const mk = e.target.closest?.("mark.hl");
+    if (mk && getSelection().isCollapsed){ hlMostrar(mk.getBoundingClientRect()); hlAlvo = {root: hlRaiz(mk), id: mk.dataset.id}; return; }
+    hlEsconder();
+  }, 10);
+}
+document.addEventListener("mouseup", hlChecar);
+document.addEventListener("touchend", hlChecar);
+document.addEventListener("keyup", e => { if (e.shiftKey) hlChecar(e); });
+addEventListener("scroll", hlEsconder, {passive: true});
+$("#hlReset").onclick = () => { if (confirm("Apagar todas as marcações de texto desta página?")){ S.marks = {}; save(); hlTudo(); } };
+document.querySelectorAll("section.tab").forEach(s => { if (!["mapa", "questoes", "flash", "rend"].includes(s.id)) s.dataset.hl = s.id; });
+hlTudo();
+
+/* teclado */
+document.addEventListener("keydown", e => {
+  if (e.target.tagName === "SELECT" || e.ctrlKey || e.metaKey || e.altKey) return;
+  const k = e.key.toLowerCase(), tab = active();
+  if (tab === "questoes"){
+    const q = QUESTOES[cur];
+    if (k === "arrowright") step(1);
+    else if (k === "arrowleft") step(-1);
+    else if (q && !S.answers[q.n]){
+      const v = q.tipo === "ce" ? k.toUpperCase() : k;
+      if (k === "enter"){ e.preventDefault(); submeter(); }
+      else if (opcoes(q).includes(v)){ e.shiftKey ? descartar(v) : escolher(v); }
+    }
+  } else if (tab === "flash"){
+    if (k === " "){ e.preventDefault(); $("#fc").classList.toggle("flip"); }
+    else if (k === "1") grade(0); else if (k === "2") grade(1); else if (k === "3") grade(2);
+  }
+});
+
+renderMapa();
+["#inicio", "#resumo", "#mapa", "#esquemas", "#reforma"].forEach(s => abbrify($(s)));
+cur = 0; renderQ(); buildDeck();
+
+/* ---------- tamanho da fonte (70% a 200%, passo de 10%; salvo para todas as páginas) ---------- */
+function fonte(v){
+  v = Math.min(2, Math.max(0.7, Math.round(v * 10) / 10));
+  document.documentElement.style.setProperty("--fz", v);
+  localStorage.setItem("canedo_fonte", v);
+  $("#fzVal").textContent = Math.round(v * 100) + "%";
+  $("#fzMenos").disabled = v <= 0.7; $("#fzMais").disabled = v >= 2;
+}
+const fzAtual = () => parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--fz")) || 1;
+$("#fzMenos").onclick = () => fonte(fzAtual() - 0.1);
+$("#fzMais").onclick = () => fonte(fzAtual() + 0.1);
+$("#fzVal").onclick = () => fonte(1);
+fonte(fzAtual());
+
+/* ---------- tela cheia: o mesmo botão entra e sai (Esc também sai) ---------- */
+$("#telaCheia").onclick = () => document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen().catch(() => {});
+document.addEventListener("fullscreenchange", () => {
+  const on = !!document.fullscreenElement, b = $("#telaCheia");
+  b.textContent = on ? "✕ Sair da tela cheia" : "⛶ Tela cheia";
+  b.title = b.ariaLabel = on ? "Sair da tela cheia" : "Tela cheia";
+});
+
+/* ---------- menu retrátil no celular: mostra a aba atual e fecha ao escolher outra ---------- */
+function menuRotulo(){
+  const b = $("#nav button.on");
+  $("#menuBtn").textContent = "☰ " + (b ? b.firstChild.textContent.trim() : "Menu");
+}
+$("#menuBtn").onclick = () => {
+  const on = $("header").classList.toggle("menu-on");
+  $("#menuBtn").setAttribute("aria-expanded", on);
+};
+$("#nav").addEventListener("click", e => {
+  if (!e.target.closest("button")) return;
+  $("header").classList.remove("menu-on"); $("#menuBtn").setAttribute("aria-expanded", false); menuRotulo();
+});
+document.addEventListener("click", e => { if (!e.target.closest("header")) menuRotulo(); });
+menuRotulo();
+</script>
+</body>
+</html>

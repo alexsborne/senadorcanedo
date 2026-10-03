@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câmara Municipal de Senador Canedo · Páginas de estudo</title>
+<style>
+:root{--bg:#f6f7f9;--surface:#fff;--surface2:#f0f2f5;--text:#1d2330;--muted:#5d6676;--line:#dde1e7;--accent:#2f5bd3;--accent-soft:#e7edfc;--ok:#1f8a4c;--ok-soft:#e3f4ea;--warn:#a86a00;--bad:#c23a3a}
+@media (prefers-color-scheme:dark){:root{--bg:#12151b;--surface:#1a1e26;--surface2:#222733;--text:#e6e9ef;--muted:#9aa3b2;--line:#2e3442;--accent:#7b9cff;--accent-soft:#232c45;--ok:#4cc27f;--ok-soft:#1b3326;--warn:#f0b54a;--bad:#ef7676}}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text)}
+.wrap{max-width:1040px;margin:0 auto;padding:28px 20px 60px}
+h1{font-size:24px;margin:0 0 4px}
+h2{font-size:19px;margin:28px 0 10px}
+.lead{color:var(--muted);margin:0 0 18px}
+.muted{color:var(--muted)} .small{font-size:13.5px}
+.stats{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 16px;min-width:170px}
+.stat b{display:block;font-size:26px}
+.tarefa{display:flex;gap:16px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:12px;color:inherit;text-decoration:none;transition:border-color .15s,transform .15s}
+.tarefa:hover{border-color:var(--accent);transform:translateY(-1px)}
+.tarefa .corpo{flex:1;min-width:0}
+.tarefa .corpo b{font-size:17px}
+.badge{background:var(--accent);color:#fff;font-weight:700;border-radius:8px;padding:6px 12px;font-size:15px;letter-spacing:.5px}
+.bar{height:8px;background:var(--surface2);border-radius:99px;overflow:hidden;margin-top:8px}
+.bar>div{height:100%;background:var(--ok)}
+.btn{display:inline-block;text-decoration:none;font-size:14px;padding:7px 14px;border-radius:8px;border:1px solid var(--accent);white-space:nowrap}
+.btn.pri{background:var(--accent);color:#fff}
+.call{border-left:4px solid var(--accent);background:var(--accent-soft);padding:10px 14px;border-radius:0 8px 8px 0;margin:12px 0}
+:root{--fz:1} .wrap{zoom:var(--fz)}
+.topo{display:flex;align-items:flex-start;gap:16px;flex-wrap:wrap}
+.fz{display:flex;align-items:center;gap:4px;margin-left:auto}
+.fz button{border:1px solid var(--line);background:var(--surface);color:var(--text);font:inherit;font-size:14px;font-weight:650;min-width:34px;height:30px;padding:0 8px;border-radius:8px;cursor:pointer}
+.fz button:hover{background:var(--surface2)}
+.fz button:disabled{opacity:.4;cursor:default}
+.fz #fzVal{min-width:52px;font-weight:400;color:var(--muted);font-size:13px}
+@media(max-width:700px){.wrap{padding:12px 12px 40px} h1{font-size:18px} .lead{font-size:14px} .fz{margin-left:0} .stat{min-width:0;flex:1;padding:8px 10px} .stat b{font-size:20px} .tarefa{flex-wrap:wrap;gap:10px} .tarefa .btn{width:100%;text-align:center}}
+</style>
+<script>document.documentElement.style.setProperty("--fz", localStorage.getItem("canedo_fonte") || "1");</script>
+</head>
+<body>
+<div class="wrap">
+<div class="topo"><div><h1>Câmara Municipal de Senador Canedo · Páginas de estudo</h1>
+<p class="lead">Concurso 001/2026 (banca Consulpam, provas em 17 e 18 de outubro de 2026). Escolha uma tarefa para abrir o resumo, o mapa mental, os esquemas, as questões e os flashcards.</p></div>
+<div class="fz" role="group" aria-label="Tamanho da fonte">
+  <button id="fzMenos" title="Diminuir fonte" aria-label="Diminuir fonte">A−</button>
+  <button id="fzVal" title="Voltar ao tamanho normal" aria-label="Tamanho normal">100%</button>
+  <button id="fzMais" title="Aumentar fonte" aria-label="Aumentar fonte">A+</button>
+  <button id="telaCheia" title="Tela cheia" aria-label="Tela cheia">⛶ Tela cheia</button>
+</div></div>
+
+<div class="stats">
+  <div class="stat"><span class="muted small">Tarefas com página</span><b>2</b></div>
+  <div class="stat"><span class="muted small">Questões respondidas</span><b id="totResp">0</b></div>
+  <div class="stat"><span class="muted small">Aproveitamento geral</span><b id="totPct">—</b></div>
+</div>
+
+<h2>Tarefas</h2>
+<a class="tarefa" href="lei%20org%C3%A2nica/T1_lei_organica_senador_canedo.html" data-key="canedo_T1_lei_organica_v1" data-n="36">
+  <span class="badge">T1</span>
+  <div class="corpo"><b>Lei Orgânica do Município de Senador Canedo</b>
+    <div class="muted small">Organização do Município, Câmara, Vereadores, processo legislativo, Executivo, administração, bens, tributos e orçamento (Lei Orgânica de 1990, atualizada até 2025).</div>
+    <div class="muted small">36 questões · 46 flashcards · resumo, mapa mental, esquemas e prazos</div>
+    <div class="bar"><div style="width:0%"></div></div><div class="prog muted small">Nenhuma questão respondida neste navegador</div>
+  </div>
+  <span class="btn pri">Abrir</span>
+</a><a class="tarefa" href="regimento%20interno/T2_regimento_interno_senador_canedo.html" data-key="canedo_T2_regimento_interno_v1" data-n="39">
+  <span class="badge">T2</span>
+  <div class="corpo"><b>Regimento Interno da Câmara Municipal</b>
+    <div class="muted small">Mesa, comissões, Plenário e quóruns, Vereadores, sessões, proposições, debates e votação, orçamento, veto e reforma do Regimento (Resolução 4/2020).</div>
+    <div class="muted small">39 questões · 49 flashcards · resumo, mapa mental, esquemas e prazos</div>
+    <div class="bar"><div style="width:0%"></div></div><div class="prog muted small">Nenhuma questão respondida neste navegador</div>
+  </div>
+  <span class="btn pri">Abrir</span>
+</a>
+
+<div class="call small"><b>Dica</b> Estude a T1 (Lei Orgânica) antes da T2 (Regimento): várias questões do Regimento exploram as diferenças entre as duas normas. O progresso fica salvo neste navegador; use <i>Exportar</i> na aba Rendimento de cada página para fazer backup.</div>
+<p class="muted small" style="margin-top:24px">Índice gerado em 03/10/2026 19:26. Material de estudo independente, elaborado a partir dos textos oficiais publicados pela Câmara.</p>
+</div>
+<script>
+const $ = s => document.querySelector(s);
+let tot = 0, ok = 0;
+document.querySelectorAll(".tarefa").forEach(a => {
+  const S = JSON.parse(localStorage.getItem(a.dataset.key) || "null"), n = +a.dataset.n;
+  const ans = S && S.answers ? Object.values(S.answers) : [];
+  if (!ans.length) return;
+  const c = ans.filter(x => x.ok).length; tot += ans.length; ok += c;
+  a.querySelector(".bar>div").style.width = Math.round(100 * ans.length / n) + "%";
+  a.querySelector(".prog").textContent = `${ans.length} de ${n} respondidas · ${Math.round(100 * c / ans.length)}% de acertos`;
+});
+$("#totResp").textContent = tot;
+if (tot) $("#totPct").textContent = Math.round(100 * ok / tot) + "%";
+
+function fonte(v){
+  v = Math.min(2, Math.max(0.7, Math.round(v * 10) / 10));
+  document.documentElement.style.setProperty("--fz", v);
+  localStorage.setItem("canedo_fonte", v);
+  $("#fzVal").textContent = Math.round(v * 100) + "%";
+  $("#fzMenos").disabled = v <= 0.7; $("#fzMais").disabled = v >= 2;
+}
+const fzAtual = () => parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--fz")) || 1;
+$("#fzMenos").onclick = () => fonte(fzAtual() - 0.1);
+$("#fzMais").onclick = () => fonte(fzAtual() + 0.1);
+$("#fzVal").onclick = () => fonte(1);
+fonte(fzAtual());
+$("#telaCheia").onclick = () => document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen().catch(() => {});
+document.addEventListener("fullscreenchange", () => {
+  const on = !!document.fullscreenElement, b = $("#telaCheia");
+  b.textContent = on ? "✕ Sair da tela cheia" : "⛶ Tela cheia";
+  b.title = b.ariaLabel = on ? "Sair da tela cheia" : "Tela cheia";
+});
+</script>
+</body></html>
