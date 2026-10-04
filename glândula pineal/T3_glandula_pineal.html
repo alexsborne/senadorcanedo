@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T3 · Glândula pineal: estudo para apresentação</title>
+<style>
+:root{
+  --bg:#f6f7f9;--surface:#fff;--surface2:#f0f2f5;--text:#1d2330;--muted:#5d6676;--line:#dde1e7;
+  --accent:#2f5bd3;--accent-soft:#e7edfc;--ok:#1f8a4c;--ok-soft:#e3f4ea;--bad:#c23a3a;--bad-soft:#fbe7e7;
+  --warn:#a86a00;--warn-soft:#fdf1dc;--shadow:0 1px 3px rgba(0,0,0,.06),0 4px 14px rgba(0,0,0,.04);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#12151b;--surface:#1a1e26;--surface2:#222733;--text:#e6e9ef;--muted:#9aa3b2;--line:#2e3442;
+  --accent:#7b9cff;--accent-soft:#232c45;--ok:#4cc27f;--ok-soft:#1b3326;--bad:#ef7676;--bad-soft:#3a2023;
+  --warn:#f0b54a;--warn-soft:#3a2f1a;--shadow:none;
+}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text)}
+header{background:var(--surface);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.top{display:flex;align-items:center;gap:16px;padding:12px 0 6px;flex-wrap:wrap}
+.badge{background:var(--accent);color:var(--on-accent,#fff);font-weight:700;border-radius:8px;padding:4px 10px;font-size:14px;letter-spacing:.5px}
+.top h1{font-size:18px;margin:0;font-weight:650}
+.top .sub{color:var(--muted);font-size:13px}
+nav{display:flex;gap:4px;overflow-x:auto;padding-bottom:8px}
+nav button{border:0;background:none;color:var(--muted);font:inherit;font-size:14px;padding:6px 12px;border-radius:8px;cursor:pointer;white-space:nowrap}
+nav button:hover{background:var(--surface2);color:var(--text)}
+nav button.on{background:var(--accent-soft);color:var(--accent);font-weight:600}
+main{padding:24px 0 80px}
+section.tab{display:none}section.tab.on{display:block}
+h2{font-size:22px;margin:0 0 4px}
+h3{font-size:17px;margin:28px 0 10px}
+.lead{color:var(--muted);margin:0 0 20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 20px;box-shadow:var(--shadow);margin-bottom:16px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.call{border-left:4px solid var(--accent);background:var(--accent-soft);padding:10px 14px;border-radius:0 8px 8px 0;margin:12px 0}
+.call.warn{border-color:var(--warn);background:var(--warn-soft)}
+.call.bad{border-color:var(--bad);background:var(--bad-soft)}
+.call.ok{border-color:var(--ok);background:var(--ok-soft)}
+.call b:first-child{display:block;margin-bottom:2px}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+th,td{border-bottom:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--surface2);font-weight:600}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:10px;margin:10px 0}
+.tbl table th:first-child,.tbl table td:first-child{padding-left:14px}
+.k{font-weight:650;color:var(--accent)}
+.muted{color:var(--muted)}
+.pill{display:inline-block;font-size:12px;padding:1px 8px;border-radius:99px;background:var(--surface2);color:var(--muted);border:1px solid var(--line)}
+.pill.ok{background:var(--ok-soft);color:var(--ok);border-color:transparent}
+.pill.bad{background:var(--bad-soft);color:var(--bad);border-color:transparent}
+details{border:1px solid var(--line);border-radius:10px;margin:8px 0;background:var(--surface)}
+details summary{cursor:pointer;padding:10px 14px;font-weight:600}
+details>div{padding:0 14px 12px}
+.btn{border:1px solid var(--line);background:var(--surface);color:var(--text);font:inherit;font-size:14px;padding:8px 14px;border-radius:8px;cursor:pointer}
+.btn:hover{border-color:var(--accent)}
+.btn.pri{background:var(--accent);border-color:var(--accent);color:var(--on-accent,#fff)}
+.btn.ok{background:var(--ok);border-color:var(--ok);color:var(--on-accent,#fff)}
+.btn.bad{background:var(--bad);border-color:var(--bad);color:var(--on-accent,#fff)}
+.btn:disabled{opacity:.45;cursor:default}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+select{font:inherit;font-size:14px;padding:7px 10px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--text)}
+
+/* roteiro */
+.steps{counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{counter-increment:s;position:relative;padding:10px 0 10px 46px;border-bottom:1px dashed var(--line)}
+.steps li:last-child{border:0}
+.steps li::before{content:counter(s);position:absolute;left:0;top:10px;width:32px;height:32px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-weight:700;display:grid;place-items:center}
+
+/* mapa mental */
+.mm{padding:22px 16px}
+.mm-root{display:block;max-width:520px;margin:0 auto;text-align:center;background:var(--accent);color:var(--on-accent,#fff);border-radius:12px;padding:12px 16px;font-size:14px;line-height:1.45}
+.mm-root b{display:block;font-size:17px;letter-spacing:.5px}
+.mm-trunk{width:2px;height:22px;background:var(--line);margin:0 auto}
+.mm-branches{display:grid;grid-template-columns:repeat(var(--n,5),1fr);gap:12px;border-top:2px solid var(--line);padding-top:0}
+.mm-br{display:flex;flex-direction:column;align-items:stretch}
+.mm-br::before{content:"";width:2px;height:18px;background:var(--line);margin:0 auto}
+.mm-h{border:2px solid var(--c);border-radius:10px;padding:8px 10px;text-align:center;font-size:13px;background:var(--surface)}
+.mm-h b{display:block;font-size:14.5px;color:var(--c)}
+.mm-br ul{list-style:none;margin:8px 0 0;padding:0 0 0 12px;border-left:2px solid var(--c)}
+.mm-br li{font-size:13px;line-height:1.4;background:var(--surface2);border-radius:8px;padding:6px 9px;margin:6px 0;position:relative}
+.mm-br li::before{content:"";position:absolute;left:-12px;top:50%;width:10px;border-top:2px solid var(--c)}
+@media(max-width:860px){.mm-branches{grid-template-columns:1fr 1fr;border-top:0}}
+@media(max-width:520px){.mm-branches{grid-template-columns:1fr}}
+
+
+/* abreviações com dica */
+abbr[data-tip]{text-decoration:underline dotted;text-underline-offset:3px;cursor:help}
+#tip{position:fixed;z-index:100;max-width:300px;background:var(--text);color:var(--bg);font-size:13px;line-height:1.35;padding:6px 10px;border-radius:7px;box-shadow:0 4px 14px rgba(0,0,0,.25);pointer-events:none;opacity:0;transition:opacity .12s}
+#tip.on{opacity:1}
+
+
+/* mapa clicável */
+.mm [data-k]{cursor:pointer;transition:transform .12s,box-shadow .12s}
+.mm [data-k]:hover{transform:translateY(-1px);box-shadow:0 2px 8px rgba(0,0,0,.12)}
+.mm [data-k].sel{outline:3px solid var(--c,var(--accent));outline-offset:2px}
+.mm-root[data-k].sel{outline-color:var(--text)}
+.mm-hint{text-align:center;color:var(--muted);font-size:13px;margin:-4px 0 12px}
+#mmPanel{border-left:6px solid var(--c,var(--accent));scroll-margin-top:140px}
+#mmPanel h4{margin:0 0 4px;font-size:18px;color:var(--c,var(--accent))}
+#mmPanel .mm-sec{margin:12px 0 0}
+#mmPanel .lbl{display:block;font-size:13px;text-transform:uppercase;letter-spacing:.4px;color:var(--muted);margin-bottom:2px}
+#mmPanel .ex{background:var(--ok-soft);border-radius:8px;padding:10px 12px}
+#mmPanel .pg{background:var(--bad-soft);border-radius:8px;padding:10px 12px}
+#mmPanel .nav{display:flex;justify-content:space-between;gap:8px;margin-top:14px}
+
+/* questões */
+.qnav{display:flex;flex-wrap:wrap;gap:5px;margin:10px 0 16px}
+.qnav button{width:34px;height:30px;border-radius:6px;border:1px solid var(--line);background:var(--surface);color:var(--text);font-size:12.5px;cursor:pointer}
+.qnav button.cur{outline:2px solid var(--accent);outline-offset:1px}
+.qnav button.ok{background:var(--ok);color:var(--on-accent,#fff);border-color:var(--ok)}
+.qnav button.bad{background:var(--bad);color:var(--on-accent,#fff);border-color:var(--bad)}
+.progress{height:8px;background:var(--surface2);border-radius:99px;overflow:hidden}
+.progress>div{height:100%;background:var(--accent);transition:width .3s}
+.qhead{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:13.5px;margin-bottom:8px}
+.enun{white-space:pre-line;margin-bottom:14px}
+.trecho{white-space:pre-line;margin:0 0 12px;padding:10px 14px;border-left:4px solid var(--accent);background:var(--surface2);border-radius:0 8px 8px 0;font-style:italic}
+.trecho .lbl{display:block;font-style:normal;font-size:12px;text-transform:uppercase;letter-spacing:.4px;color:var(--muted);margin-bottom:2px}
+.opt{display:flex;gap:10px;align-items:flex-start;width:100%;text-align:left;border:1px solid var(--line);background:var(--surface);color:var(--text);font:inherit;font-size:15px;padding:10px 12px;border-radius:10px;margin:6px 0;cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--accent);background:var(--accent-soft)}
+.opt .l{font-weight:700;min-width:22px;text-transform:uppercase}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:var(--ok-soft)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.ce{display:flex;gap:10px}.ce .opt{justify-content:center;font-weight:650}
+.opt{user-select:none;-webkit-user-select:none;position:relative}
+.opt.sel{border-color:var(--accent);background:var(--accent-soft);box-shadow:inset 0 0 0 1px var(--accent)}
+.opt.sel .l::before{content:"● ";color:var(--accent)}
+.opt.desc{opacity:.55;padding-right:92px}
+.opt.desc span{text-decoration:line-through;text-decoration-thickness:2px}
+.ce .opt.desc{text-decoration:line-through;text-decoration-thickness:2px}
+.opt.desc::after{content:"descartada";position:absolute;right:10px;top:8px;font-size:11px;color:var(--muted);text-decoration:none}
+.qact{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:12px}
+.qmsg{font-size:14.5px;padding:8px 12px;border-radius:8px;display:none}
+.qmsg.on{display:block}
+.qmsg.warn{background:var(--warn-soft);color:var(--warn)}
+.qmsg.bad{background:var(--bad-soft);color:var(--bad)}
+.qhint{font-size:12.5px;color:var(--muted);margin:2px 0 6px}
+.coment{margin-top:16px;border-top:1px solid var(--line);padding-top:12px}
+.coment p{margin:6px 0}
+.verdict{font-weight:700;font-size:16px}
+.verdict.ok{color:var(--ok)}.verdict.bad{color:var(--bad)}
+
+/* flashcards */
+.fc{perspective:1200px;max-width:640px;margin:0 auto}
+.fc-inner{position:relative;min-height:240px;transition:transform .45s;transform-style:preserve-3d;cursor:pointer}
+.fc.flip .fc-inner{transform:rotateY(180deg)}
+.fc-face{position:absolute;inset:0;backface-visibility:hidden;border-radius:14px;padding:26px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;border:1px solid var(--line);background:var(--surface);box-shadow:var(--shadow)}
+.fc-face.back{transform:rotateY(180deg);background:var(--accent-soft);text-align:left;align-items:flex-start;font-size:15px}
+.fc-face .q{font-size:19px;font-weight:600}
+.fc-meta{display:flex;justify-content:space-between;max-width:640px;margin:0 auto 8px;color:var(--muted);font-size:13px}
+.boxes{display:flex;gap:6px;justify-content:center;margin:14px 0}
+.boxes span{font-size:12px;padding:3px 9px;border-radius:99px;background:var(--surface2);border:1px solid var(--line)}
+
+/* rendimento */
+.big{font-size:44px;font-weight:750;line-height:1}
+.bar{display:grid;grid-template-columns:200px 1fr 70px;gap:10px;align-items:center;margin:6px 0;font-size:14px}
+.bar .t{height:12px;background:var(--surface2);border-radius:99px;overflow:hidden}
+.bar .t>div{height:100%;background:var(--ok)}
+.bar .t>div.mid{background:var(--warn)}.bar .t>div.low{background:var(--bad)}
+@media(max-width:600px){.bar{grid-template-columns:120px 1fr 56px}}
+kbd{font:12px ui-monospace,monospace;border:1px solid var(--line);border-bottom-width:2px;border-radius:4px;padding:0 5px;background:var(--surface2)}
+.btn kbd{background:rgba(255,255,255,.18);color:inherit;border-color:currentColor}
+/* marca-texto */
+mark.hl{color:#1d2330;border-radius:3px;padding:0 1px;cursor:pointer;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+mark.hl-am{background:#fff176}mark.hl-ro{background:#f9c2dc}mark.hl-ve{background:#b6efc4}
+#hlBar{position:fixed;z-index:120;display:none;gap:6px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:6px 8px;box-shadow:0 6px 20px rgba(0,0,0,.18)}
+#hlBar.on{display:flex}
+#hlBar .lbl{font-size:12px;color:var(--muted);margin-right:2px}
+#hlBar button{width:28px;height:28px;border-radius:50%;border:2px solid var(--line);cursor:pointer;font-size:14px;line-height:1;color:var(--text);background:var(--surface2);padding:0}
+#hlBar button:hover{transform:scale(1.12);border-color:var(--text)}
+#hlBar button[data-c=am]{background:#fff176}#hlBar button[data-c=ro]{background:#f9c2dc}#hlBar button[data-c=ve]{background:#b6efc4}
+/* tamanho da fonte: A− / A+ escalam a página inteira (zoom em header e main; #tip só a fonte, para não deslocar) */
+:root{--fz:1}
+header,main{zoom:var(--fz)}
+#tip{font-size:calc(13px * var(--fz))}
+.fz{display:flex;align-items:center;gap:4px}
+.fz button{border:1px solid var(--line);background:var(--surface);color:var(--text);font:inherit;font-size:14px;font-weight:650;min-width:34px;height:30px;padding:0 8px;border-radius:8px;cursor:pointer}
+.fz button:hover{background:var(--surface2)}
+.fz #fzVal{min-width:52px;font-weight:400;color:var(--muted);font-size:13px}
+/* celular: cabeçalho compacto numa linha e menu retrátil (abas, fonte, tela cheia e índice dentro dele) */
+#menuBtn{display:none}
+@media(max-width:700px){
+  .wrap{padding:0 12px}
+  .top{flex-wrap:nowrap;gap:8px;padding:6px 0}
+  .top>div:not(.fz){min-width:0;flex:1}
+  .top h1{font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .top .sub{display:none}
+  .badge{font-size:12px;padding:2px 7px}
+  #menuBtn{display:inline-block;flex-shrink:0;max-width:46vw;border:1px solid var(--line);background:var(--accent-soft);color:var(--accent);font:inherit;font-size:13px;font-weight:600;padding:5px 10px;border-radius:8px;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .top>a,.top .fz,nav{display:none}
+  header.menu-on .top{flex-wrap:wrap}
+  header.menu-on .top>a{display:block;order:3;width:100%;margin:2px 0 0 !important}
+  header.menu-on .top .fz{display:flex;order:4;width:100%;flex-wrap:wrap}
+  header.menu-on nav{display:flex;flex-direction:column;gap:2px;max-height:60vh;overflow-y:auto}
+  header.menu-on nav button{text-align:left;padding:9px 12px}
+}
+/* temas: html[data-tema] tem precedência sobre :root e sobre o claro/escuro do sistema */
+html[data-tema="claro"]{--bg:#f6f7f9;--surface:#fff;--surface2:#f0f2f5;--text:#1d2330;--muted:#5d6676;--line:#dde1e7;--accent:#2f5bd3;--accent-soft:#e7edfc;--ok:#1f8a4c;--ok-soft:#e3f4ea;--bad:#c23a3a;--bad-soft:#fbe7e7;--warn:#a86a00;--warn-soft:#fdf1dc;--on-accent:#fff;--shadow:0 1px 3px rgba(0,0,0,.06),0 4px 14px rgba(0,0,0,.04);color-scheme:light}
+html[data-tema="escuro"]{--bg:#12151b;--surface:#1a1e26;--surface2:#222733;--text:#e6e9ef;--muted:#9aa3b2;--line:#2e3442;--accent:#7b9cff;--accent-soft:#232c45;--ok:#4cc27f;--ok-soft:#1b3326;--bad:#ef7676;--bad-soft:#3a2023;--warn:#f0b54a;--warn-soft:#3a2f1a;--on-accent:#fff;--shadow:none;color-scheme:dark}
+html[data-tema="sepia"]{--bg:#f4ecd8;--surface:#fbf5e6;--surface2:#efe4cc;--text:#3b2f22;--muted:#6e5d48;--line:#e0d2b4;--accent:#8a5a2b;--accent-soft:#f1e2c9;--ok:#2f7a3a;--ok-soft:#e2efd9;--bad:#b23b2e;--bad-soft:#f6dfd6;--warn:#9a6400;--warn-soft:#f7e8c6;--on-accent:#fff;--shadow:0 1px 3px rgba(60,40,10,.08);color-scheme:light}
+html[data-tema="oceano"]{--bg:#0d1b2a;--surface:#13263a;--surface2:#1b3350;--text:#e3edf7;--muted:#93a9c1;--line:#24425f;--accent:#4fc3f7;--accent-soft:#163a55;--ok:#5ad18b;--ok-soft:#173a2a;--bad:#ff7b7b;--bad-soft:#3d2026;--warn:#ffc857;--warn-soft:#3b3220;--on-accent:#06223a;--shadow:none;color-scheme:dark}
+html[data-tema="contraste"]{--bg:#000;--surface:#000;--surface2:#1a1a1a;--text:#fff;--muted:#e6e6e6;--line:#fff;--accent:#ffd400;--accent-soft:#332b00;--ok:#00e676;--ok-soft:#00331a;--bad:#ff6b6b;--bad-soft:#3a0000;--warn:#ffb000;--warn-soft:#332400;--on-accent:#000;--shadow:none;color-scheme:dark}
+html[data-tema="contraste"] a{color:#ffd400}
+#tema{border:1px solid var(--line);background:var(--surface);color:var(--text);font:inherit;font-size:13px;height:30px;padding:0 6px;border-radius:8px;cursor:pointer}
+</style>
+<script>
+/* aplica o tamanho salvo antes de desenhar a página; vale para todas as páginas do plano */
+document.documentElement.style.setProperty("--fz", localStorage.getItem("canedo_fonte") || "1");
+const _t = localStorage.getItem("canedo_tema"); if (_t) document.documentElement.dataset.tema = _t;
+</script>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="top">
+      <span class="badge">T3</span>
+      <div>
+        <h1>Tarefa 3 · Glândula pineal: o relógio escondido no cérebro</h1>
+        <div class="sub">Estudo para uma apresentação de 8 minutos · resumo, roteiro da fala, mapa mental, questões e flashcards</div>
+      </div>
+
+      <button id="menuBtn" aria-expanded="false" aria-controls="nav" title="Abrir menu">☰ Menu</button>
+      <a href="../index.html" style="margin-left:auto;font-size:14px;color:var(--accent);text-decoration:none">← Índice das tarefas</a>
+      <div class="fz" role="group" aria-label="Tamanho da fonte">
+        <button id="fzMenos" title="Diminuir fonte" aria-label="Diminuir fonte">A−</button>
+        <button id="fzVal" title="Voltar ao tamanho normal" aria-label="Tamanho normal">100%</button>
+        <button id="fzMais" title="Aumentar fonte" aria-label="Aumentar fonte">A+</button>
+        <button id="telaCheia" title="Tela cheia" aria-label="Tela cheia">⛶ Tela cheia</button>
+        <select id="tema" title="Tema de cores" aria-label="Tema de cores"><option value="claro">☀ Claro</option><option value="escuro">☾ Escuro</option><option value="sepia">📜 Sépia</option><option value="oceano">🌊 Oceano</option><option value="contraste">◐ Alto contraste</option></select>
+      </div>
+    </div>
+    <nav id="nav">
+      <button data-t="inicio" class="on">Roteiro</button>
+      <button data-t="resumo">Resumo</button>
+      <button data-t="mapa">Mapa mental</button>
+      <button data-t="esquemas">Esquemas</button>
+      <button data-t="reforma">Apresentação (8 min)</button>
+      <button data-t="questoes">Questões <span class="pill" id="navQ">0/0</span></button>
+      <button data-t="flash">Flashcards</button>
+      <button data-t="rend">Rendimento</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ROTEIRO -->
+<section class="tab on" id="inicio">
+<h2>Roteiro de estudo T3</h2>
+  <p class="lead">Objetivo: entender a <b>glândula pineal</b> bem o bastante para apresentar o tema em <b>8 minutos</b> com segurança e responder às perguntas da turma e do professor. Planeje cerca de 1h30, que pode ser dividida em dois dias.</p>
+
+  <div class="call"><b>O tema em uma frase</b>
+    A glândula pineal é uma pequena glândula no centro do cérebro que produz a <b>melatonina</b> quando está escuro, avisando o corpo de que é noite e ajudando a organizar o <b>relógio biológico</b> (ritmo circadiano).
+  </div>
+
+  <div class="card">
+    <ol class="steps">
+      <li><b>Aquecimento (5 min).</b> Abra os <b>Flashcards</b> e tente 5 cartões antes de ler. Errar agora ajuda a lembrar depois.</li>
+      <li><b>Resumo (25 min).</b> Leia a aba <b>Resumo</b> e responda aos blocos <i>Pergunte-se</i> antes de abrir a resposta.</li>
+      <li><b>Mapa mental e Esquemas (10 min).</b> Clique em cada item do mapa. O caminho <i>luz → olho → relógio → pineal → melatonina</i> é o coração da apresentação.</li>
+      <li><b>Apresentação (20 min).</b> Na aba <b>Apresentação (8 min)</b> está o roteiro da fala, slide por slide, com o tempo de cada parte. Ensaie em voz alta com um cronômetro.</li>
+      <li><b>Questões (20 min).</b> 42 questões. Escolha com um clique, descarte com dois e confirme em <b>Responder</b>; leia sempre o comentário.</li>
+      <li><b>Rendimento (5 min).</b> Veja os temas abaixo de 70% e volte ao Resumo deles. As perguntas da turma costumam cair justamente aí.</li>
+    </ol>
+  </div>
+
+  <div class="grid3">
+    <div class="card"><b>Meta</b><br><span class="muted">Explicar sem ler: o que é, onde fica, o que produz, como a luz controla e por que isso importa para o sono.</span></div>
+    <div class="card"><b>Diferencial</b><br><span class="muted">Ligue o tema ao dia a dia da turma: celular à noite, adolescentes que dormem tarde, jet lag e o mito do “terceiro olho”.</span></div>
+    <div class="card"><b>Salvamento</b><br><span class="muted">Respostas, flashcards e marcações ficam neste navegador. Use <i>Exportar</i> na aba Rendimento para fazer backup.</span></div>
+  </div>
+</section>
+
+<!-- RESUMO -->
+<section class="tab" id="resumo">
+<h2>Resumo: glândula pineal</h2>
+  <p class="lead">Os <span class="k">termos em destaque</span> são os que você precisa saber dizer na apresentação. Os blocos vermelhos marcam confusões comuns, que também viram boas perguntas da plateia.</p>
+
+  <h3>1. O que é e onde fica</h3>
+  <div class="card">
+    <ul>
+      <li>A <span class="k">glândula pineal</span>, também chamada <b>epífise</b> (ou epífise cerebral), é uma <b>glândula endócrina</b>: lança seu produto, um hormônio, diretamente no sangue.</li>
+      <li>Fica <b>bem no centro do cérebro</b>, entre os dois hemisférios, na parte de trás do <b>terceiro ventrículo</b>. Pertence ao <b>epitálamo</b>, uma região do <b>diencéfalo</b>.</li>
+      <li>O nome vem do latim <i>pinea</i>, <b>pinha</b>, por causa do formato de pequeno cone.</li>
+      <li>É minúscula: cerca de <span class="k">5 a 8 mm</span> de comprimento e uns <b>0,1 g</b>, mais ou menos o tamanho de um grão de arroz ou de uma ervilha pequena.</li>
+      <li>É formada principalmente por <span class="k">pinealócitos</span>, as células que produzem a melatonina, apoiadas por células da glia.</li>
+      <li>É <b>muito irrigada</b> por vasos sanguíneos e fica fora da barreira hematoencefálica, o que facilita entregar o hormônio ao sangue.</li>
+    </ul>
+    <div class="call bad"><b>Confusão comum</b><b>Pineal</b> não é <b>hipófise</b>. A hipófise (ou pituitária) fica embaixo do cérebro, presa ao hipotálamo, e produz vários hormônios (do crescimento, por exemplo). A pineal fica no centro e tem como hormônio principal a <b>melatonina</b>.</div>
+  </div>
+  <details><summary>Pergunte-se</summary>
+    <p>Por que ela se chama “pineal”?<br><i>Porque lembra uma pinha (em latim, pinea).</i></p>
+  </details>
+
+  <h3>2. A melatonina, o “hormônio da escuridão”</h3>
+  <div class="card">
+    <ul>
+      <li>O principal produto da pineal é a <span class="k">melatonina</span>. Ela é liberada quando está escuro e quase some durante o dia claro. Por isso é chamada de <b>hormônio da escuridão</b> ou “hormônio da noite”.</li>
+      <li>Fabricação passo a passo: <b>triptofano</b> (aminoácido que vem da alimentação) → <b>serotonina</b> → N-acetilserotonina → <b>melatonina</b>. A enzima AANAT é a “chave” que liga a produção à noite.</li>
+      <li>O nível no sangue começa a subir cerca de <b>2 horas antes</b> do horário habitual de dormir e atinge o <span class="k">pico de madrugada</span> (por volta das 2 às 4 horas). De manhã, com a luz, cai.</li>
+      <li>A melatonina <b>não é um sonífero</b> que “desliga” a pessoa: ela é um <b>sinal de horário</b>. Diz ao corpo “é noite”, e o corpo se prepara para dormir (a temperatura cai, a sonolência aumenta).</li>
+      <li>Também é produzida em pequenas quantidades em outros lugares (retina, intestino), mas a melatonina que circula no sangue à noite vem principalmente da pineal.</li>
+    </ul>
+    <div class="call bad"><b>Confusão comum</b><b>Melatonina</b> não é <b>melanina</b>. A melanina é o pigmento da pele e dos cabelos. Os nomes se parecem porque a melatonina foi descoberta clareando a pele de sapos: <i>mela</i> (negro, escuro) + <i>tonina</i> (de serotonina).</div>
+  </div>
+  <details><summary>Pergunte-se</summary>
+    <p>De qual substância a melatonina é feita, e de onde vem essa substância?<br><i>Da serotonina, que por sua vez é feita a partir do triptofano, um aminoácido da alimentação (leite, ovos, banana, castanhas).</i></p>
+  </details>
+
+  <h3>3. Como a luz controla a pineal</h3>
+  <div class="card">
+    <p>A pineal humana <b>não enxerga a luz diretamente</b>. Ela recebe a informação por um caminho longo, que é o ponto alto da apresentação:</p>
+    <div class="tbl"><table>
+      <tr><th>Etapa</th><th>O que acontece</th></tr>
+      <tr><td>1. Olhos</td><td>Células especiais da <b>retina</b>, com o pigmento <b>melanopsina</b>, percebem a luz, principalmente a <b>azul</b>. Elas não servem para formar imagens, só para medir a claridade.</td></tr>
+      <tr><td>2. Relógio central</td><td>O sinal vai ao <span class="k">núcleo supraquiasmático</span> (NSQ), no <b>hipotálamo</b>: o “relógio-mestre” do corpo.</td></tr>
+      <tr><td>3. Desvio pela medula</td><td>Do hipotálamo, o sinal desce pela medula espinhal e sobe de volta pelo <b>gânglio cervical superior</b>, no pescoço (sistema nervoso simpático).</td></tr>
+      <tr><td>4. Pineal</td><td>À noite, os nervos liberam <b>noradrenalina</b> na pineal, que liga a produção de <b>melatonina</b>.</td></tr>
+    </table></div>
+    <ul>
+      <li><b>Escuro</b> = sinal liberado = melatonina <b>alta</b>. <b>Luz</b> = sinal freado = melatonina <b>baixa</b>.</li>
+      <li>A luz <span class="k">azul</span> (comprimento de onda perto de 460 a 480 nm), comum em telas de celular, computador e lâmpadas LED brancas, é a que mais <b>bloqueia</b> a melatonina.</li>
+    </ul>
+    <div class="call bad"><b>Confusão comum</b>Quem manda no relógio é o <b>núcleo supraquiasmático</b>; a pineal é o “alto-falante” que transforma a hora do relógio num sinal químico (a melatonina) para o corpo todo.</div>
+  </div>
+  <details><summary>Pergunte-se</summary>
+    <p>Se a pineal fica no meio do cérebro, como ela “sabe” que é noite?<br><i>Pelos olhos: a retina percebe a luz e avisa o núcleo supraquiasmático, que comanda a pineal por nervos que passam pelo pescoço.</i></p>
+  </details>
+
+  <h3>4. Ritmo circadiano: o relógio de 24 horas</h3>
+  <div class="card">
+    <ul>
+      <li><span class="k">Ritmo circadiano</span> (do latim <i>circa diem</i>, “cerca de um dia”) é o ciclo de aproximadamente <b>24 horas</b> do corpo: sono e vigília, temperatura, fome, alerta, liberação de hormônios.</li>
+      <li>O relógio interno não tem exatamente 24 horas; a <b>luz do dia</b> o acerta todo dia. A melatonina ajuda a espalhar essa hora certa para o corpo todo.</li>
+      <li>Outro hormônio com ritmo diário é o <b>cortisol</b>, alto de manhã para nos despertar. Melatonina e cortisol funcionam como uma gangorra ao longo do dia.</li>
+      <li><b>Adolescentes</b>: na puberdade, a melatonina começa a subir <b>mais tarde</b> à noite. Por isso muitos adolescentes têm sono mais tarde e dificuldade de acordar cedo. Não é só preguiça: é biologia.</li>
+    </ul>
+    <div class="call bad"><b>Confusão comum</b><b>Circadiano</b> ≠ <b>sazonal</b>. Circadiano é o ciclo de um dia; sazonal é o das estações do ano. A pineal participa dos dois, porque as noites mudam de duração ao longo do ano.</div>
+  </div>
+
+  <h3>5. Outras funções</h3>
+  <div class="card">
+    <ul>
+      <li><b>Estações do ano</b>: em muitos animais, a duração da noite (e, portanto, da produção de melatonina) informa a estação e controla a <b>reprodução sazonal</b>, a troca de pelagem e a hibernação. Ovelhas, por exemplo, entram no cio quando as noites ficam longas.</li>
+      <li><b>Puberdade</b>: a melatonina é alta na infância e cai na puberdade. Tumores na região da pineal em crianças podem estar ligados à <b>puberdade precoce</b>.</li>
+      <li><b>Antioxidante</b>: a melatonina neutraliza radicais livres em laboratório; estuda-se seu papel na proteção das células.</li>
+      <li><b>Sistema imunológico e temperatura</b>: há relação com a queda da temperatura corporal à noite e com a imunidade, ainda em estudo.</li>
+    </ul>
+  </div>
+
+  <h3>6. Calcificação: a “areia cerebral”</h3>
+  <div class="card">
+    <ul>
+      <li>Com a idade, a pineal acumula pequenos depósitos de cálcio chamados <span class="k">areia cerebral</span> (<i>corpora arenacea</i>).</li>
+      <li>A calcificação é comum em adultos e aparece em <b>raio X e tomografia</b>. Os médicos já a usaram como <b>ponto de referência</b> para saber se o cérebro estava deslocado.</li>
+      <li>Calcificação em si costuma ser <b>normal</b>; há estudos associando-a a menos melatonina, mas a relação ainda é discutida.</li>
+    </ul>
+  </div>
+
+  <h3>7. Saúde: sono, telas, jet lag e suplementos</h3>
+  <div class="card">
+    <ul>
+      <li><b>Telas à noite</b>: a luz azul do celular atrasa a liberação de melatonina e o sono. Dicas: diminuir o brilho, usar o modo noturno e, melhor ainda, guardar o aparelho <b>1 hora antes de dormir</b>.</li>
+      <li><b>Luz da manhã</b>: tomar sol logo cedo ajuda a acertar o relógio e a ter sono no horário certo à noite.</li>
+      <li><span class="k">Jet lag</span>: ao cruzar fusos horários, o relógio interno fica desencontrado do horário local. A luz no novo lugar (e, com orientação médica, a melatonina) ajuda a reajustar.</li>
+      <li><b>Trabalho noturno</b>: trabalhar de noite sob luz forte reduz a melatonina e bagunça o ritmo circadiano.</li>
+      <li><b>Suplementos de melatonina</b>: existem, mas devem ser usados <b>só com orientação de médico</b>, principalmente por crianças e adolescentes.</li>
+      <li><b>Tumores da pineal</b> são raros, mais comuns em crianças e jovens. Por estar perto de vias importantes, podem causar dor de cabeça, acúmulo de líquido no cérebro (hidrocefalia) e dificuldade de olhar para cima (síndrome de Parinaud).</li>
+    </ul>
+  </div>
+  <details><summary>Pergunte-se</summary>
+    <p>Por que usar o celular na cama atrapalha o sono?<br><i>Porque a luz azul da tela chega à retina, o relógio interno entende que ainda é dia e a pineal segura a melatonina.</i></p>
+  </details>
+
+  <h3>8. História e o “terceiro olho”</h3>
+  <div class="card">
+    <ul>
+      <li><b>Galeno</b> (médico grego, século II) já descrevia a glândula e achava que ela regulava o fluxo de “espíritos” no cérebro.</li>
+      <li><span class="k">René Descartes</span> (século XVII) a chamou de <b>“sede principal da alma”</b>, porque era uma estrutura única no meio do cérebro, enquanto quase tudo o mais é duplo (direito e esquerdo).</li>
+      <li>Em <span class="k">1958</span>, o dermatologista americano <b>Aaron Lerner</b> isolou a <b>melatonina</b> a partir de pineais de boi.</li>
+      <li><b>Terceiro olho</b>: em alguns répteis, como o <b>tuatara</b> da Nova Zelândia e muitos lagartos, existe um <b>olho parietal</b> no alto da cabeça, ligado ao complexo pineal, que percebe luz. Em peixes, anfíbios e aves, a própria pineal capta luz. Nos mamíferos, ela perdeu essa capacidade e depende dos olhos.</li>
+    </ul>
+    <div class="call bad"><b>Mito × fato</b>Ideias de que a pineal dá poderes paranormais ou que é o “portal da alma” são <b>crenças</b>, sem comprovação científica. O que a ciência mostra é a ligação com a luz e com o tempo. Vale citar o mito na apresentação, sempre separando-o dos fatos.</div>
+  </div>
+</section>
+
+<!-- MAPA -->
+<section class="tab" id="mapa">
+  <h2>Mapa mental: glândula pineal</h2>
+  <p class="lead">Leia de cima para baixo e explore cada item. Depois feche a página e tente redesenhar o mapa de memória.</p>
+  <p class="mm-hint">👆 Clique em qualquer item do mapa para ver a explicação detalhada, com exemplo, no painel logo abaixo.</p>
+  <div class="card mm" id="mmBox"></div>
+  <div class="card" id="mmPanel"><p class="muted" style="margin:0">Nenhum item selecionado. Clique no centro do mapa para começar.</p></div>
+
+  <h3>Onde este tema se encaixa na Biologia</h3>
+  <div class="card">
+    <div class="grid3" style="font-size:14px">
+      <div><b class="k">Sistema endócrino</b><br>Glândulas e hormônios ← <i>você está aqui</i><br>Hipófise, tireoide, suprarrenais, pâncreas, gônadas</div>
+      <div><b class="k">Sistema nervoso</b><br>Encéfalo: cérebro, diencéfalo ← <i>você está aqui</i><br>Hipotálamo e sistema nervoso autônomo</div>
+      <div><b class="k">Sentidos</b><br>Olho e retina ← <i>você está aqui</i><br>Percepção da luz</div>
+      <div><b class="k">Cronobiologia</b><br>Ritmo circadiano ← <i>você está aqui</i><br>Sono, jet lag e trabalho em turnos</div>
+      <div><b class="k">Evolução</b><br>Olho parietal dos répteis ← <i>você está aqui</i><br>Fotorreceptores em peixes e anfíbios</div>
+      <div><b class="k">Saúde</b><br>Higiene do sono e telas ← <i>você está aqui</i><br>Uso responsável de suplementos</div>
+    </div>
+  </div>
+</section>
+
+<!-- ESQUEMAS -->
+<section class="tab" id="esquemas">
+<h2>Esquemas para revisar</h2>
+  <p class="lead">Tabelas para revisão rápida. Algumas servem quase prontas como slides.</p>
+
+  <h3>Dia × noite</h3>
+  <div class="tbl"><table>
+    <tr><th></th><th>Dia (luz)</th><th>Noite (escuro)</th></tr>
+    <tr><td>Retina</td><td>Percebe luz e avisa o relógio</td><td>Sem luz, não envia o sinal de “dia”</td></tr>
+    <tr><td>Núcleo supraquiasmático</td><td>Freia o caminho até a pineal</td><td>Libera o caminho até a pineal</td></tr>
+    <tr><td>Pineal</td><td>Quase parada</td><td>Recebe noradrenalina e trabalha</td></tr>
+    <tr><td>Melatonina no sangue</td><td><b>Baixa</b></td><td><b>Alta</b> (pico de madrugada)</td></tr>
+    <tr><td>Corpo</td><td>Alerta, temperatura mais alta</td><td>Sonolência, temperatura mais baixa</td></tr>
+  </table></div>
+
+  <h3>Pineal × hipófise</h3>
+  <div class="tbl"><table>
+    <tr><th></th><th>Pineal (epífise)</th><th>Hipófise (pituitária)</th></tr>
+    <tr><td>Onde fica</td><td>Centro do cérebro, no epitálamo, atrás do terceiro ventrículo</td><td>Base do cérebro, presa ao hipotálamo, numa cavidade do osso esfenoide (sela túrcica)</td></tr>
+    <tr><td>Hormônio principal</td><td>Melatonina</td><td>Vários: do crescimento, prolactina, estimulantes da tireoide, das suprarrenais e das gônadas, ocitocina e ADH</td></tr>
+    <tr><td>Controlada por</td><td>Luz, via retina e núcleo supraquiasmático</td><td>Hipotálamo</td></tr>
+    <tr><td>Apelido</td><td>“Relógio” ou “hormônio da escuridão”</td><td>“Glândula-mestra”</td></tr>
+  </table></div>
+
+  <h3>Melatonina × melanina × serotonina</h3>
+  <div class="tbl"><table>
+    <tr><th>Substância</th><th>O que é</th><th>Onde aparece</th></tr>
+    <tr><td><b>Melatonina</b></td><td>Hormônio que sinaliza a noite</td><td>Pineal (e um pouco na retina e no intestino)</td></tr>
+    <tr><td><b>Serotonina</b></td><td>Neurotransmissor; é a “matéria-prima” da melatonina</td><td>Cérebro, intestino, pineal durante o dia</td></tr>
+    <tr><td><b>Melanina</b></td><td>Pigmento que dá cor à pele, aos olhos e aos cabelos</td><td>Melanócitos da pele</td></tr>
+  </table></div>
+
+  <h3>Mitos × fatos</h3>
+  <div class="tbl"><table>
+    <tr><th>Mito</th><th>Fato</th></tr>
+    <tr><td>A pineal é um olho que enxerga dentro da cabeça humana</td><td>Nos humanos ela não capta luz; recebe a informação pelos olhos. Só em alguns animais (lagartos, peixes) há fotorreceptores ligados a ela</td></tr>
+    <tr><td>Melatonina é remédio para dormir sem riscos</td><td>É um sinal de horário; suplemento só com orientação médica</td></tr>
+    <tr><td>Calcificação da pineal é doença</td><td>É comum e geralmente normal em adultos</td></tr>
+    <tr><td>Adolescente dorme tarde só por preguiça</td><td>Na puberdade a melatonina sobe mais tarde, atrasando o sono</td></tr>
+    <tr><td>Descartes provou que a alma mora na pineal</td><td>Foi uma hipótese filosófica do século XVII, sem prova científica</td></tr>
+  </table></div>
+
+  <h3>A fábrica de melatonina</h3>
+  <div class="tbl"><table>
+    <tr><th>Passo</th><th>Substância</th><th>Observação</th></tr>
+    <tr><td>1</td><td>Triptofano</td><td>Aminoácido da alimentação</td></tr>
+    <tr><td>2</td><td>Serotonina</td><td>Abundante na pineal durante o dia</td></tr>
+    <tr><td>3</td><td>N-acetilserotonina</td><td>Enzima AANAT, ligada pela noradrenalina à noite</td></tr>
+    <tr><td>4</td><td>Melatonina</td><td>Enzima ASMT; sai direto para o sangue</td></tr>
+  </table></div>
+</section>
+
+<!-- REFORMA -->
+<section class="tab" id="reforma">
+<h2>Apresentação de 8 minutos</h2>
+  <p class="lead">Roteiro de fala com 8 slides e o tempo de cada parte. Ensaie com cronômetro: se passar de 8 minutos, corte primeiro os itens marcados como <i>opcional</i>.</p>
+
+  <div class="tbl"><table>
+    <tr><th>Tempo</th><th>Slide</th><th>O que falar</th></tr>
+    <tr><td>0:00–0:40</td><td><b>1. Abertura</b></td><td>Comece com uma pergunta: “Quem aqui já ficou no celular até tarde e depois não conseguia dormir?”. Diga que a resposta está numa glândula do tamanho de um grão de arroz.</td></tr>
+    <tr><td>0:40–1:40</td><td><b>2. O que é e onde fica</b></td><td>Glândula endócrina no centro do cérebro, no epitálamo; nome de pinha; 5 a 8 mm; também chamada epífise. Mostre uma imagem do cérebro cortado ao meio.</td></tr>
+    <tr><td>1:40–2:50</td><td><b>3. Melatonina</b></td><td>O hormônio da escuridão: sobe à noite, pico de madrugada, cai de manhã. Feita do triptofano, passando pela serotonina. Não é sonífero, é um sinal de “é noite”.</td></tr>
+    <tr><td>2:50–4:10</td><td><b>4. Como a luz controla</b></td><td>Desenhe as setas: luz → retina → núcleo supraquiasmático (relógio-mestre) → medula e pescoço → pineal → melatonina. Escuro liga, luz desliga.</td></tr>
+    <tr><td>4:10–5:00</td><td><b>5. Relógio biológico</b></td><td>Ritmo circadiano de cerca de 24 horas; a luz acerta o relógio todo dia. Adolescentes têm a melatonina mais tarde, por isso o sono atrasa.</td></tr>
+    <tr><td>5:00–6:10</td><td><b>6. No dia a dia</b></td><td>Celular e luz azul, jet lag, trabalho noturno. Dê 3 dicas: guardar o celular 1 hora antes de dormir, tomar sol de manhã, manter horários regulares.</td></tr>
+    <tr><td>6:10–7:15</td><td><b>7. Curiosidades</b></td><td>Descartes e a “sede da alma”; o “terceiro olho” do tuatara e dos lagartos; a areia cerebral (calcificação) que aparece no raio X. <i>Opcional:</i> a descoberta da melatonina em 1958.</td></tr>
+    <tr><td>7:15–8:00</td><td><b>8. Conclusão</b></td><td>Retome a pergunta inicial: “Agora vocês sabem por que o celular tira o sono”. Frase final: “A pineal é pequena, mas é ela que avisa ao corpo inteiro que a noite chegou”. Abra para perguntas.</td></tr>
+  </table></div>
+
+  <h3>Dicas para a apresentação</h3>
+  <div class="card">
+    <ul>
+      <li><b>Pouco texto nos slides</b>: uma imagem e no máximo 3 tópicos curtos. Você fala, o slide só ajuda.</li>
+      <li>O <b>slide 4</b> (caminho da luz) vale a pena ser um desenho com setas: é o que a turma vai lembrar.</li>
+      <li>Ensaie <b>3 vezes</b> em voz alta: a primeira lendo, a segunda olhando só os tópicos, a terceira sem olhar, cronometrando.</li>
+      <li>Fale devagar, olhe para a turma e use as mãos para mostrar onde fica a glândula (aponte para o meio da cabeça, entre as orelhas, um pouco acima).</li>
+      <li>Se esquecer algo, volte à frase-guia: <b>“luz desliga, escuro liga”</b>.</li>
+    </ul>
+  </div>
+
+  <h3>Perguntas que a turma pode fazer</h3>
+  <div class="tbl"><table>
+    <tr><th>Pergunta</th><th>Resposta curta</th></tr>
+    <tr><td>Tomar melatonina faz mal?</td><td>Pode ter efeitos como sonolência de dia e dor de cabeça; deve ser usada só com orientação médica, principalmente por menores de idade.</td></tr>
+    <tr><td>Cegos produzem melatonina?</td><td>Produzem. Mas quem não percebe nenhuma luz pode ter o relógio desacertado, porque falta a informação da retina para ajustá-lo.</td></tr>
+    <tr><td>A pineal é mesmo um terceiro olho?</td><td>Nos humanos, não. Em alguns répteis existe um olho parietal ligado a ela, que percebe luz. É uma herança evolutiva.</td></tr>
+    <tr><td>O modo noturno do celular resolve?</td><td>Ajuda um pouco, porque reduz a luz azul, mas o melhor é diminuir o tempo de tela antes de dormir.</td></tr>
+    <tr><td>Dá para viver sem a pineal?</td><td>Sim. Pessoas que a retiraram por tumor vivem, mas podem ter mais dificuldade com o sono e o ritmo circadiano.</td></tr>
+    <tr><td>Por que fica calcificada?</td><td>Acúmulo de cálcio com a idade; é comum e geralmente não causa sintomas.</td></tr>
+  </table></div>
+
+  <h3>Fontes para citar no último slide</h3>
+  <div class="card">
+    <ul>
+      <li>Livros didáticos de Biologia do ensino médio (capítulo de sistema endócrino).</li>
+      <li>Guyton & Hall, <i>Tratado de Fisiologia Médica</i> (capítulo sobre a glândula pineal e os ritmos circadianos).</li>
+      <li>Sociedade Brasileira de Endocrinologia e Metabologia e Associação Brasileira do Sono (orientações sobre melatonina e higiene do sono).</li>
+    </ul>
+  </div>
+</section>
+
+<!-- QUESTÕES -->
+<section class="tab" id="questoes">
+  <h2>Questões comentadas</h2>
+  <p class="lead">São 42 questões de múltipla escolha (A a D) sobre a glândula pineal, organizadas por tema. O comentário aparece depois de cada resposta e, ao terminar, a aba Rendimento mostra em quais temas você está mais segura para a apresentação.</p>
+  <div class="row" style="margin-bottom:10px">
+    <label class="muted" for="fTema">Tema:</label>
+    <select id="fTema"></select>
+    <label class="muted" for="fStatus">Mostrar:</label>
+    <select id="fStatus"><option value="all">Todas</option><option value="pend">Não respondidas</option><option value="bad">Erradas</option><option value="ok">Certas</option></select>
+  </div>
+  <div class="progress"><div id="qProg"></div></div>
+  <div class="qnav" id="qNav"></div>
+  <div class="card" id="qCard"></div>
+  <div class="row" style="justify-content:space-between">
+    <button class="btn" id="qPrev">← Anterior</button>
+    <span class="muted" style="font-size:13px">Atalhos: <kbd>A</kbd>–<kbd>E</kbd> ou <kbd>C</kbd>/<kbd>E</kbd> escolhe · <kbd>Shift</kbd>+letra descarta · <kbd>Enter</kbd> responde · <kbd>←</kbd> <kbd>→</kbd> navega</span>
+    <button class="btn pri" id="qNext">Próxima →</button>
+  </div>
+</section>
+
+<!-- FLASHCARDS -->
+<section class="tab" id="flash">
+  <h2>Flashcards com repetição espaçada</h2>
+  <p class="lead">Leia a pergunta, responda <b>em voz alta</b> e só então vire o cartão (clique ou <kbd>Espaço</kbd>). Marque com sinceridade: os cartões errados voltam primeiro (sistema Leitner, caixas 1 a 5).</p>
+  <div class="row" style="justify-content:center;margin-bottom:12px">
+    <select id="fcDeck">
+      <option value="all">Todos os baralhos</option>
+      <option value="a00">Conceitos-chave</option>
+      <option value="ref">Números, nomes e caminhos</option>
+      <option value="pan">História, mitos e apresentação</option>
+    </select>
+    <button class="btn" id="fcShuffle">Embaralhar</button>
+    <button class="btn" id="fcReset">Zerar caixas</button>
+  </div>
+  <div class="fc-meta"><span id="fcPos"></span><span id="fcBox"></span></div>
+  <div class="fc" id="fc"><div class="fc-inner"><div class="fc-face front"><div class="q" id="fcQ"></div><div class="muted" style="margin-top:14px;font-size:13px">clique para virar</div></div><div class="fc-face back"><div id="fcA"></div></div></div></div>
+  <div class="row" style="justify-content:center;margin-top:16px">
+    <button class="btn bad" id="fcBad">✘ Errei (<kbd>1</kbd>)</button>
+    <button class="btn" id="fcMid">~ Hesitei (<kbd>2</kbd>)</button>
+    <button class="btn ok" id="fcOk">✔ Acertei (<kbd>3</kbd>)</button>
+  </div>
+  <div class="boxes" id="fcBoxes"></div>
+</section>
+
+<!-- RENDIMENTO -->
+<section class="tab" id="rend">
+  <h2>Rendimento</h2>
+  <div id="rendBody"></div>
+  <h3>Gerenciar dados</h3>
+  <div class="row">
+    <button class="btn" id="expBtn">Exportar respostas (.json)</button>
+    <label class="btn" for="impFile">Importar respostas</label><input type="file" id="impFile" accept=".json" hidden>
+    <button class="btn" id="redoBad">Refazer erradas</button>
+    <button class="btn" id="hlReset">Apagar marcações de texto</button>
+    <button class="btn bad" id="resetAll">Apagar todas as respostas</button>
+  </div>
+</section>
+
+</main>
+
+<div id="tip" role="tooltip"></div>
+<div id="hlBar" role="toolbar" aria-label="Marca-texto"><span class="lbl">Marcar</span><button data-c="am" title="Amarelo" aria-label="Amarelo"></button><button data-c="ro" title="Rosa" aria-label="Rosa"></button><button data-c="ve" title="Verde" aria-label="Verde"></button><button data-c="" title="Apagar marcação" aria-label="Apagar marcação">✕</button></div>
+<script>
+const QUESTOES = [{"fonte": "Questão inédita", "tema": "Anatomia e localização", "enun": "A glândula pineal está localizada:", "alts": [["a", "no pescoço, à frente da traqueia."], ["b", "sobre os rins, uma de cada lado."], ["c", "no centro do encéfalo, entre os dois hemisférios cerebrais, no epitálamo."], ["d", "na base do crânio, presa ao hipotálamo por uma haste."]], "tipo": "mc", "resp": "c", "com": ["A pineal fica no epitálamo, parte do diencéfalo, atrás do terceiro ventrículo. A base do crânio presa ao hipotálamo é a hipófise; no pescoço fica a tireoide; sobre os rins, as suprarrenais.", "Gabarito: letra C."], "rot": "Questão 1", "nav": "1", "n": 1}, {"fonte": "Questão inédita", "tema": "Anatomia e localização", "enun": "O nome “pineal” faz referência:", "alts": [["a", "ao hormônio que ela produz."], ["b", "ao formato da glândula, parecido com o de uma pinha."], ["c", "ao cientista que a descobriu."], ["d", "à cor escura de suas células."]], "tipo": "mc", "resp": "b", "com": ["Pineal vem do latim pinea, pinha, por causa do formato de pequeno cone.", "Gabarito: letra B."], "rot": "Questão 2", "nav": "2", "n": 2}, {"fonte": "Questão inédita", "tema": "Anatomia e localização", "enun": "Outro nome usado para a glândula pineal é:", "alts": [["a", "timo."], ["b", "epífise."], ["c", "hipófise."], ["d", "tireoide."]], "tipo": "mc", "resp": "b", "com": ["A pineal também é chamada epífise (epífise cerebral). A hipófise é outra glândula, também chamada pituitária.", "Gabarito: letra B."], "rot": "Questão 3", "nav": "3", "n": 3}, {"fonte": "Questão inédita", "tema": "Anatomia e localização", "enun": "Quanto ao tamanho, a glândula pineal humana adulta:", "alts": [["a", "mede cerca de 5 centímetros."], ["b", "é microscópica, visível só ao microscópio eletrônico."], ["c", "mede cerca de 5 a 8 milímetros, algo como um grão de arroz."], ["d", "tem o tamanho de uma noz."]], "tipo": "mc", "resp": "c", "com": ["A pineal mede cerca de 5 a 8 mm e pesa por volta de 0,1 g.", "Gabarito: letra C."], "rot": "Questão 4", "nav": "4", "n": 4}, {"fonte": "Questão inédita", "tema": "Anatomia e localização", "enun": "As células da glândula pineal responsáveis pela produção de melatonina são os:", "alts": [["a", "adipócitos."], ["b", "pinealócitos."], ["c", "melanócitos."], ["d", "hepatócitos."]], "tipo": "mc", "resp": "b", "com": ["Os pinealócitos fabricam a melatonina. Melanócitos produzem melanina na pele; hepatócitos são do fígado; adipócitos armazenam gordura.", "Gabarito: letra B."], "rot": "Questão 5", "nav": "5", "n": 5}, {"fonte": "Questão inédita", "tema": "Anatomia e localização", "enun": "A pineal é classificada como glândula endócrina porque:", "alts": [["a", "lança o hormônio que produz diretamente na corrente sanguínea."], ["b", "libera sua secreção por um ducto até a boca."], ["c", "produz suor para controlar a temperatura."], ["d", "secreta enzimas digestivas no intestino."]], "tipo": "mc", "resp": "a", "com": ["Glândulas endócrinas liberam hormônios no sangue, sem ductos. A pineal é muito irrigada, o que facilita esse transporte.", "Gabarito: letra A."], "rot": "Questão 6", "nav": "6", "n": 6}, {"fonte": "Questão inédita", "tema": "Anatomia e localização", "enun": "Os depósitos de cálcio que se acumulam na pineal com a idade, visíveis em exames de imagem, são conhecidos como:", "alts": [["a", "areia cerebral."], ["b", "pedras nos rins."], ["c", "placas de ateroma."], ["d", "cálculos biliares."]], "tipo": "mc", "resp": "a", "com": ["A areia cerebral (corpora arenacea) é comum em adultos e geralmente normal. Já foi usada como ponto de referência em radiografias do crânio.", "Gabarito: letra A."], "rot": "Questão 7", "nav": "7", "n": 7}, {"fonte": "Questão inédita", "tema": "Melatonina", "enun": "O principal hormônio produzido pela glândula pineal é:", "alts": [["a", "a melatonina."], ["b", "a insulina."], ["c", "a adrenalina."], ["d", "o hormônio do crescimento."]], "tipo": "mc", "resp": "a", "com": ["A melatonina é o principal produto da pineal. Insulina vem do pâncreas; adrenalina, das suprarrenais; hormônio do crescimento, da hipófise.", "Gabarito: letra A."], "rot": "Questão 8", "nav": "8", "n": 8}, {"fonte": "Questão inédita", "tema": "Melatonina", "enun": "A melatonina é conhecida como “hormônio da escuridão” porque:", "alts": [["a", "provoca a dilatação das pupilas."], ["b", "sua produção aumenta no escuro e diminui na presença de luz."], ["c", "escurece a pele quando exposta ao sol."], ["d", "só é produzida por pessoas de pele escura."]], "tipo": "mc", "resp": "b", "com": ["A pineal libera melatonina à noite; a luz, captada pelos olhos, freia a produção.", "Gabarito: letra B."], "rot": "Questão 9", "nav": "9", "n": 9}, {"fonte": "Questão inédita", "tema": "Melatonina", "enun": "A melatonina é fabricada a partir da serotonina, que por sua vez se forma a partir do:", "alts": [["a", "colesterol."], ["b", "iodo."], ["c", "cálcio."], ["d", "triptofano, um aminoácido obtido na alimentação."]], "tipo": "mc", "resp": "d", "com": ["Caminho: triptofano → serotonina → N-acetilserotonina → melatonina. Colesterol origina hormônios esteroides; iodo é usado pela tireoide.", "Gabarito: letra D."], "rot": "Questão 10", "nav": "10", "n": 10}, {"fonte": "Questão inédita", "tema": "Melatonina", "enun": "Em uma pessoa que dorme à noite e fica acordada de dia, o nível de melatonina no sangue atinge seu máximo:", "alts": [["a", "logo depois do almoço."], ["b", "ao acordar, por volta das 7 horas."], ["c", "no fim da tarde, ao pôr do sol."], ["d", "de madrugada, por volta das 2 às 4 horas."]], "tipo": "mc", "resp": "d", "com": ["A melatonina sobe cerca de 2 horas antes do horário habitual de dormir, atinge o pico de madrugada e cai com a luz da manhã.", "Gabarito: letra D."], "rot": "Questão 11", "nav": "11", "n": 11}, {"fonte": "Questão inédita", "tema": "Melatonina", "enun": "Sobre a melatonina, é correto afirmar que:", "alts": [["a", "é produzida em maior quantidade durante o dia."], ["b", "funciona como um sinal de que é noite, preparando o corpo para dormir."], ["c", "é um sedativo potente que faz a pessoa desmaiar de sono."], ["d", "é o mesmo pigmento que dá cor à pele."]], "tipo": "mc", "resp": "b", "com": ["A melatonina é um sinal de horário, e não um sonífero. A melanina é o pigmento da pele; os nomes se parecem, mas são substâncias diferentes.", "Gabarito: letra B."], "rot": "Questão 12", "nav": "12", "n": 12}, {"fonte": "Questão inédita", "tema": "Melatonina", "enun": "A palavra melatonina foi formada a partir de:", "alts": [["a", "“melon” (melão), fruta onde foi encontrada."], ["b", "“melas” e “toni”, nomes de dois pesquisadores."], ["c", "“mela” (escuro) e “tonina” (de serotonina), porque a substância clareava a pele de sapos."], ["d", "“mel” (doce) e “tonina” (tônico), por ser um tônico natural."]], "tipo": "mc", "resp": "c", "com": ["Aaron Lerner observou que o extrato da pineal clareava as células de pigmento da pele de sapos; o nome junta “melas” (negro) e serotonina, substância de onde ela vem.", "Gabarito: letra C."], "rot": "Questão 13", "nav": "13", "n": 13}, {"fonte": "Questão inédita", "tema": "Melatonina", "enun": "Ao longo da vida, a produção de melatonina:", "alts": [["a", "só começa na puberdade."], ["b", "é alta na infância e tende a diminuir com o envelhecimento."], ["c", "é baixa na infância e aumenta na velhice."], ["d", "é sempre a mesma, do nascimento à morte."]], "tipo": "mc", "resp": "b", "com": ["Crianças têm níveis altos de melatonina; há queda na puberdade e redução progressiva com a idade, o que ajuda a explicar o sono mais leve de muitos idosos.", "Gabarito: letra B."], "rot": "Questão 14", "nav": "14", "n": 14}, {"fonte": "Questão inédita", "tema": "Luz e controle", "enun": "Nos seres humanos, a glândula pineal recebe a informação sobre a luz do ambiente:", "alts": [["a", "pelo ouvido, que percebe os sons do dia."], ["b", "indiretamente, pelos olhos, por meio de um caminho que passa pelo hipotálamo."], ["c", "diretamente, porque a luz atravessa o crânio e a atinge."], ["d", "pela pele, que capta o calor do sol."]], "tipo": "mc", "resp": "b", "com": ["Nos humanos a pineal não capta luz diretamente: a retina informa o núcleo supraquiasmático, que comanda a pineal por nervos simpáticos.", "Gabarito: letra B."], "rot": "Questão 15", "nav": "15", "n": 15}, {"fonte": "Questão inédita", "tema": "Luz e controle", "enun": "A estrutura do hipotálamo considerada o “relógio-mestre” do organismo é o:", "alts": [["a", "corpo caloso."], ["b", "núcleo supraquiasmático."], ["c", "cerebelo."], ["d", "bulbo."]], "tipo": "mc", "resp": "b", "com": ["O núcleo supraquiasmático, logo acima do quiasma óptico, é o relógio central. O cerebelo cuida do equilíbrio; o bulbo, de funções vitais; o corpo caloso liga os hemisférios.", "Gabarito: letra B."], "rot": "Questão 16", "nav": "16", "n": 16}, {"fonte": "Questão inédita", "tema": "Luz e controle", "enun": "A cor de luz que mais suprime a produção de melatonina é a:", "alts": [["a", "azul."], ["b", "vermelha."], ["c", "infravermelha."], ["d", "amarela."]], "tipo": "mc", "resp": "a", "com": ["As células da retina com melanopsina são mais sensíveis à luz azul, por volta de 460 a 480 nm, presente em telas e lâmpadas LED brancas.", "Gabarito: letra A."], "rot": "Questão 17", "nav": "17", "n": 17}, {"fonte": "Questão inédita", "tema": "Luz e controle", "enun": "O pigmento de células especiais da retina que mede a claridade do ambiente e informa o relógio biológico chama-se:", "alts": [["a", "clorofila."], ["b", "melanopsina."], ["c", "melanina."], ["d", "hemoglobina."]], "tipo": "mc", "resp": "b", "com": ["A melanopsina está em células ganglionares da retina que não formam imagens, só medem a luz e avisam o núcleo supraquiasmático.", "Gabarito: letra B."], "rot": "Questão 18", "nav": "18", "n": 18}, {"fonte": "Questão inédita", "tema": "Luz e controle", "enun": "À noite, a produção de melatonina é ativada quando as fibras nervosas simpáticas liberam na pineal o neurotransmissor:", "alts": [["a", "dopamina."], ["b", "acetilcolina."], ["c", "noradrenalina."], ["d", "insulina."]], "tipo": "mc", "resp": "c", "com": ["A noradrenalina ativa a enzima AANAT nos pinealócitos, ligando a produção de melatonina.", "Gabarito: letra C."], "rot": "Questão 19", "nav": "19", "n": 19}, {"fonte": "Questão inédita", "tema": "Luz e controle", "enun": "No caminho entre o hipotálamo e a pineal, o sinal nervoso:", "alts": [["a", "desce pela medula espinhal e volta ao cérebro pelo gânglio cervical superior, no pescoço."], ["b", "vai direto do olho para a pineal pelo nervo óptico."], ["c", "passa pelo coração antes de chegar à pineal."], ["d", "é levado pelo sangue em forma de hormônio."]], "tipo": "mc", "resp": "a", "com": ["O caminho é longo: núcleo supraquiasmático → núcleo paraventricular → medula espinhal → gânglio cervical superior → fibras simpáticas → pineal.", "Gabarito: letra A."], "rot": "Questão 20", "nav": "20", "n": 20}, {"fonte": "Questão inédita", "tema": "Luz e controle", "enun": "Uma pessoa acorda de madrugada e acende uma lâmpada forte. O efeito esperado sobre a pineal é:", "alts": [["a", "o aumento imediato da melatonina."], ["b", "nenhum, porque a pineal só reage ao sol."], ["c", "a produção de adrenalina pela pineal."], ["d", "a redução rápida da produção de melatonina."]], "tipo": "mc", "resp": "d", "com": ["Luz forte à noite chega à retina, o relógio interpreta como dia e a produção de melatonina cai em pouco tempo.", "Gabarito: letra D."], "rot": "Questão 21", "nav": "21", "n": 21}, {"fonte": "Questão inédita", "tema": "Ritmo circadiano e sono", "enun": "O termo “ritmo circadiano” refere-se a:", "alts": [["a", "ciclos biológicos de aproximadamente 24 horas."], ["b", "ciclos que duram uma semana."], ["c", "ciclos que acompanham as fases da Lua."], ["d", "ciclos que só ocorrem durante o sono."]], "tipo": "mc", "resp": "a", "com": ["Circadiano vem do latim circa diem, “cerca de um dia”: sono e vigília, temperatura, fome e hormônios seguem esse ciclo.", "Gabarito: letra A."], "rot": "Questão 22", "nav": "22", "n": 22}, {"fonte": "Questão inédita", "tema": "Ritmo circadiano e sono", "enun": "O principal fator ambiental que acerta diariamente o relógio biológico humano é:", "alts": [["a", "a umidade do ar."], ["b", "a pressão atmosférica."], ["c", "a luz."], ["d", "o barulho."]], "tipo": "mc", "resp": "c", "com": ["O relógio interno não tem exatamente 24 horas; a luz do dia o ajusta todo dia, pela retina e pelo núcleo supraquiasmático.", "Gabarito: letra C."], "rot": "Questão 23", "nav": "23", "n": 23}, {"fonte": "Questão inédita", "tema": "Ritmo circadiano e sono", "enun": "Muitos adolescentes têm sono mais tarde à noite e dificuldade de acordar cedo. Uma explicação biológica é que, na puberdade:", "alts": [["a", "a liberação de melatonina passa a começar mais tarde."], ["b", "a pineal para de funcionar."], ["c", "a melatonina passa a ser produzida de dia."], ["d", "o cérebro deixa de precisar de sono."]], "tipo": "mc", "resp": "a", "com": ["Na adolescência há um atraso natural do relógio: a melatonina sobe mais tarde, e o uso de telas à noite piora o atraso.", "Gabarito: letra A."], "rot": "Questão 24", "nav": "24", "n": 24}, {"fonte": "Questão inédita", "tema": "Ritmo circadiano e sono", "enun": "O uso do celular na cama, antes de dormir, pode atrasar o sono porque:", "alts": [["a", "o celular emite som que estimula a pineal."], ["b", "a radiação do aparelho destrói a pineal."], ["c", "a tela aumenta a produção de melatonina."], ["d", "a luz da tela, rica em azul, reduz a liberação de melatonina."]], "tipo": "mc", "resp": "d", "com": ["A luz azul chega à retina, o relógio entende que ainda é dia e a pineal segura a melatonina.", "Gabarito: letra D."], "rot": "Questão 25", "nav": "25", "n": 25}, {"fonte": "Questão inédita", "tema": "Ritmo circadiano e sono", "enun": "O jet lag, sentido após viagens longas de avião para o leste ou o oeste, ocorre porque:", "alts": [["a", "a altitude do voo danifica a pineal."], ["b", "a comida do avião tem pouco triptofano."], ["c", "a pressão da cabine bloqueia a melatonina."], ["d", "o relógio biológico fica desencontrado do horário do novo local."]], "tipo": "mc", "resp": "d", "com": ["Ao cruzar fusos horários, o ritmo circadiano continua no horário de origem; a luz no novo local ajuda a reajustá-lo em alguns dias.", "Gabarito: letra D."], "rot": "Questão 26", "nav": "26", "n": 26}, {"fonte": "Questão inédita", "tema": "Ritmo circadiano e sono", "enun": "Qual hábito ajuda a manter o relógio biológico em ordem?", "alts": [["a", "Usar o celular com brilho máximo à noite."], ["b", "Tomar luz natural pela manhã e evitar telas na hora antes de dormir."], ["c", "Dormir com a luz acesa todas as noites."], ["d", "Mudar o horário de dormir todos os dias."]], "tipo": "mc", "resp": "b", "com": ["Luz de manhã reforça o sinal de dia; escuro à noite libera a melatonina. Horários regulares também ajudam.", "Gabarito: letra B."], "rot": "Questão 27", "nav": "27", "n": 27}, {"fonte": "Questão inédita", "tema": "Ritmo circadiano e sono", "enun": "O hormônio que costuma estar alto pela manhã, ajudando a despertar, e que forma uma espécie de “gangorra” com a melatonina ao longo do dia é o:", "alts": [["a", "glucagon."], ["b", "estrogênio."], ["c", "calcitonina."], ["d", "cortisol."]], "tipo": "mc", "resp": "d", "com": ["O cortisol, das suprarrenais, tem pico ao amanhecer; a melatonina tem pico de madrugada.", "Gabarito: letra D."], "rot": "Questão 28", "nav": "28", "n": 28}, {"fonte": "Questão inédita", "tema": "Outras funções e saúde", "enun": "Em muitos animais, como ovelhas e hamsters, a melatonina participa do controle de eventos que acontecem em certas estações do ano, como:", "alts": [["a", "a reprodução, a troca de pelagem e a hibernação."], ["b", "a digestão de cada refeição."], ["c", "a contração do coração."], ["d", "a cicatrização de feridas."]], "tipo": "mc", "resp": "a", "com": ["A duração da noite muda ao longo do ano, e com ela a duração da produção de melatonina, que informa a estação e controla a reprodução sazonal.", "Gabarito: letra A."], "rot": "Questão 29", "nav": "29", "n": 29}, {"fonte": "Questão inédita", "tema": "Outras funções e saúde", "enun": "Tumores na região da glândula pineal em crianças podem estar associados a:", "alts": [["a", "aumento da produção de saliva."], ["b", "puberdade precoce."], ["c", "crescimento excessivo das unhas."], ["d", "perda do olfato."]], "tipo": "mc", "resp": "b", "com": ["A melatonina e a região pineal se relacionam com o momento da puberdade; tumores ali, em crianças, podem se associar à puberdade precoce.", "Gabarito: letra B."], "rot": "Questão 30", "nav": "30", "n": 30}, {"fonte": "Questão inédita", "tema": "Outras funções e saúde", "enun": "Além de sinalizar a noite, a melatonina tem ação estudada como:", "alts": [["a", "anestésico local."], ["b", "vitamina essencial à visão."], ["c", "antioxidante, neutralizando radicais livres."], ["d", "antibiótico, matando bactérias."]], "tipo": "mc", "resp": "c", "com": ["Em laboratório, a melatonina neutraliza radicais livres; seu papel protetor no corpo ainda é pesquisado.", "Gabarito: letra C."], "rot": "Questão 31", "nav": "31", "n": 31}, {"fonte": "Questão inédita", "tema": "Outras funções e saúde", "enun": "Sobre o uso de suplementos de melatonina por adolescentes, a orientação mais adequada é:", "alts": [["a", "usar somente com orientação médica."], ["b", "usar livremente, porque é natural e sem efeitos."], ["c", "usar todos os dias para melhorar as notas."], ["d", "substituir o sono por melatonina."]], "tipo": "mc", "resp": "a", "com": ["Melatonina pode causar efeitos como sonolência de dia e dor de cabeça, e o uso por crianças e adolescentes deve ser orientado por médico.", "Gabarito: letra A."], "rot": "Questão 32", "nav": "32", "n": 32}, {"fonte": "Questão inédita", "tema": "Outras funções e saúde", "enun": "Tumores da pineal podem comprimir estruturas vizinhas e causar, entre outros sinais:", "alts": [["a", "febre alta e manchas na pele."], ["b", "dor nas articulações dos joelhos."], ["c", "dor de cabeça, hidrocefalia e dificuldade de olhar para cima."], ["d", "queda de cabelo e unhas fracas."]], "tipo": "mc", "resp": "c", "com": ["Por estar perto do aqueduto cerebral e do teto do mesencéfalo, a massa pode bloquear o líquido (hidrocefalia) e causar a síndrome de Parinaud.", "Gabarito: letra C."], "rot": "Questão 33", "nav": "33", "n": 33}, {"fonte": "Questão inédita", "tema": "Outras funções e saúde", "enun": "Trabalhadores que fazem plantão noturno sob luz forte tendem a:", "alts": [["a", "produzir mais melatonina que o normal."], ["b", "ter o relógio biológico mais preciso."], ["c", "não sofrer nenhum efeito, pois se acostumam em um dia."], ["d", "produzir menos melatonina e ter o ritmo circadiano desregulado."]], "tipo": "mc", "resp": "d", "com": ["Luz forte à noite suprime a melatonina, e dormir de dia contraria o relógio interno.", "Gabarito: letra D."], "rot": "Questão 34", "nav": "34", "n": 34}, {"fonte": "Questão inédita", "tema": "Outras funções e saúde", "enun": "A calcificação da glândula pineal em adultos:", "alts": [["a", "é sempre sinal de tumor."], ["b", "só ocorre em quem bebe água com flúor."], ["c", "impede totalmente a produção de melatonina."], ["d", "é comum e, em geral, não indica doença."]], "tipo": "mc", "resp": "d", "com": ["A areia cerebral aumenta com a idade e costuma ser achado normal em exames. A relação com a quantidade de melatonina ainda é estudada.", "Gabarito: letra D."], "rot": "Questão 35", "nav": "35", "n": 35}, {"fonte": "Questão inédita", "tema": "História e curiosidades", "enun": "O filósofo do século XVII que considerou a glândula pineal a “sede principal da alma” foi:", "alts": [["a", "René Descartes."], ["b", "Charles Darwin."], ["c", "Isaac Newton."], ["d", "Aristóteles."]], "tipo": "mc", "resp": "a", "com": ["Descartes se impressionou por ser uma estrutura única no centro do cérebro, enquanto quase tudo o mais é duplo.", "Gabarito: letra A."], "rot": "Questão 36", "nav": "36", "n": 36}, {"fonte": "Questão inédita", "tema": "História e curiosidades", "enun": "A melatonina foi isolada pela primeira vez em 1958, a partir de pineais de boi, pelo pesquisador:", "alts": [["a", "Alexander Fleming."], ["b", "Oswaldo Cruz."], ["c", "Aaron Lerner."], ["d", "Louis Pasteur."]], "tipo": "mc", "resp": "c", "com": ["O dermatologista Aaron Lerner, nos Estados Unidos, procurava substâncias que agissem sobre a pigmentação da pele.", "Gabarito: letra C."], "rot": "Questão 37", "nav": "37", "n": 37}, {"fonte": "Questão inédita", "tema": "História e curiosidades", "enun": "O médico da Antiguidade que descreveu a glândula pineal e achava que ela regulava o fluxo de “espíritos” no cérebro foi:", "alts": [["a", "Vesálio."], ["b", "Freud."], ["c", "Galeno."], ["d", "Hipócrates."]], "tipo": "mc", "resp": "c", "com": ["Galeno, no século II, já descrevia a glândula. Vesálio viveu no século XVI; Freud, nos séculos XIX e XX.", "Gabarito: letra C."], "rot": "Questão 38", "nav": "38", "n": 38}, {"fonte": "Questão inédita", "tema": "História e curiosidades", "enun": "A ideia da pineal como “terceiro olho” tem relação com o fato de que:", "alts": [["a", "os humanos enxergam imagens com a pineal."], ["b", "a pineal tem íris e cristalino nos mamíferos."], ["c", "a pineal substitui os olhos em pessoas cegas."], ["d", "em alguns répteis, como o tuatara e muitos lagartos, há um olho parietal ligado ao complexo pineal que percebe luz."]], "tipo": "mc", "resp": "d", "com": ["Em répteis, peixes e anfíbios há fotorreceptores ligados ao complexo pineal; nos mamíferos, a pineal depende da informação dos olhos.", "Gabarito: letra D."], "rot": "Questão 39", "nav": "39", "n": 39}, {"fonte": "Questão inédita", "tema": "História e curiosidades", "enun": "Descartes escolheu a pineal como ponto de ligação entre alma e corpo principalmente porque:", "alts": [["a", "ela produz melatonina, que ele havia descoberto."], ["b", "ela é o maior órgão do cérebro."], ["c", "ela fica fora do crânio."], ["d", "ela é uma estrutura única, enquanto a maioria das partes do cérebro é dupla."]], "tipo": "mc", "resp": "d", "com": ["A melatonina só foi descoberta em 1958, três séculos depois. A pineal é minúscula e fica no centro do cérebro.", "Gabarito: letra D."], "rot": "Questão 40", "nav": "40", "n": 40}, {"fonte": "Questão inédita", "tema": "História e curiosidades", "enun": "Em peixes e anfíbios, diferentemente do que ocorre nos humanos, a glândula pineal:", "alts": [["a", "produz insulina."], ["b", "fica fora do corpo."], ["c", "é capaz de perceber a luz diretamente."], ["d", "não existe."]], "tipo": "mc", "resp": "c", "com": ["Nesses animais a pineal tem fotorreceptores; nos mamíferos, ela perdeu essa capacidade e depende da retina.", "Gabarito: letra C."], "rot": "Questão 41", "nav": "41", "n": 41}, {"fonte": "Questão inédita", "tema": "História e curiosidades", "enun": "Qual afirmação sobre a glândula pineal é um MITO, sem comprovação científica?", "alts": [["a", "Ela dá às pessoas poderes paranormais quando “ativada”."], ["b", "Ela produz melatonina no escuro."], ["c", "Ela pode calcificar com a idade."], ["d", "Ela participa do ritmo circadiano."]], "tipo": "mc", "resp": "a", "com": ["As outras três afirmações são fatos científicos. Ideias de poderes especiais são crenças, sem base na ciência.", "Gabarito: letra A."], "rot": "Questão 42", "nav": "42", "n": 42}];
+
+const FLASH = [
+ // Conceitos-chave
+ ["a00","O que é a glândula pineal?","Uma <b>glândula endócrina</b> pequena, no centro do cérebro, que produz <b>melatonina</b> quando está escuro.<br><b>Exemplo:</b> é ela que avisa o corpo de que a noite chegou."],
+ ["a00","Onde fica a pineal?","No <b>centro do cérebro</b>, entre os hemisférios, atrás do terceiro ventrículo, no <b>epitálamo</b> (diencéfalo).<br><b>Exemplo:</b> aponte para o meio da cabeça, entre as orelhas, um pouco acima."],
+ ["a00","Qual é o hormônio principal da pineal?","A <b>melatonina</b>, o “hormônio da escuridão”.<br><b>Exemplo:</b> sobe à noite, tem pico de madrugada e cai de manhã."],
+ ["a00","Luz aumenta ou diminui a melatonina?","<b>Diminui</b>. O escuro aumenta.<br><b>Exemplo:</b> acender a tela do celular na cama freia a melatonina."],
+ ["a00","Qual luz mais bloqueia a melatonina?","A luz <b>azul</b> (cerca de 460 a 480 nm).<br><b>Exemplo:</b> telas e lâmpadas LED brancas emitem bastante luz azul."],
+ ["a00","Como a pineal sabe que é noite?","Pelos <b>olhos</b>: retina → núcleo supraquiasmático → medula e pescoço → pineal.<br><b>Exemplo:</b> nos humanos ela não percebe a luz diretamente."],
+ ["a00","O que é ritmo circadiano?","O ciclo de <b>cerca de 24 horas</b> do corpo: sono, temperatura, fome, hormônios.<br><b>Exemplo:</b> acordar quase no mesmo horário mesmo sem despertador."],
+ ["a00","Qual é o relógio-mestre do corpo?","O <b>núcleo supraquiasmático</b>, no hipotálamo.<br><b>Exemplo:</b> ele é o maestro; a pineal transforma a hora dele em melatonina."],
+ ["a00","Melatonina é sonífero?","Não. É um <b>sinal de horário</b> que diz “é noite”.<br><b>Exemplo:</b> o corpo responde baixando a temperatura e aumentando a sonolência."],
+ ["a00","Por que adolescentes dormem mais tarde?","Na puberdade a melatonina passa a subir <b>mais tarde</b> à noite.<br><b>Exemplo:</b> o sono só vem perto da meia-noite, mesmo indo para a cama às 22 horas."],
+ ["a00","De que é feita a melatonina?","Do <b>triptofano</b> (aminoácido da alimentação), que vira <b>serotonina</b> e depois melatonina.<br><b>Exemplo:</b> leite, ovos, banana e castanhas têm triptofano."],
+ ["a00","Que células produzem melatonina na pineal?","Os <b>pinealócitos</b>.<br><b>Exemplo:</b> são os “funcionários do turno da noite” da glândula."],
+ ["a00","Pineal × hipófise","Pineal: <b>centro</b> do cérebro, melatonina. Hipófise: <b>base</b> do cérebro, presa ao hipotálamo, vários hormônios (“glândula-mestra”).<br><b>Exemplo:</b> o hormônio do crescimento vem da hipófise, e não da pineal."],
+ ["a00","Melatonina × melanina","Melatonina: <b>hormônio</b> da noite. Melanina: <b>pigmento</b> da pele e dos cabelos.<br><b>Exemplo:</b> o bronzeado é melanina."],
+ // Números, nomes e caminhos
+ ["ref","Tamanho da pineal","Cerca de <b>5 a 8 mm</b> e <b>0,1 g</b>.<br><b>Exemplo:</b> do tamanho de um grão de arroz ou de uma ervilha pequena."],
+ ["ref","Origem do nome “pineal”","Do latim <i>pinea</i>, <b>pinha</b>, pelo formato de cone.<br><b>Exemplo:</b> outro nome é epífise."],
+ ["ref","Horário do pico de melatonina","De <b>madrugada</b>, por volta das <b>2 às 4 horas</b>.<br><b>Exemplo:</b> começa a subir cerca de 2 horas antes do horário habitual de dormir."],
+ ["ref","Caminho completo da luz até a pineal","Retina (melanopsina) → <b>núcleo supraquiasmático</b> → medula espinhal → <b>gânglio cervical superior</b> → pineal (noradrenalina).<br><b>Exemplo:</b> é um “desvio” pelo pescoço."],
+ ["ref","Qual substância os nervos liberam na pineal à noite?","<b>Noradrenalina</b>, que liga a produção de melatonina.<br><b>Exemplo:</b> funciona como interruptor."],
+ ["ref","Melanopsina","Pigmento de células especiais da retina que mede a <b>claridade</b> e informa o relógio.<br><b>Exemplo:</b> é mais sensível à luz azul."],
+ ["ref","Enzima-chave da produção noturna","<b>AANAT</b>, que transforma serotonina em N-acetilserotonina.<br><b>Exemplo:</b> a ASMT faz o último passo, formando a melatonina."],
+ ["ref","Areia cerebral","Depósitos de <b>cálcio</b> na pineal (<i>corpora arenacea</i>), comuns com a idade.<br><b>Exemplo:</b> aparece como pontinho branco na tomografia."],
+ ["ref","Região do cérebro da pineal","<b>Epitálamo</b>, parte do <b>diencéfalo</b>.<br><b>Exemplo:</b> o diencéfalo também tem o tálamo e o hipotálamo."],
+ ["ref","Circa diem","Origem latina de <b>circadiano</b>: “cerca de um dia”.<br><b>Exemplo:</b> o relógio interno não tem exatamente 24 horas; a luz o acerta."],
+ ["ref","Hormônio que forma uma “gangorra” com a melatonina","O <b>cortisol</b>, alto de manhã.<br><b>Exemplo:</b> melatonina alta de madrugada, cortisol alto ao acordar."],
+ // História, mitos e apresentação
+ ["pan","Quem chamou a pineal de “sede da alma”?","<b>René Descartes</b>, filósofo do século XVII.<br><b>Exemplo:</b> ele se impressionou por ser uma estrutura única, no centro do cérebro."],
+ ["pan","Quem descobriu a melatonina e quando?","<b>Aaron Lerner</b>, em <b>1958</b>, a partir de pineais de boi.<br><b>Exemplo:</b> o extrato clareava a pele de sapos."],
+ ["pan","Por que “melatonina”?","<i>Mela</i> (escuro, negro) + <i>tonina</i> (de serotonina).<br><b>Exemplo:</b> a substância clareava as células de pigmento dos sapos."],
+ ["pan","A pineal é um terceiro olho?","Nos humanos, <b>não</b>. Em alguns répteis, como o <b>tuatara</b> e muitos lagartos, há um <b>olho parietal</b> ligado ao complexo pineal que percebe luz.<br><b>Exemplo:</b> em peixes e anfíbios a própria pineal capta luz."],
+ ["pan","Pineal e estações do ano","A <b>duração</b> da produção noturna de melatonina indica a estação e regula a reprodução de muitos animais.<br><b>Exemplo:</b> ovelhas entram no cio quando as noites ficam longas."],
+ ["pan","Jet lag","Desencontro entre o relógio interno e o horário do lugar após cruzar fusos.<br><b>Exemplo:</b> a luz no novo horário ajuda a reajustar."],
+ ["pan","Três dicas de sono para a turma","Guardar o celular <b>1 hora antes</b> de dormir; tomar <b>sol de manhã</b>; manter <b>horários regulares</b>.<br><b>Exemplo:</b> são o fechamento do slide 6."],
+ ["pan","Frase-guia da apresentação","<b>“Luz desliga, escuro liga.”</b><br><b>Exemplo:</b> use-a se der branco no meio da fala."],
+ ["pan","Melatonina em suplemento","Só com <b>orientação médica</b>, principalmente para crianças e adolescentes.<br><b>Exemplo:</b> pode causar sonolência durante o dia e dor de cabeça."]
+];
+
+/* ---------- mapa mental: cada item tem explicação, exemplo, base legal e pegadinha ---------- */
+const MM_ROOT = {k: "root", t: "GLÂNDULA PINEAL", s: "Epífise · centro do cérebro · produz melatonina<br><small>Anatomia · Melatonina · Luz · Ritmo circadiano · Funções · Saúde · História</small>",
+  e: "A glândula pineal é uma glândula endócrina minúscula, com formato de pinha, no centro do cérebro. Quando escurece, ela libera <b>melatonina</b> no sangue, o sinal químico que avisa o corpo inteiro de que é noite e ajuda a manter o relógio biológico de cerca de 24 horas.",
+  x: "Você apaga a luz do quarto: em pouco tempo a pineal aumenta a melatonina, a temperatura do corpo cai e vem a sonolência. Se você acende a tela do celular, a luz azul freia esse processo.",
+  l: "Livros de Biologia do ensino médio (sistema endócrino) e de Fisiologia (Guyton & Hall).",
+  p: "A pineal <b>não</b> é a hipófise, e a melatonina <b>não</b> é a melanina."};
+
+const MM = [
+ {k: "anat", c: "#2f5bd3", t: "Anatomia", s: "Onde fica e do que é feita",
+  e: "Fica no centro do cérebro, entre os hemisférios, atrás do terceiro ventrículo, no epitálamo (diencéfalo). Mede 5 a 8 mm e pesa cerca de 0,1 g. É formada por pinealócitos e células da glia, e é muito irrigada.",
+  x: "Se você traçar uma linha imaginária entre as duas orelhas e outra entre os olhos e a nuca, a pineal fica perto do cruzamento, um pouco acima.",
+  l: "Anatomia do encéfalo: diencéfalo = tálamo, hipotálamo e epitálamo.",
+  p: "Pineal fica no <b>centro</b>; a hipófise fica <b>embaixo</b>, presa ao hipotálamo.",
+  f: [
+   {k: "anat1", t: "Nome e formato",
+    e: "Pineal vem do latim <i>pinea</i>, pinha, por causa do formato de pequeno cone. Também é chamada epífise.",
+    x: "Na apresentação, mostrar a foto de uma pinha ao lado de um desenho do cérebro ajuda a turma a fixar o nome.",
+    l: "Origem latina do termo.",
+    p: "Epífise também é o nome da ponta dos ossos longos; no contexto do cérebro, é a pineal."},
+   {k: "anat2", t: "Pinealócitos",
+    e: "São as células que fabricam a melatonina. Recebem o comando dos nervos simpáticos à noite.",
+    x: "Pense nos pinealócitos como os funcionários de uma fábrica que só trabalha no turno da noite.",
+    l: "Histologia da pineal.",
+    p: "Quem produz a melatonina são os pinealócitos, e não os neurônios do hipotálamo."},
+   {k: "anat3", t: "Areia cerebral",
+    e: "Depósitos de cálcio que aumentam com a idade (corpora arenacea). Aparecem em raio X e tomografia e já serviram de ponto de referência para os médicos.",
+    x: "Na tomografia de um adulto, um pontinho branco no meio do cérebro costuma ser a pineal calcificada.",
+    l: "Radiologia: calcificação fisiológica da pineal.",
+    p: "Calcificação da pineal geralmente é <b>normal</b>, e não sinal de doença."}
+  ]},
+ {k: "mel", c: "#7a3fc2", t: "Melatonina", s: "O hormônio da escuridão",
+  e: "Hormônio feito a partir do triptofano, passando pela serotonina. Sobe cerca de 2 horas antes do horário habitual de dormir, tem pico de madrugada e cai de manhã.",
+  x: "Às 3 da manhã, num quarto escuro, a melatonina no sangue está no máximo; às 10 da manhã, com sol, quase não há.",
+  l: "Bioquímica: triptofano → serotonina → N-acetilserotonina → melatonina.",
+  p: "A melatonina é um <b>sinal de horário</b>, e não um calmante que apaga a pessoa.",
+  f: [
+   {k: "mel1", t: "Fabricação",
+    e: "Triptofano (da alimentação) vira serotonina; à noite, a enzima AANAT transforma serotonina em N-acetilserotonina, e a ASMT termina o trabalho, formando a melatonina.",
+    x: "Leite, ovos, banana e castanhas têm triptofano, a matéria-prima de todo esse caminho.",
+    l: "Via de síntese da melatonina.",
+    p: "Serotonina é a matéria-prima; não confunda com o produto final."},
+   {k: "mel2", t: "Ritmo da produção",
+    e: "Quase nada de dia; começa a subir à noite; pico entre 2 e 4 horas; cai ao amanhecer. A quantidade é alta na infância e diminui com a idade.",
+    x: "Idosos produzem menos melatonina, o que ajuda a explicar por que costumam ter sono mais leve.",
+    l: "Curva diária da melatonina.",
+    p: "O pico é de <b>madrugada</b>, e não na hora em que deitamos."},
+   {k: "mel3", t: "Nome e descoberta",
+    e: "Isolada em 1958 por Aaron Lerner, a partir de pineais de boi. Clareava a pele de sapos; daí o nome: mela (escuro) + tonina (de serotonina).",
+    x: "Lerner procurava um tratamento para manchas de pele e acabou encontrando o hormônio do sono.",
+    l: "História da endocrinologia.",
+    p: "Melatonina ≠ melanina (pigmento da pele)."}
+  ]},
+ {k: "luz", c: "#c0392b", t: "Luz e controle", s: "Da retina até a pineal",
+  e: "A pineal humana não percebe luz sozinha. A retina capta a luz, o núcleo supraquiasmático do hipotálamo (relógio-mestre) processa e o sinal chega à pineal por nervos simpáticos que passam pelo pescoço.",
+  x: "Uma pessoa acorda às 2 da manhã e acende uma luz branca forte no banheiro: a produção de melatonina cai em minutos.",
+  l: "Trato retino-hipotalâmico → núcleo supraquiasmático → medula → gânglio cervical superior → pineal.",
+  p: "Escuro <b>liga</b> a pineal; luz <b>desliga</b>.",
+  f: [
+   {k: "luz1", t: "Melanopsina e luz azul",
+    e: "Células especiais da retina, com o pigmento melanopsina, são mais sensíveis à luz azul (cerca de 460 a 480 nm). Elas medem a claridade, sem formar imagens.",
+    x: "As telas de celular e as lâmpadas LED brancas emitem muita luz azul; a luz de uma vela, pouca.",
+    l: "Células ganglionares da retina intrinsecamente fotossensíveis.",
+    p: "Não são os cones e bastonetes comuns que mais informam o relógio."},
+   {k: "luz2", t: "Núcleo supraquiasmático",
+    e: "Grupo de neurônios no hipotálamo, logo acima do cruzamento dos nervos ópticos (quiasma óptico). É o relógio central do corpo.",
+    x: "Ele é o maestro; a pineal é um dos músicos que toca no horário que ele marca.",
+    l: "Hipotálamo anterior.",
+    p: "O relógio-mestre é o núcleo supraquiasmático, e não a própria pineal."},
+   {k: "luz3", t: "Noradrenalina",
+    e: "À noite, as fibras simpáticas liberam noradrenalina na pineal, o que ativa a enzima AANAT e liga a produção de melatonina.",
+    x: "É como o interruptor que o relógio aciona à distância.",
+    l: "Sistema nervoso simpático; gânglio cervical superior.",
+    p: "O caminho passa pela medula e pelo pescoço antes de voltar ao cérebro."}
+  ]},
+ {k: "ritmo", c: "#1f8a4c", t: "Ritmo circadiano", s: "O relógio de cerca de 24 horas",
+  e: "Ciclo diário de sono e vigília, temperatura, fome e hormônios. O relógio interno é acertado todo dia pela luz, e a melatonina espalha a informação para o corpo.",
+  x: "Mesmo sem despertador, muitas pessoas acordam quase no mesmo horário todo dia: é o ritmo circadiano.",
+  l: "Do latim <i>circa diem</i>, “cerca de um dia”.",
+  p: "Circadiano é o ciclo <b>diário</b>; sazonal é o das <b>estações</b>.",
+  f: [
+   {k: "ritmo1", t: "Adolescência",
+    e: "Na puberdade, a melatonina começa a subir mais tarde, e o sono também atrasa. Telas à noite pioram o atraso.",
+    x: "Um adolescente que só tem sono à meia-noite e precisa acordar às 6 horas acumula falta de sono durante a semana.",
+    l: "Atraso de fase do sono na adolescência.",
+    p: "Não é só preguiça: há uma mudança biológica no relógio."},
+   {k: "ritmo2", t: "Jet lag e trabalho noturno",
+    e: "Viajar entre fusos horários ou trabalhar à noite desencontra o relógio interno do horário real. A luz no horário certo ajuda a reajustar.",
+    x: "Quem voa do Brasil para o Japão (12 horas de diferença) sente sono de dia e fica acordado de madrugada por alguns dias.",
+    l: "Cronobiologia.",
+    p: "O jet lag é um problema do relógio, e não do cansaço da viagem."}
+  ]},
+ {k: "func", c: "#b8860b", t: "Outras funções", s: "Estações, puberdade, proteção",
+  e: "A duração da noite informa a estação do ano a muitos animais e regula a reprodução sazonal. Nos humanos, a melatonina cai na puberdade e tem ação antioxidante.",
+  x: "Ovelhas entram no período reprodutivo no outono, quando as noites mais longas aumentam a melatonina.",
+  l: "Fotoperíodo e reprodução sazonal.",
+  p: "Em humanos, o papel nas estações do ano é bem menor que nos animais.",
+  f: [
+   {k: "func1", t: "Estações do ano",
+    e: "Noites longas = mais horas de melatonina = sinal de inverno. Muitos animais usam isso para reproduzir, trocar de pelo ou hibernar.",
+    x: "Hamsters mantidos com noites curtas ou longas mudam a cor do pelo e o ciclo reprodutivo.",
+    l: "Fotoperiodismo animal.",
+    p: "O sinal é a <b>duração</b> da melatonina, e não só a quantidade."},
+   {k: "func2", t: "Puberdade e antioxidante",
+    e: "A melatonina é alta na infância e cai na puberdade; tumores da região pineal em crianças podem se associar à puberdade precoce. Também neutraliza radicais livres.",
+    x: "Pesquisadores estudam a melatonina como protetora das células, mas isso não significa que tomar suplemento faz bem a todos.",
+    l: "Endocrinologia pediátrica.",
+    p: "Efeito em laboratório não é o mesmo que tratamento comprovado."}
+  ]},
+ {k: "hist", c: "#0f7c8c", t: "História e mitos", s: "Descartes e o terceiro olho",
+  e: "Galeno descreveu a glândula no século II. Descartes a chamou de sede principal da alma no século XVII. Em alguns répteis, o olho parietal ligado ao complexo pineal percebe luz: daí a ideia de terceiro olho.",
+  x: "O tuatara, réptil da Nova Zelândia, tem um olho parietal visível em filhotes, coberto por escamas nos adultos.",
+  l: "História da medicina e anatomia comparada.",
+  p: "Poderes paranormais da pineal são <b>mito</b>, sem base científica.",
+  f: [
+   {k: "hist1", t: "Descartes",
+    e: "Filósofo francês do século XVII. Achou que a alma agia sobre o corpo pela pineal, por ser uma estrutura única no centro do cérebro.",
+    x: "Quase tudo no cérebro é duplo (dois hemisférios, dois tálamos); a pineal é uma só, e isso impressionou Descartes.",
+    l: "Descartes, <i>As paixões da alma</i> (1649).",
+    p: "Era uma hipótese filosófica, e não uma descoberta científica."},
+   {k: "hist2", t: "Terceiro olho",
+    e: "Em lampreias, peixes, anfíbios e aves, a pineal percebe luz diretamente; em lagartos e no tuatara há o olho parietal. Nos mamíferos, a pineal depende dos olhos.",
+    x: "Alguns lagartos usam o olho parietal para perceber a sombra de uma ave que se aproxima.",
+    l: "Evolução dos fotorreceptores.",
+    p: "Nos humanos a pineal <b>não</b> capta luz diretamente."}
+  ]}
+];
+
+function mmItens(){
+  const out = [MM_ROOT];
+  MM.forEach(b => { out.push(b); b.f.forEach(f => out.push(Object.assign({c: b.c, pai: b.t}, f))); });
+  return out;
+}
+function renderMapa(){
+  $("#mmBox").innerHTML = `<div class="mm-root" data-k="root" tabindex="0"><b>${MM_ROOT.t}</b>${MM_ROOT.s}</div>
+    <div class="mm-trunk"></div>
+    <div class="mm-branches" style="--n:${MM.length}">${MM.map(b => `<div class="mm-br" style="--c:${b.c}">
+      <div class="mm-h" data-k="${b.k}" tabindex="0"><b>${b.t}</b>${b.s}</div>
+      <ul>${b.f.map(f => `<li data-k="${f.k}" tabindex="0">${f.t}</li>`).join("")}</ul></div>`).join("")}</div>`;
+  $("#mmBox").querySelectorAll("[data-k]").forEach(el => {
+    el.onclick = () => abrirItem(el.dataset.k);
+    el.onkeydown = e => { if (e.key === "Enter" || e.key === " "){ e.preventDefault(); abrirItem(el.dataset.k); } };
+  });
+  abbrify($("#mmBox"));
+}
+function abrirItem(k){
+  const itens = mmItens(), i = itens.findIndex(x => x.k === k), it = itens[i];
+  $("#mmBox").querySelectorAll("[data-k]").forEach(el => el.classList.toggle("sel", el.dataset.k === k));
+  const p = $("#mmPanel");
+  p.style.setProperty("--c", it.c || "var(--accent)");
+  p.innerHTML = `<div class="muted" style="font-size:13px">${it.pai ? "Mapa › " + it.pai : "Mapa"}</div>
+    <h4>${it.t}</h4>
+    <div class="mm-sec"><span class="lbl">Explicação</span>${it.e}</div>
+    <div class="mm-sec ex"><span class="lbl">Exemplo prático</span>${it.x}</div>
+    <div class="mm-sec"><span class="lbl">De onde vem / para saber mais</span>${it.l}</div>
+    <div class="mm-sec pg"><span class="lbl">Cuidado: confusão comum</span>${it.p}</div>
+    <div class="nav"><button class="btn" id="mmPrev" ${i === 0 ? "disabled" : ""}>← Item anterior</button>
+      <button class="btn pri" id="mmNext" ${i === itens.length - 1 ? "disabled" : ""}>Próximo item →</button></div>`;
+  abbrify(p);
+  p.dataset.hl = "mm-" + k; hlAplicar(p);
+  $("#mmPrev").onclick = () => abrirItem(itens[i - 1].k);
+  $("#mmNext").onclick = () => abrirItem(itens[i + 1].k);
+  const r = p.getBoundingClientRect();
+  if (r.top < 120 || r.top > innerHeight - 160) p.scrollIntoView({behavior: "smooth", block: "start"});
+}
+
+/* ---------- glossário: toda sigla ganha dica com o nome por extenso ---------- */
+const GLOSS = {
+ "CF/88": "Constituição Federal de 1988", "CF": "Constituição Federal de 1988",
+ "CTN": "Código Tributário Nacional (Lei 5.172/1966)", "STF": "Supremo Tribunal Federal", "STJ": "Superior Tribunal de Justiça",
+ "LC": "Lei Complementar", "MP": "Medida Provisória", "EC": "Emenda Constitucional", "DL": "Decreto-Lei",
+ "ADCT": "Ato das Disposições Constitucionais Transitórias", "CLT": "Consolidação das Leis do Trabalho",
+ "ADI": "Ação Direta de Inconstitucionalidade", "RE": "Recurso Extraordinário", "RREE": "Recursos Extraordinários",
+ "REsp": "Recurso Especial", "HC": "Habeas Corpus", "AgR": "Agravo Regimental",
+ "ICMS": "Imposto sobre Circulação de Mercadorias e Serviços", "ISS": "Imposto sobre Serviços", "ISSQN": "Imposto sobre Serviços de Qualquer Natureza",
+ "IPTU": "Imposto sobre a Propriedade Predial e Territorial Urbana", "ITBI": "Imposto sobre a Transmissão de Bens Imóveis",
+ "ITCMD": "Imposto sobre Transmissão Causa Mortis e Doação", "IPVA": "Imposto sobre a Propriedade de Veículos Automotores",
+ "IE": "Imposto de Exportação", "IR": "Imposto de Renda", "IRPF": "Imposto de Renda da Pessoa Física", "IRPJ": "Imposto de Renda da Pessoa Jurídica",
+ "IPI": "Imposto sobre Produtos Industrializados", "IOF": "Imposto sobre Operações Financeiras", "ITR": "Imposto sobre a Propriedade Territorial Rural",
+ "IGF": "Imposto sobre Grandes Fortunas", "IS": "Imposto Seletivo", "IEG": "Imposto Extraordinário de Guerra",
+ "IBS": "Imposto sobre Bens e Serviços", "CBS": "Contribuição sobre Bens e Serviços", "IVA": "Imposto sobre Valor Agregado",
+ "CIDE": "Contribuição de Intervenção no Domínio Econômico", "COSIP": "Contribuição para o Custeio do Serviço de Iluminação Pública",
+ "COFINS": "Contribuição para o Financiamento da Seguridade Social", "CSLL": "Contribuição Social sobre o Lucro Líquido",
+ "PIS": "Programa de Integração Social", "PASEP": "Programa de Formação do Patrimônio do Servidor Público",
+ "RPPS": "Regime Próprio de Previdência Social", "RGPS": "Regime Geral de Previdência Social",
+ "CVM": "Comissão de Valores Mobiliários", "AFRMM": "Adicional ao Frete para a Renovação da Marinha Mercante",
+ "SEBRAE": "Serviço Brasileiro de Apoio às Micro e Pequenas Empresas", "INCRA": "Instituto Nacional de Colonização e Reforma Agrária",
+ "SESC": "Serviço Social do Comércio", "SENAC": "Serviço Nacional de Aprendizagem Comercial", "SENAI": "Serviço Nacional de Aprendizagem Industrial",
+ "OAB": "Ordem dos Advogados do Brasil", "CRC": "Conselho Regional de Contabilidade", "CREA": "Conselho Regional de Engenharia e Agronomia",
+ "CRM": "Conselho Regional de Medicina", "CRA": "Conselho Regional de Administração", "IBAMA": "Instituto Brasileiro do Meio Ambiente e dos Recursos Naturais Renováveis",
+ "TCFA": "Taxa de Controle e Fiscalização Ambiental", "TFA": "Taxa de Fiscalização de Anúncios", "TFLF": "Taxa de Fiscalização, Localização e Funcionamento",
+ "TLLF": "Taxa de Licença de Localização e Funcionamento", "ZFM": "Zona Franca de Manaus", "PAF": "Processo Administrativo Fiscal",
+ "DF": "Distrito Federal", "SEFAZ": "Secretaria de Estado de Fazenda", "SEEC": "Secretaria de Estado de Economia",
+ "CEBRASPE": "Centro Brasileiro de Pesquisa em Avaliação e Seleção e de Promoção de Eventos (banca)", "CESPE": "Centro de Seleção e de Promoção de Eventos (atual CEBRASPE)",
+ "PGFN": "Procuradoria-Geral da Fazenda Nacional", "AGU": "Advocacia-Geral da União", "RFB": "Receita Federal do Brasil",
+ "CAGE": "Contadoria e Auditoria-Geral do Estado", "CGE": "Controladoria-Geral do Estado", "TCE": "Tribunal de Contas do Estado",
+ "PGE": "Procuradoria-Geral do Estado", "STM": "Superior Tribunal Militar", "PF": "Polícia Federal", "PC": "Polícia Civil",
+ "ANM": "Agência Nacional de Mineração", "CAU": "Conselho de Arquitetura e Urbanismo", "INPI": "Instituto Nacional da Propriedade Industrial",
+ "APEX": "Agência Brasileira de Promoção de Exportações e Investimentos", "EMBRAPA": "Empresa Brasileira de Pesquisa Agropecuária",
+ "CAGEPA": "Companhia de Água e Esgotos da Paraíba", "SEPLAN": "Secretaria de Planejamento", "APO": "Analista de Planejamento e Orçamento",
+ "PPNT": "Processo seletivo público (Petrobras)", "ATT": "Auditor Técnico de Tributos", "AFRE": "Auditor Fiscal da Receita Estadual",
+ "AFE": "Auditor Fiscal Estadual",
+ "art.": "artigo", "arts.": "artigos", "Art.": "artigo", "§": "parágrafo", "c/c": "combinado com", "nº": "número", "n.º": "número",
+ "Proc": "Procurador", "Pref": "Prefeitura", "Rel.": "Relator", "Min.": "Ministro", "Súm.": "Súmula", "SV": "Súmula Vinculante",
+ "NSQ": "núcleo supraquiasmático (o relógio central do corpo, no hipotálamo)", "AANAT": "arilalquilamina N-acetiltransferase, a enzima-chave que liga a produção de melatonina à noite", "ASMT": "acetilserotonina O-metiltransferase, a última enzima da produção de melatonina", "nm": "nanômetro (bilionésima parte do metro), unidade do comprimento de onda da luz", "mg": "miligrama (milésima parte do grama)", "AMPc": "AMP cíclico, mensageiro químico dentro da célula",
+ "FG": "fato gerador", "BC": "base de cálculo", "LO": "lei ordinária"
+};
+const GLOSS_RE = new RegExp("(?<![\\wÀ-ÿ])(" + Object.keys(GLOSS).sort((a, b) => b.length - a.length)
+  .map(s => s.replace(/[.*+?^${}()|[\]\\\/]/g, "\\$&")).join("|") + ")(?![\\wÀ-ÿ])", "g");
+function abbrify(root){
+  if (!root) return;
+  const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {acceptNode: n =>
+    n.parentElement.closest("abbr,script,style,select,option,kbd") ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT});
+  const nodes = []; while (w.nextNode()) nodes.push(w.currentNode);
+  nodes.forEach(n => {
+    const s = n.nodeValue; GLOSS_RE.lastIndex = 0;
+    if (!GLOSS_RE.test(s)) return;
+    const frag = document.createDocumentFragment(); let last = 0; GLOSS_RE.lastIndex = 0; let m;
+    while ((m = GLOSS_RE.exec(s))){
+      frag.append(s.slice(last, m.index));
+      const a = document.createElement("abbr"); a.textContent = m[1]; a.dataset.tip = GLOSS[m[1]]; a.setAttribute("aria-label", GLOSS[m[1]]);
+      frag.append(a); last = m.index + m[1].length;
+    }
+    frag.append(s.slice(last)); n.replaceWith(frag);
+  });
+}
+/* dica posicionada acima da sigla, sem cobrir o texto nem ficar sob o cursor */
+(() => {
+  const tip = () => document.getElementById("tip");
+  function show(el){
+    const t = tip(); t.textContent = el.dataset.tip; t.classList.add("on");
+    const r = el.getBoundingClientRect(), w = t.offsetWidth, h = t.offsetHeight;
+    let x = Math.min(Math.max(8, r.left + r.width / 2 - w / 2), innerWidth - w - 8);
+    let y = r.top - h - 8; if (y < 8) y = r.bottom + 8;
+    t.style.left = x + "px"; t.style.top = y + "px";
+  }
+  document.addEventListener("mouseover", e => { const a = e.target.closest("abbr[data-tip]"); if (a) show(a); });
+  document.addEventListener("mouseout", e => { if (e.target.closest("abbr[data-tip]")) tip().classList.remove("on"); });
+  document.addEventListener("click", e => { const a = e.target.closest("abbr[data-tip]"); if (a){ show(a); setTimeout(() => tip().classList.remove("on"), 2500); } });
+  addEventListener("scroll", () => tip().classList.remove("on"), {passive: true});
+})();
+
+const KEY = "canedo_T3_glandula_pineal_v1";
+/* respostas já resolvidas, embutidas na publicação (usadas só se este navegador ainda não tiver dados) */
+const RESPOSTAS_INICIAIS = null;
+let S = JSON.parse(localStorage.getItem(KEY) || "null") || (RESPOSTAS_INICIAIS ? structuredClone(RESPOSTAS_INICIAIS) : null) || {answers:{}, cards:{}};
+S.answers ||= {}; S.cards ||= {}; S.draft ||= {};
+const save = () => localStorage.setItem(KEY, JSON.stringify(S));
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+/* abas */
+function showTab(t){
+  document.querySelectorAll("section.tab").forEach(s => s.classList.toggle("on", s.id === t));
+  document.querySelectorAll("#nav button").forEach(b => b.classList.toggle("on", b.dataset.t === t));
+  if (t === "rend") renderRend();
+  if (t === "flash") renderCard();
+  window.scrollTo(0, 0);
+}
+document.querySelectorAll("#nav button").forEach(b => b.onclick = () => showTab(b.dataset.t));
+const active = () => document.querySelector("section.tab.on").id;
+
+/* questões */
+const TEMAS = [...new Set(QUESTOES.map(q => q.tema))];
+$("#fTema").innerHTML = '<option value="all">Todos os temas</option>' + TEMAS.map(t => `<option>${esc(t)}</option>`).join("");
+let cur = 0;
+
+function visible(){
+  const t = $("#fTema").value, st = $("#fStatus").value;
+  return QUESTOES.map((q, i) => i).filter(i => {
+    const q = QUESTOES[i], a = S.answers[q.n];
+    if (t !== "all" && q.tema !== t) return false;
+    if (st === "pend") return !a;
+    if (st === "bad") return a && !a.ok;
+    if (st === "ok") return a && a.ok;
+    return true;
+  });
+}
+function fmtCom(p){
+  return esc(p).replace(/^(Letra [A-E]|Item [IVX]+|Alternativa [A-E]|Assertiva [IVX]+)(:?)/, "<b>$1$2</b>");
+}
+function renderQ(){
+  const vis = visible();
+  const done = Object.keys(S.answers).length;
+  $("#qProg").style.width = (100 * done / QUESTOES.length) + "%";
+  $("#navQ").textContent = `${done}/${QUESTOES.length}`;
+  $("#qNav").innerHTML = vis.map(i => {
+    const a = S.answers[QUESTOES[i].n];
+    return `<button data-i="${i}" class="${a ? (a.ok ? "ok" : "bad") : ""} ${i === cur ? "cur" : ""}">${QUESTOES[i].nav || QUESTOES[i].n}</button>`;
+  }).join("");
+  $("#qNav").querySelectorAll("button").forEach(b => b.onclick = () => { cur = +b.dataset.i; renderQ(); });
+  if (!vis.length){ $("#qCard").innerHTML = '<p class="muted">Nenhuma questão neste filtro.</p>'; return; }
+  if (!vis.includes(cur)) cur = vis[0];
+  const q = QUESTOES[cur], a = S.answers[q.n];
+  const d = draft(q.n);
+  const st = v => a ? "" : (d.desc.includes(v) ? "desc" : d.sel === v ? "sel" : "");
+  let opts;
+  if (q.tipo === "ce"){
+    opts = '<div class="ce">' + [["C","Certo"],["E","Errado"]].map(([v, l]) => {
+      let cls = "";
+      if (a){ if (v === q.resp) cls = "right"; else if (v === a.sel) cls = "wrong"; }
+      return `<button class="opt ${cls} ${st(v)}" data-v="${v}" ${a ? "disabled" : ""}>${l}</button>`;
+    }).join("") + "</div>";
+  } else {
+    opts = q.alts.map(([l, t]) => {
+      let cls = "";
+      if (a){ if (l === q.resp) cls = "right"; else if (l === a.sel) cls = "wrong"; }
+      return `<button class="opt ${cls} ${st(l)}" data-v="${l}" ${a ? "disabled" : ""}><span class="l">${l})</span><span>${esc(t)}</span></button>`;
+    }).join("");
+  }
+  const pos = vis.indexOf(cur) + 1;
+  let com = "";
+  if (a){
+    const gab = q.tipo === "ce" ? (q.resp === "C" ? "Certo" : "Errado") : "Letra " + q.resp.toUpperCase();
+    com = `<div class="coment" data-hl="q${q.n}c"><div class="verdict ${a.ok ? "ok" : "bad"}">${a.ok ? "✔ Você acertou" : "✘ Você errou"} · Gabarito: ${gab}</div>
+      ${q.com.map(p => `<p>${fmtCom(p)}</p>`).join("")}</div>`;
+  }
+  $("#qCard").innerHTML = `<div class="qhead"><span><b>${esc(q.rot || "Questão " + q.n)}</b> · ${esc(q.fonte)}</span><span><span class="pill">${esc(q.tema)}</span> ${pos}/${vis.length}</span></div>
+    ${q.texto ? `<div class="trecho" data-hl="q${q.n}t"><span class="lbl">Trecho do texto</span>${esc(q.texto)}</div>` : ""}
+    <div class="enun" data-hl="q${q.n}">${esc(q.enun)}</div>
+    ${a ? "" : '<div class="qhint">Clique para escolher · clique duas vezes para descartar (riscar) ou recuperar uma opção</div>'}
+    ${opts}
+    ${a ? "" : `<div class="qact"><button class="btn pri" id="qSubmit">Responder</button><div class="qmsg" id="qMsg" role="alert"></div></div>`}
+    ${com}`;
+  abbrify($("#qCard"));
+  $("#qCard").querySelectorAll("[data-hl]").forEach(hlAplicar);
+  let clickTimer = null;
+  $("#qCard").querySelectorAll(".opt:not(:disabled)").forEach(b => {
+    b.onclick = () => { clearTimeout(clickTimer); clickTimer = setTimeout(() => escolher(b.dataset.v), 230); };
+    b.ondblclick = e => { e.preventDefault(); clearTimeout(clickTimer); descartar(b.dataset.v); };
+  });
+  if ($("#qSubmit")) $("#qSubmit").onclick = submeter;
+  $("#qPrev").disabled = pos <= 1;
+  $("#qNext").textContent = pos >= vis.length ? "Ver rendimento →" : "Próxima →";
+}
+function draft(n){
+  S.draft ||= {};
+  return S.draft[n] ||= {sel: null, desc: []};
+}
+function opcoes(q){ return q.tipo === "ce" ? ["C", "E"] : q.alts.map(x => x[0]); }
+function escolher(v){
+  const q = QUESTOES[cur]; if (S.answers[q.n]) return;
+  const d = draft(q.n);
+  if (d.desc.includes(v)){ msg("warn", "Essa opção está descartada. Clique duas vezes nela para recuperá-la antes de escolher."); return; }
+  d.sel = d.sel === v ? null : v; save(); renderQ();
+}
+function descartar(v){
+  const q = QUESTOES[cur]; if (S.answers[q.n]) return;
+  const d = draft(q.n);
+  if (d.desc.includes(v)) d.desc = d.desc.filter(x => x !== v);
+  else { d.desc.push(v); if (d.sel === v) d.sel = null; }
+  save(); renderQ();
+  if (d.desc.length === opcoes(q).length) msg("warn", "Você descartou todas as opções. Clique duas vezes em uma delas para recuperá-la e poder responder.");
+}
+function msg(tipo, texto){
+  const m = $("#qMsg"); if (!m) return;
+  m.className = "qmsg on " + tipo; m.textContent = texto;
+}
+function submeter(){
+  const q = QUESTOES[cur]; if (S.answers[q.n]) return;
+  const d = draft(q.n), todas = opcoes(q);
+  if (d.desc.length === todas.length) return msg("bad", "Você marcou todas as opções como descartadas. Recupere uma (clique duas vezes) e selecione-a antes de responder.");
+  if (!d.sel) return msg("bad", "Você não selecionou nenhuma resposta. Clique em uma opção e depois em Responder.");
+  answer(d.sel);
+}
+function answer(v){
+  const q = QUESTOES[cur];
+  if (S.answers[q.n]) return;
+  const d = draft(q.n);
+  S.answers[q.n] = {sel: v, ok: v === q.resp, desc: d.desc.slice(), ts: Date.now()};
+  delete S.draft[q.n];
+  save(); renderQ();
+  $("#qCard .coment")?.scrollIntoView({behavior: "smooth", block: "nearest"});
+  if (Object.keys(S.answers).length === QUESTOES.length){
+    setTimeout(() => { if (confirmFinish()) showTab("rend"); }, 50);
+  }
+}
+let finishedShown = false;
+function confirmFinish(){ if (finishedShown) return false; finishedShown = true; return true; }
+function step(d){
+  const vis = visible(), p = vis.indexOf(cur);
+  if (d > 0 && p >= vis.length - 1){ showTab("rend"); return; }
+  const np = Math.min(Math.max(p + d, 0), vis.length - 1);
+  cur = vis[np]; renderQ(); $("#qCard").scrollIntoView({block: "nearest"});
+}
+$("#qPrev").onclick = () => step(-1);
+$("#qNext").onclick = () => step(1);
+$("#fTema").onchange = $("#fStatus").onchange = () => { cur = -1; renderQ(); };
+
+/* flashcards */
+let deck = [], fcI = 0;
+FLASH.forEach((c, i) => c.id = "f" + i);
+function buildDeck(shuffle){
+  const d = $("#fcDeck").value;
+  deck = FLASH.filter(c => d === "all" || c[0] === d);
+  const box = c => (S.cards[c.id] || {box: 1}).box;
+  deck = deck.map(c => [c, Math.random()]).sort((x, y) => shuffle ? x[1] - y[1] : (box(x[0]) - box(y[0])) || (x[1] - y[1])).map(x => x[0]);
+  fcI = 0; renderCard();
+}
+function renderCard(){
+  if (!deck.length) buildDeck();
+  const c = deck[fcI];
+  $("#fc").classList.remove("flip");
+  $("#fcQ").innerHTML = c[1];
+  $("#fcA").innerHTML = c[2];
+  const b = (S.cards[c.id] || {box: 1}).box;
+  $("#fcPos").textContent = `Cartão ${fcI + 1} de ${deck.length}`;
+  $("#fcBox").textContent = `Caixa ${b}`;
+  const cnt = [0, 0, 0, 0, 0];
+  deck.forEach(x => cnt[((S.cards[x.id] || {box: 1}).box) - 1]++);
+  abbrify($("#fcQ")); abbrify($("#fcA"));
+  $("#fcBoxes").innerHTML = cnt.map((n, i) => `<span>Caixa ${i + 1}: ${n}</span>`).join("");
+}
+function grade(g){
+  const c = deck[fcI], st = S.cards[c.id] || {box: 1};
+  st.box = g === 0 ? 1 : g === 1 ? Math.max(1, st.box) : Math.min(5, st.box + 1);
+  st.seen = (st.seen || 0) + 1; S.cards[c.id] = st; save();
+  fcI = (fcI + 1) % deck.length; renderCard();
+}
+$("#fc").onclick = () => $("#fc").classList.toggle("flip");
+$("#fcBad").onclick = () => grade(0);
+$("#fcMid").onclick = () => grade(1);
+$("#fcOk").onclick = () => grade(2);
+$("#fcDeck").onchange = () => buildDeck();
+$("#fcShuffle").onclick = () => buildDeck(true);
+$("#fcReset").onclick = () => { if (confirm("Zerar as caixas de todos os flashcards?")){ S.cards = {}; save(); buildDeck(); } };
+
+/* rendimento */
+function renderRend(){
+  const ans = S.answers, n = QUESTOES.length, done = QUESTOES.filter(q => ans[q.n]);
+  const ok = done.filter(q => ans[q.n].ok).length;
+  if (!done.length){ $("#rendBody").innerHTML = '<div class="card"><p class="muted">Você ainda não respondeu nenhuma questão. Vá para a aba <b>Questões</b>.</p></div>'; return; }
+  const pct = Math.round(100 * ok / done.length);
+  const ce = done.filter(q => q.tipo === "ce"), ceOk = ce.filter(q => ans[q.n].ok).length, ceBad = ce.length - ceOk;
+  const mc = done.filter(q => q.tipo === "mc"), mcOk = mc.filter(q => ans[q.n].ok).length;
+  const complete = done.length === n;
+  const msg = pct >= 80 ? ["ok", "Excelente! Acima da meta de 80%. Você está pronta para responder às perguntas da turma."] : pct >= 70 ? ["warn", "Bom, mas abaixo da meta de 80%. Revise os temas em amarelo e vermelho."] : ["bad", "Abaixo de 70%. Releia o Resumo dos temas fracos antes de refazer as erradas."];
+  const byT = TEMAS.map(t => {
+    const qs = done.filter(q => q.tema === t), o = qs.filter(q => ans[q.n].ok).length;
+    return {t, tot: QUESTOES.filter(q => q.tema === t).length, d: qs.length, o, p: qs.length ? Math.round(100 * o / qs.length) : null};
+  }).sort((a, b) => (a.p ?? 101) - (b.p ?? 101));
+  const wrong = done.filter(q => !ans[q.n].ok);
+  $("#rendBody").innerHTML = `
+    ${complete ? "" : `<div class="call warn"><b>Resultado parcial</b>Você respondeu ${done.length} de ${n}. O rendimento final aparece quando terminar todas.</div>`}
+    <div class="grid3">
+      <div class="card"><div class="muted">Aproveitamento</div><div class="big" style="color:var(--${pct >= 80 ? "ok" : pct >= 70 ? "warn" : "bad"})">${pct}%</div><div class="muted">${ok} certas de ${done.length}</div></div>
+      ${ce.length ? `<div class="card"><div class="muted">Certo/Errado (nota CEBRASPE)</div><div class="big">${ceOk - ceBad}</div><div class="muted">${ceOk} certas − ${ceBad} erradas, em ${ce.length} itens</div></div>` : `<div class="card"><div class="muted">Respondidas</div><div class="big">${done.length}/${n}</div><div class="muted">${n - done.length} pendentes</div></div>`}
+      <div class="card"><div class="muted">Múltipla escolha</div><div class="big">${mc.length ? Math.round(100 * mcOk / mc.length) : 0}%</div><div class="muted">${mcOk} de ${mc.length}</div></div>
+    </div>
+    <div class="call ${msg[0]}"><b>Diagnóstico</b>${msg[1]}</div>
+    <h3>Desempenho por tema (do mais fraco ao mais forte)</h3>
+    <div class="card">${byT.map(r => `<div class="bar"><span>${esc(r.t)}</span><div class="t"><div class="${r.p === null ? "" : r.p < 70 ? "low" : r.p < 85 ? "mid" : ""}" style="width:${r.p ?? 0}%"></div></div><span>${r.p === null ? "—" : r.p + "%"} <small class="muted">${r.o}/${r.d}</small></span></div>`).join("")}</div>
+    <h3>Questões erradas (${wrong.length})</h3>
+    <div class="card">${wrong.length ? wrong.map(q => `<div style="margin:6px 0"><a href="#" data-n="${q.n}">Q${q.n}</a> · <span class="pill">${esc(q.tema)}</span> <span class="muted">${esc(q.enun.slice(-120).replace(/^\S*\s/, "…"))}</span></div>`).join("") : '<p class="muted">Nenhuma! 🎯</p>'}</div>`;
+  abbrify($("#rendBody"));
+  $("#rendBody").querySelectorAll("a[data-n]").forEach(a => a.onclick = e => {
+    e.preventDefault(); $("#fTema").value = "all"; $("#fStatus").value = "all";
+    cur = QUESTOES.findIndex(q => q.n === +a.dataset.n); showTab("questoes"); renderQ();
+  });
+}
+$("#expBtn").onclick = () => {
+  const blob = new Blob([JSON.stringify(S, null, 1)], {type: "application/json"});
+  const a = document.createElement("a"); a.href = URL.createObjectURL(blob);
+  a.download = `${KEY}_${new Date().toISOString().slice(0, 10)}.json`; a.click();
+};
+$("#impFile").onchange = e => {
+  const f = e.target.files[0]; if (!f) return;
+  f.text().then(t => { S = JSON.parse(t); S.answers ||= {}; S.cards ||= {}; S.draft ||= {}; S.marks ||= {}; save(); renderQ(); renderRend(); hlTudo(); });
+};
+$("#redoBad").onclick = () => {
+  const bad = Object.keys(S.answers).filter(k => !S.answers[k].ok);
+  if (!bad.length) return;
+  bad.forEach(k => delete S.answers[k]); save(); finishedShown = false;
+  $("#fStatus").value = "pend"; cur = -1; showTab("questoes"); renderQ();
+};
+$("#resetAll").onclick = () => { if (confirm("Apagar TODAS as respostas das questões?")){ S.answers = {}; save(); finishedShown = false; renderQ(); renderRend(); } };
+
+/* ---------- marca-texto: selecione um trecho e escolha amarelo, rosa ou verde (salvo em S.marks) ---------- */
+S.marks ||= {};
+const hlBar = $("#hlBar");
+let hlAlvo = null;  /* {root, id} quando o clique foi numa marcação já existente */
+const hlId = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+const hlRaiz = n => (n.nodeType === 1 ? n : n.parentElement)?.closest("[data-hl]");
+function hlTextos(root){
+  const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT), r = [];
+  while (w.nextNode()) r.push(w.currentNode);
+  return r;
+}
+function hlOff(root, node, off){ const r = document.createRange(); r.setStart(root, 0); r.setEnd(node, off); return r.toString().length; }
+/* posições contadas no texto puro do bloco; se o texto mudar, procura o trecho guardado */
+function hlAplicar(root){
+  if (!root) return;
+  root.querySelectorAll("mark.hl").forEach(m => m.replaceWith(...m.childNodes));
+  root.normalize();
+  const full = root.textContent;
+  (S.marks[root.dataset.hl] || []).forEach(m => {
+    if (full.slice(m.s, m.e) !== m.t){ const i = full.indexOf(m.t); if (i < 0) return; m.s = i; m.e = i + m.t.length; }
+    let pos = 0;
+    hlTextos(root).forEach(t => {
+      const a = pos, b = pos + t.length; pos = b;
+      if (b <= m.s || a >= m.e) return;
+      if (!t.nodeValue.trim() && /^(TABLE|TBODY|THEAD|TR|UL|OL|SECTION|DIV|DETAILS)$/.test(t.parentNode.nodeName)) return;
+      let n = t;
+      if (m.e - a < t.length) n.splitText(m.e - a);
+      if (m.s > a) n = n.splitText(m.s - a);
+      const mk = document.createElement("mark");
+      mk.className = "hl hl-" + m.c; mk.dataset.id = m.id;
+      n.replaceWith(mk); mk.append(n);
+    });
+  });
+}
+function hlTudo(){ document.querySelectorAll("[data-hl]").forEach(hlAplicar); }
+function hlSelecao(){
+  const sel = getSelection();
+  if (!sel.rangeCount || sel.isCollapsed) return null;
+  const r = sel.getRangeAt(0), root = hlRaiz(r.startContainer);
+  if (!root || root !== hlRaiz(r.endContainer)) return null;
+  const s = hlOff(root, r.startContainer, r.startOffset), e = hlOff(root, r.endContainer, r.endOffset);
+  return e > s ? {root, s, e, rect: r.getBoundingClientRect()} : null;
+}
+/* tira o trecho [s, e) das marcações existentes (nova cor por cima ou apagar) */
+function hlCortar(lista, s, e, full){
+  const out = [];
+  lista.forEach(m => {
+    if (m.e <= s || m.s >= e) return out.push(m);
+    if (m.s < s) out.push({...m, id: hlId(), e: s, t: full.slice(m.s, s)});
+    if (m.e > e) out.push({...m, id: hlId(), s: e, t: full.slice(e, m.e)});
+  });
+  return out;
+}
+function hlSalvar(root, lista){
+  const k = root.dataset.hl;
+  if (lista.length) S.marks[k] = lista.sort((a, b) => a.s - b.s); else delete S.marks[k];
+  save(); hlAplicar(root);
+}
+function hlMostrar(rect){
+  hlBar.classList.add("on");
+  const w = hlBar.offsetWidth, h = hlBar.offsetHeight;
+  let y = rect.top - h - 8; if (y < 8) y = rect.bottom + 8;
+  hlBar.style.left = Math.min(Math.max(8, rect.left + rect.width / 2 - w / 2), innerWidth - w - 8) + "px";
+  hlBar.style.top = y + "px";
+}
+function hlEsconder(){ hlBar.classList.remove("on"); hlAlvo = null; }
+hlBar.addEventListener("mousedown", e => e.preventDefault());
+hlBar.querySelectorAll("button").forEach(b => b.onclick = () => {
+  const c = b.dataset.c;
+  if (hlAlvo){
+    const {root, id} = hlAlvo, lista = S.marks[root.dataset.hl] || [];
+    hlSalvar(root, c ? lista.map(m => m.id === id ? {...m, c} : m) : lista.filter(m => m.id !== id));
+  } else {
+    const x = hlSelecao(); if (!x) return hlEsconder();
+    const full = x.root.textContent, lista = hlCortar(S.marks[x.root.dataset.hl] || [], x.s, x.e, full);
+    if (c) lista.push({id: hlId(), s: x.s, e: x.e, c, t: full.slice(x.s, x.e)});
+    getSelection().removeAllRanges();
+    hlSalvar(x.root, lista);
+  }
+  hlEsconder();
+});
+function hlChecar(e){
+  if (hlBar.contains(e.target)) return;
+  setTimeout(() => {
+    const x = hlSelecao();
+    if (x){ hlAlvo = null; return hlMostrar(x.rect); }
+    const mk = e.target.closest?.("mark.hl");
+    if (mk && getSelection().isCollapsed){ hlMostrar(mk.getBoundingClientRect()); hlAlvo = {root: hlRaiz(mk), id: mk.dataset.id}; return; }
+    hlEsconder();
+  }, 10);
+}
+document.addEventListener("mouseup", hlChecar);
+document.addEventListener("touchend", hlChecar);
+document.addEventListener("keyup", e => { if (e.shiftKey) hlChecar(e); });
+addEventListener("scroll", hlEsconder, {passive: true});
+$("#hlReset").onclick = () => { if (confirm("Apagar todas as marcações de texto desta página?")){ S.marks = {}; save(); hlTudo(); } };
+document.querySelectorAll("section.tab").forEach(s => { if (!["mapa", "questoes", "flash", "rend"].includes(s.id)) s.dataset.hl = s.id; });
+hlTudo();
+
+/* teclado */
+document.addEventListener("keydown", e => {
+  if (e.target.tagName === "SELECT" || e.ctrlKey || e.metaKey || e.altKey) return;
+  const k = e.key.toLowerCase(), tab = active();
+  if (tab === "questoes"){
+    const q = QUESTOES[cur];
+    if (k === "arrowright") step(1);
+    else if (k === "arrowleft") step(-1);
+    else if (q && !S.answers[q.n]){
+      const v = q.tipo === "ce" ? k.toUpperCase() : k;
+      if (k === "enter"){ e.preventDefault(); submeter(); }
+      else if (opcoes(q).includes(v)){ e.shiftKey ? descartar(v) : escolher(v); }
+    }
+  } else if (tab === "flash"){
+    if (k === " "){ e.preventDefault(); $("#fc").classList.toggle("flip"); }
+    else if (k === "1") grade(0); else if (k === "2") grade(1); else if (k === "3") grade(2);
+  }
+});
+
+renderMapa();
+["#inicio", "#resumo", "#mapa", "#esquemas", "#reforma"].forEach(s => abbrify($(s)));
+cur = 0; renderQ(); buildDeck();
+
+/* ---------- tamanho da fonte (70% a 200%, passo de 10%; salvo para todas as páginas) ---------- */
+function fonte(v){
+  v = Math.min(2, Math.max(0.7, Math.round(v * 10) / 10));
+  document.documentElement.style.setProperty("--fz", v);
+  localStorage.setItem("canedo_fonte", v);
+  $("#fzVal").textContent = Math.round(v * 100) + "%";
+  $("#fzMenos").disabled = v <= 0.7; $("#fzMais").disabled = v >= 2;
+}
+const fzAtual = () => parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--fz")) || 1;
+$("#fzMenos").onclick = () => fonte(fzAtual() - 0.1);
+$("#fzMais").onclick = () => fonte(fzAtual() + 0.1);
+$("#fzVal").onclick = () => fonte(1);
+fonte(fzAtual());
+
+/* ---------- tema de cores (5 opções; salvo para todas as páginas) ---------- */
+(() => {
+  const sel = document.getElementById("tema");
+  sel.value = localStorage.getItem("canedo_tema") || (matchMedia("(prefers-color-scheme: dark)").matches ? "escuro" : "claro");
+  sel.onchange = () => { document.documentElement.dataset.tema = sel.value; localStorage.setItem("canedo_tema", sel.value); };
+})();
+
+/* ---------- tela cheia: o mesmo botão entra e sai (Esc também sai) ---------- */
+$("#telaCheia").onclick = () => document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen().catch(() => {});
+document.addEventListener("fullscreenchange", () => {
+  const on = !!document.fullscreenElement, b = $("#telaCheia");
+  b.textContent = on ? "✕ Sair da tela cheia" : "⛶ Tela cheia";
+  b.title = b.ariaLabel = on ? "Sair da tela cheia" : "Tela cheia";
+});
+
+/* ---------- menu retrátil no celular: mostra a aba atual e fecha ao escolher outra ---------- */
+function menuRotulo(){
+  const b = $("#nav button.on");
+  $("#menuBtn").textContent = "☰ " + (b ? b.firstChild.textContent.trim() : "Menu");
+}
+$("#menuBtn").onclick = () => {
+  const on = $("header").classList.toggle("menu-on");
+  $("#menuBtn").setAttribute("aria-expanded", on);
+};
+$("#nav").addEventListener("click", e => {
+  if (!e.target.closest("button")) return;
+  $("header").classList.remove("menu-on"); $("#menuBtn").setAttribute("aria-expanded", false); menuRotulo();
+});
+document.addEventListener("click", e => { if (!e.target.closest("header")) menuRotulo(); });
+menuRotulo();
+</script>
+</body>
+</html>
