@@ -21,7 +21,7 @@ body{margin:0;font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif
 header{background:var(--surface);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
 .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
 .top{display:flex;align-items:center;gap:16px;padding:12px 0 6px;flex-wrap:wrap}
-.badge{background:var(--accent);color:#fff;font-weight:700;border-radius:8px;padding:4px 10px;font-size:14px;letter-spacing:.5px}
+.badge{background:var(--accent);color:var(--on-accent,#fff);font-weight:700;border-radius:8px;padding:4px 10px;font-size:14px;letter-spacing:.5px}
 .top h1{font-size:18px;margin:0;font-weight:650}
 .top .sub{color:var(--muted);font-size:13px}
 nav{display:flex;gap:4px;overflow-x:auto;padding-bottom:8px}
@@ -56,9 +56,9 @@ details summary{cursor:pointer;padding:10px 14px;font-weight:600}
 details>div{padding:0 14px 12px}
 .btn{border:1px solid var(--line);background:var(--surface);color:var(--text);font:inherit;font-size:14px;padding:8px 14px;border-radius:8px;cursor:pointer}
 .btn:hover{border-color:var(--accent)}
-.btn.pri{background:var(--accent);border-color:var(--accent);color:#fff}
-.btn.ok{background:var(--ok);border-color:var(--ok);color:#fff}
-.btn.bad{background:var(--bad);border-color:var(--bad);color:#fff}
+.btn.pri{background:var(--accent);border-color:var(--accent);color:var(--on-accent,#fff)}
+.btn.ok{background:var(--ok);border-color:var(--ok);color:var(--on-accent,#fff)}
+.btn.bad{background:var(--bad);border-color:var(--bad);color:var(--on-accent,#fff)}
 .btn:disabled{opacity:.45;cursor:default}
 .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 select{font:inherit;font-size:14px;padding:7px 10px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--text)}
@@ -71,7 +71,7 @@ select{font:inherit;font-size:14px;padding:7px 10px;border-radius:8px;border:1px
 
 /* mapa mental */
 .mm{padding:22px 16px}
-.mm-root{display:block;max-width:520px;margin:0 auto;text-align:center;background:var(--accent);color:#fff;border-radius:12px;padding:12px 16px;font-size:14px;line-height:1.45}
+.mm-root{display:block;max-width:520px;margin:0 auto;text-align:center;background:var(--accent);color:var(--on-accent,#fff);border-radius:12px;padding:12px 16px;font-size:14px;line-height:1.45}
 .mm-root b{display:block;font-size:17px;letter-spacing:.5px}
 .mm-trunk{width:2px;height:22px;background:var(--line);margin:0 auto}
 .mm-branches{display:grid;grid-template-columns:repeat(var(--n,5),1fr);gap:12px;border-top:2px solid var(--line);padding-top:0}
@@ -88,9 +88,9 @@ select{font:inherit;font-size:14px;padding:7px 10px;border-radius:8px;border:1px
 
 /* abreviações com dica */
 abbr[data-tip]{text-decoration:underline dotted;text-underline-offset:3px;cursor:help}
-#tip{position:fixed;z-index:100;max-width:300px;background:#1d2330;color:#fff;font-size:13px;line-height:1.35;padding:6px 10px;border-radius:7px;box-shadow:0 4px 14px rgba(0,0,0,.25);pointer-events:none;opacity:0;transition:opacity .12s}
+#tip{position:fixed;z-index:100;max-width:300px;background:var(--text);color:var(--bg);font-size:13px;line-height:1.35;padding:6px 10px;border-radius:7px;box-shadow:0 4px 14px rgba(0,0,0,.25);pointer-events:none;opacity:0;transition:opacity .12s}
 #tip.on{opacity:1}
-@media (prefers-color-scheme:dark){#tip{background:#e6e9ef;color:#12151b}}
+
 
 /* mapa clicável */
 .mm [data-k]{cursor:pointer;transition:transform .12s,box-shadow .12s}
@@ -110,8 +110,8 @@ abbr[data-tip]{text-decoration:underline dotted;text-underline-offset:3px;cursor
 .qnav{display:flex;flex-wrap:wrap;gap:5px;margin:10px 0 16px}
 .qnav button{width:34px;height:30px;border-radius:6px;border:1px solid var(--line);background:var(--surface);color:var(--text);font-size:12.5px;cursor:pointer}
 .qnav button.cur{outline:2px solid var(--accent);outline-offset:1px}
-.qnav button.ok{background:var(--ok);color:#fff;border-color:var(--ok)}
-.qnav button.bad{background:var(--bad);color:#fff;border-color:var(--bad)}
+.qnav button.ok{background:var(--ok);color:var(--on-accent,#fff);border-color:var(--ok)}
+.qnav button.bad{background:var(--bad);color:var(--on-accent,#fff);border-color:var(--bad)}
 .progress{height:8px;background:var(--surface2);border-radius:99px;overflow:hidden}
 .progress>div{height:100%;background:var(--accent);transition:width .3s}
 .qhead{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:13.5px;margin-bottom:8px}
@@ -197,10 +197,19 @@ header,main{zoom:var(--fz)}
   header.menu-on nav{display:flex;flex-direction:column;gap:2px;max-height:60vh;overflow-y:auto}
   header.menu-on nav button{text-align:left;padding:9px 12px}
 }
+/* temas: html[data-tema] tem precedência sobre :root e sobre o claro/escuro do sistema */
+html[data-tema="claro"]{--bg:#f6f7f9;--surface:#fff;--surface2:#f0f2f5;--text:#1d2330;--muted:#5d6676;--line:#dde1e7;--accent:#2f5bd3;--accent-soft:#e7edfc;--ok:#1f8a4c;--ok-soft:#e3f4ea;--bad:#c23a3a;--bad-soft:#fbe7e7;--warn:#a86a00;--warn-soft:#fdf1dc;--on-accent:#fff;--shadow:0 1px 3px rgba(0,0,0,.06),0 4px 14px rgba(0,0,0,.04);color-scheme:light}
+html[data-tema="escuro"]{--bg:#12151b;--surface:#1a1e26;--surface2:#222733;--text:#e6e9ef;--muted:#9aa3b2;--line:#2e3442;--accent:#7b9cff;--accent-soft:#232c45;--ok:#4cc27f;--ok-soft:#1b3326;--bad:#ef7676;--bad-soft:#3a2023;--warn:#f0b54a;--warn-soft:#3a2f1a;--on-accent:#fff;--shadow:none;color-scheme:dark}
+html[data-tema="sepia"]{--bg:#f4ecd8;--surface:#fbf5e6;--surface2:#efe4cc;--text:#3b2f22;--muted:#6e5d48;--line:#e0d2b4;--accent:#8a5a2b;--accent-soft:#f1e2c9;--ok:#2f7a3a;--ok-soft:#e2efd9;--bad:#b23b2e;--bad-soft:#f6dfd6;--warn:#9a6400;--warn-soft:#f7e8c6;--on-accent:#fff;--shadow:0 1px 3px rgba(60,40,10,.08);color-scheme:light}
+html[data-tema="oceano"]{--bg:#0d1b2a;--surface:#13263a;--surface2:#1b3350;--text:#e3edf7;--muted:#93a9c1;--line:#24425f;--accent:#4fc3f7;--accent-soft:#163a55;--ok:#5ad18b;--ok-soft:#173a2a;--bad:#ff7b7b;--bad-soft:#3d2026;--warn:#ffc857;--warn-soft:#3b3220;--on-accent:#06223a;--shadow:none;color-scheme:dark}
+html[data-tema="contraste"]{--bg:#000;--surface:#000;--surface2:#1a1a1a;--text:#fff;--muted:#e6e6e6;--line:#fff;--accent:#ffd400;--accent-soft:#332b00;--ok:#00e676;--ok-soft:#00331a;--bad:#ff6b6b;--bad-soft:#3a0000;--warn:#ffb000;--warn-soft:#332400;--on-accent:#000;--shadow:none;color-scheme:dark}
+html[data-tema="contraste"] a{color:#ffd400}
+#tema{border:1px solid var(--line);background:var(--surface);color:var(--text);font:inherit;font-size:13px;height:30px;padding:0 6px;border-radius:8px;cursor:pointer}
 </style>
 <script>
 /* aplica o tamanho salvo antes de desenhar a página; vale para todas as páginas do plano */
 document.documentElement.style.setProperty("--fz", localStorage.getItem("canedo_fonte") || "1");
+const _t = localStorage.getItem("canedo_tema"); if (_t) document.documentElement.dataset.tema = _t;
 </script>
 </head>
 <body>
@@ -220,6 +229,7 @@ document.documentElement.style.setProperty("--fz", localStorage.getItem("canedo_
         <button id="fzVal" title="Voltar ao tamanho normal" aria-label="Tamanho normal">100%</button>
         <button id="fzMais" title="Aumentar fonte" aria-label="Aumentar fonte">A+</button>
         <button id="telaCheia" title="Tela cheia" aria-label="Tela cheia">⛶ Tela cheia</button>
+        <select id="tema" title="Tema de cores" aria-label="Tema de cores"><option value="claro">☀ Claro</option><option value="escuro">☾ Escuro</option><option value="sepia">📜 Sépia</option><option value="oceano">🌊 Oceano</option><option value="contraste">◐ Alto contraste</option></select>
       </div>
     </div>
     <nav id="nav">
@@ -1374,6 +1384,13 @@ $("#fzMenos").onclick = () => fonte(fzAtual() - 0.1);
 $("#fzMais").onclick = () => fonte(fzAtual() + 0.1);
 $("#fzVal").onclick = () => fonte(1);
 fonte(fzAtual());
+
+/* ---------- tema de cores (5 opções; salvo para todas as páginas) ---------- */
+(() => {
+  const sel = document.getElementById("tema");
+  sel.value = localStorage.getItem("canedo_tema") || (matchMedia("(prefers-color-scheme: dark)").matches ? "escuro" : "claro");
+  sel.onchange = () => { document.documentElement.dataset.tema = sel.value; localStorage.setItem("canedo_tema", sel.value); };
+})();
 
 /* ---------- tela cheia: o mesmo botão entra e sai (Esc também sai) ---------- */
 $("#telaCheia").onclick = () => document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen().catch(() => {});
